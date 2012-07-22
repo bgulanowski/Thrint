@@ -1,0 +1,19 @@
+/* 
+  Product.strings
+  Thrint
+
+  Created by Brent Gulanowski on 12-03-14.
+  Copyright (c) 2012 Bored Astronaut. All rights reserved.
+*/
+
+"code" = "product code";
+
+"dueDate" = "due date";
+
+"name" = "name";
+
+"other" = "additional info";
+
+"otherTitle" = "subtitle";
+
+"startDate" = "start date";

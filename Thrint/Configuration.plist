@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>entity_tabs</key>
+	<dict>
+		<key>Product</key>
+		<dict>
+			<key>title</key>
+			<string>Products</string>
+			<key>image_name</key>
+			<string>icon_document</string>
+		</dict>
+		<key>Team</key>
+		<dict>
+			<key>title</key>
+			<string>Teams</string>
+			<key>image_name</key>
+			<string>icon_users</string>
+		</dict>
+		<key>Developer</key>
+		<dict>
+			<key>title</key>
+			<string>Developers</string>
+			<key>image_name</key>
+			<string>icon_user</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
