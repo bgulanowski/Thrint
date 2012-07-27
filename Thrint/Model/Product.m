@@ -1,5 +1,8 @@
 #import "Product.h"
-#import "NSManagedObject+BAAdditions.h"
+
+#import <ThrintKit/NSManagedObject+ViewAdditions.h>
+#import <ThrintKit/NSManagedObject+BAAdditions.h>
+
 #import "Component.h"
 #import "Team.h"
 
@@ -30,6 +33,24 @@
 
 - (NSArray *)orderedSectionTitles {
     return [NSArray arrayWithObject:@"General"];
+}
+
+- (NSArray *)displayPropertyNames {
+    
+    static __strong NSArray * names;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        names = [[NSArray alloc] initWithObjects:
+                 @"name",
+                 @"code",
+                 @"startDate",
+                 @"dueDate",
+                 @"otherTitle",
+                 @"other",
+                 nil];
+    });
+    return names;
 }
 
 @end

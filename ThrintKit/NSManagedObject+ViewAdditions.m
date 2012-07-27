@@ -2,100 +2,25 @@
 //  NSManagedObject+ViewAdditions.m
 //  Thrint
 //
-//  Created by Brent Gulanowski on 11-11-22.
-//  Copyright (c) 2011 Bored Astronaut. All rights reserved.
+//  Created by Brent Gulanowski on 12-03-18.
+//  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
 #import "NSManagedObject+ViewAdditions.h"
 
-#import "Product.h"
-#import "Team.h"
-#import "Developer.h"
-#import "ObjectDetailVC.h"
+#import "DetailVC.h"
+#import "ListVC.h"
+
 #import "TextAttributeCell.h"
 #import "BooleanAttributeCell.h"
-#import "FloatAttributeCell.h"
-#import "IntegerAttributeCell.h"
+#import "SliderAttributeCell.h"
+#import "DateAttributeCell.h"
+#import "BACoreDataManager.h"
+
 #import "NSManagedObject+BAAdditions.h"
 
 
-
-@implementation NSAttributeDescription (ThrintAdditions)
-
-+ (NSString *)cellIdentifierForAttributeType:(NSAttributeType)type {
-    
-    NSString *identifier = nil;
-    
-    switch (type) {
-            
-        case NSInteger16AttributeType:
-        case NSInteger32AttributeType:
-        case NSInteger64AttributeType:
-            identifier = NSStringFromClass([IntegerAttributeCell class]);
-            break;
-            
-        case NSBooleanAttributeType:
-            identifier = NSStringFromClass([BooleanAttributeCell class]);
-            break;
-            
-        case NSDecimalAttributeType:
-        case NSFloatAttributeType:
-            identifier = NSStringFromClass([FloatAttributeCell class]);
-            break;
-            
-        case NSStringAttributeType:
-        case NSDateAttributeType: // TODO: make new cell for dates
-            // TODO: check for a user info entry which specifies a transformer class
-        case NSBinaryDataAttributeType:
-            identifier = NSStringFromClass([TextAttributeCell class]);
-            break;
-            
-        case NSUndefinedAttributeType:
-        default:
-            break;
-    }
-    
-    return identifier;
-}
-
-- (NSString *)cellIdentifier {
-    NSString *identifier = [NSAttributeDescription cellIdentifierForAttributeType:[self attributeType]];
-    if(!identifier)
-        identifier = [[self userInfo] objectForKey:@"cell_identifier"];
-    return identifier;
-}
-
-- (NSString *)displayName {
-    NSString *displayName = [[self userInfo] objectForKey:@""];
-    if(!displayName)
-        displayName = self.name;
-    return displayName;
-}
-
-@end
-
-
 @implementation NSManagedObject (ViewAdditions)
-
-#pragma mark - Private
-- (NSArray *)cellPrototypeIdentifiers {
-    
-    static NSArray *array;
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        array = [[NSArray alloc] initWithObjects:
-                 @"TextAttributeCell",
-                 @"IntegerAttributeCell",
-                 @"BooleanAttributeCell",
-                 @"FloatAttributeCell",
-                 // @"ImageAttributeCell"
-                 // @"URLAttributeCell"
-                 nil];
-    });
-    
-    return array;
-}
 
 - (UIImage *)displayImage {
     
@@ -118,7 +43,7 @@
         title = [self performSelector:@selector(title)];
     else
         // TODO: insert spaces before capital letters
-        title = [[self entity] name];
+        title = [self stringRepresentation];
     
     return [title capitalizedString];
 }
@@ -126,7 +51,7 @@
 - (NSString *)displaySubtitle { return @""; }
 
 - (NSString *)displayDescription {
-
+    
     NSString *sub = [self displaySubtitle];
     
     if([sub length])
@@ -135,113 +60,221 @@
         return [self displayTitle];
 }
 
-
-+ (ObjectDetailVC *)detailViewController {
-
-//    NSString *dvcClassName = [[[self entity] name] stringByAppendingString:@"DetailVC"];
-//    Class customClass = NSClassFromString(dvcClassName) ?: [ObjectDetailVC class];
-//    ObjectDetailVC *detailVC = [[customClass alloc] initWithStyle:UITableViewStyleGrouped];
-      
-    ObjectDetailVC *detailVC = nil;
+- (NSArray *)displayPropertyNames {
+#if 1
+    return [self attributeNames];
+#else
+    NSArray *attributeNames = [self attributeNames];
+    NSArray *relationshipNames = [self relationshipNames];
     
-    if(NSClassFromString(@"UIStoryboard")) {
-        
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"EntityBrowser" bundle:nil];
-        ObjectDetailVC *vc = [sb instantiateViewControllerWithIdentifier:@"object_detail"];
-        
-        // copy prototypes
-//        for(NSString *identifier in [self cellPrototypeIdentifiers]) {
-//            
-//        }
-        detailVC = vc;
+    return [attributeNames arrayByAddingObjectsFromArray:relationshipNames];
+#endif
+}
+
+- (DetailVC *)detailViewController {
+    
+    NSString *className = [[[self entity] name] stringByAppendingString:@"DetailVC"];
+    Class class = NSClassFromString(className) ?: [DetailVC class];
+    NSManagedObjectContext *editor = [UIApplication modelManager].editingContext;
+    NSManagedObject *scratch = [editor objectWithID:[self objectID]];
+    
+    DetailVC *dvc = [class detailViewControllerWithObject:scratch properties:[self displayPropertyNames]];
+    
+    dvc.hidesBottomBarWhenPushed = YES;
+    
+    return dvc;
+}
+
++ (ListVC *)listViewController {
+    
+    NSString *className = [[self entityName] stringByAppendingString:@"ListVC"];
+    Class class = NSClassFromString(className) ?: [ListVC class];
+    
+    ListVC * lvc = [class entityList];
+    
+    if(class == [ListVC class])
+        [(EntityListDataSource *)lvc.dataSource setEntityName:[self entityName]];
+    
+    return lvc;
+}
+
+- (ListVC *)listViewControllerForRelationship:(NSString *)relationshipName {
+    
+    NSManagedObject *relation = [self valueForKeyPath:relationshipName];
+    Class relationClass = [relation class];
+    
+    if(!relationClass) {
+        NSRelationshipDescription *rd = [self relationshipForName:relationshipName];
+        relationClass = NSClassFromString([[rd destinationEntity] managedObjectClassName]);
     }
     
-    return detailVC;
+    ListVC *entityListVC = [relationClass listViewController];
+    
+    [(EntityListDataSource *)entityListVC.dataSource setContext:self.managedObjectContext];
+    entityListVC.dataSource.selection = relation;
+    entityListVC.dataSource.showSubtitle = NO;
+    
+    return entityListVC;
 }
 
-- (ObjectDetailVC *)detailViewController {
+- (UITableViewCell *)cellForRelationship:(NSString *)relationshipName /*index:(NSUInteger)index*/ {
     
-    ObjectDetailVC *detailVC = [[self class] detailViewController];
+    TextAttributeCell *cell = [TextAttributeCell cell];
     
-    detailVC.object = self;
-    
-    return detailVC;
-}
-
-+ (void)configureCell:(UITableViewCell *)cell {
-    cell.textLabel.text = @"Add New…";
-}
-
-- (void)configureCell:(UITableViewCell *)cell {    
-    cell.textLabel.text = [self displayTitle];
-    cell.imageView.image = [self displayImage];
-}
-
-+ (UITableViewCell *)tableViewCell {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                                   reuseIdentifier:NSStringFromClass(self)];
-    [self configureCell:cell];
-    return cell;
-}
-
-- (UITableViewCell *)tableViewCell {
-    
-    UITableViewCell *cell = [[self class] tableViewCell];
-    
-    [self configureCell:cell];
-    
-    return cell;
-}
-
-- (void)configureCell:(TextAttributeCell *)cell forAttribute:(NSAttributeDescription *)attribute {
+#if 1
     cell.representedObject = self;
-    [cell configureWithValue:[self valueForKey:attribute.name] attribute:attribute];
-}
-
-- (void)configureAttributeCell:(TextAttributeCell *)cell {
-    [self configureCell:cell forAttribute:[self attributeForName:cell.keyPath]];
-}
-
-- (void)updateForAttributeCell:(TextAttributeCell *)cell {
-    [self setValue:[cell objectValue] forKey:cell.keyPath];
-}
-
-+ (NSPredicate *)safeAttributesPredicate {
+    cell.propertyName = relationshipName;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textField.enabled = NO;
     
-    static __strong NSPredicate *predicate;
-    static dispatch_once_t onceToken;
+    [cell configure];
     
-    dispatch_once(&onceToken, ^{
-
-        NSAttributeType types[] = { NSInteger16AttributeType, NSInteger32AttributeType, NSInteger64AttributeType, NSStringAttributeType, NSFloatAttributeType, NSDoubleAttributeType, NSBooleanAttributeType, NSDecimalAttributeType };
-        NSMutableArray *safeTypes = [NSMutableArray array];
+#else
+    id relValue = [self valueForKey:relationshipName];
+    UITableViewCellAccessoryType type = UITableViewCellAccessoryNone;
+    
+    // Support for to-many relationships
+    if([relValue respondsToSelector:@selector(count)]) {
         
-        for(NSUInteger i=0; i< sizeof(types)/sizeof(NSAttributeType); ++i)
-            [safeTypes addObject:[NSNumber numberWithInteger:types[i]]];
-
-        predicate = [NSPredicate predicateWithFormat:@"type in %@", safeTypes];
-    });
+#if 1
+        [NSException raise:NSInternalInconsistencyException format:@"Can't handle to-many relationships!"];
+#else   
+        if(index < [relValue count]) {
+            cell.detailTextLabel.text = [[self objectInRelationship:relationshipName atIndex:index] displayTitle];
+            type = UITableViewCellAccessoryDetailDisclosureButton;
+        }
+        else
+            cell.detailTextLabel.text = @"Choose…";
+#endif
+    }
+    else {
+        cell.label.text = NSLocalizedStringFromTable(relationshipName, self.entity.name, @"Display name for relationship");
+        if(relValue) {
+            cell.detailTextLabel.text = [relValue displayTitle];
+            type = UITableViewCellAccessoryDetailDisclosureButton;
+        }
+        else
+            cell.detailTextLabel.text = @"Choose…";
+    }
     
-    return predicate;
-}
-
-- (NSArray *)detailViewAttributes {
-    return [[[[self entity] attributesByName] allValues] filteredArrayUsingPredicate:[[self class] safeAttributesPredicate]];
-}
-
-- (NSArray *)detailViewKeyPaths {
-    return [[self detailViewAttributes] valueForKey:@"name"];
-}
-
-- (NSString *)cellIdentifierForKeyPath:(NSString *)keyPath {
-    return [[self attributeForKeyPath:keyPath] cellIdentifier];
-}
-
-- (TextAttributeCell *)cellForKeyPath:(NSString *)keyPath {
+    cell.accessoryType = type;
+#endif
     
-    NSString *identifier = [self cellIdentifierForKeyPath:keyPath];
+    return cell;
+}
+
+- (UITableViewCell *)cellForProperty:(NSString *)propertyName {
     
-    return (TextAttributeCell *)[[NSClassFromString(identifier) alloc] init];
+    NSAttributeType attributeType = [self attributeTypeForProperty:propertyName];
+    UITableViewCellAccessoryType accessoryType = UITableViewCellAccessoryNone;
+    TextAttributeCell *cell = nil;
+    
+    if(RELATIONSHIP_PROPERTY_TYPE == attributeType) {
+        // Ignoring to-manys for now -- each custom table should solve that problem on its own
+        return [self cellForRelationship:propertyName  /* index:0*/];
+    }
+    
+    switch (attributeType) {
+        case NSUndefinedAttributeType:
+            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSUndefinedAttributeType"];
+            break;
+            
+        case NSInteger16AttributeType:
+            cell = [TextAttributeCell cellForEnumerations:[self enumerationStringsForProperty:propertyName]];
+            cell.enumerationIndex = [[self valueForKeyPath:propertyName] integerValue] - 1;
+            accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            break;
+            
+        case NSInteger32AttributeType:
+            cell = [TextAttributeCell cell];
+            break;
+            
+        case NSDecimalAttributeType: // should not use!
+            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSDecimalAttributeType"];
+            break;
+            
+        case NSDoubleAttributeType: // slider
+        case NSFloatAttributeType: // slider
+            cell = [SliderAttributeCell cell];
+            break;
+            
+        case NSStringAttributeType: // txt
+            cell = [TextAttributeCell cell];
+            break;
+            
+        case NSBooleanAttributeType: // switch
+            cell = [BooleanAttributeCell cell];
+            break;
+            
+        case NSDateAttributeType:
+            cell = [TextAttributeCell cell];
+            break;
+            
+        case NSBinaryDataAttributeType: // should not use!
+            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSBinaryDataAttributeType"];
+            break;
+            
+        case NSTransformableAttributeType: // should not use!
+            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSTransformableAttributeType"];
+            break;
+            
+        case NSObjectIDAttributeType: // should not use!
+            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSObjectIDAttributeType"];
+            break;
+            
+        default:
+            cell = [TextAttributeCell cell];
+            break;
+    }
+        
+    cell.representedObject = self;
+    cell.propertyName = propertyName;
+    cell.accessoryType = accessoryType;
+    [cell configure];
+
+    return cell;
+}
+
+- (UITableViewCell *)subtitleCellForTableView:(UITableView *)tableView {
+    
+    static NSString *CellIdentifier = @"EntityListDataSourceCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if(!cell)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    
+    cell.textLabel.text = [self displayTitle];
+    cell.detailTextLabel.text = [self displaySubtitle];
+    
+    return cell;
+}
+
+- (NSArray *)enumerationStringsForProperty:(NSString *)propertyName {
+    return [NSArray array];
+}
+
++ (NSString *)localizedString:(NSString *)string {
+    return NSLocalizedStringFromTable(string, [[self class] entityName], @"");
+}
+
+- (NSString *)localizedString:(NSString *)string {
+    return [[self class] localizedString:string];
+}
+
++ (NSArray *)localizedStrings:(NSArray *)strings {
+
+    NSString *entityName = [[self class] entityName];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[strings count]];
+    
+    for(NSString *string in strings)
+        [result addObject:NSLocalizedStringFromTable(string, entityName, @"")];
+         
+    return result;
+}
+
+- (NSArray *)localizedStrings:(NSArray *)strings {
+    return [[self class] localizedStrings:strings];
 }
 
 @end

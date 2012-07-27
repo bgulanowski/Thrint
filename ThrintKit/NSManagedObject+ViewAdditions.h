@@ -2,43 +2,39 @@
 //  NSManagedObject+ViewAdditions.h
 //  Thrint
 //
-//  Created by Brent Gulanowski on 11-11-22.
-//  Copyright (c) 2011 Bored Astronaut. All rights reserved.
+//  Created by Brent Gulanowski on 12-03-18.
+//  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 
-@class ObjectDetailVC, TextAttributeCell;
 
-@interface NSAttributeDescription (ThrintAdditions)
-+ (NSString *)cellIdentifierForAttributeType:(NSAttributeType)type;
-- (NSString *)displayName;
-@end
+@class DetailVC, ListVC, TextAttributeCell;
 
 @interface NSManagedObject (ViewAdditions)
 
-@property (nonatomic, readonly) UIImage *displayImage;
-@property (nonatomic, readonly) NSString *displayTitle;
-@property (nonatomic, readonly) NSString *displaySubtitle;
-@property (nonatomic, readonly) NSString *displayDescription;
+- (NSString *)displayTitle;
+- (NSString *)displaySubtitle;
+- (NSString *)displayDescription;
+- (UIImage *)displayImage;
 
-+ (ObjectDetailVC *)detailViewController;
-- (ObjectDetailVC *)detailViewController;
-+ (void)configureCell:(UITableViewCell *)cell;
-- (void)configureCell:(UITableViewCell *)cell;
-+ (UITableViewCell *)tableViewCell;
-- (UITableViewCell *)tableViewCell;
+- (NSArray *)displayPropertyNames; // attributes, relationships or keypaths
+- (DetailVC *)detailViewController;
++ (ListVC *)listViewController;
+- (ListVC *)listViewControllerForRelationship:(NSString *)relationshipName;
 
-- (void)configureAttributeCell:(TextAttributeCell *)cell;
-- (void)updateForAttributeCell:(TextAttributeCell *)cell;
+- (UITableViewCell *)cellForRelationship:(NSString *)relationshipName /* index:(NSUInteger)index*/; // index is only relevant for to-many relationships
+- (TextAttributeCell *)cellForProperty:(NSString *)propertyName;
 
-- (NSArray *)detailViewAttributes;
-// Subclasses can override to add more key paths; all key paths must map to an attribute on a destination entity
-// OR classes must override -cellIdentifierForKeyPath: to return a suitable identifier, and/or -cellForKeyPath:
-- (NSArray *)detailViewKeyPaths;
+- (UITableViewCell *)subtitleCellForTableView:(UITableView *)tableView;
 
-// default returns an appropriate Thrint attribute cell class name for standard types on known attributes
-- (NSString *)cellIdentifierForKeyPath:(NSString *)keyPath;
-// default returns nil; subclasses should override for custom key paths
-- (TextAttributeCell *)cellForKeyPath:(NSString *)keyPath;
+// Subclasses must override for any enumerated types (NSInteger16AttributeType)
+- (NSArray *)enumerationStringsForProperty:(NSString *)propertyName;
+
++ (NSString *)localizedString:(NSString *)string;
++ (NSArray *)localizedStrings:(NSArray *)strings;
+
+- (NSString *)localizedString:(NSString *)string;
+- (NSArray *)localizedStrings:(NSArray *)strings;
 
 @end

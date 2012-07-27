@@ -34,7 +34,7 @@ static NSManagedObjectContext *activeContext;
 	
 	NSError *error = nil;
 	NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
-	NSPersistentStoreCoordinator *coord = [[[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model] autorelease];
+	NSPersistentStoreCoordinator *coord = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
 	NSPersistentStore *store = nil;
 
 	if(![[NSFileManager defaultManager] createDirectoryAtPath:[path stringByDeletingLastPathComponent]
@@ -52,7 +52,7 @@ static NSManagedObjectContext *activeContext;
 
 	[self setActiveContext:context];
 	
-	return [context autorelease];
+	return context;
 }
 
 + (NSManagedObjectContext *)configuredContextForStorePath:(NSString *)path model:(NSManagedObjectModel *)model {
@@ -73,7 +73,7 @@ static NSManagedObjectContext *activeContext;
     if(!path)
         path = [[NSBundle mainBundle] pathForResource:name ofType:@"momd"];
     
-	NSManagedObjectModel *model = [[[NSManagedObjectModel alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]] autorelease];
+	NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]];
 									
 	return [self configuredContextWithDefaultStoreForModel:model];
 }
@@ -83,8 +83,7 @@ static NSManagedObjectContext *activeContext;
 }
 
 + (void)setActiveContext:(NSManagedObjectContext *)context {
-    [activeContext release];
-	activeContext = [context retain];
+	activeContext = context;
 }
 
 - (void)makeActive {
@@ -101,7 +100,7 @@ static NSManagedObjectContext *activeContext;
                                                object:moc];
     moc.persistentStoreCoordinator = self.persistentStoreCoordinator;
 
-    return [moc autorelease];
+    return moc;
 }
 
 - (void)editorSaved:(NSNotification *)note {
@@ -129,7 +128,7 @@ static NSManagedObjectContext *activeContext;
 - (NSArray *)objectsForEntityNamed:(NSString *)entityName matchingPredicate:(NSPredicate *)aPredicate {
 	
 	NSArray *result = nil;
-	NSFetchRequest *fetch = [[[NSFetchRequest alloc] init] autorelease];
+	NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self];
     Class class = NSClassFromString([entity managedObjectClassName]);
 	NSError *error = nil;

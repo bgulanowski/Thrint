@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="SCO-bP-vus">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E2617" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="SCO-bP-vus">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
+        <!--ListVC - Entities List-->
         <scene sceneID="g9c-MW-PCL">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5z-ed-XWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController storyboardIdentifier="entities_list" title="Entities List" clearsSelectionOnViewWillAppear="NO" id="EOY-A9-DJu" customClass="ObjectListVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="entities_list" title="Entities List" clearsSelectionOnViewWillAppear="NO" id="EOY-A9-DJu" customClass="ListVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Fa1-kx-WRI">
                         <rect key="frame" x="0.0" y="64" width="320" height="788"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,6 +24,7 @@
             </objects>
             <point key="canvasLocation" x="1222" y="277"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="K3q-9U-Qpj">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJD-LC-sdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,6 +39,7 @@
             </objects>
             <point key="canvasLocation" x="686" y="277"/>
         </scene>
+        <!--Split View Controller - Entity Browser-->
         <scene sceneID="nUG-ag-3OM">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8v-aL-xOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -51,6 +54,7 @@
             </objects>
             <point key="canvasLocation" x="-314" y="793"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="Orx-pJ-bJ2">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMa-jb-Gz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -68,10 +72,11 @@
             </objects>
             <point key="canvasLocation" x="1668" y="793"/>
         </scene>
+        <!--DetailVC-->
         <scene sceneID="5Cm-oc-K0N">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMp-jE-dTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController storyboardIdentifier="object_detail" id="yVO-so-KXr" customClass="ObjectDetailVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="object_detail" id="yVO-so-KXr" customClass="DetailVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Yf1-0m-RH4">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +114,7 @@
                                 <rect key="frame" x="0.0" y="99" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                    <rect key="frame" x="45" y="0.0" width="678" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="20" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="GFy-9o-HvB">
@@ -135,7 +140,7 @@
                                 <rect key="frame" x="0.0" y="143" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="45" y="1" width="658" height="43"/>
+                                    <rect key="frame" x="45" y="0.0" width="658" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="20" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="cCf-Ls-Duu">
@@ -163,7 +168,7 @@
                                 <rect key="frame" x="0.0" y="187" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                    <rect key="frame" x="45" y="0.0" width="678" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="20" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="xMT-Ox-Aka">
@@ -196,7 +201,7 @@
                                 <rect key="frame" x="0.0" y="231" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                    <rect key="frame" x="45" y="0.0" width="678" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="20" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="w6n-uQ-gcP">
@@ -229,7 +234,7 @@
                                 <rect key="frame" x="0.0" y="275" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="45" y="1" width="645" height="43"/>
+                                    <rect key="frame" x="45" y="0.0" width="645" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D2n-AA-36Y">
@@ -247,7 +252,7 @@
                                 <rect key="frame" x="0.0" y="319" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                    <rect key="frame" x="45" y="0.0" width="678" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="20" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="rOy-7Q-9bk">
@@ -287,6 +292,16 @@
                 <relationship kind="outlet" name="flagSwitch" candidateClass="UISwitch"/>
             </relationships>
         </class>
+        <class className="DetailVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailVC.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelEdits:"/>
+                <relationship kind="action" name="deleteObject:"/>
+                <relationship kind="action" name="dismissKeyboard:"/>
+                <relationship kind="action" name="saveEdits:"/>
+                <relationship kind="outlet" name="tableFooterView" candidateClass="UIView"/>
+            </relationships>
+        </class>
         <class className="FloatAttributeCell" superclassName="TextAttributeCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FloatAttributeCell.h"/>
             <relationships>
@@ -302,14 +317,12 @@
         <class className="IntegerAttributeCell" superclassName="TextAttributeCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IntegerAttributeCell.h"/>
             <relationships>
+                <relationship kind="action" name="update:"/>
                 <relationship kind="outlet" name="stepper" candidateClass="UIStepper"/>
             </relationships>
         </class>
-        <class className="ObjectDetailVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ObjectDetailVC.h"/>
-        </class>
-        <class className="ObjectListVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ObjectListVC.h"/>
+        <class className="ListVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListVC.h"/>
             <relationships>
                 <relationship kind="action" name="edit:"/>
             </relationships>

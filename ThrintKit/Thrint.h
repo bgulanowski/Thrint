@@ -13,8 +13,8 @@
 #import <ThrintKit/NSManagedObject+ViewAdditions.h>
 
 #import <ThrintKit/BACoreDataManager.h>
-#import <ThrintKit/ObjectListVC.h>
-#import <ThrintKit/ObjectDetailVC.h>
+#import <ThrintKit/ListVC.h>
+#import <ThrintKit/DetailVC.h>
 #import <ThrintKit/ThrintTableViewController.h>
 
 

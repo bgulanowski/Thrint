@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ObjectListVC.h"
+#import "ListVC.h"
 #import "DashboardVC.h"
 #import "ThrintTableViewController.h"
 

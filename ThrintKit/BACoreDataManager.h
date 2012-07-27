@@ -65,4 +65,5 @@
 
 @interface UIApplication (BAAdditions)
 - (BACoreDataManager *)modelManager;
++ (BACoreDataManager *)modelManager;
 @end

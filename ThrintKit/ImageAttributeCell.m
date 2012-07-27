@@ -12,9 +12,4 @@
 
 @synthesize attributeImageView=_attributeImageView;
 
-- (void)dealloc {
-    self.attributeImageView = nil;
-    [super dealloc];
-}
-
 @end

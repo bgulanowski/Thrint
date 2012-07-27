@@ -8,7 +8,7 @@
 
 #import "ThrintTableViewController.h"
 
-#import "ObjectListVC.h"
+#import "ListVC.h"
 
 #import "Thrint.h"
 

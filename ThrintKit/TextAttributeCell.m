@@ -9,6 +9,7 @@
 #import "TextAttributeCell.h"
 #import "NSManagedObject+BAAdditions.h"
 #import "NSManagedObject+ViewAdditions.h"
+#import "BACoreDataManager.h"
 
 
 @implementation TextAttributeCell
@@ -29,7 +30,6 @@
 #pragma mark - Accessors
 - (void)setPropertyName:(NSString *)propertyName {
     if(![propertyName isEqualToString:_propertyName]) {
-        [_propertyName release];
         _propertyName = [propertyName copy];
         [self updateAttributeType];
     }
@@ -37,31 +37,18 @@
 
 - (void)setRepresentedObject:(NSManagedObject *)representedObject {
     if(representedObject != _representedObject) {
-        [_representedObject release];
-        _representedObject = [representedObject retain];
+        _representedObject = representedObject;
         [self updateAttributeType];
     }
 }
 
 - (void)setSuffix:(NSString *)suffix {
     if(![_suffix isEqualToString:_suffix]) {
-        [_suffix release];
-        _suffix = [suffix retain];
+        _suffix = suffix;
         self.textField.text = [self textValue];
     }
 }
 
-
-#pragma mark - NSObject
-- (void)dealloc {
-    self.label = nil;
-    self.textField = nil;
-    self.representedObject = nil;
-    self.propertyName = nil;
-    self.enumerations = nil;
-    self.suffix = nil;
-    [super dealloc];
-}
 
 - (id)init {
     self = [super initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:NSStringFromClass([self class])];
@@ -152,7 +139,7 @@
     else
         _textField.text = [self textValue];
     
-    self.label.text = [[_representedObject localizedString:_propertyName] capitalizedString];
+    self.label.text = [_propertyName capitalizedString];
 
     
     if(NSInteger32AttributeType == _attributeType || NSFloatAttributeType == _attributeType) {
@@ -187,7 +174,7 @@
     [_textField resignFirstResponder];
     [_representedObject setValue:[self objectValue] forKeyPath:_propertyName];
     if(_liveEditing)
-        [[UIApplication archive] scheduleSave];
+        [[UIApplication modelManager] scheduleSave];
 }
 
 + (TextAttributeCell *)cell {

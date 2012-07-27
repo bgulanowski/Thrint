@@ -31,11 +31,8 @@
 		4E83162814E1AE3B00123C1B /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E83162714E1AE3B00123C1B /* Configuration.plist */; };
 		4E8316AF14E2C5BA00123C1B /* BooleanAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83167014E2C5BA00123C1B /* BooleanAttributeCell.m */; };
 		4E8316B114E2C5BA00123C1B /* DateAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83167214E2C5BA00123C1B /* DateAttributeCell.m */; };
-		4E8316B314E2C5BA00123C1B /* FloatAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83167414E2C5BA00123C1B /* FloatAttributeCell.m */; };
 		4E8316B514E2C5BA00123C1B /* IntegerAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83167614E2C5BA00123C1B /* IntegerAttributeCell.m */; };
 		4E8316DF14E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A114E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m */; };
-		4E8316E114E2C5BA00123C1B /* ObjectDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A314E2C5BA00123C1B /* ObjectDetailVC.m */; };
-		4E8316E314E2C5BA00123C1B /* ObjectListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A514E2C5BA00123C1B /* ObjectListVC.m */; };
 		4E8316E514E2C5BA00123C1B /* TextAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A714E2C5BA00123C1B /* TextAttributeCell.m */; };
 		4E8316E714E2C5BA00123C1B /* Thrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A914E2C5BA00123C1B /* Thrint.m */; };
 		4E8316EA14E2C5BA00123C1B /* ThrintTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */; };
@@ -85,22 +82,28 @@
 		8410880F15BA11FF008E97B9 /* NSManagedObject+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662915BA02C10005A060 /* NSManagedObject+BAAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881015BA11FF008E97B9 /* NSManagedObject+ViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881115BA11FF008E97B9 /* NSManagedObjectContext+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662B15BA02C10005A060 /* NSManagedObjectContext+BAAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410881215BA11FF008E97B9 /* ObjectDetailVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662C15BA02C10005A060 /* ObjectDetailVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410881315BA11FF008E97B9 /* ObjectListVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662D15BA02C10005A060 /* ObjectListVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881415BA11FF008E97B9 /* TextAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662E15BA02C10005A060 /* TextAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881515BA11FF008E97B9 /* Thrint.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662F15BA02C10005A060 /* Thrint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881615BA11FF008E97B9 /* ThrintTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400663015BA02C10005A060 /* ThrintTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410882015BA1588008E97B9 /* TextAttributeCell.xib in Copy Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell.xib */; };
-		8410882215BA16E6008E97B9 /* ThrintKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8410882115BA16E6008E97B9 /* ThrintKit.framework */; };
 		8410882615BA17B5008E97B9 /* EntityBrowser.storyboard in Copy Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser.storyboard */; };
-		8410882715BA17D4008E97B9 /* TextAttributeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell.xib */; };
-		8410882815BA17D7008E97B9 /* EntityBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser.storyboard */; };
-		8410882B15BA18BF008E97B9 /* SliderAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8410882915BA18BF008E97B9 /* SliderAttributeCell.h */; };
+		8410882B15BA18BF008E97B9 /* SliderAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8410882915BA18BF008E97B9 /* SliderAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410882C15BA18BF008E97B9 /* SliderAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8410882A15BA18BF008E97B9 /* SliderAttributeCell.m */; };
+		8426F4CB15C1DB9C00337A17 /* DetailVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4C715C1DB9C00337A17 /* DetailVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8426F4CC15C1DB9C00337A17 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4C815C1DB9C00337A17 /* DetailVC.m */; };
+		8426F4CD15C1DB9C00337A17 /* ListVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4C915C1DB9C00337A17 /* ListVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8426F4CE15C1DB9C00337A17 /* ListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4CA15C1DB9C00337A17 /* ListVC.m */; };
+		8426F4D115C1DC4000337A17 /* EntityListDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4CF15C1DC4000337A17 /* EntityListDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8426F4D215C1DC4000337A17 /* EntityListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4D015C1DC4000337A17 /* EntityListDataSource.m */; };
+		8426F4D515C1DC5800337A17 /* ListDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4D315C1DC5800337A17 /* ListDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8426F4D615C1DC5800337A17 /* ListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4D415C1DC5800337A17 /* ListDataSource.m */; };
 		84DCA31C15BA0B1700F37EA4 /* IntegerNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3813FE1485578F0024A7B1 /* IntegerNumberTransformer.m */; };
 		84DCA31D15BA0B1700F37EA4 /* DecimalNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E38140114855BAA0024A7B1 /* DecimalNumberTransformer.m */; };
 		84DCA31E15BA0B1700F37EA4 /* FloatNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E38140414855DCB0024A7B1 /* FloatNumberTransformer.m */; };
 		84DCA31F15BA0B1700F37EA4 /* DateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E38140A14855FAF0024A7B1 /* DateTransformer.m */; };
+		84F4761615C1E78F0015D59C /* EntityBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser.storyboard */; };
+		84F4761715C1E7960015D59C /* TextAttributeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell.xib */; };
+		84F4761915C1E7B50015D59C /* ThrintKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F4761815C1E7B50015D59C /* ThrintKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,8 +206,6 @@
 		4E83169E14E2C5BA00123C1B /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		4E83169F14E2C5BA00123C1B /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		4E8316A114E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ViewAdditions.m"; sourceTree = "<group>"; };
-		4E8316A314E2C5BA00123C1B /* ObjectDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectDetailVC.m; sourceTree = "<group>"; };
-		4E8316A514E2C5BA00123C1B /* ObjectListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectListVC.m; sourceTree = "<group>"; };
 		4E8316A714E2C5BA00123C1B /* TextAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextAttributeCell.m; sourceTree = "<group>"; };
 		4E8316A914E2C5BA00123C1B /* Thrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thrint.m; sourceTree = "<group>"; };
 		4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrintTableViewController.m; sourceTree = "<group>"; };
@@ -238,14 +239,21 @@
 		8400662915BA02C10005A060 /* NSManagedObject+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+BAAdditions.h"; sourceTree = "<group>"; };
 		8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ViewAdditions.h"; sourceTree = "<group>"; };
 		8400662B15BA02C10005A060 /* NSManagedObjectContext+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+BAAdditions.h"; sourceTree = "<group>"; };
-		8400662C15BA02C10005A060 /* ObjectDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectDetailVC.h; sourceTree = "<group>"; };
-		8400662D15BA02C10005A060 /* ObjectListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectListVC.h; sourceTree = "<group>"; };
 		8400662E15BA02C10005A060 /* TextAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextAttributeCell.h; sourceTree = "<group>"; };
 		8400662F15BA02C10005A060 /* Thrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thrint.h; sourceTree = "<group>"; };
 		8400663015BA02C10005A060 /* ThrintTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrintTableViewController.h; sourceTree = "<group>"; };
-		8410882115BA16E6008E97B9 /* ThrintKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ThrintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8410882915BA18BF008E97B9 /* SliderAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderAttributeCell.h; sourceTree = "<group>"; };
 		8410882A15BA18BF008E97B9 /* SliderAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderAttributeCell.m; sourceTree = "<group>"; };
+		8426F4C715C1DB9C00337A17 /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
+		8426F4C815C1DB9C00337A17 /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
+		8426F4C915C1DB9C00337A17 /* ListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListVC.h; sourceTree = "<group>"; };
+		8426F4CA15C1DB9C00337A17 /* ListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVC.m; sourceTree = "<group>"; };
+		8426F4CF15C1DC4000337A17 /* EntityListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityListDataSource.h; sourceTree = "<group>"; };
+		8426F4D015C1DC4000337A17 /* EntityListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityListDataSource.m; sourceTree = "<group>"; };
+		8426F4D315C1DC5800337A17 /* ListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDataSource.h; sourceTree = "<group>"; };
+		8426F4D415C1DC5800337A17 /* ListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDataSource.m; sourceTree = "<group>"; };
+		84F4761515C1E7700015D59C /* Resources */ = {isa = PBXFileReference; lastKnownFileType = text; name = Resources; path = ThrintKit.framework/Resources; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F4761815C1E7B50015D59C /* ThrintKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ThrintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,7 +265,7 @@
 				4E821731147BFFB300295D45 /* UIKit.framework in Frameworks */,
 				4E821733147BFFB300295D45 /* Foundation.framework in Frameworks */,
 				4E821735147BFFB300295D45 /* CoreGraphics.framework in Frameworks */,
-				8410882215BA16E6008E97B9 /* ThrintKit.framework in Frameworks */,
+				84F4761915C1E7B50015D59C /* ThrintKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +304,8 @@
 		4E82172F147BFFB300295D45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8410882115BA16E6008E97B9 /* ThrintKit.framework */,
+				84F4761815C1E7B50015D59C /* ThrintKit.framework */,
+				84F4761515C1E7700015D59C /* Resources */,
 				4E821730147BFFB300295D45 /* UIKit.framework */,
 				4E821732147BFFB300295D45 /* Foundation.framework */,
 				4EA237C4147C022500E69862 /* CoreData.framework */,
@@ -468,10 +477,14 @@
 		4E8316EF14E2C63700123C1B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8400662C15BA02C10005A060 /* ObjectDetailVC.h */,
-				4E8316A314E2C5BA00123C1B /* ObjectDetailVC.m */,
-				8400662D15BA02C10005A060 /* ObjectListVC.h */,
-				4E8316A514E2C5BA00123C1B /* ObjectListVC.m */,
+				8426F4D315C1DC5800337A17 /* ListDataSource.h */,
+				8426F4D415C1DC5800337A17 /* ListDataSource.m */,
+				8426F4CF15C1DC4000337A17 /* EntityListDataSource.h */,
+				8426F4D015C1DC4000337A17 /* EntityListDataSource.m */,
+				8426F4C715C1DB9C00337A17 /* DetailVC.h */,
+				8426F4C815C1DB9C00337A17 /* DetailVC.m */,
+				8426F4C915C1DB9C00337A17 /* ListVC.h */,
+				8426F4CA15C1DB9C00337A17 /* ListVC.m */,
 				8400663015BA02C10005A060 /* ThrintTableViewController.h */,
 				4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */,
 			);
@@ -557,12 +570,14 @@
 				8410880F15BA11FF008E97B9 /* NSManagedObject+BAAdditions.h in Headers */,
 				8410881015BA11FF008E97B9 /* NSManagedObject+ViewAdditions.h in Headers */,
 				8410881115BA11FF008E97B9 /* NSManagedObjectContext+BAAdditions.h in Headers */,
-				8410881215BA11FF008E97B9 /* ObjectDetailVC.h in Headers */,
-				8410881315BA11FF008E97B9 /* ObjectListVC.h in Headers */,
 				8410881415BA11FF008E97B9 /* TextAttributeCell.h in Headers */,
+				8410882B15BA18BF008E97B9 /* SliderAttributeCell.h in Headers */,
+				8426F4CB15C1DB9C00337A17 /* DetailVC.h in Headers */,
+				8426F4CD15C1DB9C00337A17 /* ListVC.h in Headers */,
+				8426F4D115C1DC4000337A17 /* EntityListDataSource.h in Headers */,
+				8426F4D515C1DC5800337A17 /* ListDataSource.h in Headers */,
 				8410881515BA11FF008E97B9 /* Thrint.h in Headers */,
 				8410881615BA11FF008E97B9 /* ThrintTableViewController.h in Headers */,
-				8410882B15BA18BF008E97B9 /* SliderAttributeCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,14 +655,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F4761715C1E7960015D59C /* TextAttributeCell.xib in Resources */,
+				84F4761615C1E78F0015D59C /* EntityBrowser.storyboard in Resources */,
 				4E82173B147BFFB300295D45 /* InfoPlist.strings in Resources */,
 				4EE47F14147EF2E7006C4795 /* icon_user.png in Resources */,
 				4EE47F15147EF2E7006C4795 /* icon_users.png in Resources */,
 				4EE47F17147EF2F3006C4795 /* icon_settings.png in Resources */,
 				4EE47F19147EF311006C4795 /* icon_document.png in Resources */,
 				4E83162814E1AE3B00123C1B /* Configuration.plist in Resources */,
-				8410882715BA17D4008E97B9 /* TextAttributeCell.xib in Resources */,
-				8410882815BA17D7008E97B9 /* EntityBrowser.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,11 +753,8 @@
 				4EAB34AE14D9D6090038B6CC /* NSManagedObjectContext+BAAdditions.m in Sources */,
 				4E8316AF14E2C5BA00123C1B /* BooleanAttributeCell.m in Sources */,
 				4E8316B114E2C5BA00123C1B /* DateAttributeCell.m in Sources */,
-				4E8316B314E2C5BA00123C1B /* FloatAttributeCell.m in Sources */,
 				4E8316B514E2C5BA00123C1B /* IntegerAttributeCell.m in Sources */,
 				4E8316DF14E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m in Sources */,
-				4E8316E114E2C5BA00123C1B /* ObjectDetailVC.m in Sources */,
-				4E8316E314E2C5BA00123C1B /* ObjectListVC.m in Sources */,
 				4E8316E514E2C5BA00123C1B /* TextAttributeCell.m in Sources */,
 				4E8316E714E2C5BA00123C1B /* Thrint.m in Sources */,
 				4E8316EA14E2C5BA00123C1B /* ThrintTableViewController.m in Sources */,
@@ -752,6 +764,10 @@
 				84DCA31E15BA0B1700F37EA4 /* FloatNumberTransformer.m in Sources */,
 				84DCA31F15BA0B1700F37EA4 /* DateTransformer.m in Sources */,
 				8410882C15BA18BF008E97B9 /* SliderAttributeCell.m in Sources */,
+				8426F4CC15C1DB9C00337A17 /* DetailVC.m in Sources */,
+				8426F4CE15C1DB9C00337A17 /* ListVC.m in Sources */,
+				8426F4D215C1DC4000337A17 /* EntityListDataSource.m in Sources */,
+				8426F4D615C1DC5800337A17 /* ListDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,6 +825,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_MISSING_PARENTHESES = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -828,6 +845,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_MISSING_PARENTHESES = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -842,7 +860,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../../Shared/Xcode/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../../../Shared/Xcode/Products/Debug-iphoneos\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Thrint/Thrint-Prefix.pch";
@@ -861,7 +879,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../../../../Shared/Xcode/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../../../Shared/Xcode/Products/Debug-iphoneos\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Thrint/Thrint-Prefix.pch";

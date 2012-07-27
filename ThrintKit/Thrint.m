@@ -7,7 +7,7 @@
 //
 
 #import "Thrint.h"
-#import "ObjectListVC.h"
+#import "ListVC.h"
 #import "ThrintTableViewController.h"
 
 #import "NSManagedObjectContext+BAAdditions.h"
@@ -28,7 +28,7 @@
     barButtonItem.title = [aViewController valueForKeyPath:@"topViewController.navigationItem.title"];
     [nav topViewController].navigationItem.leftBarButtonItem = barButtonItem;
     
-    [(ObjectListVC *)aViewController.topViewController setPopOver:pc];
+    [(ListVC *)aViewController.topViewController setPopOver:pc];
 }
 
 - (void)splitViewController: (UISplitViewController*)svc
@@ -38,7 +38,7 @@
     UINavigationController *nav = [[svc viewControllers] lastObject];
     
     [nav topViewController].navigationItem.leftBarButtonItem = nil;
-    [(ObjectListVC *)aViewController.topViewController setPopOver:nil];
+    [(ListVC *)aViewController.topViewController setPopOver:nil];
 }
 
 
@@ -50,10 +50,10 @@
         self.rootEntityNames = entityNames;
         if(![entityNames count])
             self.rootEntityNames = [[[[self.context persistentStoreCoordinator] managedObjectModel] entitiesByName] allKeys];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(contextRequestNotification:)
-                                                     name:kManagedObjectContextRequestNotificationName
-                                                   object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(contextRequestNotification:)
+//                                                     name:kManagedObjectContextRequestNotificationName
+//                                                   object:nil];
     }
     return self;
 }
@@ -62,14 +62,18 @@
     return [self initWithStoreURL:url rootEntityNames:nil];
 }
 
-- (ObjectListVC *)configureListViewController:(ObjectListVC *)listVC forEntityNamed:(NSString *)entityName {
+- (ListVC *)configureListViewController:(ListVC *)listVC forEntityNamed:(NSString *)entityName {
     
     NSString *title = [_delegate titleForEntity:entityName];
     UIImage *image = [UIImage imageNamed:[_delegate imageNameForEntity:entityName]];
     
-    listVC.context = self.context;
-    listVC.entityName = entityName;
+    EntityListDataSource *datasource = (EntityListDataSource *)listVC.dataSource;
+
+    datasource.context = self.context;
+    datasource.entityName = entityName;
+    
     listVC.navigationItem.title = title;
+    listVC.allowEditing = YES;
     listVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:title
                                                       image:image
                                                         tag:101 + [_rootEntityNames indexOfObject:entityName]];
@@ -82,7 +86,7 @@
     UIStoryboard *storyboard = [[self class] splitViewStoryboard];
     UISplitViewController *svc = (UISplitViewController *)[storyboard instantiateInitialViewController];
     UINavigationController *nav = (UINavigationController *)[[svc viewControllers] objectAtIndex:0];
-    ObjectListVC *listVC = (ObjectListVC *)[nav topViewController];
+    ListVC *listVC = (ListVC *)[nav topViewController];
     
     [self configureListViewController:listVC forEntityNamed:entityName];
 
@@ -94,11 +98,11 @@
     return svc;
 }
 
-- (ObjectListVC *)listViewControllerForEntityNamed:(NSString *)entityName {
+- (ListVC *)listViewControllerForEntityNamed:(NSString *)entityName {
     
     NSString *className = [entityName stringByAppendingString:@"ListVC"];
-    Class listVCClass = NSClassFromString(className) ?: [ObjectListVC class];
-    ObjectListVC *listVC = [[listVCClass alloc] init];
+    Class listVCClass = NSClassFromString(className) ?: [ListVC class];
+    ListVC *listVC = [[listVCClass alloc] init];
     
     return [self configureListViewController:listVC forEntityNamed:entityName];
 }
@@ -165,10 +169,10 @@
     return storyboard;
 }
 
-
-#pragma mark - NSNotification handlers
-- (void)contextRequestNotification:(NSNotification *)note {
-    [[note object] setContext:self.context];
-}
-
+//
+//#pragma mark - NSNotification handlers
+//- (void)contextRequestNotification:(NSNotification *)note {
+//    [[note object] setContext:self.context];
+//}
+//
 @end

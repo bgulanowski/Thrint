@@ -24,16 +24,6 @@
 @synthesize model, coordinator, context, editingContext, storeURL, storeUnreadable, readOnly, saveDelay, scheduledSaveTimer;
 @synthesize editCount;
 
-#pragma mark - NSObject
-- (void)dealloc {
-    self.model = nil;
-    self.coordinator = nil;
-    self.context = nil;
-    self.editingContext = nil;
-    self.storeURL = nil;
-    [super dealloc];
-}
-
 - (NSURL *)modelURL {
     
     Class class = [self class];
@@ -74,7 +64,6 @@
     if( ! [self openPersistentStore:psc]) {
 		if([self readOnly] || ![self moveAsideOldStore] || ![self openPersistentStore:psc]) {
 			[self setStoreUnreadable:YES];
-            [psc release];
 			psc = nil;
 		}
 	}
@@ -110,7 +99,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editorSaved:) name:NSManagedObjectContextDidSaveNotification object:moc];
         moc.persistentStoreCoordinator = coordinator;
         self.editingContext = moc;
-        [moc release];
     });
     return editingContext;
 }
@@ -150,14 +138,14 @@
 	NSError *error = nil;
     
     NSAssert(context != nil, @"No managed object context!");
-    NSAssert(editingContext != nil, @"No editing context!");
+//    NSAssert(editingContext != nil, @"No editing context!");
 	
 	@try {
 #ifdef DEBUG
         if(editCount)
             NSLog(@"Not saving editing context; edits in progress");
 #endif
-        if(!editCount && !(success = [editingContext save:&error]))
+        if(editingContext && !editCount && !(success = [editingContext save:&error]))
             NSLog(@"Could not save editing context: %@", error);
         else if(!(success = [context save:&error]))
             NSLog(@"Could not save context: %@", error);
@@ -319,6 +307,10 @@
     if([[self delegate] conformsToProtocol:@protocol(BAApplicationDelegateAdditions)])
         return [(id<BAApplicationDelegateAdditions>)[self delegate] modelManager];
     return nil;
+}
+
++ (BACoreDataManager *)modelManager {
+    return [[self sharedApplication] modelManager];
 }
 
 @end

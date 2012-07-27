@@ -28,14 +28,11 @@ Class numberClass;
 	numberClass = [NSNumber class];
     NSValueTransformer *transformer = [[IntegerNumberTransformer alloc] init];
     [NSValueTransformer setValueTransformer:transformer forName:kNuIntegerTransformerName];
-    [transformer release];
 //    [NSValueTransformer setValueTransformer:[[DecimalNumberTransformer alloc] init] forName:kNuDecimalTransformerName];
     transformer = [[FloatNumberTransformer alloc] init];
     [NSValueTransformer setValueTransformer:transformer forName:kNuFloatTransformerName];
-    [transformer release];
     transformer = [[DateTransformer alloc] init];
     [NSValueTransformer setValueTransformer:transformer forName:kNuDateTransformerName];
-    [transformer release];
 }
 
 - (id)valueForDataKey:(NSString *)aKey {
