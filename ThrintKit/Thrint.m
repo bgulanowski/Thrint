@@ -17,6 +17,15 @@
 
 @synthesize rootEntityNames=_rootEntityNames, delegate=_delegate;
 
+#pragma mark - Accessors
+- (void)setDelegate:(id<ThrintDelegate>)delegate {
+    if(delegate != _delegate) {
+        _delegate = delegate;
+        _delegateTitles = [delegate respondsToSelector:@selector(titleForEntity:)];
+        _delegateImages = [delegate respondsToSelector:@selector(imageNameForEntity:)];
+    }
+}
+
 #pragma mark - UISplitViewControllerDelegate
 - (void)splitViewController:(UISplitViewController*)svc
      willHideViewController:(UINavigationController *)aViewController
@@ -50,10 +59,6 @@
         self.rootEntityNames = entityNames;
         if(![entityNames count])
             self.rootEntityNames = [[[[self.context persistentStoreCoordinator] managedObjectModel] entitiesByName] allKeys];
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(contextRequestNotification:)
-//                                                     name:kManagedObjectContextRequestNotificationName
-//                                                   object:nil];
     }
     return self;
 }
@@ -64,8 +69,8 @@
 
 - (ListVC *)configureListViewController:(ListVC *)listVC forEntityNamed:(NSString *)entityName {
     
-    NSString *title = [_delegate titleForEntity:entityName];
-    UIImage *image = [UIImage imageNamed:[_delegate imageNameForEntity:entityName]];
+    NSString *title = _delegateTitles ? [_delegate titleForEntity:entityName] ?: entityName : entityName;
+    UIImage *image = _delegateImages ? [UIImage imageNamed:[_delegate imageNameForEntity:entityName]] : nil;
     
     EntityListDataSource *datasource = (EntityListDataSource *)listVC.dataSource;
 
@@ -74,9 +79,7 @@
     
     listVC.navigationItem.title = title;
     listVC.allowEditing = YES;
-    listVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:title
-                                                      image:image
-                                                        tag:101 + [_rootEntityNames indexOfObject:entityName]];
+    listVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:image tag:101 + [_rootEntityNames indexOfObject:entityName]];
     
     return listVC;
 }
@@ -152,7 +155,7 @@
 }
 
 - (UIViewController *)rootViewController {
-    if([_rootEntityNames count] < 5 && [_delegate conformsToProtocol:@protocol(ThrintDelegate)])
+    if([_rootEntityNames count] < 5)
         return [self rootTabBarController];
     
     return [[UINavigationController alloc] initWithRootViewController:[self rootTableViewController]];

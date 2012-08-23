@@ -192,7 +192,7 @@
 #endif
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 96; // To be dynamic, we could load the TextAttributeCell.xib and check, but this is easier
+    return 45;
 }
 
 
@@ -206,8 +206,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TextAttributeCell *cell = [_object cellForProperty:[[self properties] objectAtIndex:[indexPath row]]];
+    
+    NSString *property = [[self properties] objectAtIndex:[indexPath row]];
+    TextAttributeCell *cell = [_object cellForProperty:property tableView:tableView];
+    
     NSAssert(cell, @"No cell created!");
+    
     cell.liveEditing = _liveEditing;
     return cell;
 }

@@ -23,8 +23,10 @@
 + (ListVC *)listViewController;
 - (ListVC *)listViewControllerForRelationship:(NSString *)relationshipName;
 
-- (UITableViewCell *)cellForRelationship:(NSString *)relationshipName /* index:(NSUInteger)index*/; // index is only relevant for to-many relationships
+- (TextAttributeCell *)cellForRelationship:(NSString *)relationshipName /* index:(NSUInteger)index*/; // index is only relevant for to-many relationships
+- (Class)cellClassForProperty:(NSString *)propertyName;
 - (TextAttributeCell *)cellForProperty:(NSString *)propertyName;
+- (TextAttributeCell *)cellForProperty:(NSString *)property tableView:(UITableView *)tableView;
 
 - (UITableViewCell *)subtitleCellForTableView:(UITableView *)tableView;
 

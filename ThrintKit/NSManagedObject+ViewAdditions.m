@@ -117,7 +117,7 @@
     return entityListVC;
 }
 
-- (UITableViewCell *)cellForRelationship:(NSString *)relationshipName /*index:(NSUInteger)index*/ {
+- (TextAttributeCell *)cellForRelationship:(NSString *)relationshipName /*index:(NSUInteger)index*/ {
     
     TextAttributeCell *cell = [TextAttributeCell cell];
     
@@ -163,75 +163,83 @@
     return cell;
 }
 
-- (UITableViewCell *)cellForProperty:(NSString *)propertyName {
+- (Class)cellClassForProperty:(NSString *)propertyName {
     
     NSAttributeType attributeType = [self attributeTypeForProperty:propertyName];
-    UITableViewCellAccessoryType accessoryType = UITableViewCellAccessoryNone;
-    TextAttributeCell *cell = nil;
+    Class class = Nil;
+
+    switch (attributeType) {
+        case NSUndefinedAttributeType:
+            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSUndefinedAttributeType"];
+            return nil;
+            
+        case NSDecimalAttributeType:
+            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSDecimalAttributeType"];
+            break;
+            
+        case NSDoubleAttributeType:
+        case NSFloatAttributeType:
+            class = [SliderAttributeCell class];
+            break;
+            
+        case NSBooleanAttributeType:
+            class = [BooleanAttributeCell class];
+            break;
+            
+        case NSBinaryDataAttributeType:
+            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSBinaryDataAttributeType"];
+            break;
+            
+        case NSTransformableAttributeType:
+            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSTransformableAttributeType"];
+            break;
+            
+        case NSObjectIDAttributeType:
+            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSObjectIDAttributeType"];
+            break;
+            
+        case NSStringAttributeType:
+        case NSInteger32AttributeType:
+        case NSInteger16AttributeType:
+        case NSDateAttributeType:
+        default:
+            class = [TextAttributeCell class];
+            break;
+    }
+    
+    return class;
+}
+
+- (TextAttributeCell *)cellForProperty:(NSString *)propertyName {
+    
+    NSAttributeType attributeType = [self attributeTypeForProperty:propertyName];
     
     if(RELATIONSHIP_PROPERTY_TYPE == attributeType) {
         // Ignoring to-manys for now -- each custom table should solve that problem on its own
         return [self cellForRelationship:propertyName  /* index:0*/];
     }
     
-    switch (attributeType) {
-        case NSUndefinedAttributeType:
-            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSUndefinedAttributeType"];
-            break;
-            
-        case NSInteger16AttributeType:
-            cell = [TextAttributeCell cellForEnumerations:[self enumerationStringsForProperty:propertyName]];
-            cell.enumerationIndex = [[self valueForKeyPath:propertyName] integerValue] - 1;
-            accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            break;
-            
-        case NSInteger32AttributeType:
-            cell = [TextAttributeCell cell];
-            break;
-            
-        case NSDecimalAttributeType: // should not use!
-            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSDecimalAttributeType"];
-            break;
-            
-        case NSDoubleAttributeType: // slider
-        case NSFloatAttributeType: // slider
-            cell = [SliderAttributeCell cell];
-            break;
-            
-        case NSStringAttributeType: // txt
-            cell = [TextAttributeCell cell];
-            break;
-            
-        case NSBooleanAttributeType: // switch
-            cell = [BooleanAttributeCell cell];
-            break;
-            
-        case NSDateAttributeType:
-            cell = [TextAttributeCell cell];
-            break;
-            
-        case NSBinaryDataAttributeType: // should not use!
-            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSBinaryDataAttributeType"];
-            break;
-            
-        case NSTransformableAttributeType: // should not use!
-            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSTransformableAttributeType"];
-            break;
-            
-        case NSObjectIDAttributeType: // should not use!
-            [NSException raise:NSInternalInconsistencyException format:@"Cannot support NSObjectIDAttributeType"];
-            break;
-            
-        default:
-            cell = [TextAttributeCell cell];
-            break;
-    }
-        
-    cell.representedObject = self;
-    cell.propertyName = propertyName;
-    cell.accessoryType = accessoryType;
-    [cell configure];
+    return [[self cellClassForProperty:propertyName] cellWithObject:self property:propertyName];
+}
 
+- (TextAttributeCell *)cellForProperty:(NSString *)property tableView:(UITableView *)tableView {
+        
+    NSString *identifier = NSStringFromClass([self cellClassForProperty:property]);
+    TextAttributeCell *cell = nil;
+    
+    if(identifier)
+        cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    if(!cell)
+        cell = [self cellForProperty:property];
+
+    if(cell) {
+        cell.propertyName = property;
+        cell.attributeType = [self attributeTypeForProperty:property];
+        cell.representedObject = self;
+        [cell configure];
+    }
+    
     return cell;
 }
 

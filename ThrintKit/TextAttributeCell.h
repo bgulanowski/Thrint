@@ -35,5 +35,6 @@
 
 + (TextAttributeCell *)cell;
 + (TextAttributeCell *)cellForEnumerations:(id)enumerations;
++ (TextAttributeCell *)cellWithObject:(NSManagedObject *)object property:(NSString *)propertyName;
 
 @end

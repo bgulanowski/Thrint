@@ -186,15 +186,16 @@
     });
     
     NSString *key = NSStringFromClass(self);
-
-    UINib *nib = [nibs objectForKey:key];
+    id nib = [nibs objectForKey:key];
     
     if(!nib) {
         nib = [UINib nibWithNibName:key bundle:nil];
         [nibs setObject:nib forKey:key];
     }
+    else if(nib == [NSNull null])
+        nib = nil;
     
-    return [[nib instantiateWithOwner:nil options:nil] lastObject];
+    return [[(UINib *)nib instantiateWithOwner:nil options:nil] lastObject];
 }
 
 + (TextAttributeCell *)cellForEnumerations:(id)enumerations {
@@ -203,6 +204,22 @@
     
     cell.textField.enabled = NO;
     cell.enumerations = enumerations;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    return cell;
+}
+
++ (TextAttributeCell *)cellWithObject:(NSManagedObject *)object property:(NSString *)propertyName {
+    
+    NSAttributeType attributeType = [object attributeTypeForProperty:propertyName];
+    TextAttributeCell *cell = nil;
+    
+    if(NSInteger16AttributeType == attributeType) {
+        cell = [self cellForEnumerations:[object enumerationStringsForProperty:propertyName]];
+        cell.enumerationIndex = [[object valueForKeyPath:propertyName] integerValue] - 1;
+    }
+    else
+        cell = [self cell];
     
     return cell;
 }
