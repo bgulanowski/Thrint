@@ -89,25 +89,3 @@
 }
 
 @end
-
-
-@implementation UITabBarController (ThrintAdditions)
-
-- (UIViewController *)viewControllerForItemTitle:(NSString *)title {
-    
-    NSArray *vcs = self.viewControllers;
-    NSArray *titles = [vcs valueForKeyPath:@"tabBarItem.title"];
-    
-    return [vcs objectAtIndex:[titles indexOfObject:title]];
-}
-
-
-- (UIViewController *)viewControllerForItemTag:(NSUInteger)tag {
-    
-    NSArray *vcs = self.viewControllers;
-    NSArray *tags = [vcs valueForKeyPath:@"tabBarItem.tag"];
-    
-    return [vcs objectAtIndex:[tags indexOfObject:[NSNumber numberWithUnsignedInteger:tag]]];
-}
-
-@end

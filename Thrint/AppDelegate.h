@@ -18,8 +18,3 @@
 @property (nonatomic, strong) UIWindow *window;
 
 @end
-
-@interface UITabBarController (ThrintAdditions)
-- (UIViewController *)viewControllerForItemTag:(NSUInteger)tag;
-- (UIViewController *)viewControllerForItemTitle:(NSString *)identifier;
-@end
