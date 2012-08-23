@@ -9,7 +9,7 @@
 #import "ThrintKit.h"
 
 
-NSString *ThrintKitVersion = @"1.0.0a";
+NSString *ThrintKitVersion = @"1.0.1";
 
 //@implementation ThrintKit
 //
