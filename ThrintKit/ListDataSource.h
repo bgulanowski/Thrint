@@ -46,8 +46,3 @@
 @optional
 - (id)insertObject;
 @end
-
-@interface NSObject (ListRepresentation)
-- (NSString *)listString;
-- (UITableViewCell *)cellForTableView:(UITableView *)tableView;
-@end

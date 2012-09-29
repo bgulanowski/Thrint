@@ -22,7 +22,7 @@
     return (Developer *)[self insertObject];
 }
 
-- (NSString *)displayDescription {
+- (NSString *)listString {
     
     Role *role = [self.roles anyObject];
     NSString *roleString;
@@ -33,6 +33,10 @@
         roleString = @"unassigned";
         
     return [NSString stringWithFormat:@"%@ (%@)", self.name, roleString];
+}
+
+- (NSString *)displayDescription {
+    return [self listString];
 }
 
 @end

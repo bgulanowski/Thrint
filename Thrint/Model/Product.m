@@ -4,6 +4,8 @@
 #import <ThrintKit/NSManagedObject+BAAdditions.h>
 
 #import "Component.h"
+
+#import "Milestone.h"
 #import "Team.h"
 
 
@@ -33,6 +35,10 @@
 
 - (NSArray *)orderedSectionTitles {
     return [NSArray arrayWithObject:@"General"];
+}
+
+- (NSString *)listString {
+    return [NSString stringWithFormat:@"%@ by %@ - due %@", self.name, self.team.name, [df stringFromDate:self.dueDate]];
 }
 
 - (NSArray *)displayPropertyNames {

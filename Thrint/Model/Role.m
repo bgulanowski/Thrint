@@ -22,6 +22,10 @@
     return (Role *)[self insertObject];
 }
 
+- (NSString *)listString {
+    return [NSString stringWithFormat:@"%@ (%@)", self.name, [[self.developers anyObject] name] ?: @"unassigned"];
+}
+
 - (NSString *)displayTitle {
     
     NSArray *names = [[self.developers valueForKeyPath:@"name"] allObjects];

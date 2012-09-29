@@ -20,6 +20,10 @@
     return (Team *)[self insertObject];
 }
 
+- (NSString *)listString {
+    return [NSString stringWithFormat:@"%@ (%u products, %u devs)", self.name, [self.products count], [self.developers count]];
+}
+
 - (NSString *)displayTitle {
     
     NSArray *names = [self.developers valueForKey:@"name"];

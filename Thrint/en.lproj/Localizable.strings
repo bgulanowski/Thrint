@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Thrint
+
+  Created by Brent Gulanowski on 12-09-29.
+  Copyright (c) 2012 Bored Astronaut. All rights reserved.
+*/
+
+
+/* General/Shared */
+"ok" = "OK";
+"cancel" = "Cancel";
+"delete" = "Delete";
+"discard" = "Discard";
+"discard_changes_" = "Discard Changes?";
+
+
+/* List */
+
+// General
+"add_new_" = "Add New…";
+
+

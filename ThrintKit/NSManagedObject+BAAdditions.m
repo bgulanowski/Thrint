@@ -285,10 +285,6 @@ Class numberClass;
     return [self description];
 }
 
-- (NSString *)listString {
-    return [self description];
-}
-
 + (NSString *)defaultSortKey {
     return nil;
 }

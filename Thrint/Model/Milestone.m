@@ -8,6 +8,17 @@
 
 @implementation Milestone
 
+NSDateFormatter *df;
+
++ (void)initialize {
+    if(self == [Milestone class]) {
+        df = [[NSDateFormatter alloc] init];
+        df.dateStyle = NSDateFormatterLongStyle;
+        df.timeStyle = NSDateFormatterNoStyle;
+    }
+}
+
+
 + (NSManagedObject *)insertObject {
     
     Milestone *milestone = (Milestone *)[super insertObject];
@@ -22,15 +33,11 @@
     return (Milestone *)[self insertObject];
 }
 
+- (NSString *)listString {
+    return [NSString stringWithFormat:@"%@ due %@", self.version, [df stringFromDate:self.dueDate]];
+}
+
 - (NSString *)displayDescription {
-    
-    static NSDateFormatter *df;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        df = [[NSDateFormatter alloc] init];
-        df.dateStyle = NSDateFormatterLongStyle;
-        df.timeStyle = NSDateFormatterNoStyle;
-    });
     
     NSString *featuresString = [[[self valueForKeyPath:@"features.name"] allObjects] componentsJoinedByString:@", "];
     

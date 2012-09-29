@@ -58,7 +58,6 @@ extern NSString *kNuDateTransformerName;
 - (NSString *)objectIDString;
 - (NSString *)objectIDAsFileName;
 - (NSString *)stringRepresentation;
-- (NSString *)listString;
 
 + (NSString *)defaultSortKey;
 + (BOOL)defaultSortAscending;

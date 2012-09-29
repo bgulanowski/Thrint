@@ -20,6 +20,10 @@
     return (ProductNote *)[self insertObject];
 }
 
+-(NSString *)listString {
+    return [NSString stringWithFormat:@"%@", self.title];
+}
+
 - (NSString *)displaySubtitle {
     NSString *content = self.details;
     

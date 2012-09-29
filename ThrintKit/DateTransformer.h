@@ -10,4 +10,7 @@
 
 @interface DateTransformer : NSValueTransformer
 
++ (NSString *)stringFromDate:(NSDate *)date;
++ (NSDate *)dateFromString:(NSString *)string;
+
 @end

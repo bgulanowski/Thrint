@@ -26,6 +26,14 @@ static NSDateFormatter *formatter;
 
 + (Class)transformedValueClass { return [NSDate class]; }
 
++ (NSString *)stringFromDate:(NSDate *)date {
+    return [formatter stringFromDate:date];
+}
+
++ (NSDate *)dateFromString:(NSString *)string {
+    return [formatter dateFromString:string];
+}
+
 - (NSDate *)transformedValue:(NSString *)value { return [formatter dateFromString:value]; }
 
 - (id)reverseTransformedValue:(id)value { return [formatter stringFromDate:value]; }

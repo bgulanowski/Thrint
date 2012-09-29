@@ -96,6 +96,9 @@
 		8426F4D215C1DC4000337A17 /* EntityListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4D015C1DC4000337A17 /* EntityListDataSource.m */; };
 		8426F4D515C1DC5800337A17 /* ListDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4D315C1DC5800337A17 /* ListDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8426F4D615C1DC5800337A17 /* ListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4D415C1DC5800337A17 /* ListDataSource.m */; };
+		8452E6271617A0B200DE6DF6 /* NSObject+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8452E6251617A0B200DE6DF6 /* NSObject+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8452E6281617A0B200DE6DF6 /* NSObject+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452E6261617A0B200DE6DF6 /* NSObject+ThrintAdditions.m */; };
+		8461A89216174945009FE5C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8461A89416174945009FE5C5 /* Localizable.strings */; };
 		84DCA31C15BA0B1700F37EA4 /* IntegerNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3813FE1485578F0024A7B1 /* IntegerNumberTransformer.m */; };
 		84DCA31D15BA0B1700F37EA4 /* DecimalNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E38140114855BAA0024A7B1 /* DecimalNumberTransformer.m */; };
 		84DCA31E15BA0B1700F37EA4 /* FloatNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E38140414855DCB0024A7B1 /* FloatNumberTransformer.m */; };
@@ -159,7 +162,7 @@
 		4E83161B14E1A3FC00123C1B /* EntityBrowser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EntityBrowser.storyboard; sourceTree = "<group>"; };
 		4E83162314E1A76D00123C1B /* ThrintKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrintKit.h; sourceTree = "<group>"; };
 		4E83162414E1A76D00123C1B /* ThrintKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrintKit.m; sourceTree = "<group>"; };
-		4E83162714E1AE3B00123C1B /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Configuration.plist; path = Thrint/Configuration.plist; sourceTree = "<group>"; };
+		4E83162714E1AE3B00123C1B /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		4E83167014E2C5BA00123C1B /* BooleanAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooleanAttributeCell.m; sourceTree = "<group>"; };
 		4E83167214E2C5BA00123C1B /* DateAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateAttributeCell.m; sourceTree = "<group>"; };
 		4E83167614E2C5BA00123C1B /* IntegerAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerAttributeCell.m; sourceTree = "<group>"; };
@@ -220,10 +223,10 @@
 		4EA2381F147C3B4800E69862 /* NSManagedObjectContext+BAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+BAAdditions.m"; sourceTree = "<group>"; };
 		4EAB349C14D9D57C0038B6CC /* libThrintKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libThrintKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC66D65147D815A00B3B849 /* BACoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BACoreDataManager.m; sourceTree = "<group>"; };
-		4EE47F12147EF2E7006C4795 /* icon_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_user.png; path = Thrint/icon_user.png; sourceTree = "<group>"; };
-		4EE47F13147EF2E7006C4795 /* icon_users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_users.png; path = Thrint/icon_users.png; sourceTree = "<group>"; };
-		4EE47F16147EF2F3006C4795 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_settings.png; path = Thrint/icon_settings.png; sourceTree = "<group>"; };
-		4EE47F18147EF311006C4795 /* icon_document.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_document.png; path = Thrint/icon_document.png; sourceTree = "<group>"; };
+		4EE47F12147EF2E7006C4795 /* icon_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_user.png; sourceTree = "<group>"; };
+		4EE47F13147EF2E7006C4795 /* icon_users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_users.png; sourceTree = "<group>"; };
+		4EE47F16147EF2F3006C4795 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
+		4EE47F18147EF311006C4795 /* icon_document.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_document.png; sourceTree = "<group>"; };
 		8400661F15BA02C10005A060 /* BACoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BACoreDataManager.h; sourceTree = "<group>"; };
 		8400662015BA02C10005A060 /* BooleanAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanAttributeCell.h; sourceTree = "<group>"; };
 		8400662115BA02C10005A060 /* DateAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateAttributeCell.h; sourceTree = "<group>"; };
@@ -249,6 +252,9 @@
 		8426F4D015C1DC4000337A17 /* EntityListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityListDataSource.m; sourceTree = "<group>"; };
 		8426F4D315C1DC5800337A17 /* ListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDataSource.h; sourceTree = "<group>"; };
 		8426F4D415C1DC5800337A17 /* ListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDataSource.m; sourceTree = "<group>"; };
+		8452E6251617A0B200DE6DF6 /* NSObject+ThrintAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ThrintAdditions.h"; sourceTree = "<group>"; };
+		8452E6261617A0B200DE6DF6 /* NSObject+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ThrintAdditions.m"; sourceTree = "<group>"; };
+		8461A89316174945009FE5C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		84F4761515C1E7700015D59C /* Resources */ = {isa = PBXFileReference; lastKnownFileType = text; name = Resources; path = ThrintKit.framework/Resources; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F4761815C1E7B50015D59C /* ThrintKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ThrintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -284,6 +290,7 @@
 			children = (
 				4E821736147BFFB300295D45 /* Thrint */,
 				4E83161114E1A33D00123C1B /* ThrintKit */,
+				8452E62416179E0D00DE6DF6 /* Vendor */,
 				4E82172F147BFFB300295D45 /* Frameworks */,
 				4E82172D147BFFB300295D45 /* Products */,
 			);
@@ -338,6 +345,7 @@
 		4E83161114E1A33D00123C1B /* ThrintKit */ = {
 			isa = PBXGroup;
 			children = (
+				8452E62316179DED00DE6DF6 /* Categories */,
 				4E83162314E1A76D00123C1B /* ThrintKit.h */,
 				4E83162414E1A76D00123C1B /* ThrintKit.m */,
 				4E8316ED14E2C62800123C1B /* Classes */,
@@ -366,7 +374,7 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		4E83167714E2C5BA00123C1B /* Model */ = {
+		4E83167714E2C5BA00123C1B /* BAFoundation */ = {
 			isa = PBXGroup;
 			children = (
 				8400661F15BA02C10005A060 /* BACoreDataManager.h */,
@@ -376,7 +384,7 @@
 				8400662B15BA02C10005A060 /* NSManagedObjectContext+BAAdditions.h */,
 				4EA2381F147C3B4800E69862 /* NSManagedObjectContext+BAAdditions.m */,
 			);
-			name = Model;
+			name = BAFoundation;
 			sourceTree = "<group>";
 		};
 		4E8316EB14E2C5CA00123C1B /* Machine */ = {
@@ -442,7 +450,6 @@
 				4E8316A914E2C5BA00123C1B /* Thrint.m */,
 				4E8316EE14E2C62F00123C1B /* Views */,
 				4E8316EF14E2C63700123C1B /* View Controllers */,
-				4E83167714E2C5BA00123C1B /* Model */,
 				4E8316F014E2C63F00123C1B /* Transformers */,
 			);
 			name = Classes;
@@ -459,8 +466,6 @@
 				4E9778A8150D21EE0096EDBD /* ImageAttributeCell.m */,
 				8400662715BA02C10005A060 /* IntegerAttributeCell.h */,
 				4E83167614E2C5BA00123C1B /* IntegerAttributeCell.m */,
-				8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */,
-				4E8316A114E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m */,
 				8410882915BA18BF008E97B9 /* SliderAttributeCell.h */,
 				8410882A15BA18BF008E97B9 /* SliderAttributeCell.m */,
 				8400662E15BA02C10005A060 /* TextAttributeCell.h */,
@@ -540,9 +545,30 @@
 				4EE47F13147EF2E7006C4795 /* icon_users.png */,
 				4EE47F16147EF2F3006C4795 /* icon_settings.png */,
 				4E83162714E1AE3B00123C1B /* Configuration.plist */,
+				8461A89416174945009FE5C5 /* Localizable.strings */,
 			);
 			name = Resources;
-			path = ..;
+			path = /Users/brent/Dev/github/thrint/Thrint;
+			sourceTree = "<absolute>";
+		};
+		8452E62316179DED00DE6DF6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */,
+				4E8316A114E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m */,
+				8452E6251617A0B200DE6DF6 /* NSObject+ThrintAdditions.h */,
+				8452E6261617A0B200DE6DF6 /* NSObject+ThrintAdditions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		8452E62416179E0D00DE6DF6 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				4E83167714E2C5BA00123C1B /* BAFoundation */,
+			);
+			name = Vendor;
+			path = ThrintKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -572,6 +598,7 @@
 				8426F4D515C1DC5800337A17 /* ListDataSource.h in Headers */,
 				8410881515BA11FF008E97B9 /* Thrint.h in Headers */,
 				8410881615BA11FF008E97B9 /* ThrintTableViewController.h in Headers */,
+				8452E6271617A0B200DE6DF6 /* NSObject+ThrintAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +684,7 @@
 				4EE47F17147EF2F3006C4795 /* icon_settings.png in Resources */,
 				4EE47F19147EF311006C4795 /* icon_document.png in Resources */,
 				4E83162814E1AE3B00123C1B /* Configuration.plist in Resources */,
+				8461A89216174945009FE5C5 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +790,7 @@
 				8426F4CE15C1DB9C00337A17 /* ListVC.m in Sources */,
 				8426F4D215C1DC4000337A17 /* EntityListDataSource.m in Sources */,
 				8426F4D615C1DC5800337A17 /* ListDataSource.m in Sources */,
+				8452E6281617A0B200DE6DF6 /* NSObject+ThrintAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,6 +826,14 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		8461A89416174945009FE5C5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8461A89316174945009FE5C5 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -821,6 +858,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_MISSING_PARENTHESES = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -841,6 +879,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_MISSING_PARENTHESES = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;

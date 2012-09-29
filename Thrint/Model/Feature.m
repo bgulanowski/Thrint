@@ -24,4 +24,12 @@
     return  (Feature *)[self insertObject];
 }
 
+- (NSString *)listString {
+    return [NSString stringWithFormat:@"%@ (%@)", self.name, self.owner.name];
+}
+
+- (NSString *)displayDescription {
+    return self.details;
+}
+
 @end

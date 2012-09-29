@@ -19,6 +19,10 @@
     return (Test *)[self insertObject];
 }
 
+- (NSString *)listString {
+    return [@"Test of %@" stringByAppendingFormat:@"%@", self.feature.name];
+}
+
 - (NSString *)displayDescription {
     return [NSString stringWithFormat:@"Test for %@", self.feature.name];
 }

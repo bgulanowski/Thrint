@@ -19,4 +19,8 @@
     return (Library *)[self insertObject];
 }
 
+- (NSString *)listString {
+    return [NSString stringWithFormat:@"%@ (%u deps)", self.name, [self.dependents count]];
+}
+
 @end

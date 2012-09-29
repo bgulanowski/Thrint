@@ -72,6 +72,12 @@
 }
 
 
+#pragma mark - NSObject
+- (id)init {
+    return [self initWithDataSource:[[self class] dataSource]];
+}
+
+
 #pragma mark - NSCoding
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -255,14 +261,6 @@
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
     }
     [self.tableView endUpdates];
-}
-
-@end
-
-@implementation NSObject (StringRepresentation)
-
-- (NSString *)stringRepresentation {
-    return [self description];
 }
 
 @end

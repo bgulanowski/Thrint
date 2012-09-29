@@ -10,6 +10,7 @@
 
 #import "TextAttributeCell.h"
 #import "NSManagedObject+ViewAdditions.h"
+#import "NSObject+ThrintAdditions.h"
 
 
 @interface ListDataSource ()
@@ -196,28 +197,6 @@
 
 + (ListDataSource *)dataSourceWithContent:(NSArray *)content selectionPath:(NSIndexPath *)path {
     return [[self alloc] initWithContent:content selectionPath:path];
-}
-
-@end
-
-
-@implementation NSObject (ListRepresentation)
-
-- (NSString *)listString {
-    return [self description];
-}
-
-- (UITableViewCell *)cellForTableView:(UITableView *)tableView {
-
-    static NSString *CellIdentifier = @"ListDataSourceCell";
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (!cell)
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    cell.textLabel.text = [self listString];
-    
-    return cell;
 }
 
 @end
