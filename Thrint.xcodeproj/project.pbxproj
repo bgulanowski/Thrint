@@ -74,7 +74,6 @@
 		8410880715BA11FF008E97B9 /* DateAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662115BA02C10005A060 /* DateAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410880815BA11FF008E97B9 /* DateTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662215BA02C10005A060 /* DateTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410880915BA11FF008E97B9 /* DecimalNumberTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662315BA02C10005A060 /* DecimalNumberTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410880A15BA11FF008E97B9 /* FloatAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662415BA02C10005A060 /* FloatAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410880B15BA11FF008E97B9 /* FloatNumberTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662515BA02C10005A060 /* FloatNumberTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410880C15BA11FF008E97B9 /* ImageAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662615BA02C10005A060 /* ImageAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410880D15BA11FF008E97B9 /* IntegerAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662715BA02C10005A060 /* IntegerAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -163,7 +162,6 @@
 		4E83162714E1AE3B00123C1B /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Configuration.plist; path = Thrint/Configuration.plist; sourceTree = "<group>"; };
 		4E83167014E2C5BA00123C1B /* BooleanAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooleanAttributeCell.m; sourceTree = "<group>"; };
 		4E83167214E2C5BA00123C1B /* DateAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateAttributeCell.m; sourceTree = "<group>"; };
-		4E83167414E2C5BA00123C1B /* FloatAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatAttributeCell.m; sourceTree = "<group>"; };
 		4E83167614E2C5BA00123C1B /* IntegerAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerAttributeCell.m; sourceTree = "<group>"; };
 		4E83167814E2C5BA00123C1B /* _Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Component.h; sourceTree = "<group>"; };
 		4E83167914E2C5BA00123C1B /* _Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Component.m; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 		8400662115BA02C10005A060 /* DateAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateAttributeCell.h; sourceTree = "<group>"; };
 		8400662215BA02C10005A060 /* DateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTransformer.h; sourceTree = "<group>"; };
 		8400662315BA02C10005A060 /* DecimalNumberTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecimalNumberTransformer.h; sourceTree = "<group>"; };
-		8400662415BA02C10005A060 /* FloatAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatAttributeCell.h; sourceTree = "<group>"; };
 		8400662515BA02C10005A060 /* FloatNumberTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatNumberTransformer.h; sourceTree = "<group>"; };
 		8400662615BA02C10005A060 /* ImageAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAttributeCell.h; sourceTree = "<group>"; };
 		8400662715BA02C10005A060 /* IntegerAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerAttributeCell.h; sourceTree = "<group>"; };
@@ -458,8 +455,6 @@
 				4E83167014E2C5BA00123C1B /* BooleanAttributeCell.m */,
 				8400662115BA02C10005A060 /* DateAttributeCell.h */,
 				4E83167214E2C5BA00123C1B /* DateAttributeCell.m */,
-				8400662415BA02C10005A060 /* FloatAttributeCell.h */,
-				4E83167414E2C5BA00123C1B /* FloatAttributeCell.m */,
 				8400662615BA02C10005A060 /* ImageAttributeCell.h */,
 				4E9778A8150D21EE0096EDBD /* ImageAttributeCell.m */,
 				8400662715BA02C10005A060 /* IntegerAttributeCell.h */,
@@ -562,7 +557,6 @@
 				8410880715BA11FF008E97B9 /* DateAttributeCell.h in Headers */,
 				8410880815BA11FF008E97B9 /* DateTransformer.h in Headers */,
 				8410880915BA11FF008E97B9 /* DecimalNumberTransformer.h in Headers */,
-				8410880A15BA11FF008E97B9 /* FloatAttributeCell.h in Headers */,
 				8410880B15BA11FF008E97B9 /* FloatNumberTransformer.h in Headers */,
 				8410880C15BA11FF008E97B9 /* ImageAttributeCell.h in Headers */,
 				8410880D15BA11FF008E97B9 /* IntegerAttributeCell.h in Headers */,
