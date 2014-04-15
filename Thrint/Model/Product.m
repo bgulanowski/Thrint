@@ -1,7 +1,8 @@
 #import "Product.h"
 
 #import <ThrintKit/NSManagedObject+ViewAdditions.h>
-#import <ThrintKit/NSManagedObject+BAAdditions.h>
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
+#import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 
 #import "Component.h"
 
@@ -19,9 +20,7 @@
     product.code = @"PRODUCT-CODE";
     product.startDate = [NSDate date];
     product.dueDate = [NSDate dateWithTimeIntervalSinceNow:24 * 7 * 24 * 3600];
-    [product addComponentsObject:[Component insertComponent]];
-    product.team = [Team insertTeam];
-    
+	
     return product;
 }
 
