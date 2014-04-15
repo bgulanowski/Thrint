@@ -12,14 +12,6 @@
  */
 
 #import <ThrintKit/NSObject+ThrintAdditions.h>
-#import <ThrintKit/NSManagedObject+BAAdditions.h>
-#import <ThrintKit/NSManagedObjectContext+BAAdditions.h>
-#import <ThrintKit/NSManagedObject+ViewAdditions.h>
-
-#import <ThrintKit/DateTransformer.h>
-#import <ThrintKit/DecimalNumberTransformer.h>
-#import <ThrintKit/FloatNumberTransformer.h>
-#import <ThrintKit/IntegerNumberTransformer.h>
 
 #import <ThrintKit/ListDataSource.h>
 #import <ThrintKit/EntityListDataSource.h>
