@@ -288,6 +288,7 @@
 				4E82172D147BFFB300295D45 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		4E82172D147BFFB300295D45 /* Products */ = {
 			isa = PBXGroup;
