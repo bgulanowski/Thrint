@@ -8,10 +8,10 @@
 
 #import "EntityListDataSource.h"
 
-#import "NSManagedObjectContext+BAAdditions.h"
-#import "NSManagedObject+BAAdditions.h"
+#import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import "NSManagedObject+ViewAdditions.h"
-#import "BACoreDataManager.h"
+#import <BAFoundation/BACoreDataManager.h>
 
 
 @implementation EntityListDataSource

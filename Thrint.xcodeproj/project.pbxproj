@@ -60,27 +60,17 @@
 		4E9778AA150D21EE0096EDBD /* ImageAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9778A8150D21EE0096EDBD /* ImageAttributeCell.m */; };
 		4EA237C5147C022500E69862 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA237C4147C022500E69862 /* CoreData.framework */; };
 		4EAB349D14D9D57C0038B6CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E821732147BFFB300295D45 /* Foundation.framework */; };
-		4EAB34AC14D9D6090038B6CC /* BACoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC66D65147D815A00B3B849 /* BACoreDataManager.m */; };
-		4EAB34AD14D9D6090038B6CC /* NSManagedObject+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2381D147C3B4800E69862 /* NSManagedObject+BAAdditions.m */; };
-		4EAB34AE14D9D6090038B6CC /* NSManagedObjectContext+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2381F147C3B4800E69862 /* NSManagedObjectContext+BAAdditions.m */; };
 		4EE47F14147EF2E7006C4795 /* icon_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F12147EF2E7006C4795 /* icon_user.png */; };
 		4EE47F15147EF2E7006C4795 /* icon_users.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F13147EF2E7006C4795 /* icon_users.png */; };
 		4EE47F17147EF2F3006C4795 /* icon_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F16147EF2F3006C4795 /* icon_settings.png */; };
 		4EE47F19147EF311006C4795 /* icon_document.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F18147EF311006C4795 /* icon_document.png */; };
 		8410880315BA1120008E97B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E821730147BFFB300295D45 /* UIKit.framework */; };
 		8410880415BA113E008E97B9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA237C4147C022500E69862 /* CoreData.framework */; };
-		8410880515BA11FF008E97B9 /* BACoreDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400661F15BA02C10005A060 /* BACoreDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410880615BA11FF008E97B9 /* BooleanAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662015BA02C10005A060 /* BooleanAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410880715BA11FF008E97B9 /* DateAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662115BA02C10005A060 /* DateAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410880815BA11FF008E97B9 /* DateTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662215BA02C10005A060 /* DateTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410880915BA11FF008E97B9 /* DecimalNumberTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662315BA02C10005A060 /* DecimalNumberTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410880B15BA11FF008E97B9 /* FloatNumberTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662515BA02C10005A060 /* FloatNumberTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410880C15BA11FF008E97B9 /* ImageAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662615BA02C10005A060 /* ImageAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410880D15BA11FF008E97B9 /* IntegerAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662715BA02C10005A060 /* IntegerAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410880E15BA11FF008E97B9 /* IntegerNumberTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662815BA02C10005A060 /* IntegerNumberTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410880F15BA11FF008E97B9 /* NSManagedObject+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662915BA02C10005A060 /* NSManagedObject+BAAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881015BA11FF008E97B9 /* NSManagedObject+ViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410881115BA11FF008E97B9 /* NSManagedObjectContext+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662B15BA02C10005A060 /* NSManagedObjectContext+BAAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881415BA11FF008E97B9 /* TextAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662E15BA02C10005A060 /* TextAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881515BA11FF008E97B9 /* Thrint.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662F15BA02C10005A060 /* Thrint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881615BA11FF008E97B9 /* ThrintTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400663015BA02C10005A060 /* ThrintTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -99,24 +89,36 @@
 		8452E6271617A0B200DE6DF6 /* NSObject+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8452E6251617A0B200DE6DF6 /* NSObject+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8452E6281617A0B200DE6DF6 /* NSObject+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452E6261617A0B200DE6DF6 /* NSObject+ThrintAdditions.m */; };
 		8461A89216174945009FE5C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8461A89416174945009FE5C5 /* Localizable.strings */; };
-		84DCA31C15BA0B1700F37EA4 /* IntegerNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3813FE1485578F0024A7B1 /* IntegerNumberTransformer.m */; };
-		84DCA31D15BA0B1700F37EA4 /* DecimalNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E38140114855BAA0024A7B1 /* DecimalNumberTransformer.m */; };
-		84DCA31E15BA0B1700F37EA4 /* FloatNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E38140414855DCB0024A7B1 /* FloatNumberTransformer.m */; };
-		84DCA31F15BA0B1700F37EA4 /* DateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E38140A14855FAF0024A7B1 /* DateTransformer.m */; };
+		8485682118FC982200914FE1 /* libThrintKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAB349C14D9D57C0038B6CC /* libThrintKit.a */; };
+		8485682218FC982200914FE1 /* libBAFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485681A18FC97C300914FE1 /* libBAFoundation.a */; };
+		8485682918FCB62800914FE1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485682818FCB62800914FE1 /* libz.dylib */; };
 		84F4761615C1E78F0015D59C /* EntityBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser.storyboard */; };
 		84F4761715C1E7960015D59C /* TextAttributeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell.xib */; };
-		84F4761915C1E7B50015D59C /* ThrintKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F4761815C1E7B50015D59C /* ThrintKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8410881815BA1409008E97B9 /* PBXContainerItemProxy */ = {
+		8410881A15BA140E008E97B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4E821723147BFFB300295D45 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 844B426C15BA0DC80073B540;
-			remoteInfo = Distribution;
+			remoteGlobalIDString = 4EAB349B14D9D57C0038B6CC;
+			remoteInfo = ThrintKit;
 		};
-		8410881A15BA140E008E97B9 /* PBXContainerItemProxy */ = {
+		8485681918FC97C300914FE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B6AAB6CA14C21B9A0007A0A4;
+			remoteInfo = BAFoundation;
+		};
+		8485681B18FC97D900914FE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B6AAB6C914C21B9A0007A0A4;
+			remoteInfo = BAFoundation;
+		};
+		8485681D18FC981700914FE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4E821723147BFFB300295D45 /* Project object */;
 			proxyType = 1;
@@ -142,10 +144,6 @@
 
 /* Begin PBXFileReference section */
 		4E3813FA14852F520024A7B1 /* TextAttributeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextAttributeCell.xib; sourceTree = "<group>"; };
-		4E3813FE1485578F0024A7B1 /* IntegerNumberTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerNumberTransformer.m; sourceTree = "<group>"; };
-		4E38140114855BAA0024A7B1 /* DecimalNumberTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecimalNumberTransformer.m; sourceTree = "<group>"; };
-		4E38140414855DCB0024A7B1 /* FloatNumberTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatNumberTransformer.m; sourceTree = "<group>"; };
-		4E38140A14855FAF0024A7B1 /* DateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTransformer.m; sourceTree = "<group>"; };
 		4E82172C147BFFB300295D45 /* Thrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E821730147BFFB300295D45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E821732147BFFB300295D45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -219,26 +217,16 @@
 		4EA237C4147C022500E69862 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4EA23818147C36D900E69862 /* DashboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardVC.h; sourceTree = "<group>"; };
 		4EA23819147C36D900E69862 /* DashboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardVC.m; sourceTree = "<group>"; };
-		4EA2381D147C3B4800E69862 /* NSManagedObject+BAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+BAAdditions.m"; sourceTree = "<group>"; };
-		4EA2381F147C3B4800E69862 /* NSManagedObjectContext+BAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+BAAdditions.m"; sourceTree = "<group>"; };
 		4EAB349C14D9D57C0038B6CC /* libThrintKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libThrintKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EC66D65147D815A00B3B849 /* BACoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BACoreDataManager.m; sourceTree = "<group>"; };
 		4EE47F12147EF2E7006C4795 /* icon_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_user.png; sourceTree = "<group>"; };
 		4EE47F13147EF2E7006C4795 /* icon_users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_users.png; sourceTree = "<group>"; };
 		4EE47F16147EF2F3006C4795 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
 		4EE47F18147EF311006C4795 /* icon_document.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_document.png; sourceTree = "<group>"; };
-		8400661F15BA02C10005A060 /* BACoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BACoreDataManager.h; sourceTree = "<group>"; };
 		8400662015BA02C10005A060 /* BooleanAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanAttributeCell.h; sourceTree = "<group>"; };
 		8400662115BA02C10005A060 /* DateAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateAttributeCell.h; sourceTree = "<group>"; };
-		8400662215BA02C10005A060 /* DateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTransformer.h; sourceTree = "<group>"; };
-		8400662315BA02C10005A060 /* DecimalNumberTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecimalNumberTransformer.h; sourceTree = "<group>"; };
-		8400662515BA02C10005A060 /* FloatNumberTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatNumberTransformer.h; sourceTree = "<group>"; };
 		8400662615BA02C10005A060 /* ImageAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAttributeCell.h; sourceTree = "<group>"; };
 		8400662715BA02C10005A060 /* IntegerAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerAttributeCell.h; sourceTree = "<group>"; };
-		8400662815BA02C10005A060 /* IntegerNumberTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerNumberTransformer.h; sourceTree = "<group>"; };
-		8400662915BA02C10005A060 /* NSManagedObject+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+BAAdditions.h"; sourceTree = "<group>"; };
 		8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ViewAdditions.h"; sourceTree = "<group>"; };
-		8400662B15BA02C10005A060 /* NSManagedObjectContext+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+BAAdditions.h"; sourceTree = "<group>"; };
 		8400662E15BA02C10005A060 /* TextAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextAttributeCell.h; sourceTree = "<group>"; };
 		8400662F15BA02C10005A060 /* Thrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thrint.h; sourceTree = "<group>"; };
 		8400663015BA02C10005A060 /* ThrintTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrintTableViewController.h; sourceTree = "<group>"; };
@@ -255,6 +243,8 @@
 		8452E6251617A0B200DE6DF6 /* NSObject+ThrintAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ThrintAdditions.h"; sourceTree = "<group>"; };
 		8452E6261617A0B200DE6DF6 /* NSObject+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ThrintAdditions.m"; sourceTree = "<group>"; };
 		8461A89316174945009FE5C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BAFoundation.xcodeproj; path = BAFoundation/iOS/BAFoundation.xcodeproj; sourceTree = "<group>"; };
+		8485682818FCB62800914FE1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		84F4761515C1E7700015D59C /* Resources */ = {isa = PBXFileReference; lastKnownFileType = text; name = Resources; path = ThrintKit.framework/Resources; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F4761815C1E7B50015D59C /* ThrintKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ThrintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -264,11 +254,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8485682918FCB62800914FE1 /* libz.dylib in Frameworks */,
+				8485682118FC982200914FE1 /* libThrintKit.a in Frameworks */,
+				8485682218FC982200914FE1 /* libBAFoundation.a in Frameworks */,
 				4EA237C5147C022500E69862 /* CoreData.framework in Frameworks */,
 				4E821731147BFFB300295D45 /* UIKit.framework in Frameworks */,
 				4E821733147BFFB300295D45 /* Foundation.framework in Frameworks */,
 				4E821735147BFFB300295D45 /* CoreGraphics.framework in Frameworks */,
-				84F4761915C1E7B50015D59C /* ThrintKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +280,7 @@
 		4E821721147BFFB300295D45 = {
 			isa = PBXGroup;
 			children = (
+				8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */,
 				4E821736147BFFB300295D45 /* Thrint */,
 				4E83161114E1A33D00123C1B /* ThrintKit */,
 				8452E62416179E0D00DE6DF6 /* Vendor */,
@@ -308,6 +301,7 @@
 		4E82172F147BFFB300295D45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8485682818FCB62800914FE1 /* libz.dylib */,
 				84F4761815C1E7B50015D59C /* ThrintKit.framework */,
 				84F4761515C1E7700015D59C /* Resources */,
 				4E821730147BFFB300295D45 /* UIKit.framework */,
@@ -374,19 +368,6 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		4E83167714E2C5BA00123C1B /* BAFoundation */ = {
-			isa = PBXGroup;
-			children = (
-				8400661F15BA02C10005A060 /* BACoreDataManager.h */,
-				4EC66D65147D815A00B3B849 /* BACoreDataManager.m */,
-				8400662915BA02C10005A060 /* NSManagedObject+BAAdditions.h */,
-				4EA2381D147C3B4800E69862 /* NSManagedObject+BAAdditions.m */,
-				8400662B15BA02C10005A060 /* NSManagedObjectContext+BAAdditions.h */,
-				4EA2381F147C3B4800E69862 /* NSManagedObjectContext+BAAdditions.m */,
-			);
-			name = BAFoundation;
-			sourceTree = "<group>";
-		};
 		4E8316EB14E2C5CA00123C1B /* Machine */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,7 +431,6 @@
 				4E8316A914E2C5BA00123C1B /* Thrint.m */,
 				4E8316EE14E2C62F00123C1B /* Views */,
 				4E8316EF14E2C63700123C1B /* View Controllers */,
-				4E8316F014E2C63F00123C1B /* Transformers */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -489,21 +469,6 @@
 				4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */,
 			);
 			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		4E8316F014E2C63F00123C1B /* Transformers */ = {
-			isa = PBXGroup;
-			children = (
-				8400662215BA02C10005A060 /* DateTransformer.h */,
-				4E38140A14855FAF0024A7B1 /* DateTransformer.m */,
-				8400662315BA02C10005A060 /* DecimalNumberTransformer.h */,
-				4E38140114855BAA0024A7B1 /* DecimalNumberTransformer.m */,
-				8400662515BA02C10005A060 /* FloatNumberTransformer.h */,
-				4E38140414855DCB0024A7B1 /* FloatNumberTransformer.m */,
-				8400662815BA02C10005A060 /* IntegerNumberTransformer.h */,
-				4E3813FE1485578F0024A7B1 /* IntegerNumberTransformer.m */,
-			);
-			name = Transformers;
 			sourceTree = "<group>";
 		};
 		4E8316FB14E2E58200123C1B /* Model */ = {
@@ -565,10 +530,17 @@
 		8452E62416179E0D00DE6DF6 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				4E83167714E2C5BA00123C1B /* BAFoundation */,
 			);
 			name = Vendor;
 			path = ThrintKit;
+			sourceTree = "<group>";
+		};
+		8485681618FC97C200914FE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8485681A18FC97C300914FE1 /* libBAFoundation.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,18 +550,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8410880515BA11FF008E97B9 /* BACoreDataManager.h in Headers */,
 				8410880615BA11FF008E97B9 /* BooleanAttributeCell.h in Headers */,
 				8410880715BA11FF008E97B9 /* DateAttributeCell.h in Headers */,
-				8410880815BA11FF008E97B9 /* DateTransformer.h in Headers */,
-				8410880915BA11FF008E97B9 /* DecimalNumberTransformer.h in Headers */,
-				8410880B15BA11FF008E97B9 /* FloatNumberTransformer.h in Headers */,
 				8410880C15BA11FF008E97B9 /* ImageAttributeCell.h in Headers */,
 				8410880D15BA11FF008E97B9 /* IntegerAttributeCell.h in Headers */,
-				8410880E15BA11FF008E97B9 /* IntegerNumberTransformer.h in Headers */,
-				8410880F15BA11FF008E97B9 /* NSManagedObject+BAAdditions.h in Headers */,
 				8410881015BA11FF008E97B9 /* NSManagedObject+ViewAdditions.h in Headers */,
-				8410881115BA11FF008E97B9 /* NSManagedObjectContext+BAAdditions.h in Headers */,
 				8410881415BA11FF008E97B9 /* TextAttributeCell.h in Headers */,
 				8410882B15BA18BF008E97B9 /* SliderAttributeCell.h in Headers */,
 				8426F4CB15C1DB9C00337A17 /* DetailVC.h in Headers */,
@@ -616,7 +581,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				8410881915BA1409008E97B9 /* PBXTargetDependency */,
+				8485681E18FC981700914FE1 /* PBXTargetDependency */,
 			);
 			name = Thrint;
 			productName = Thrint;
@@ -637,6 +602,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8485681C18FC97D900914FE1 /* PBXTargetDependency */,
 			);
 			name = ThrintKit;
 			productName = thrint;
@@ -649,7 +615,7 @@
 		4E821723147BFFB300295D45 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Bored Astronaut";
 			};
 			buildConfigurationList = 4E821726147BFFB300295D45 /* Build configuration list for PBXProject "Thrint" */;
@@ -662,6 +628,12 @@
 			mainGroup = 4E821721147BFFB300295D45;
 			productRefGroup = 4E82172D147BFFB300295D45 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8485681618FC97C200914FE1 /* Products */;
+					ProjectRef = 8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4E82172B147BFFB300295D45 /* Thrint */,
@@ -670,6 +642,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8485681A18FC97C300914FE1 /* libBAFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBAFoundation.a;
+			remoteRef = 8485681918FC97C300914FE1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4E82172A147BFFB300295D45 /* Resources */ = {
@@ -728,6 +710,7 @@
 			);
 			name = "Create Bundle and Add Headers";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/ThrintKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -770,9 +753,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EAB34AC14D9D6090038B6CC /* BACoreDataManager.m in Sources */,
-				4EAB34AD14D9D6090038B6CC /* NSManagedObject+BAAdditions.m in Sources */,
-				4EAB34AE14D9D6090038B6CC /* NSManagedObjectContext+BAAdditions.m in Sources */,
 				4E8316AF14E2C5BA00123C1B /* BooleanAttributeCell.m in Sources */,
 				4E8316B114E2C5BA00123C1B /* DateAttributeCell.m in Sources */,
 				4E8316B514E2C5BA00123C1B /* IntegerAttributeCell.m in Sources */,
@@ -781,10 +761,6 @@
 				4E8316E714E2C5BA00123C1B /* Thrint.m in Sources */,
 				4E8316EA14E2C5BA00123C1B /* ThrintTableViewController.m in Sources */,
 				4E9778AA150D21EE0096EDBD /* ImageAttributeCell.m in Sources */,
-				84DCA31C15BA0B1700F37EA4 /* IntegerNumberTransformer.m in Sources */,
-				84DCA31D15BA0B1700F37EA4 /* DecimalNumberTransformer.m in Sources */,
-				84DCA31E15BA0B1700F37EA4 /* FloatNumberTransformer.m in Sources */,
-				84DCA31F15BA0B1700F37EA4 /* DateTransformer.m in Sources */,
 				8410882C15BA18BF008E97B9 /* SliderAttributeCell.m in Sources */,
 				8426F4CC15C1DB9C00337A17 /* DetailVC.m in Sources */,
 				8426F4CE15C1DB9C00337A17 /* ListVC.m in Sources */,
@@ -797,15 +773,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8410881915BA1409008E97B9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 844B426C15BA0DC80073B540 /* Distribution */;
-			targetProxy = 8410881815BA1409008E97B9 /* PBXContainerItemProxy */;
-		};
 		8410881B15BA140E008E97B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4EAB349B14D9D57C0038B6CC /* ThrintKit */;
 			targetProxy = 8410881A15BA140E008E97B9 /* PBXContainerItemProxy */;
+		};
+		8485681C18FC97D900914FE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BAFoundation;
+			targetProxy = 8485681B18FC97D900914FE1 /* PBXContainerItemProxy */;
+		};
+		8485681E18FC981700914FE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EAB349B14D9D57C0038B6CC /* ThrintKit */;
+			targetProxy = 8485681D18FC981700914FE1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -841,8 +822,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -854,12 +840,17 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -869,15 +860,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;

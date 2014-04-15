@@ -1,6 +1,6 @@
 #import "Component.h"
 
-#import "NSManagedObject+BAAdditions.h"
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 
 #import "Product.h"
 

@@ -7,7 +7,7 @@
 //
 
 #import "IntegerAttributeCell.h"
-#import "NSManagedObject+BAAdditions.h"
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 
 
 @implementation IntegerAttributeCell

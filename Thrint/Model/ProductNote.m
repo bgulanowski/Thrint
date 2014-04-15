@@ -1,6 +1,6 @@
 #import "ProductNote.h"
 
-#import "NSManagedObject+BAAdditions.h"
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import "NSManagedObject+ViewAdditions.h"
 
 

@@ -11,11 +11,11 @@
 #import "ListVC.h"
 #import "TextAttributeCell.h"
 #import "EntityListDataSource.h"
-#import "BACoreDataManager.h"
+#import <BAFoundation/BACoreDataManager.h>
 
 #import "NSManagedObject+ViewAdditions.h"
-#import "NSManagedObject+BAAdditions.h"
-#import "NSManagedObjectContext+BAAdditions.h"
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
+#import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 #import "NSManagedObject+ViewAdditions.h"
 
 
@@ -168,11 +168,12 @@
     }
     
     if(listVC) {
+        ListVC *weakListVC = listVC;
         listVC.selectionBlock = ^(id object) {
-            listVC.dataSource.selection = object;
+            weakListVC.dataSource.selection = object;
             // I *could* trust this to the cell itself; it's partially implemented; not sure
             if(NSInteger16AttributeType == type)
-                object = [NSNumber numberWithInt:[listVC.dataSource.selectionPath row] + 1];
+                object = [NSNumber numberWithInt:[weakListVC.dataSource.selectionPath row] + 1];
             [_object setValue:object forKeyPath:propertyName];
             [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
             return (UIViewController *)nil;

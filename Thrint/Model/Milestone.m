@@ -3,7 +3,7 @@
 #import "Component.h"
 
 #import "NSManagedObject+ViewAdditions.h"
-#import "NSManagedObject+BAAdditions.h"
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 
 
 @implementation Milestone

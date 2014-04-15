@@ -8,11 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import <ThrintKit/NSManagedObject+BAAdditions.h>
-#import <ThrintKit/NSManagedObjectContext+BAAdditions.h>
-#import <ThrintKit/NSManagedObject+ViewAdditions.h>
+#import <BAFoundation/BACoreDataManager.h>
 
-#import <ThrintKit/BACoreDataManager.h>
 #import <ThrintKit/ListVC.h>
 #import <ThrintKit/DetailVC.h>
 #import <ThrintKit/ThrintTableViewController.h>

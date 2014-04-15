@@ -1,7 +1,7 @@
 #import "Team.h"
 #import "Product.h"
 
-#import "NSManagedObject+BAAdditions.h"
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import "NSManagedObject+ViewAdditions.h"
 
 

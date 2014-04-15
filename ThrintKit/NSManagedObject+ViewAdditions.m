@@ -15,9 +15,9 @@
 #import "BooleanAttributeCell.h"
 #import "SliderAttributeCell.h"
 #import "DateAttributeCell.h"
-#import "BACoreDataManager.h"
+#import <BAFoundation/BACoreDataManager.h>
 
-#import "NSManagedObject+BAAdditions.h"
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 
 
 @implementation NSManagedObject (ViewAdditions)

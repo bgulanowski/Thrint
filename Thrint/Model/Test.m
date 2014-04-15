@@ -1,7 +1,7 @@
 #import "Test.h"
 #import "Feature.h"
 
-#import "NSManagedObject+BAAdditions.h"
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import "NSManagedObject+ViewAdditions.h"
 
 @implementation Test

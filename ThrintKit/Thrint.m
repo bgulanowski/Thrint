@@ -10,7 +10,7 @@
 #import "ListVC.h"
 #import "ThrintTableViewController.h"
 
-#import "NSManagedObjectContext+BAAdditions.h"
+#import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 
 
 @implementation Thrint

@@ -7,9 +7,9 @@
 //
 
 #import "TextAttributeCell.h"
-#import "NSManagedObject+BAAdditions.h"
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import "NSManagedObject+ViewAdditions.h"
-#import "BACoreDataManager.h"
+#import <BAFoundation/BACoreDataManager.h>
 
 
 @implementation TextAttributeCell

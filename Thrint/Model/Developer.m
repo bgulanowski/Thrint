@@ -3,7 +3,7 @@
 #import "Role.h"
 #import "Team.h"
 
-#import "NSManagedObject+BAAdditions.h"
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import "NSManagedObject+ViewAdditions.h"
 
 @implementation Developer

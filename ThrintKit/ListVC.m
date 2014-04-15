@@ -8,7 +8,7 @@
 
 #import "ListVC.h"
 #import "DetailVC.h"
-#import "BACoreDataManager.h"
+#import <BAFoundation/BACoreDataManager.h>
 
 #import "NSManagedObject+ViewAdditions.h"
 
