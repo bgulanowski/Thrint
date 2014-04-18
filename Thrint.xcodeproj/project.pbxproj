@@ -944,7 +944,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = ThrintKitHeaders;
+				PUBLIC_HEADERS_FOLDER_PATH = include/ThrintKit;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -958,7 +958,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = ThrintKitHeaders;
+				PUBLIC_HEADERS_FOLDER_PATH = include/ThrintKit;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
