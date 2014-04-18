@@ -86,10 +86,13 @@
     NSManagedObject *object = [super insertObject];
     
     if(!object) {
-        
+
         NSString *className = [[NSEntityDescription entityForName:self.entityName inManagedObjectContext:_context] managedObjectClassName];
         
         object = [NSClassFromString(className) insertObject];
+		if (self.owner && self.ownerProperty) {
+			[object setValue:self.owner forKey:self.ownerProperty];
+		}
     }
     
     _ignoreSaves = YES;
