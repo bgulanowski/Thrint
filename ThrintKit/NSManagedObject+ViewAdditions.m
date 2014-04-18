@@ -19,6 +19,10 @@
 
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
 
+@interface NSObject (ViewAdditions)
+- (UIImage *)image;
+- (NSData *)imageData;
+@end
 
 @implementation NSManagedObject (ViewAdditions)
 
