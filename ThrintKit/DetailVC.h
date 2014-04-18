@@ -22,12 +22,13 @@ typedef void (^EndEditingBlock)(void);
 
 @interface DetailVC : UITableViewController<UIActionSheetDelegate>
 
-@property (nonatomic, copy) EndEditingBlock endEditingBlock;
-@property (nonatomic, assign) UIViewController *container;
-@property (retain, nonatomic) IBOutlet UIView *tableFooterView;
+@property (nonatomic, weak) UIViewController *container;
 
-@property (nonatomic, retain) NSManagedObject *object;
-@property (nonatomic, retain) NSArray *properties;
+@property (nonatomic, strong) IBOutlet UIView *tableFooterView;
+@property (nonatomic, strong) NSManagedObject *object;
+@property (nonatomic, strong) NSArray *properties;
+
+@property (nonatomic, copy) EndEditingBlock endEditingBlock;
 
 @property (nonatomic) ActionType action;
 @property (nonatomic) BOOL liveEditing; // defaults to NO

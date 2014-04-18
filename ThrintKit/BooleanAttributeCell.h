@@ -10,6 +10,6 @@
 
 @interface BooleanAttributeCell : TextAttributeCell
 
-@property (nonatomic, assign) IBOutlet UISwitch *flagSwitch;
+@property (nonatomic, weak) IBOutlet UISwitch *flagSwitch;
 
 @end

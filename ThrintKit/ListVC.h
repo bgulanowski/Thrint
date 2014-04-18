@@ -19,13 +19,13 @@ typedef UIViewController * (^SelectionBlock)(id object);
 
 @interface ListVC : UITableViewController<ListDataSourceDelegate>
 
-@property (nonatomic, retain) ListDataSource *dataSource;
+@property (nonatomic, weak) UIViewController *container;
+@property (nonatomic, weak) UIPopoverController *popOver;
+@property (nonatomic, weak) id selection;
 
-@property (nonatomic, assign) UIViewController *container;
-@property (nonatomic, weak)   UIPopoverController *popOver;
+@property (nonatomic, strong) ListDataSource *dataSource;
+
 @property (nonatomic, copy) SelectionBlock selectionBlock;
-
-@property (nonatomic, retain) id selection;
 
 @property (nonatomic) BOOL allowEditing;
 

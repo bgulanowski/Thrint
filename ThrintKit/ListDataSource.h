@@ -13,11 +13,12 @@
 
 @interface ListDataSource : NSObject<UITableViewDataSource>
 
-@property (nonatomic, assign) UIViewController<ListDataSourceDelegate> *delegate;
-@property (nonatomic, retain) NSMutableArray *content;
+@property (nonatomic, weak) UIViewController<ListDataSourceDelegate> *delegate;
+@property (nonatomic, weak) id selection;
+
+@property (nonatomic, strong) NSArray *content;
 @property (nonatomic, copy) NSIndexPath *selectionPath;
 
-@property (nonatomic, assign) id selection;
 @property (nonatomic) BOOL showSubtitle; // defaults to YES
 @property (nonatomic, getter = isEditing) BOOL editing; // show the "add item" fake list item
 

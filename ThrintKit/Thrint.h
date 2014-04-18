@@ -29,9 +29,9 @@
     BOOL _delegateImages;
 }
 
-@property (nonatomic, assign) id<ThrintDelegate> delegate;
+@property (nonatomic, weak) id<ThrintDelegate> delegate;
 
-@property (nonatomic, retain) NSArray *rootEntityNames;
+@property (nonatomic, strong) NSArray *rootEntityNames;
 @property (nonatomic, readonly) UIViewController *rootViewController;
 
 - (UIViewController *)listViewControllerForEntityNamed:(NSString *)entityName;

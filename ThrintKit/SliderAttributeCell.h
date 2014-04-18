@@ -12,6 +12,6 @@
 
 @interface SliderAttributeCell : TextAttributeCell
 
-@property (nonatomic, assign) IBOutlet UISlider *slider;
+@property (nonatomic, weak) IBOutlet UISlider *slider;
 
 @end

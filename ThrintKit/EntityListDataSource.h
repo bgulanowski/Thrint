@@ -14,11 +14,16 @@ typedef BOOL (^DeletePreparation)(NSManagedObject *object);
 
 @interface EntityListDataSource : ListDataSource
 
+@property (nonatomic, weak) NSManagedObjectContext *context;
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchController;
+@property (nonatomic, strong) NSPredicate *predicate;
+@property (nonatomic, strong) NSManagedObject *owner;
+
 @property (nonatomic, copy)   DeletePreparation deletePreparation;
 
-@property (nonatomic, assign) NSManagedObjectContext *context;
-@property (nonatomic, retain) NSPredicate *predicate;
-@property (nonatomic, retain) NSString *entityName;
+@property (nonatomic, copy) NSString *entityName;
+@property (nonatomic, copy) NSString *ownerProperty;
 
 @property (nonatomic) BOOL ignoreSaves;
 
