@@ -8,6 +8,9 @@
 
 #import "EntityListDataSource.h"
 
+#import "NSManagedObject+ThrintAdditions.h"
+#import "NSManagedObjectContext+ThrintAdditions.h"
+
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import "NSManagedObject+ViewAdditions.h"
@@ -48,6 +51,12 @@
     }
 }
 
+- (NSFetchedResultsController *)fetchController {
+    if (!_fetchController) {
+        _fetchController = [context defaultFetchControllerForEntityName:selef.entityName];
+    }
+    return _fetchController;
+}
 
 #pragma mark - Initializer
 - (id)initWithManagedObjectContext:(NSManagedObjectContext *)context entityName:(NSString *)entityName predicate:(NSPredicate *)predicate {

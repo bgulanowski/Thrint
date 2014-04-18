@@ -78,6 +78,10 @@
 		8410882615BA17B5008E97B9 /* EntityBrowser.storyboard in Copy Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser.storyboard */; };
 		8410882B15BA18BF008E97B9 /* SliderAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8410882915BA18BF008E97B9 /* SliderAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410882C15BA18BF008E97B9 /* SliderAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8410882A15BA18BF008E97B9 /* SliderAttributeCell.m */; };
+		8426C20F190194FE001FE49F /* NSManagedObject+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426C20D190194FE001FE49F /* NSManagedObject+ThrintAdditions.h */; };
+		8426C210190194FE001FE49F /* NSManagedObject+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426C20E190194FE001FE49F /* NSManagedObject+ThrintAdditions.m */; };
+		8426C213190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426C211190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h */; };
+		8426C214190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426C212190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m */; };
 		8426F4CB15C1DB9C00337A17 /* DetailVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4C715C1DB9C00337A17 /* DetailVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8426F4CC15C1DB9C00337A17 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4C815C1DB9C00337A17 /* DetailVC.m */; };
 		8426F4CD15C1DB9C00337A17 /* ListVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4C915C1DB9C00337A17 /* ListVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -232,6 +236,10 @@
 		8400663015BA02C10005A060 /* ThrintTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrintTableViewController.h; sourceTree = "<group>"; };
 		8410882915BA18BF008E97B9 /* SliderAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderAttributeCell.h; sourceTree = "<group>"; };
 		8410882A15BA18BF008E97B9 /* SliderAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderAttributeCell.m; sourceTree = "<group>"; };
+		8426C20D190194FE001FE49F /* NSManagedObject+ThrintAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ThrintAdditions.h"; sourceTree = "<group>"; };
+		8426C20E190194FE001FE49F /* NSManagedObject+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ThrintAdditions.m"; sourceTree = "<group>"; };
+		8426C211190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+ThrintAdditions.h"; sourceTree = "<group>"; };
+		8426C212190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+ThrintAdditions.m"; sourceTree = "<group>"; };
 		8426F4C715C1DB9C00337A17 /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
 		8426F4C815C1DB9C00337A17 /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
 		8426F4C915C1DB9C00337A17 /* ListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListVC.h; sourceTree = "<group>"; };
@@ -524,6 +532,10 @@
 				4E8316A114E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m */,
 				8452E6251617A0B200DE6DF6 /* NSObject+ThrintAdditions.h */,
 				8452E6261617A0B200DE6DF6 /* NSObject+ThrintAdditions.m */,
+				8426C20D190194FE001FE49F /* NSManagedObject+ThrintAdditions.h */,
+				8426C20E190194FE001FE49F /* NSManagedObject+ThrintAdditions.m */,
+				8426C211190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h */,
+				8426C212190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -551,6 +563,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8426C20F190194FE001FE49F /* NSManagedObject+ThrintAdditions.h in Headers */,
 				8410880615BA11FF008E97B9 /* BooleanAttributeCell.h in Headers */,
 				8410880715BA11FF008E97B9 /* DateAttributeCell.h in Headers */,
 				8410880C15BA11FF008E97B9 /* ImageAttributeCell.h in Headers */,
@@ -561,6 +574,7 @@
 				8426F4CB15C1DB9C00337A17 /* DetailVC.h in Headers */,
 				8426F4CD15C1DB9C00337A17 /* ListVC.h in Headers */,
 				8426F4D115C1DC4000337A17 /* EntityListDataSource.h in Headers */,
+				8426C213190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h in Headers */,
 				8426F4D515C1DC5800337A17 /* ListDataSource.h in Headers */,
 				8410881515BA11FF008E97B9 /* Thrint.h in Headers */,
 				8410881615BA11FF008E97B9 /* ThrintTableViewController.h in Headers */,
@@ -754,6 +768,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8426C214190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m in Sources */,
+				8426C210190194FE001FE49F /* NSManagedObject+ThrintAdditions.m in Sources */,
 				4E8316AF14E2C5BA00123C1B /* BooleanAttributeCell.m in Sources */,
 				4E8316B114E2C5BA00123C1B /* DateAttributeCell.m in Sources */,
 				4E8316B514E2C5BA00123C1B /* IntegerAttributeCell.m in Sources */,
