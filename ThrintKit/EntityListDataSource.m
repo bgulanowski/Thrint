@@ -8,12 +8,12 @@
 
 #import "EntityListDataSource.h"
 
-#import "NSManagedObject+ThrintAdditions.h"
 #import "NSManagedObjectContext+ThrintAdditions.h"
+#import "NSManagedObject+ThrintAdditions.h"
+#import "NSManagedObject+ViewAdditions.h"
 
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
-#import "NSManagedObject+ViewAdditions.h"
 #import <BAFoundation/BACoreDataManager.h>
 
 
@@ -39,7 +39,7 @@
         if(_context) [nc removeObserver:self];
         _context = moc;
         self.content = nil;
-        if(_context)
+        if(_context && !self.fetchController)
             [nc addObserver:self selector:@selector(contextSaved:) name:NSManagedObjectContextDidSaveNotification object:_context];
     }
 }
@@ -53,12 +53,14 @@
 
 - (NSFetchedResultsController *)fetchController {
     if (!_fetchController) {
-        _fetchController = [context defaultFetchControllerForEntityName:selef.entityName];
+        _fetchController = [self.context defaultFetchControllerForEntityName:self.entityName];
+        _fetchController.delegate = self;
     }
     return _fetchController;
 }
 
-#pragma mark - Initializer
+#pragma mark - Designated Initializer
+
 - (id)initWithManagedObjectContext:(NSManagedObjectContext *)context entityName:(NSString *)entityName predicate:(NSPredicate *)predicate {
     self = [self init];
     if(self) {
@@ -76,29 +78,23 @@
 
 
 #pragma mark - LisdDataSourceSubclass
-- (NSInteger)indexForInsertedObject:(id)object {
-    
-    NSEntityDescription *entity = [NSEntityDescription entityForName:_entityName inManagedObjectContext:_context];
-    Class class = NSClassFromString([entity managedObjectClassName]);
-    NSString *key = [class defaultSortKey];
 
-    return [self.content indexOfObject:object
-                         inSortedRange:NSMakeRange(0, [self.content count])
-                               options:NSBinarySearchingInsertionIndex
-                       usingComparator:^NSComparisonResult(id obj1, id obj2) {
-                           return [[obj1 valueForKey:key] compare:[obj2 valueForKey:key]];
-                       }];
+- (NSInteger)indexForInsertedObject:(id)object {
+    NSString *key = [[self.context classForEntityName:self.entityName] defaultSortKey];
+    NSArray *content = self.content;
+    return [content indexOfObject:object
+                    inSortedRange:NSMakeRange(0, [content count])
+                          options:NSBinarySearchingInsertionIndex
+                  usingComparator:^NSComparisonResult(id obj1, id obj2) {
+                      return [[obj1 valueForKey:key] compare:[obj2 valueForKey:key]];
+                  }];
 }
 
 - (id)insertObject {
     
     NSManagedObject *object = [super insertObject];
-    
     if(!object) {
-
-        NSString *className = [[NSEntityDescription entityForName:self.entityName inManagedObjectContext:_context] managedObjectClassName];
-        
-        object = [NSClassFromString(className) insertObject];
+        object = [[self.context classForEntityName:self.entityName] insertObject];
 		if (self.owner && self.ownerProperty) {
 			[object setValue:self.owner forKey:self.ownerProperty];
 		}
@@ -124,19 +120,86 @@
 }
 
 
-#pragma mark - New
-- (void)reloadContent {
-    if(!_context || !_entityName) {
-        self.content = nil;
-        return;
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    NSMutableArray *content = [self mutableContent];
+    
+    if (type == NSFetchedResultsChangeUpdate) {
+        [indexPaths addObject:indexPath];
     }
+    else {
+        if (type == NSFetchedResultsChangeDelete || type == NSFetchedResultsChangeMove) {
+            [content removeObjectAtIndex:indexPath.row];
+            [indexPaths addObject:indexPath];
+        }
+        if (type == NSFetchedResultsChangeInsert || type == NSFetchedResultsChangeMove) {
+            [content insertObject:anObject atIndex:newIndexPath.row];
+            [indexPaths addObject:newIndexPath];
+        }
+    }
+    
+    UITableView *tableView = self.tableView;
+
+    [tableView beginUpdates];
+    [tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableView endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    UITableView *tableView = self.tableView;
+    [tableView beginUpdates];
+    [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableView endUpdates];
+}
+
+- (NSString *)controller:(NSFetchedResultsController *)controller sectionIndexTitleForSectionName:(NSString *)sectionName {
+    return sectionName;
+}
+
+#pragma mark - New
+
+- (NSArray *)contentFromFetchController {
+    NSError *error = nil;
+    if (![_fetchController performFetch:&error]) {
+        NSLog(@"%@", error);
+    }
+    return [_fetchController fetchedObjects];
+}
+
+- (NSArray *)contentFromContext {
+    return [NSMutableArray arrayWithArray:[self.context objectsForEntityNamed:self.entityName matchingPredicate:self.predicate]];
+}
+
+- (void)reloadContent {
     
     // preserve selection when reloading
     id selection = self.selection;
+
+    NSArray *content = nil;
+    if (_fetchController) {
+        content = [self contentFromFetchController];
+        return;
+    }
+    else if (_context && _entityName) {
+        content = [self contentFromContext];
+    }
     
     // delegate will be notified in -setContent:
-    self.content = [NSMutableArray arrayWithArray:[_context objectsForEntityNamed:_entityName matchingPredicate:self.predicate]];
-    if(selection) self.selection = selection;
+    self.content = content;
+
+    if(selection)
+        self.selection = selection;
 }
 
 

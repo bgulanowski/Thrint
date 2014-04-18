@@ -15,7 +15,6 @@
 
 + (NSFetchRequest *)defaultFetchRequest {
     NSFetchRequest *fetch = [[NSFetchRequest alloc] initWithEntityName:[self entityName]];
-    fetch.predicate = predicate;
     fetch.sortDescriptors = [self defaultSortDescriptors];
     return fetch;
 }
@@ -23,7 +22,7 @@
 + (NSFetchedResultsController *)defaultFetchControllerForContext:(NSManagedObjectContext *)context {
     NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:[self defaultFetchRequest]
                                                                                  managedObjectContext:context
-                                                                                   sectionNameKeyPath:nil
+                                                                                   sectionNameKeyPath:[self defaultSortKey]
                                                                                             cacheName:nil];
     return controller;
 }

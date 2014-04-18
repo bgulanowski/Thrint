@@ -7,6 +7,9 @@
 //
 
 #import "NSManagedObjectContext+ThrintAdditions.h"
+
+#import "NSManagedObject+ThrintAdditions.h"
+
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 
 @implementation NSManagedObjectContext (ThrintAdditions)

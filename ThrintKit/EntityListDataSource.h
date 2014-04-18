@@ -12,7 +12,7 @@
 typedef BOOL (^DeletePreparation)(NSManagedObject *object);
 
 
-@interface EntityListDataSource : ListDataSource
+@interface EntityListDataSource : ListDataSource<NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, weak) NSManagedObjectContext *context;
 

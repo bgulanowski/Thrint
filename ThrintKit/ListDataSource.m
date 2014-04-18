@@ -70,6 +70,9 @@
     self.selectionPath = (NSNotFound == index) ? nil : [NSIndexPath indexPathForRow:index inSection:0];
 }
 
+- (NSMutableArray *)mutableContent {
+    return [self mutableArrayValueForKey:@"content"];
+}
 
 #pragma mark - Designated Initializer
 - (id)initWithContent:(NSArray *)content selectionPath:(NSIndexPath *)path {
