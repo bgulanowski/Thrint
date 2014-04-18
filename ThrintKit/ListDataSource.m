@@ -18,16 +18,12 @@
 @end
 
 
-@implementation ListDataSource
-
-@synthesize delegate=_delegate;
-@synthesize content=_content;
-@synthesize selectionPath=_selectionPath;
-@synthesize delegateInserts=_delegateInserts;
-@synthesize showSubtitle=_showSubtitle;
-@synthesize editing = _editing;
+@implementation ListDataSource {
+    NSMutableArray *_content;
+}
 
 #pragma mark - Accessors
+
 - (void)setContent:(NSArray *)array {
     if(![_content isEqual:array]) {
         _content = [array mutableCopy];
@@ -36,10 +32,26 @@
     }
 }
 
-- (NSMutableArray *)content {
+- (NSArray *)content {
     if (!_content)
         [self reloadContent];
-    return _content;
+    return [_content copy];
+}
+
+- (id)objectInContentAtIndex:(NSUInteger)index {
+    return [_content objectAtIndex:index];
+}
+
+- (void)insertObject:(id)object inContentAtIndex:(NSUInteger)index {
+    [_content insertObject:object atIndex:index];
+}
+
+- (void)removeObjectFromContentAtIndex:(NSUInteger)index {
+    [_content removeObjectAtIndex:index];
+}
+
+- (void)replaceObjectInContentAtIndex:(NSUInteger)index withObject:(id)object {
+    [_content replaceObjectAtIndex:index withObject:object];
 }
 
 - (void)setDelegate:(UIViewController<ListDataSourceDelegate> *)delegate {
@@ -63,7 +75,7 @@
 - (id)initWithContent:(NSArray *)content selectionPath:(NSIndexPath *)path {
     self = [self init];
     if(self) {
-        self.content = [NSMutableArray arrayWithArray:content];
+        _content = [NSMutableArray arrayWithArray:content];
         self.selectionPath = path;
     }
     return self;
