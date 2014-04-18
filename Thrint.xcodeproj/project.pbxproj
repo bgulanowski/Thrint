@@ -892,10 +892,6 @@
 		4E821757147BFFB400295D45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Shared/Xcode/Products/Debug-iphoneos\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Thrint/Thrint-Prefix.pch";
 				INFOPLIST_FILE = "Thrint/Thrint-Info.plist";
@@ -911,10 +907,6 @@
 		4E821758147BFFB400295D45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Shared/Xcode/Products/Debug-iphoneos\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Thrint/Thrint-Prefix.pch";
 				INFOPLIST_FILE = "Thrint/Thrint-Info.plist";
