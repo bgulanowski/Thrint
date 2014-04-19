@@ -77,7 +77,7 @@
 }
 
 
-#pragma mark - LisdDataSourceSubclass
+#pragma mark - LisdDataSource
 
 - (NSInteger)indexForInsertedObject:(id)object {
     NSString *key = [[self.context classForEntityName:self.entityName] defaultSortKey];
@@ -171,10 +171,11 @@
 
 - (NSArray *)contentFromFetchController {
     NSError *error = nil;
-    if (![_fetchController performFetch:&error]) {
+    NSFetchedResultsController *fetchController = self.fetchController;
+    if (![fetchController performFetch:&error]) {
         NSLog(@"%@", error);
     }
-    return [_fetchController fetchedObjects];
+    return [fetchController fetchedObjects];
 }
 
 - (NSArray *)contentFromContext {
@@ -186,12 +187,8 @@
     // preserve selection when reloading
     id selection = self.selection;
 
-    NSArray *content = nil;
-    if (_fetchController) {
-        content = [self contentFromFetchController];
-        return;
-    }
-    else if (_context && _entityName) {
+    NSArray *content = [self contentFromFetchController];
+    if (!content && _context && _entityName) {
         content = [self contentFromContext];
     }
     
