@@ -38,18 +38,7 @@
 }
 
 - (NSString *)displayTitle {
-    
-    NSString *title;
-    
-    if([self respondsToSelector:@selector(name)])
-        title = [self performSelector:@selector(name)];
-    else if([self respondsToSelector:@selector(title)])
-        title = [self performSelector:@selector(title)];
-    else
-        // TODO: insert spaces before capital letters
-        title = [self stringRepresentation];
-    
-    return [title capitalizedString];
+    return [[self valueForKey:[[self class] defaultSortKey]] capitalizedString];
 }
 
 - (NSString *)displaySubtitle { return @""; }

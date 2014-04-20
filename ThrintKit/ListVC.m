@@ -92,6 +92,7 @@
 #pragma mark - UIViewController
 - (void)viewDidLoad {
     self.tableView.dataSource = _dataSource;
+    _dataSource.tableView = self.tableView;
     if(_allowEditing && !_dataSource.selectionPath) {
         self.editButtonItem.action = @selector(edit:);
         self.editButtonItem.target = self;

@@ -192,10 +192,11 @@
         nib = [UINib nibWithNibName:key bundle:nil];
         [nibs setObject:nib forKey:key];
     }
-    else if(nib == [NSNull null])
-        nib = nil;
     
-    return [[(UINib *)nib instantiateWithOwner:nil options:nil] lastObject];
+    if(nib == [NSNull null])
+        return nil;
+    else
+        return [[(UINib *)nib instantiateWithOwner:nil options:nil] lastObject];
 }
 
 + (TextAttributeCell *)cellForEnumerations:(id)enumerations {
