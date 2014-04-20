@@ -74,7 +74,7 @@
 		8410881415BA11FF008E97B9 /* TextAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662E15BA02C10005A060 /* TextAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881515BA11FF008E97B9 /* Thrint.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662F15BA02C10005A060 /* Thrint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410881615BA11FF008E97B9 /* ThrintTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400663015BA02C10005A060 /* ThrintTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410882015BA1588008E97B9 /* TextAttributeCell.xib in Copy Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell.xib */; };
+		8410882015BA1588008E97B9 /* TextAttributeCell~ipad.xib in Copy Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */; };
 		8410882615BA17B5008E97B9 /* EntityBrowser.storyboard in Copy Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser.storyboard */; };
 		8410882B15BA18BF008E97B9 /* SliderAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8410882915BA18BF008E97B9 /* SliderAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410882C15BA18BF008E97B9 /* SliderAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8410882A15BA18BF008E97B9 /* SliderAttributeCell.m */; };
@@ -96,8 +96,9 @@
 		8485682118FC982200914FE1 /* libThrintKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAB349C14D9D57C0038B6CC /* libThrintKit.a */; };
 		8485682218FC982200914FE1 /* libBAFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485681A18FC97C300914FE1 /* libBAFoundation.a */; };
 		8485682918FCB62800914FE1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485682818FCB62800914FE1 /* libz.dylib */; };
+		84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
 		84F4761615C1E78F0015D59C /* EntityBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser.storyboard */; };
-		84F4761715C1E7960015D59C /* TextAttributeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell.xib */; };
+		84F4761715C1E7960015D59C /* TextAttributeCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,7 +139,7 @@
 			dstPath = "$(TARGET_NAME).framework/Versions/A/Resources";
 			dstSubfolderSpec = 16;
 			files = (
-				8410882015BA1588008E97B9 /* TextAttributeCell.xib in Copy Resources */,
+				8410882015BA1588008E97B9 /* TextAttributeCell~ipad.xib in Copy Resources */,
 				8410882615BA17B5008E97B9 /* EntityBrowser.storyboard in Copy Resources */,
 			);
 			name = "Copy Resources";
@@ -147,7 +148,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4E3813FA14852F520024A7B1 /* TextAttributeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextAttributeCell.xib; sourceTree = "<group>"; };
+		4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TextAttributeCell~ipad.xib"; sourceTree = "<group>"; };
 		4E82172C147BFFB300295D45 /* Thrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E821730147BFFB300295D45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E821732147BFFB300295D45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -253,6 +254,7 @@
 		8461A89316174945009FE5C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BAFoundation.xcodeproj; path = BAFoundation/iOS/BAFoundation.xcodeproj; sourceTree = "<group>"; };
 		8485682818FCB62800914FE1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TextAttributeCell~iphone.xib"; sourceTree = "<group>"; };
 		84F4761515C1E7700015D59C /* Resources */ = {isa = PBXFileReference; lastKnownFileType = text; name = Resources; path = ThrintKit.framework/Resources; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F4761815C1E7B50015D59C /* ThrintKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ThrintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -505,7 +507,8 @@
 		4E83174D14E413B200123C1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4E3813FA14852F520024A7B1 /* TextAttributeCell.xib */,
+				4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */,
+				84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */,
 				4E83161B14E1A3FC00123C1B /* EntityBrowser.storyboard */,
 			);
 			name = Resources;
@@ -673,13 +676,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84F4761715C1E7960015D59C /* TextAttributeCell.xib in Resources */,
+				84F4761715C1E7960015D59C /* TextAttributeCell~ipad.xib in Resources */,
 				84F4761615C1E78F0015D59C /* EntityBrowser.storyboard in Resources */,
 				4E82173B147BFFB300295D45 /* InfoPlist.strings in Resources */,
 				4EE47F14147EF2E7006C4795 /* icon_user.png in Resources */,
 				4EE47F15147EF2E7006C4795 /* icon_users.png in Resources */,
 				4EE47F17147EF2F3006C4795 /* icon_settings.png in Resources */,
 				4EE47F19147EF311006C4795 /* icon_document.png in Resources */,
+				84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */,
 				4E83162814E1AE3B00123C1B /* Configuration.plist in Resources */,
 				8461A89216174945009FE5C5 /* Localizable.strings in Resources */,
 			);
