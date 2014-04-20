@@ -132,6 +132,7 @@
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
 
+    NSIndexPath *insertPath = nil, *deletePath = nil;
     NSMutableArray *indexPaths = [NSMutableArray array];
     NSMutableArray *content = [self mutableContent];
     
@@ -141,18 +142,26 @@
     else {
         if (type == NSFetchedResultsChangeDelete || type == NSFetchedResultsChangeMove) {
             [content removeObjectAtIndex:indexPath.row];
-            [indexPaths addObject:indexPath];
+            deletePath = indexPath;
         }
         if (type == NSFetchedResultsChangeInsert || type == NSFetchedResultsChangeMove) {
             [content insertObject:anObject atIndex:newIndexPath.row];
-            [indexPaths addObject:newIndexPath];
+            insertPath = newIndexPath;
         }
     }
     
     UITableView *tableView = self.tableView;
 
     [tableView beginUpdates];
-    [tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    if (insertPath) {
+        [tableView insertRowsAtIndexPaths:@[insertPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    if (deletePath) {
+        [tableView deleteRowsAtIndexPaths:@[deletePath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    if ([indexPaths count]) {
+        [tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
     [tableView endUpdates];
 }
 
@@ -172,7 +181,7 @@
 - (NSArray *)contentFromFetchController {
     NSError *error = nil;
     NSFetchedResultsController *fetchController = self.fetchController;
-    if (![fetchController performFetch:&error]) {
+    if (fetchController && ![fetchController performFetch:&error]) {
         NSLog(@"%@", error);
     }
     return [fetchController fetchedObjects];
