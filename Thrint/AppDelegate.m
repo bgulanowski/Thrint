@@ -12,6 +12,17 @@
 #import "DashboardVC.h"
 #import "ThrintTableViewController.h"
 
+#import "Component.h"
+#import "Developer.h"
+#import "Feature.h"
+#import "Milestone.h"
+#import "Product.h"
+#import "ProductNote.h"
+#import "Role.h"
+#import "Team.h"
+
+#import <BAFoundation/NSManagedObjectContext+BAadditions.h>
+
 
 @implementation AppDelegate
 
@@ -44,6 +55,30 @@
 
 
 #pragma mark - New
+- (void)insertInitialObjects {
+    
+    NSManagedObjectContext *context = _thrint.context;
+    
+    Component *component = [context insertComponent];
+    Developer *dev = [context insertDeveloper];
+    Feature *feature = [context insertFeature];
+    Milestone *milestone = [context insertMilestone];
+    Product *product = [context insertProduct];
+    Role *role = [context insertRole];
+    Team *team = [context insertTeam];
+    
+    [dev addRolesObject:role];
+    
+    [team addRolesObject:role];
+    
+    product.team = team;
+    component.product = product;
+    feature.component = component;
+    feature.milestone = milestone;
+    
+    [_thrint save];
+}
+
 - (void)setUpModel {
     
     NSString *dirPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
@@ -52,6 +87,10 @@
     
     self.thrint = [[Thrint alloc] initWithStoreURL:[NSURL fileURLWithPath:storePath] rootEntityNames:names];
     _thrint.delegate = self;
+    
+    if (![_thrint.context countOfEntity:[Team entityName]]) {
+        [self insertInitialObjects];
+    }
 }
 
 - (void)setUpViews {
