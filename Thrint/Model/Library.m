@@ -6,17 +6,8 @@
 
 @implementation Library
 
-+ (NSManagedObject *)insertObject {
-    
-    Library *library = (Library *)[super insertObject];
-    
-    library.name = @"New Library";
-    
-    return library;
-}
-
-+ (Library *)insertLibrary {
-    return (Library *)[self insertObject];
+- (void)awakeFromInsert {
+    self.name = @"New Library";
 }
 
 - (NSString *)listString {

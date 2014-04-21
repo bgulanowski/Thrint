@@ -16,17 +16,8 @@
     return self.name;
 }
 
-+ (NSManagedObject *)insertObject {
-    
-    Component *component = (Component *)[super insertObject];
-    
-    component.name = @"New Component";
-    
-    return component;
-}
-
-+ (Component *)insertComponent {
-    return (Component *)[self insertObject];
+- (void)awakeFromInsert {
+	self.name = @"New Component";
 }
 
 @end

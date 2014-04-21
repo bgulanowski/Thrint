@@ -6,19 +6,6 @@
 
 @implementation Test
 
-+ (NSManagedObject *)insertObject {
-    
-    Test *test = (Test *)[super insertObject];
-    
-    
-    
-    return test;
-}
-
-+ (Test *)insertTest {
-    return (Test *)[self insertObject];
-}
-
 - (NSString *)listString {
     return [@"Test of %@" stringByAppendingFormat:@"%@", self.feature.name];
 }

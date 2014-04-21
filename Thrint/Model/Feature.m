@@ -10,18 +10,9 @@
 
 @implementation Feature
 
-+ (NSManagedObject *)insertObject {
-    
-    Feature *feature = (Feature *)[super insertObject];
-    
-    feature.name = @"New Feature";
-    feature.details = @"(Describe your new feature…)";
-    
-    return feature;
-}
-
-+ (Feature *)insertFeature {
-    return  (Feature *)[self insertObject];
+- (void)awakeFromInsert {
+    self.name = @"New Feature";
+    self.details = @"(Describe your new feature…)";
 }
 
 - (NSString *)listString {

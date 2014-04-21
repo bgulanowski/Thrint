@@ -12,22 +12,6 @@
 
 @implementation Product
 
-+ (NSManagedObject *)insertObject {
-    
-    Product *product = (Product *)[super insertObject];
-    
-    product.name = @"New Product";
-    product.code = @"PRODUCT-CODE";
-    product.startDate = [NSDate date];
-    product.dueDate = [NSDate dateWithTimeIntervalSinceNow:24 * 7 * 24 * 3600];
-	
-    return product;
-}
-
-+ (Product *)insertProduct {
-    return (Product *)[self insertObject];
-}
-
 - (NSDictionary *)genericDetailSections {
     return [NSDictionary dictionaryWithObject:[NSArray arrayWithObjects:@"name", nil] forKey:@"General"];
 }
@@ -56,6 +40,13 @@
                  nil];
     });
     return names;
+}
+
+- (void)awakeFromInsert {
+    self.name = @"New Product";
+    self.code = @"PRODUCT-CODE";
+    self.startDate = [NSDate date];
+    self.dueDate = [NSDate dateWithTimeIntervalSinceNow:24 * 7 * 24 * 3600];
 }
 
 @end

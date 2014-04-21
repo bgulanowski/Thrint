@@ -6,18 +6,8 @@
 
 @implementation ProductNote
 
-+ (NSManagedObject *)insertObject {
-    
-    ProductNote *note = (ProductNote *)[super insertObject];
-    
-    note.title = @"New Note";
-    note.details = @"(Add a description…)";
-    
-    return note;
-}
-
-+ (ProductNote *)insertProductNote {
-    return (ProductNote *)[self insertObject];
+- (void)awakeFromInsert {
+    self.title = @"New Note";
 }
 
 -(NSString *)listString {

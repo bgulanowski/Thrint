@@ -7,19 +7,6 @@
 
 @implementation Team
 
-+ (NSManagedObject *)insertObject {
-    
-    Team *team = (Team *)[super insertObject];
-    
-    team.name = @"New Team";
-    
-    return team;
-}
-
-+ (Team *)insertTeam {
-    return (Team *)[self insertObject];
-}
-
 - (NSString *)listString {
     return [NSString stringWithFormat:@"%@ (%u products, %u devs)", self.name, [self.products count], [self.developers count]];
 }
@@ -33,6 +20,10 @@
     NSString *namesString = [names count] ? [names componentsJoinedByString:@", "] : @"no members";
     
     return [NSString stringWithFormat:@"%@ (%@)", self.name, namesString]; 
+}
+
+- (void)awakeFromInsert {
+    self.name = @"New Team";
 }
 
 @end

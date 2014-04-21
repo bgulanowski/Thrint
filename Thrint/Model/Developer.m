@@ -8,18 +8,9 @@
 
 @implementation Developer
 
-+ (NSManagedObject *)insertObject {
-    
-    Developer *developer = (Developer *)[super insertObject];
-    
-    developer.name = @"New Developer";
-    developer.joinDate = [NSDate date];
-    
-    return developer;
-}
-
-+ (Developer *)insertDeveloper {
-    return (Developer *)[self insertObject];
+- (void)awakeFromInsert {
+    self.name = @"New Developer";
+    self.joinDate = [NSDate date];
 }
 
 - (NSString *)listString {

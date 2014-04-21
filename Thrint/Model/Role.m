@@ -9,17 +9,8 @@
 
 @implementation Role
 
-+ (NSManagedObject *)insertObject {
-    
-    Role *role = (Role *)[super insertObject];
-    
-    role.name = @"New Role";
-    
-    return role;
-}
-
-+ (Role *)insertRole {
-    return (Role *)[self insertObject];
+- (void)awakeFromInsert {
+    self.name = @"New Role";
 }
 
 - (NSString *)listString {

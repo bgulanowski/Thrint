@@ -18,19 +18,9 @@ NSDateFormatter *df;
     }
 }
 
-
-+ (NSManagedObject *)insertObject {
-    
-    Milestone *milestone = (Milestone *)[super insertObject];
-    
-    milestone.version = @"1.0.0a";
-    milestone.dueDate = [NSDate dateWithTimeIntervalSinceNow:3600*24*265];
-    
-    return milestone;
-}
-
-+ (Milestone *)insertMilestone {
-    return (Milestone *)[self insertObject];
+- (void)awakeFromInsert {
+    self.version = @"1.0.0a";
+    self.dueDate = [NSDate dateWithTimeIntervalSinceNow:3600*24*265];
 }
 
 - (NSString *)listString {

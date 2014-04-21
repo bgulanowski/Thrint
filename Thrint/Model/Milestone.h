@@ -5,7 +5,4 @@ extern NSDateFormatter *df;
 
 
 @interface Milestone : _Milestone {}
-
-+ (Milestone *)insertMilestone;
-
 @end

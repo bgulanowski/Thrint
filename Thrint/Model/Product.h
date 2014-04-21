@@ -2,6 +2,4 @@
 
 @interface Product : _Product {}
 
-+ (Product *)insertProduct;
-
 @end
