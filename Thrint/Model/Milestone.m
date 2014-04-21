@@ -20,7 +20,7 @@ NSDateFormatter *df;
 
 - (void)awakeFromInsert {
     self.version = @"1.0.0a";
-    self.dueDate = [NSDate dateWithTimeIntervalSinceNow:3600*24*265];
+    self.dueDate = [NSDate dateWithTimeIntervalSinceNow:3600*24*365];
 }
 
 - (NSString *)listString {
