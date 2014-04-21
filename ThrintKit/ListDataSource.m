@@ -38,6 +38,10 @@
     return [_content copy];
 }
 
+- (NSUInteger)countOfContent {
+    return [_content count];
+}
+
 - (id)objectInContentAtIndex:(NSUInteger)index {
     return [_content objectAtIndex:index];
 }
@@ -66,7 +70,7 @@
 }
 
 - (void)setSelection:(id)selection {
-    NSUInteger index = [self.content indexOfObject:selection];
+    NSUInteger index = [_content indexOfObject:selection];
     self.selectionPath = (NSNotFound == index) ? nil : [NSIndexPath indexPathForRow:index inSection:0];
 }
 
@@ -91,7 +95,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.content count] + (int)(self.editing && [self.delegate dataSourceAllowsEditing:self]);
+    return [_content count] + (int)(self.editing && [self.delegate dataSourceAllowsEditing:self]);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,9 +103,9 @@
     NSInteger row = [indexPath row];    
     UITableViewCell *cell;
     
-    if(row < [self.content count]) {
+    if(row < [_content count]) {
         
-        id object = [self.content objectAtIndex:row];
+        id object = [_content objectAtIndex:row];
 
         cell = _showSubtitle ? [object subtitleCellForTableView:tableView] :[object cellForTableView:tableView];
         if(_selectionPath) {
@@ -148,7 +152,7 @@
     id selection = [self selection];
     
     [tableView beginUpdates];
-    [_content insertObject:object atIndex:[indexPath row]];
+    [self insertObject:object inContentAtIndex:[indexPath row]];
     [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     [tableView endUpdates];
     

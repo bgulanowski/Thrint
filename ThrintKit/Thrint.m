@@ -72,11 +72,6 @@
     NSString *title = _delegateTitles ? [_delegate titleForEntity:entityName] ?: entityName : entityName;
     UIImage *image = _delegateImages ? [UIImage imageNamed:[_delegate imageNameForEntity:entityName]] : nil;
     
-    EntityListDataSource *datasource = (EntityListDataSource *)listVC.dataSource;
-
-    datasource.context = self.context;
-    datasource.entityName = entityName;
-    
     listVC.navigationItem.title = title;
     listVC.allowEditing = YES;
     listVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:image tag:101 + [_rootEntityNames indexOfObject:entityName]];
@@ -91,6 +86,9 @@
     UINavigationController *nav = (UINavigationController *)[[svc viewControllers] objectAtIndex:0];
     ListVC *listVC = (ListVC *)[nav topViewController];
     
+    EntityListDataSource *datasource = [[EntityListDataSource alloc] initWithManagedObjectContext:self.context entityName:entityName predicate:nil];
+
+    listVC.dataSource = datasource;
     [self configureListViewController:listVC forEntityNamed:entityName];
 
     svc.tabBarItem = listVC.tabBarItem;
@@ -105,7 +103,9 @@
     
     NSString *className = [entityName stringByAppendingString:@"ListVC"];
     Class listVCClass = NSClassFromString(className) ?: [ListVC class];
-    ListVC *listVC = [[listVCClass alloc] init];
+    
+    EntityListDataSource *datasource = [[EntityListDataSource alloc] initWithManagedObjectContext:self.context entityName:entityName predicate:nil];
+    ListVC *listVC = [[listVCClass alloc] initWithDataSource:datasource];
     
     return [self configureListViewController:listVC forEntityNamed:entityName];
 }

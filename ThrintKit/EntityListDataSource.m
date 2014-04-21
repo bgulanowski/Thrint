@@ -67,6 +67,7 @@
         self.predicate = predicate;
         self.entityName = entityName;
         self.context = context;
+        [self reloadContent];
     }
     return self;
 }
@@ -107,6 +108,10 @@
     return object;
 }
 
+- (void)insertObjectAtIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView {
+    [self insertObject];
+}
+
 - (BOOL)deleteObject:(NSManagedObject *)object {
 
     if(_deletePreparation && !_deletePreparation(object)) return NO;
@@ -119,6 +124,9 @@
     return YES;
 }
 
+- (void)deleteObjectAtIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView {
+    [self deleteObject:[_fetchController objectAtIndexPath:indexPath]];
+}
 
 #pragma mark - NSFetchedResultsControllerDelegate
 
@@ -166,10 +174,30 @@
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+
+    // TODO: implement
+#if 0
+    NSIndexSet *insertIndex = nil, *deleteIndex = nil, *moveIndex = nil;
+
     UITableView *tableView = self.tableView;
+    
     [tableView beginUpdates];
+    if (type == NSFetchedResultsChangeUpdate) {
+        moveIndex = [NSIndexSet indexSetWithIndex:sectionIndex];
+    }
+    else {
+        if (type == NSFetchedResultsChangeDelete || type == NSFetchedResultsChangeMove) {
+            [content removeObjectAtIndex:indexPath.row];
+            deletePath = indexPath;
+        }
+        if (type == NSFetchedResultsChangeInsert || type == NSFetchedResultsChangeMove) {
+            [content insertObject:anObject atIndex:newIndexPath.row];
+            insertPath = newIndexPath;
+        }
+    }
     [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
     [tableView endUpdates];
+#endif
 }
 
 - (NSString *)controller:(NSFetchedResultsController *)controller sectionIndexTitleForSectionName:(NSString *)sectionName {
