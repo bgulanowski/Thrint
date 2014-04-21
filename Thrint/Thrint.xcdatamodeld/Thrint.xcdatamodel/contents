@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Component" representedClassName="Component" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="dependencies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Library" inverseName="dependents" inverseEntity="Library" syncable="YES"/>
@@ -8,6 +8,9 @@
         <fetchedProperty name="developers" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="Developer" predicateString="ANY features IN $FETCH_SOURCE.features"/>
         </fetchedProperty>
+        <userInfo>
+            <entry key="sortKey" value="name"/>
+        </userInfo>
     </entity>
     <entity name="Developer" representedClassName="Developer" syncable="YES">
         <attribute name="active" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
@@ -21,6 +24,9 @@
         <fetchedProperty name="teams" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="Team"/>
         </fetchedProperty>
+        <userInfo>
+            <entry key="sortKey" value="name"/>
+        </userInfo>
     </entity>
     <entity name="Feature" representedClassName="Feature" syncable="YES">
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
@@ -29,10 +35,16 @@
         <relationship name="milestone" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Milestone" inverseName="features" inverseEntity="Milestone" syncable="YES"/>
         <relationship name="owner" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Developer" inverseName="features" inverseEntity="Developer" syncable="YES"/>
         <relationship name="tests" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Test" inverseName="feature" inverseEntity="Test" syncable="YES"/>
+        <userInfo>
+            <entry key="sortKey" value="name"/>
+        </userInfo>
     </entity>
     <entity name="Library" representedClassName="Library" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="dependents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Component" inverseName="dependencies" inverseEntity="Component" syncable="YES"/>
+        <userInfo>
+            <entry key="sortKey" value="name"/>
+        </userInfo>
     </entity>
     <entity name="Milestone" representedClassName="Milestone" syncable="YES">
         <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -41,6 +53,9 @@
         <fetchedProperty name="products" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="Product" predicateString="ANY components.@distinctUnionOfSets.features IN $FETCH_SOURCE.features"/>
         </fetchedProperty>
+        <userInfo>
+            <entry key="sortKey" value="dueDate"/>
+        </userInfo>
     </entity>
     <entity name="Product" representedClassName="Product" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
@@ -72,17 +87,26 @@
         <fetchedProperty name="milestones" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="Milestone" predicateString="ANY $FETCH_SOURCE.components in feature.component"/>
         </fetchedProperty>
+        <userInfo>
+            <entry key="sortKey" value="name"/>
+        </userInfo>
     </entity>
     <entity name="ProductNote" representedClassName="ProductNote" syncable="YES">
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="notes" inverseEntity="Product" syncable="YES"/>
+        <userInfo>
+            <entry key="sortKey" value="title"/>
+        </userInfo>
     </entity>
     <entity name="Role" representedClassName="Role" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unique" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
         <relationship name="developers" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Developer" inverseName="roles" inverseEntity="Developer" syncable="YES"/>
         <relationship name="team" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="roles" inverseEntity="Team" syncable="YES"/>
+        <userInfo>
+            <entry key="sortKey" value="name"/>
+        </userInfo>
     </entity>
     <entity name="Team" representedClassName="Team" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -91,20 +115,23 @@
         <fetchedProperty name="developers" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="Developer" predicateString="ANY roles.team = $FETCH_SOURCE"/>
         </fetchedProperty>
+        <userInfo>
+            <entry key="sortKey" value="name"/>
+        </userInfo>
     </entity>
     <entity name="Test" representedClassName="Test" syncable="YES">
         <relationship name="feature" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Feature" inverseName="tests" inverseEntity="Feature" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Component" positionX="-344" positionY="222" width="128" height="119"/>
-        <element name="Developer" positionX="-342" positionY="394" width="128" height="119"/>
-        <element name="Feature" positionX="-137" positionY="342" width="128" height="105"/>
-        <element name="Library" positionX="-137" positionY="222" width="128" height="60"/>
-        <element name="Milestone" positionX="70" positionY="270" width="128" height="89"/>
-        <element name="Product" positionX="-542" positionY="252" width="128" height="179"/>
-        <element name="ProductNote" positionX="-774" positionY="267" width="128" height="60"/>
-        <element name="Role" positionX="-533" positionY="477" width="128" height="75"/>
-        <element name="Team" positionX="-774" positionY="370" width="128" height="119"/>
-        <element name="Test" positionX="115" positionY="426" width="128" height="60"/>
+        <element name="Component" positionX="-344" positionY="222" width="128" height="134"/>
+        <element name="Developer" positionX="-342" positionY="394" width="128" height="164"/>
+        <element name="Feature" positionX="-137" positionY="351" width="128" height="135"/>
+        <element name="Library" positionX="-137" positionY="222" width="128" height="75"/>
+        <element name="Milestone" positionX="70" positionY="270" width="128" height="119"/>
+        <element name="Product" positionX="-533" positionY="162" width="128" height="284"/>
+        <element name="ProductNote" positionX="-774" positionY="252" width="128" height="90"/>
+        <element name="Role" positionX="-533" positionY="459" width="128" height="105"/>
+        <element name="Team" positionX="-774" positionY="352" width="128" height="119"/>
+        <element name="Test" positionX="70" positionY="426" width="128" height="60"/>
     </elements>
 </model>
