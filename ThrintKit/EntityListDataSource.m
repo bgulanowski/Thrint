@@ -9,7 +9,6 @@
 #import "EntityListDataSource.h"
 
 #import "NSManagedObjectContext+ThrintAdditions.h"
-#import "NSManagedObject+ThrintAdditions.h"
 #import "NSManagedObject+ViewAdditions.h"
 
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>

@@ -1,25 +1,18 @@
 //
-//  NSManagedObject+ThrintAdditions.m
+//  NSEntityDescription+ThrintAdditions.m
 //  Thrint
 //
-//  Created by Brent Gulanowski on 2014-04-18.
+//  Created by Brent Gulanowski on 2014-04-21.
 //  Copyright (c) 2014 Bored Astronaut. All rights reserved.
 //
 
-#import "NSManagedObject+ThrintAdditions.h"
+#import "NSEntityDescription+ThrintAdditions.h"
 
-#import <BAFoundation/NSManagedObject+BAAdditions.h>
-#import <CoreData/CoreData.h>
+#import <BAFoundation/NSEntityDescription+BAAdditions.h>
 
-@implementation NSManagedObject (ThrintAdditions)
+@implementation NSEntityDescription (ThrintAdditions)
 
-+ (NSFetchRequest *)defaultFetchRequest {
-    NSFetchRequest *fetch = [[NSFetchRequest alloc] initWithEntityName:[self entityName]];
-    fetch.sortDescriptors = [self defaultSortDescriptors];
-    return fetch;
-}
-
-+ (NSFetchedResultsController *)defaultFetchControllerForContext:(NSManagedObjectContext *)context {
+- (NSFetchedResultsController *)defaultFetchControllerForContext:(NSManagedObjectContext *)context {
     NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:[self defaultFetchRequest]
                                                                                  managedObjectContext:context
                                                                                    sectionNameKeyPath:[self defaultSortKey]
