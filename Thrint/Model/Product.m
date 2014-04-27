@@ -43,6 +43,7 @@
 }
 
 - (void)awakeFromInsert {
+    [super awakeFromInsert];
     self.name = @"New Product";
     self.code = @"PRODUCT-CODE";
     self.startDate = [NSDate date];

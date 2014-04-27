@@ -9,6 +9,7 @@
 @implementation Developer
 
 - (void)awakeFromInsert {
+    [super awakeFromInsert];
     self.name = @"New Developer";
     self.joinDate = [NSDate date];
 }

@@ -17,6 +17,7 @@
 }
 
 - (void)awakeFromInsert {
+    [super awakeFromInsert];
 	self.name = @"New Component";
 }
 

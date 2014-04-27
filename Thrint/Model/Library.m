@@ -7,6 +7,7 @@
 @implementation Library
 
 - (void)awakeFromInsert {
+    [super awakeFromInsert];
     self.name = @"New Library";
 }
 

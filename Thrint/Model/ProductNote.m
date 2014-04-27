@@ -7,6 +7,7 @@
 @implementation ProductNote
 
 - (void)awakeFromInsert {
+    [super awakeFromInsert];
     self.title = @"New Note";
 }
 

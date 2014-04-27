@@ -11,6 +11,7 @@
 @implementation Feature
 
 - (void)awakeFromInsert {
+    [super awakeFromInsert];
     self.name = @"New Feature";
     self.details = @"(Describe your new feature…)";
 }

@@ -10,6 +10,7 @@
 @implementation Role
 
 - (void)awakeFromInsert {
+    [super awakeFromInsert];
     self.name = @"New Role";
 }
 

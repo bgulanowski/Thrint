@@ -23,6 +23,7 @@
 }
 
 - (void)awakeFromInsert {
+    [super awakeFromInsert];
     self.name = @"New Team";
 }
 
