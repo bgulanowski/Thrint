@@ -9,9 +9,16 @@
 #import <Foundation/Foundation.h>
 
 
+typedef BOOL (^DeletePreparation)(NSManagedObject *object);
+typedef void (^InsertCompletion)(NSManagedObject *object);
+
+
 @protocol ListDataSourceDelegate;
 
 @interface ListDataSource : NSObject<UITableViewDataSource>
+
+@property (nonatomic, copy) InsertCompletion insertCompletion;
+@property (nonatomic, copy) DeletePreparation deletePreparation;
 
 @property (nonatomic, weak) UIViewController<ListDataSourceDelegate> *delegate;
 @property (nonatomic, weak) UITableView *tableView;
@@ -34,10 +41,10 @@
 - (id)insertObject; // if delegate implements, will forward
 - (BOOL)deleteObject:(id)object;
 
-- (void)insertObjectAtIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView;
-- (void)insertObject:(id)object inSection:(NSUInteger)section updateTableView:(UITableView *)tableView;
+- (id)insertObject:(id)object atIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView;
+
+- (id)insertObjectAtIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView;
 - (void)deleteObjectAtIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView;
-- (void)deleteObject:(id)object inSection:(NSUInteger)section updateTableView:(UITableView *)tableView;
 
 - (id)initWithContent:(NSArray *)content selectionPath:(NSIndexPath *)path;
 + (ListDataSource *)dataSourceWithContent:(NSArray *)content selectionPath:(NSIndexPath *)path;
@@ -49,4 +56,5 @@
 - (BOOL)dataSourceAllowsEditing:(ListDataSource *)dataSource;
 @optional
 - (id)insertObject;
+- (void)didInsertObject:(id)object;
 @end

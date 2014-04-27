@@ -15,8 +15,9 @@
 #import "BooleanAttributeCell.h"
 #import "SliderAttributeCell.h"
 #import "DateAttributeCell.h"
-#import <BAFoundation/BACoreDataManager.h>
 
+#import <BAFoundation/BACoreDataManager.h>
+#import <BAFoundation/NSEntityDescription+BAAdditions.h>
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
 
 @interface NSObject (ViewAdditions)
@@ -38,7 +39,7 @@
 }
 
 - (NSString *)displayTitle {
-    return [[self valueForKey:[[self class] defaultSortKey]] capitalizedString];
+    return [[self valueForKey:[[self entity] defaultSortKey]] capitalizedString];
 }
 
 - (NSString *)displaySubtitle { return @""; }
@@ -68,8 +69,12 @@
     
     NSString *className = [[[self entity] name] stringByAppendingString:@"DetailVC"];
     Class class = NSClassFromString(className) ?: [DetailVC class];
-    NSManagedObjectContext *editor = [UIApplication modelManager].editingContext;
-    NSManagedObject *scratch = [editor objectWithID:[self objectID]];
+
+    NSManagedObject *scratch = self;
+    if (![[self objectID] isTemporaryID]) {
+        NSManagedObjectContext *editor = [UIApplication modelManager].editingContext;
+        scratch = [editor objectWithID:[self objectID]];
+    }
     
     DetailVC *dvc = [class detailViewControllerWithObject:scratch properties:[self displayPropertyNames]];
     
@@ -92,21 +97,8 @@
 }
 
 - (ListVC *)listViewControllerForRelationship:(NSString *)relationshipName {
-    
-    NSManagedObject *relation = [self valueForKeyPath:relationshipName];
-    Class relationClass = [relation class];
-    
-    if(!relationClass) {
-        NSRelationshipDescription *rd = [self relationshipForName:relationshipName];
-        relationClass = NSClassFromString([[rd destinationEntity] managedObjectClassName]);
-    }
-    
-    ListVC *entityListVC = [relationClass listViewController];
-    
-    [(EntityListDataSource *)entityListVC.dataSource setContext:self.managedObjectContext];
-    entityListVC.dataSource.selection = relation;
-    entityListVC.dataSource.showSubtitle = NO;
-    
+    EntityListDataSource *dataSource = [[EntityListDataSource alloc] initWithOwner:self relationship:relationshipName];
+    ListVC *entityListVC = [[ListVC alloc] initWithDataSource:dataSource];
     return entityListVC;
 }
 

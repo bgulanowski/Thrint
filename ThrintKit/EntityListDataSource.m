@@ -10,6 +10,8 @@
 
 #import "NSManagedObjectContext+ThrintAdditions.h"
 #import "NSManagedObject+ViewAdditions.h"
+#import "DetailVC.h"
+#import "ListVC.h"
 
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
@@ -71,9 +73,21 @@
     return self;
 }
 
-- (id)initWithObject:(NSManagedObject *)object entityName:(NSString *)entityName keyPath:(NSString *)keyPath {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", keyPath, object];
-    return [self initWithManagedObjectContext:[object managedObjectContext] entityName:entityName predicate:predicate];
+- (id)initWithOwner:(NSManagedObject *)owner relationship:(NSString *)relationshipName {
+    
+    NSRelationshipDescription *relationship = [owner relationshipForName:relationshipName];
+    NSEntityDescription *contentEntity = [relationship destinationEntity];
+    NSString *ownerKey = [[relationship inverseRelationship] name];
+    NSPredicate *relationPredicate = [NSPredicate predicateWithFormat:@"%K = %@", ownerKey, owner];
+    
+    self = [self initWithManagedObjectContext:owner.managedObjectContext entityName:[contentEntity name] predicate:relationPredicate];
+    if (self) {
+        self.owner = owner;
+        self.ownerProperty = ownerKey;
+        // TODO: support to-many relationships
+        self.selection = [owner valueForKey:relationshipName];
+    }
+    return self;
 }
 
 
@@ -100,31 +114,60 @@
 		}
     }
     
-    _ignoreSaves = YES;
-    [[UIApplication modelManager] save];
-    _ignoreSaves = NO;
-
     return object;
 }
 
-- (void)insertObjectAtIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView {
-    [self insertObject];
+- (id)insertObject:(id)object atIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView {
+    DetailVC *detailVC = [object detailViewController];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:detailVC];
+    [(ListVC *)tableView.delegate presentViewController:nav animated:YES completion:nil];
+    // fetch controller already updated content and informed us, where we updated view
+    return object;
 }
 
 - (BOOL)deleteObject:(NSManagedObject *)object {
-
-    if(_deletePreparation && !_deletePreparation(object)) return NO;
-
-    self.ignoreSaves = YES;
-    [object.managedObjectContext deleteObject:object];
-    [[UIApplication modelManager] save];
-    self.ignoreSaves = NO;
-    
-    return YES;
+    [_context deleteObject:object];
+    NSError *error = nil;
+    if(![_context save:&error]) {
+        NSLog(@"%@", error);
+        return NO;
+    }
+    else {
+        return YES;
+    }
 }
 
 - (void)deleteObjectAtIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView {
     [self deleteObject:[_fetchController objectAtIndexPath:indexPath]];
+}
+
+- (id)objectAtIndexPath:(NSIndexPath *)path {
+    if (_useSections) {
+        return [_fetchController objectAtIndexPath:path];
+    }
+    else {
+        return [super objectAtIndexPath:path];
+    }
+}
+
+#pragma mark - NSTableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (_useSections) {
+        return [[_fetchController sections] count];
+    }
+    else {
+        return [super numberOfSectionsInTableView:tableView];
+    }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (_useSections) {
+        return [[[_fetchController sections] objectAtIndex:section] numberOfObjects];
+    }
+    else {
+        return [super tableView:tableView numberOfRowsInSection:section];
+    }
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate
@@ -142,6 +185,15 @@
     NSIndexPath *insertPath = nil, *deletePath = nil;
     NSMutableArray *indexPaths = [NSMutableArray array];
     NSMutableArray *content = [self mutableContent];
+    
+    if (!_useSections) {
+        if (indexPath) {
+            indexPath = [NSIndexPath indexPathForRow:[content indexOfObject:anObject] inSection:0];
+        }
+        if (newIndexPath) {
+            newIndexPath = [NSIndexPath indexPathForRow:[[_fetchController fetchedObjects] indexOfObject:anObject] inSection:0];
+        }
+    }
     
     if (type == NSFetchedResultsChangeUpdate) {
         [indexPaths addObject:indexPath];

@@ -100,12 +100,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSInteger row = [indexPath row];    
     UITableViewCell *cell;
+    id object = [self objectAtIndexPath:indexPath];
     
-    if(row < [_content count]) {
-        
-        id object = [_content objectAtIndex:row];
+    if(object) {
 
         cell = _showSubtitle ? [object subtitleCellForTableView:tableView] :[object cellForTableView:tableView];
         if(_selectionPath) {
@@ -143,10 +141,30 @@
 #pragma mark - New
 
 - (void)reloadContent {}
-- (id)insertObject { return _delegateInserts ? [_delegate insertObject] : nil; }
+
+- (id)insertObject {
+    return _delegateInserts ? [_delegate insertObject] : nil;
+}
+
+- (id)insertObjectAndInvokeCompletion {
+    id object = [self insertObject];
+    if (_insertCompletion) {
+        _insertCompletion(object);
+    }
+    return object;
+}
+
 - (BOOL)deleteObject:(id)object { return NO; }
 
-- (void)insertObject:(id)object atIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView {
+- (BOOL)prepareAndDeleteObject:(id)object {
+    if(!_deletePreparation || _deletePreparation(object))
+        return [self deleteObject:object];
+    else
+        return NO;
+    
+}
+
+- (id)insertObject:(id)object atIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView {
     
     // Index path might change, so track the object and update index path later
     id selection = [self selection];
@@ -155,7 +173,6 @@
     [self insertObject:object inContentAtIndex:[indexPath row]];
     [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     [tableView endUpdates];
-    
     
     if(selection) {
         
@@ -170,21 +187,19 @@
             [tableView reloadRowsAtIndexPaths:selections withRowAnimation:UITableViewRowAnimationFade];
         }
     }
+    
+    return object;
 }
 
-- (void)insertObjectAtIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView {
-    [self insertObject:[self insertObject] atIndexPath:indexPath updateTableView:tableView];
-}
-
-- (void)insertObject:(id)object inSection:(NSUInteger)section updateTableView:(UITableView *)tableView {
-    [self insertObject:object atIndexPath:[self indexPathForObject:object inSection:section] updateTableView:tableView];
+- (id)insertObjectAtIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView {
+    return [self insertObject:[self insertObjectAndInvokeCompletion] atIndexPath:indexPath updateTableView:tableView];
 }
 
 - (void)deleteObjectAtIndexPath:(NSIndexPath *)indexPath updateTableView:(UITableView *)tableView {
     
     NSUInteger row = [indexPath row];
     
-    if(![self deleteObject:[_content objectAtIndex:row]]) return;
+    if(![self prepareAndDeleteObject:[_content objectAtIndex:row]]) return;
     
     [_content removeObjectAtIndex:row];
 
@@ -193,12 +208,14 @@
     [tableView endUpdates];
 }
 
-- (void)deleteObject:(id)object inSection:(NSUInteger)section updateTableView:(UITableView *)tableView {
-    [self deleteObjectAtIndexPath:[self indexPathForObject:object inSection:section] updateTableView:tableView];
-}
-
 - (id)objectAtIndexPath:(NSIndexPath *)path {
-    return [_content objectAtIndex:[path row]];
+    NSInteger row = path.row;
+    if (row < [_content count]) {
+        return [_content objectAtIndex:[path row]];
+    }
+    else {
+        return nil;
+    }
 }
 
 - (NSInteger)indexForInsertedObject:(id)object {

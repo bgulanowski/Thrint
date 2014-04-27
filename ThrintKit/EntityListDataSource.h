@@ -9,9 +9,6 @@
 #import "ListDataSource.h"
 
 
-typedef BOOL (^DeletePreparation)(NSManagedObject *object);
-
-
 @interface EntityListDataSource : ListDataSource<NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, weak) NSManagedObjectContext *context;
@@ -20,15 +17,14 @@ typedef BOOL (^DeletePreparation)(NSManagedObject *object);
 @property (nonatomic, strong) NSPredicate *predicate;
 @property (nonatomic, strong) NSManagedObject *owner;
 
-@property (nonatomic, copy)   DeletePreparation deletePreparation;
-
 @property (nonatomic, copy) NSString *entityName;
 @property (nonatomic, copy) NSString *ownerProperty;
 
 @property (nonatomic) BOOL ignoreSaves;
+@property (nonatomic) BOOL useSections;
 
 - (id)initWithManagedObjectContext:(NSManagedObjectContext *)context entityName:(NSString *)entityName predicate:(NSPredicate *)predicate;
-- (id)initWithObject:(NSManagedObject *)object entityName:(NSString *)entityName keyPath:(NSString *)keyPath;
+- (id)initWithOwner:(NSManagedObject *)owner relationship:(NSString *)relationshipName;
 
 @end
 
