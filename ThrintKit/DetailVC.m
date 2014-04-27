@@ -277,6 +277,14 @@
     if(_endEditingBlock) _endEditingBlock();
 }
 
+- (void)dismissSelf {
+    if (self.presentingViewController) {
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    }
+    else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 
 #pragma mark - Actions
 - (IBAction)dismissKeyboard:(id)sender {
@@ -288,8 +296,8 @@
     [self.view endEditing:YES];
     
     if([[_object changedValues] count] < 1) {
-        [self.navigationController popViewControllerAnimated:YES];
         [[UIApplication modelManager] endEditing];
+        [self dismissSelf];
     }
     else {
         [self confirmCancel];
@@ -298,7 +306,7 @@
 
 - (IBAction)saveEdits:(id)sender {
     [self finalizeEditing];
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissSelf];
 }
 
 - (IBAction)deleteObject:(id)sender {
