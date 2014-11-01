@@ -30,20 +30,20 @@
 }
 
 - (id)objectValue {
-    if(NSFloatAttributeType == self.attributeType)
-        return [NSNumber numberWithFloat:_slider.value];
-    else
-        return [NSNumber numberWithInteger:_slider.value];
+    return @(_slider.value);
 }
 
 - (void)update:(id)sender {
-    if(sender == self.textField)
+    if(sender == self.textField) {
         _slider.value = [self.textField.text floatValue];
+    }
     else {
-        if(NSFloatAttributeType == self.attributeType)
+        if(NSFloatAttributeType == self.attributeType) {
             self.textField.text = [NSString stringWithFormat:@"%.3f", _slider.value];
-        else
-            self.textField.text = [NSString stringWithFormat:@"%d", (NSInteger) _slider.value];
+        }
+        else {
+            self.textField.text = [NSString stringWithFormat:@"%d", (int)_slider.value];
+        }
     }
     [super update:sender];
 }

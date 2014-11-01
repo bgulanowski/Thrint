@@ -8,7 +8,7 @@
 @implementation Component
 
 - (NSString *)stringRepresentation {
-    return [NSString stringWithFormat:@"%@ (%@) - %u devs, %u features, %u deps",
+    return [NSString stringWithFormat:@"%@ (%@) - %zu devs, %zu features, %zu deps",
             self.name, self.product.name, [self.developers count], [self.features count], [self.dependencies count]];
 }
 

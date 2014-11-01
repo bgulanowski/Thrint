@@ -8,26 +8,19 @@
 
 #import "DetailVC.h"
 
+#import "Thrint.h"
 #import "ListVC.h"
 #import "TextAttributeCell.h"
 #import "EntityListDataSource.h"
-#import <BAFoundation/BACoreDataManager.h>
 
 #import "NSManagedObject+ViewAdditions.h"
+
+#import <BAFoundation/BACoreDataManager.h>
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
-#import "NSManagedObject+ViewAdditions.h"
 
 
 @implementation DetailVC
-
-@synthesize endEditingBlock=_endEditingBlock;
-@synthesize container=_container;
-@synthesize tableFooterView = _tableFooterView;
-@synthesize object=_object;
-@synthesize properties=_properties;
-@synthesize action=_action;
-@synthesize liveEditing=_liveEditing, editMode = _showDeleteButton;
 
 #pragma mark - Private
 - (void)updateForLiveEditingState {
@@ -54,30 +47,34 @@
                                               otherButtonTitles:nil];
     self.action = ActionCancel;
     
-    if(self.tabBarController)
+    if(self.tabBarController) {
         [sheet showFromTabBar:self.tabBarController.tabBar];
-    else
+    }
+    else {
         [sheet showInView:self.view];
+    }
 }
 
-
 #pragma mark - Accessors
+
 - (UINavigationController *)navigationController {
     
     UINavigationController *nav = [super navigationController];
-    if(!nav && _container)
+    if(!nav && _container) {
         nav = _container.navigationController;
-    
+    }
     return nav;
 }
 
 - (void)setLiveEditing:(BOOL)liveEditing {
     if(_liveEditing != liveEditing) {
         _liveEditing = liveEditing;
-        if(_liveEditing)
+        if(_liveEditing) {
             [[UIApplication modelManager] endEditing];
-        else
+        }
+        else {
             [[UIApplication modelManager] startEditing];
+        }
         [self updateForLiveEditingState];
     }
 }
@@ -86,8 +83,9 @@
 - (void)setObject:(NSManagedObject *)model {
     if(_object != model) {
         [[_object managedObjectContext] save:NULL];
-        if([_object class] != [model class])
+        if([_object class] != [model class]) {
             self.properties = nil;
+        }
         _object = model;
         self.navigationItem.title = [_object displayTitle];
         [self.tableView reloadData];
@@ -96,13 +94,14 @@
 }
 
 - (NSArray *)properties {
-    if(!_properties)
+    if(!_properties) {
         _properties = [_object displayPropertyNames];
+    }
     return _properties;
 }
 
-
 #pragma mark - UIViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -111,8 +110,9 @@
     gr.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:gr];
 
-    if(_showDeleteButton && _tableFooterView)
+    if(_showDeleteButton && _tableFooterView) {
         self.tableView.tableFooterView = self.tableFooterView;
+    }
 }
 
 - (void)viewDidUnload {
@@ -135,14 +135,14 @@
 //    [super viewDidDisappear:animated];
 //}
 
-
 #pragma mark - UIScrollViewDelegate
+
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.view endEditing:NO];
 }
 
-
 #pragma mark - UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     NSString *propertyName = [_properties objectAtIndex:[indexPath row]];
@@ -172,8 +172,9 @@
         listVC.selectionBlock = ^(id object) {
             weakListVC.dataSource.selection = object;
             // I *could* trust this to the cell itself; it's partially implemented; not sure
-            if(NSInteger16AttributeType == type)
-                object = [NSNumber numberWithInt:[weakListVC.dataSource.selectionPath row] + 1];
+            if(NSInteger16AttributeType == type) {
+                object = @([weakListVC.dataSource.selectionPath row] + 1);
+            }
             [_object setValue:object forKeyPath:propertyName];
             [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
             return (UIViewController *)nil;
@@ -196,8 +197,8 @@
     return 45;
 }
 
-
 #pragma mark - UITableViewDataSource
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -217,8 +218,8 @@
     return cell;
 }
 
-
 #pragma mark - UIActionSheetDelegate
+
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 
     if([actionSheet cancelButtonIndex] == buttonIndex) return;
@@ -244,8 +245,8 @@
     [self cancelConfirmed];
 }
 
+#pragma mark - DetailVC
 
-#pragma mark - New
 - (id)initWithObject:(NSManagedObject *)object properties:(NSArray *)properties {
     self = [self initWithStyle:UITableViewStyleGrouped];
     if(self) {
@@ -272,9 +273,12 @@
 
 - (void)finalizeEditing {
     [self.view endEditing:YES];
-    if(!_liveEditing)
+    if(!_liveEditing) {
         [[UIApplication modelManager] endEditing];
-    if(_endEditingBlock) _endEditingBlock();
+    }
+    if(_endEditingBlock) {
+         _endEditingBlock();
+    }
 }
 
 - (void)dismissSelf {
@@ -287,6 +291,7 @@
 }
 
 #pragma mark - Actions
+
 - (IBAction)dismissKeyboard:(id)sender {
     [self.view endEditing:YES];
 }
@@ -317,10 +322,12 @@
                                               otherButtonTitles:nil];
     self.action = ActionDelete;
     
-    if(self.tabBarController)
+    if(self.tabBarController) {
         [sheet showFromTabBar:self.tabBarController.tabBar];
-    else
+    }
+    else {
         [sheet showInView:self.view];
+    }
 }
 
 @end

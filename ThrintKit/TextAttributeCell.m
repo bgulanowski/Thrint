@@ -7,9 +7,11 @@
 //
 
 #import "TextAttributeCell.h"
-#import <BAFoundation/NSManagedObject+BAAdditions.h>
+
+#import "Thrint.h"
 #import "NSManagedObject+ViewAdditions.h"
-#import <BAFoundation/BACoreDataManager.h>
+
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 
 
 @implementation TextAttributeCell
@@ -177,7 +179,7 @@
         [[UIApplication modelManager] scheduleSave];
 }
 
-+ (TextAttributeCell *)cell {
++ (TextAttributeCell *)cellFromNib {
     
     static NSMutableDictionary *nibs;
     static dispatch_once_t onceToken;
@@ -185,7 +187,7 @@
         nibs = [[NSMutableDictionary alloc] init];
     });
     
-    NSString *key = NSStringFromClass(self);
+    NSString *key = [NSString stringWithFormat:@"%@~%@", NSStringFromClass(self), [Thrint fileSuffixForDevice]];
     id nib = [nibs objectForKey:key];
     
     if(!nib) {
@@ -201,7 +203,7 @@
 
 + (TextAttributeCell *)cellForEnumerations:(id)enumerations {
     
-    TextAttributeCell *cell = [self cell];
+    TextAttributeCell *cell = [self cellFromNib];
     
     cell.textField.enabled = NO;
     cell.enumerations = enumerations;
@@ -220,7 +222,7 @@
         cell.enumerationIndex = [[object valueForKeyPath:propertyName] integerValue] - 1;
     }
     else
-        cell = [self cell];
+        cell = [self cellFromNib];
     
     return cell;
 }

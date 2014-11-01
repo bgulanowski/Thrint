@@ -12,7 +12,7 @@
 }
 
 - (NSString *)listString {
-    return [NSString stringWithFormat:@"%@ (%u deps)", self.name, [self.dependents count]];
+    return [NSString stringWithFormat:@"%@ (%zu deps)", self.name, [self.dependents count]];
 }
 
 @end

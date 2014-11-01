@@ -33,7 +33,7 @@
 
 - (IBAction)update:(id)sender;
 
-+ (TextAttributeCell *)cell;
++ (TextAttributeCell *)cellFromNib;
 + (TextAttributeCell *)cellForEnumerations:(id)enumerations;
 + (TextAttributeCell *)cellWithObject:(NSManagedObject *)object property:(NSString *)propertyName;
 

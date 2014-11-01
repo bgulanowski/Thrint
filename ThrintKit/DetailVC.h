@@ -33,6 +33,7 @@ typedef void (^EndEditingBlock)(void);
 @property (nonatomic) ActionType action;
 @property (nonatomic) BOOL liveEditing; // defaults to NO
 @property (nonatomic) BOOL editMode; // defaults to YES
+@property (nonatomic) BOOL showDeleteButton;
 
 - (id)initWithObject:(NSManagedObject *)object properties:(NSArray *)properties;
 

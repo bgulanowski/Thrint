@@ -8,7 +8,7 @@
 @implementation Team
 
 - (NSString *)listString {
-    return [NSString stringWithFormat:@"%@ (%u products, %u devs)", self.name, [self.products count], [self.developers count]];
+    return [NSString stringWithFormat:@"%@ (%zu products, %zu devs)", self.name, [self.products count], [self.developers count]];
 }
 
 - (NSString *)displayTitle {
