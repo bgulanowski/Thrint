@@ -104,7 +104,7 @@
 
 - (TextAttributeCell *)cellForRelationship:(NSString *)relationshipName /*index:(NSUInteger)index*/ {
     
-    TextAttributeCell *cell = [TextAttributeCell cell];
+    TextAttributeCell *cell = [TextAttributeCell cellFromNib];
     
 #if 1
     cell.representedObject = self;
@@ -212,12 +212,12 @@
     NSString *identifier = NSStringFromClass([self cellClassForProperty:property]);
     TextAttributeCell *cell = nil;
     
-    if(identifier)
+    if(identifier) {
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    if(!cell)
+    }
+    if(!cell) {
         cell = [self cellForProperty:property];
-
+    }
     if(cell) {
         cell.propertyName = property;
         cell.attributeType = [self attributeTypeForProperty:property];

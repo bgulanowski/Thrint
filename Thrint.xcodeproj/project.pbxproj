@@ -78,6 +78,7 @@
 		8410882615BA17B5008E97B9 /* EntityBrowser~ipad.storyboard in Copy Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser~ipad.storyboard */; };
 		8410882B15BA18BF008E97B9 /* SliderAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8410882915BA18BF008E97B9 /* SliderAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8410882C15BA18BF008E97B9 /* SliderAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8410882A15BA18BF008E97B9 /* SliderAttributeCell.m */; };
+		8419ECD41A059A23004D4906 /* BooleanAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847C618019144E37001622BF /* BooleanAttributeCell~iphone.xib */; };
 		8426C213190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426C211190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8426C214190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426C212190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m */; };
 		8426F4CB15C1DB9C00337A17 /* DetailVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4C715C1DB9C00337A17 /* DetailVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -690,6 +691,7 @@
 				4E82173B147BFFB300295D45 /* InfoPlist.strings in Resources */,
 				4EE47F14147EF2E7006C4795 /* icon_user.png in Resources */,
 				84B3D3F91909F47000DA15B5 /* Images.xcassets in Resources */,
+				8419ECD41A059A23004D4906 /* BooleanAttributeCell~iphone.xib in Resources */,
 				4EE47F15147EF2E7006C4795 /* icon_users.png in Resources */,
 				4EE47F17147EF2F3006C4795 /* icon_settings.png in Resources */,
 				4EE47F19147EF311006C4795 /* icon_document.png in Resources */,
