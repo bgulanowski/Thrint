@@ -32,12 +32,14 @@
 @property (nonatomic, weak) id<ThrintDelegate> delegate;
 
 @property (nonatomic, strong) NSArray *rootEntityNames;
+@property (nonatomic, strong) UIStoryboard *thrintStoryboard;
 @property (nonatomic, readonly) UIViewController *rootViewController;
 
 - (UIViewController *)listViewControllerForEntityNamed:(NSString *)entityName;
 - (UISplitViewController *)splitViewControllerForEntityNamed:(NSString *)entityName;
 
-+ (UIStoryboard *)splitViewStoryboard;
++ (NSString *)fileSuffixForDevice;
++ (NSString *)storyboardName;
 
 // if entityNames is nil/empty, uses all entity names found in the model
 - (id)initWithStoreURL:(NSURL *)url rootEntityNames:(NSArray *)entityNames;

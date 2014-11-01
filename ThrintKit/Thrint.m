@@ -13,9 +13,9 @@
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 
 
-@implementation Thrint
-
-@synthesize rootEntityNames=_rootEntityNames, delegate=_delegate;
+@implementation Thrint {
+    dispatch_once_t _thrintStoryBoardToken;
+}
 
 #pragma mark - Accessors
 - (void)setDelegate:(id<ThrintDelegate>)delegate {
@@ -81,8 +81,7 @@
 
 - (UISplitViewController *)splitViewControllerForEntityNamed:(NSString *)entityName {
     
-    UIStoryboard *storyboard = [[self class] splitViewStoryboard];
-    UISplitViewController *svc = (UISplitViewController *)[storyboard instantiateInitialViewController];
+    UISplitViewController *svc = (UISplitViewController *)[self.thrintStoryboard instantiateInitialViewController];
     UINavigationController *nav = (UINavigationController *)[[svc viewControllers] objectAtIndex:0];
     ListVC *listVC = (ListVC *)[nav topViewController];
     
@@ -161,15 +160,24 @@
     return [[UINavigationController alloc] initWithRootViewController:[self rootTableViewController]];
 }
 
-+ (UIStoryboard *)splitViewStoryboard {
-    
-    static UIStoryboard *storyboard;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        storyboard = [UIStoryboard storyboardWithName:@"EntityBrowser" bundle:nil];
++ (NSString *)fileSuffixForDevice {
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"ipad" : @"iphone";
+}
+
++ (NSString *)storyboardName {
+    return [NSString stringWithFormat:@"EntityBrowser~%@", [self fileSuffixForDevice]];
+}
+
+- (UIStoryboard *)thrintStoryboard {
+    dispatch_once(&_thrintStoryBoardToken, ^{
+        @try {
+            _thrintStoryboard = [UIStoryboard storyboardWithName:[[self class] storyboardName] bundle:nil];
+        }
+        @catch (NSException *exception) {
+        }
     });
     
-    return storyboard;
+    return _thrintStoryboard;
 }
 
 //
