@@ -260,7 +260,7 @@
 }
 
 + (DetailVC *)detailViewControllerWithObject:(NSManagedObject *)object properties:(NSArray *)properties {
-    return [[self alloc] initWithObject:object properties:properties];
+    return [[(Thrint *)[UIApplication modelManager] thrintStoryboard] detailViewControllerWithObject:object properties:properties] ?: [[self alloc] initWithObject:object properties:properties];
 }
 
 //- (ListVC *)listViewControllerForProperty:(NSString *)property {
@@ -328,6 +328,17 @@
     else {
         [sheet showInView:self.view];
     }
+}
+
+@end
+
+@implementation UIStoryboard (ThrintDetail)
+
+- (DetailVC *)detailViewControllerWithObject:(NSManagedObject *)object properties:(NSArray *)properties {
+    DetailVC *dvc = [self instantiateViewControllerWithIdentifier:@"object_detail"];
+    dvc.object = object;
+    dvc.properties = properties;
+    return dvc;
 }
 
 @end

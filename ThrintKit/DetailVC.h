@@ -50,3 +50,7 @@ typedef void (^EndEditingBlock)(void);
 - (IBAction)deleteObject:(id)sender;
 
 @end
+
+@interface UIStoryboard (ThrintDetail)
+- (DetailVC *)detailViewControllerWithObject:(NSManagedObject *)object properties:(NSArray *)properties;
+@end
