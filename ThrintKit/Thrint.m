@@ -7,7 +7,9 @@
 //
 
 #import "Thrint.h"
+
 #import "ListVC.h"
+#import "ThrintKit.h"
 #import "ThrintTableViewController.h"
 
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
@@ -171,7 +173,7 @@
 - (UIStoryboard *)thrintStoryboard {
     dispatch_once(&_thrintStoryBoardToken, ^{
         @try {
-            _thrintStoryboard = [UIStoryboard storyboardWithName:[[self class] storyboardName] bundle:nil];
+            _thrintStoryboard = [UIStoryboard storyboardWithName:[[self class] storyboardName] bundle:[ThrintKit resourceBundle]];
         }
         @catch (NSException *exception) {
         }

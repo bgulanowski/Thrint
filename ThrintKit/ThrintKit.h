@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /* The purpose of this class is just to create an object file.
  */
@@ -25,9 +25,11 @@
 #import <ThrintKit/IntegerAttributeCell.h>
 #import <ThrintKit/SliderAttributeCell.h>
 #import <ThrintKit/TextAttributeCell.h>
+#import <ThrintKit/Thrint.h>
 
-extern NSString *ThrintKitVersion;
+@interface ThrintKit : NSObject
 
-//@interface ThrintKit : NSObject
-//
-//@end
++ (NSString *)versionString;
++ (NSBundle *)resourceBundle;
+
+@end

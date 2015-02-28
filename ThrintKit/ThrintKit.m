@@ -8,9 +8,21 @@
 
 #import "ThrintKit.h"
 
+static NSString * const ThrintKitVersion = @"1.0.2";
 
-NSString *ThrintKitVersion = @"1.0.2";
+static NSString * const ThrintKitProductName = @"ThrintKit";
 
-//@implementation ThrintKit
-//
-//@end
+@implementation ThrintKit
+
++ (NSString *)versionString {
+    return ThrintKitVersion;
+}
+
++ (NSBundle *)resourceBundle {
+    
+    NSBundle *thrintKitBundle = [NSBundle bundleForClass:[self class]];
+    NSString *resourcePath = [thrintKitBundle pathForResource:ThrintKitProductName ofType:@"bundle"];    
+    return [NSBundle bundleWithPath:resourcePath];
+}
+
+@end

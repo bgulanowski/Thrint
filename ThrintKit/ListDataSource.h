@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import <CoreData/CoreData.h>
 
 typedef BOOL (^DeletePreparation)(NSManagedObject *object);
 typedef void (^InsertCompletion)(NSManagedObject *object);
