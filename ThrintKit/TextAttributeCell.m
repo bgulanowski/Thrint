@@ -8,11 +8,19 @@
 
 #import "TextAttributeCell.h"
 
-#import "Thrint.h"
+#import "ThrintKit.h"
 #import "NSManagedObject+ViewAdditions.h"
 
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
 
+
+@interface UINib (NibLocating)
++ (instancetype)nibForName:(NSString *)name;
+@end
+
+@interface NSBundle (NibLocating)
++ (instancetype)bundleForNibName:(NSString *)name;
+@end
 
 @implementation TextAttributeCell
 
@@ -187,18 +195,17 @@
         nibs = [[NSMutableDictionary alloc] init];
     });
     
-    NSString *key = [NSString stringWithFormat:@"%@~%@", NSStringFromClass(self), [Thrint fileSuffixForDevice]];
-    id nib = [nibs objectForKey:key];
+    NSString *nibFileName = [NSString stringWithFormat:@"%@~%@", NSStringFromClass(self), [Thrint fileSuffixForDevice]];
+    UINib *nib = [nibs objectForKey:nibFileName];
     
     if(!nib) {
-        nib = [UINib nibWithNibName:key bundle:nil];
-        [nibs setObject:nib forKey:key];
+        nib = [UINib nibForName:nibFileName];
+        if (nib) {
+            [nibs setObject:nib forKey:nibFileName];
+        }
     }
     
-    if(nib == [NSNull null])
-        return nil;
-    else
-        return [[(UINib *)nib instantiateWithOwner:nil options:nil] lastObject];
+    return [[nib instantiateWithOwner:nil options:nil] lastObject];
 }
 
 + (TextAttributeCell *)cellForEnumerations:(id)enumerations {
@@ -225,6 +232,30 @@
         cell = [self cellFromNib];
     
     return cell;
+}
+
+@end
+
+@implementation NSBundle (NibLocating)
+
++ (NSBundle *)bundleForNibName:(NSString *)name
+{
+    for (NSBundle *bundle in [NSBundle allBundles]) {
+        if ([bundle pathForResource:name ofType:@"nib"]) {
+            return bundle;
+        }
+    }
+    return nil;
+}
+
+@end
+
+@implementation UINib (NibLocating)
+
++ (instancetype)nibForName:(NSString *)name
+{
+    NSBundle *bundle = [NSBundle bundleForNibName:name];
+    return bundle ? [self nibWithNibName:name bundle:bundle] : nil;
 }
 
 @end
