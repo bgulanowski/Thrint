@@ -13,6 +13,10 @@
 
 #import <ThrintKit/NSObject+ThrintAdditions.h>
 
+#import <ThrintKit/THRList.h>
+#import <ThrintKit/THRList+THRTableDataProviding.h>
+#import <ThrintKit/THRPropertyList.h>
+
 #import <ThrintKit/ListDataSource.h>
 #import <ThrintKit/EntityListDataSource.h>
 #import <ThrintKit/ListVC.h>

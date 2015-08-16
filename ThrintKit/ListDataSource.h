@@ -21,7 +21,7 @@ typedef void (^InsertCompletion)(NSManagedObject *object);
 @property (nonatomic, copy) InsertCompletion insertCompletion;
 @property (nonatomic, copy) DeletePreparation deletePreparation;
 
-@property (nonatomic, weak) UIViewController<ListDataSourceDelegate> *delegate;
+@property (nonatomic, weak) id<ListDataSourceDelegate> delegate;
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, weak) id selection;
 

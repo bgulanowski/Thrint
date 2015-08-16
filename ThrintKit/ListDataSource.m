@@ -10,7 +10,7 @@
 
 #import "TextAttributeCell.h"
 #import "NSManagedObject+ViewAdditions.h"
-#import "NSObject+ThrintAdditions.h"
+#import "NSObject+THRTableDataProviding.h"
 
 
 @interface ListDataSource ()

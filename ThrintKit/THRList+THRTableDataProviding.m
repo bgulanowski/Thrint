@@ -8,7 +8,7 @@
 
 #import "THRList+THRTableDataProviding.h"
 
-#import "NSObject+ThrintAdditions.h"
+#import "NSObject+THRTableDataProviding.h"
 
 @implementation THRList (THRTableDataProviding)
 

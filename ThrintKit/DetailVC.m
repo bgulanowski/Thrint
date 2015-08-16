@@ -19,6 +19,8 @@
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 
+@interface DetailVC ()<UITableViewDataSource, UITableViewDelegate>
+@end
 
 @implementation DetailVC
 

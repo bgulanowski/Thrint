@@ -101,7 +101,7 @@
         BOOL iPad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 
         if(iPad) {
-            self.contentSizeForViewInPopover = CGSizeMake(320, 640);
+            self.preferredContentSize = CGSizeMake(320, 640);
             
             [self synchronizeDetailView:nil];
         }
