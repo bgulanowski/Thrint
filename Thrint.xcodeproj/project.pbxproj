@@ -65,6 +65,8 @@
 		4EE47F15147EF2E7006C4795 /* icon_users.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F13147EF2E7006C4795 /* icon_users.png */; };
 		4EE47F17147EF2F3006C4795 /* icon_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F16147EF2F3006C4795 /* icon_settings.png */; };
 		4EE47F19147EF311006C4795 /* icon_document.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F18147EF311006C4795 /* icon_document.png */; };
+		84002B3F1B89FEBD001B65A0 /* THRListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 84002B3D1B89FEBD001B65A0 /* THRListViewController.h */; };
+		84002B401B89FEBD001B65A0 /* THRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84002B3E1B89FEBD001B65A0 /* THRListViewController.m */; };
 		840E11311AA20B190055F56A /* ThrintKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E83162314E1A76D00123C1B /* ThrintKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		840E117F1AA2124C0055F56A /* EntityBrowser~iphone.storyboard in Copy Resources */ = {isa = PBXBuildFile; fileRef = 840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */; };
 		840E11AC1AA222F70055F56A /* ThrintKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83162414E1A76D00123C1B /* ThrintKit.m */; };
@@ -305,6 +307,8 @@
 		4EE47F13147EF2E7006C4795 /* icon_users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_users.png; sourceTree = "<group>"; };
 		4EE47F16147EF2F3006C4795 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
 		4EE47F18147EF311006C4795 /* icon_document.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_document.png; sourceTree = "<group>"; };
+		84002B3D1B89FEBD001B65A0 /* THRListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRListViewController.h; sourceTree = "<group>"; };
+		84002B3E1B89FEBD001B65A0 /* THRListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRListViewController.m; sourceTree = "<group>"; };
 		8400662015BA02C10005A060 /* BooleanAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanAttributeCell.h; sourceTree = "<group>"; };
 		8400662115BA02C10005A060 /* DateAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateAttributeCell.h; sourceTree = "<group>"; };
 		8400662615BA02C10005A060 /* ImageAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAttributeCell.h; sourceTree = "<group>"; };
@@ -575,16 +579,18 @@
 		4E8316EF14E2C63700123C1B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8426F4D315C1DC5800337A17 /* ListDataSource.h */,
-				8426F4D415C1DC5800337A17 /* ListDataSource.m */,
-				8426F4CF15C1DC4000337A17 /* EntityListDataSource.h */,
-				8426F4D015C1DC4000337A17 /* EntityListDataSource.m */,
 				8426F4C715C1DB9C00337A17 /* DetailVC.h */,
 				8426F4C815C1DB9C00337A17 /* DetailVC.m */,
+				8426F4CF15C1DC4000337A17 /* EntityListDataSource.h */,
+				8426F4D015C1DC4000337A17 /* EntityListDataSource.m */,
+				8426F4D315C1DC5800337A17 /* ListDataSource.h */,
+				8426F4D415C1DC5800337A17 /* ListDataSource.m */,
 				8426F4C915C1DB9C00337A17 /* ListVC.h */,
 				8426F4CA15C1DB9C00337A17 /* ListVC.m */,
 				8400663015BA02C10005A060 /* ThrintTableViewController.h */,
 				4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */,
+				84002B3D1B89FEBD001B65A0 /* THRListViewController.h */,
+				84002B3E1B89FEBD001B65A0 /* THRListViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -734,6 +740,7 @@
 				84BD6A601B80C080005C658F /* THRList+THRTableDataProviding.h in Headers */,
 				8426F4CD15C1DB9C00337A17 /* ListVC.h in Headers */,
 				8426F4D115C1DC4000337A17 /* EntityListDataSource.h in Headers */,
+				84002B3F1B89FEBD001B65A0 /* THRListViewController.h in Headers */,
 				8460D20A1ACAC4ED00BCBBC9 /* THRList.h in Headers */,
 				8426F4D515C1DC5800337A17 /* ListDataSource.h in Headers */,
 				8410881515BA11FF008E97B9 /* Thrint.h in Headers */,
@@ -988,6 +995,7 @@
 				4E8316B514E2C5BA00123C1B /* IntegerAttributeCell.m in Sources */,
 				8460D20B1ACAC4ED00BCBBC9 /* THRList.m in Sources */,
 				4E8316DF14E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m in Sources */,
+				84002B401B89FEBD001B65A0 /* THRListViewController.m in Sources */,
 				84BD6A691B80CD83005C658F /* THRPropertyList+THRTableDataProviding.m in Sources */,
 				84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */,
 				4E8316E514E2C5BA00123C1B /* TextAttributeCell.m in Sources */,

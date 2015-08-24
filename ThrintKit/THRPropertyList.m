@@ -8,29 +8,17 @@
 
 #import "THRPropertyList.h"
 
-#import <objc/runtime.h>
+#import <BAFoundation/NSObject+BAIntrospection.h>
+
+static THRPropertyType THRPropertyTypeForValueType(BAValueType valueType);
+
+#pragma mark -
 
 @interface THRPropertyList ()
 @property NSArray *properties;
 @end
 
-@implementation THRProperty
-
-- (instancetype)initWithName:(NSString *)name type:(THRPropertyType)type value:(id)value {
-    self = [super init];
-    if (self) {
-        _name = name;
-        _type = type;
-        _value = value;
-    }
-    return self;
-}
-
-+ (instancetype)propertyWithName:(NSString *)name type:(THRPropertyType)type value:(id)value {
-    return [[self alloc] initWithName:name type:type value:value];
-}
-
-@end
+#pragma mark -
 
 @implementation THRPropertyList
 
@@ -68,10 +56,36 @@
 
 @end
 
+#pragma mark -
+
+@implementation THRProperty
+
+- (instancetype)initWithName:(NSString *)name type:(THRPropertyType)type value:(id)value {
+    self = [super init];
+    if (self) {
+        _name = name;
+        _type = type;
+        _value = value;
+    }
+    return self;
+}
+
++ (instancetype)propertyWithName:(NSString *)name type:(THRPropertyType)type value:(id)value {
+    return [[self alloc] initWithName:name type:type value:value];
+}
+
+@end
+
+#pragma mark -
+
 @implementation NSObject (THRPropertyCreating)
 
 - (THRProperty *)propertyForKey:(NSString *)key {
     return [THRProperty propertyWithName:key type:[self propertyTypeForKey:key] value:[self valueForKey:key]];
+}
+
+- (THRProperty *)propertyForValueInfo:(BAValueInfo *)valueInfo {
+    return [self propertyForKey:valueInfo.name];
 }
 
 - (NSArray *)propertiesForKeys:(NSArray *)keys {
@@ -83,51 +97,48 @@
 }
 
 - (NSArray *)propertiesForType:(THRPropertyType)propertyType {
-    if (propertyType == THRPropertyTypeValue) {
-        return self.properties;
-    }
-    else {
-        return @[];
-    }
+    return [self.properties filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"type = %td", propertyType]];
 }
 
 - (NSArray *)properties {
-    return [self propertiesForKeys:[self propertyKeys]];
-}
-
-+ (NSArray *)propertyKeys {
-    
-    NSMutableArray *keys = [NSMutableArray array];
-    
-    unsigned int outCount = 0;
-    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
-    
-    for (unsigned int index=0; index<outCount; ++index) {
-        [keys addObject:[NSString stringWithUTF8String:property_getName(properties[index])]];
+    NSMutableArray *properties = [NSMutableArray array];
+    NSArray *propertyInfo = [[self class] propertyInfo];
+    for (BAValueInfo *valueInfo in propertyInfo) {
+        [properties addObject:[self propertyForValueInfo:valueInfo]];
     }
-    free(properties);
-    
-    return keys;
+    return properties;
 }
 
 - (NSDictionary *)propertiesByType {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    for (THRPropertyType type = THRPropertyTypeTitle; type<THRPropertyTypeCount; ++type) {
+    for (THRPropertyType type = THRPropertyTypeUndefined+1; type<THRPropertyTypeCount; ++type) {
         dictionary[@(type)] = [self propertiesForType:type];
     }
     return dictionary;
 }
 
++ (THRPropertyType)propertyTypeForValueInfo:(BAValueInfo *)valueInfo {
+    return THRPropertyTypeForValueType(valueInfo.valueType);
+}
+
 + (THRPropertyType)propertyTypeForKey:(NSString *)key {
-    return THRPropertyTypeValue;
+    return THRPropertyTypeForValueType([self propertyInfoForName:key].valueType);
 }
 
 - (THRPropertyType)propertyTypeForKey:(NSString *)key {
     return [[self class] propertyTypeForKey:key];
 }
 
++ (NSArray *)propertyKeys {
+    return [[self propertyInfo] valueForKey:NSStringFromSelector(@selector(name))];
+}
+
 - (NSArray *)propertyKeys {
     return [[self class] propertyKeys];
+}
+
++ (NSArray *)titleKeys {
+    return @[@"name", @"title", @"_name", @"_title"];
 }
 
 //- (NSArray *)valuesForKeys:(NSArray *)keys {
@@ -139,3 +150,32 @@
 //}
 
 @end
+
+THRPropertyType THRPropertyTypeForValueType(BAValueType valueType) {
+    
+    switch (valueType) {
+        case BAValueTypeBool:
+            return THRPropertyTypeOption;
+            
+        case BAValueTypeInteger:
+        case BAValueTypeFloat:
+        case BAValueTypeCString:
+        case BAValueTypeString:
+            return THRPropertyTypeValue;
+
+        case BAValueTypeObject:
+            return THRPropertyTypeConnection;
+
+        case BAValueTypeCollection:
+            return THRPropertyTypeCollection;
+            
+        case BAValueTypeCArray:
+        case BAValueTypeClass:
+        case BAValueTypeUndefined:
+            break;
+            
+        default:
+            break;
+    }
+    return THRPropertyTypeUndefined;
+}

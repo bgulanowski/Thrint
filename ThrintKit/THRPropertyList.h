@@ -11,8 +11,10 @@
 #import <ThrintKit/ThrintKit.h>
 
 typedef NS_ENUM(NSUInteger, THRPropertyType) {
+    THRPropertyTypeUndefined,
     THRPropertyTypeTitle,
     THRPropertyTypeOption,
+    THRPropertyTypeEnumeration,
     THRPropertyTypeValue,
     THRPropertyTypeConnection,
     THRPropertyTypeCollection,
@@ -20,6 +22,10 @@ typedef NS_ENUM(NSUInteger, THRPropertyType) {
 };
 
 @class THRProperty;
+
+/*
+ * Represents a list of THRProperty objects
+ */
 
 @interface THRPropertyList : NSObject<THRList>
 
@@ -30,7 +36,11 @@ typedef NS_ENUM(NSUInteger, THRPropertyType) {
 
 @end
 
-@interface THRProperty : NSObject
+/*
+ * Represents a property of an object (contrasted with a class specification)
+ */
+
+@interface THRProperty : NSObject<THRItem>
 
 @property (readonly) NSString *name;
 @property (readonly) THRPropertyType type;
@@ -39,6 +49,7 @@ typedef NS_ENUM(NSUInteger, THRPropertyType) {
 @end
 
 // Specialized Properties for each type
+// We need the classes to generate the correct UITableViewCells
 
 @interface THRPropertyAttribute : THRProperty
 @end
@@ -48,8 +59,12 @@ typedef NS_ENUM(NSUInteger, THRPropertyType) {
 
 // Specialized Attribute Properties
 
+// Boolean is option type
+
 @interface THRPropertyBoolean : THRPropertyAttribute
 @end
+
+// Integer and FLoat are Value types
 
 @interface THRPropertyInteger : THRPropertyAttribute
 @end
@@ -57,10 +72,15 @@ typedef NS_ENUM(NSUInteger, THRPropertyType) {
 @interface THRPropertyFloat : THRPropertyAttribute
 @end
 
-@interface THRPropertyOption : THRPropertyInteger
+@interface THRPropertyEnumeration : THRPropertyInteger
 @end
 
+// String and Date are Value types
+
 @interface THRPropertyString : THRPropertyAttribute
+@end
+
+@interface THRPropertyDate : THRPropertyAttribute
 @end
 
 @interface THRPropertyTitle : THRPropertyString

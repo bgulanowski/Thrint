@@ -10,6 +10,7 @@
 
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
+#import <BAFoundation/NSEntityDescription+BAAdditions.h>
 
 @implementation THRList {
     NSMutableArray *_items;
@@ -81,11 +82,15 @@
 }
 
 - (void)removeObjectFromItemsAtIndex:(NSUInteger)index {
-    
+    dispatch_sync(_queue, ^{
+        [_items removeObjectAtIndex:index];
+    });
 }
 
 - (void)removeItemsAtIndexes:(NSIndexSet *)indexes {
-    
+    dispatch_sync(_queue, ^{
+        [_items removeObjectsAtIndexes:indexes];
+    });
 }
 
 - (void)replaceObjectInItemsAtIndex:(NSUInteger)index withObject:(id)item {
@@ -98,6 +103,20 @@
     dispatch_sync(_queue, ^{
         [_items replaceObjectsAtIndexes:indexes withObjects:items];
     });
+}
+
+#pragma mark - Initializer
+
+- (instancetype)initWithItems:(NSArray *)items {
+    self = [super init];
+    if (self) {
+        _items = [items mutableCopy];
+    }
+    return self;
+}
+
++ (instancetype)listWithItems:(NSArray *)items {
+    return [[self alloc] initWithItems:items];
 }
 
 @end
@@ -118,12 +137,12 @@
 - (instancetype)initWithRequest:(NSFetchRequest *)request managedObjectContext:(NSManagedObjectContext *)objectContext {
     self = [super init];
     if (self) {
-        self.fetch = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:objectContext sectionNameKeyPath:[objectContext defaultSortKeyForEntity:request.entity] cacheName:nil];
+        self.fetch = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:objectContext sectionNameKeyPath:[request.entity defaultSortKey] cacheName:nil];
     }
     return self;
 }
 
-#pragma mark -
+#pragma mark - THRList
 
 - (NSArray *)items {
     return self.fetch.fetchedObjects;
@@ -149,10 +168,6 @@
 
 - (THRSavedList *)listWithRequest:(NSFetchRequest *)request {
     return [[THRSavedList alloc] initWithRequest:request managedObjectContext:self];
-}
-
-- (NSString *)defaultSortKeyForEntity:(NSEntityDescription *)entity {
-    return [[self classForEntityName:entity.name] defaultSortKey];
 }
 
 @end

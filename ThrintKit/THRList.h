@@ -10,12 +10,15 @@
 
 #import <CoreData/CoreData.h>
 
+@protocol THRItem;
+@protocol THRSection;
+
 @protocol THRList <NSObject>
 
 @property (readonly, copy) NSArray *items;
 
 - (NSUInteger)countOfItems;
-- (id)objectInItemsAtIndex:(NSUInteger)index;
+- (id<THRItem>)objectInItemsAtIndex:(NSUInteger)index;
 - (NSArray *)itemsAtIndexes:(NSIndexSet *)indexes;
 
 @end
@@ -24,25 +27,49 @@
 
 - (void)setItems:(NSArray *)items;
 
-- (void)insertObject:(id)object inItemsAtIndex:(NSUInteger)index;
+- (void)insertObject:(id<THRItem>)object inItemsAtIndex:(NSUInteger)index;
 - (void)insertItems:(NSArray *)array atIndexes:(NSIndexSet *)indexes;
 
 - (void)removeObjectFromItemsAtIndex:(NSUInteger)index;
 - (void)removeItemsAtIndexes:(NSIndexSet *)indexes;
 
-- (void)replaceObjectInItemsAtIndex:(NSUInteger)index withObject:(id)item;
+- (void)replaceObjectInItemsAtIndex:(NSUInteger)index withObject:(id<THRItem>)item;
 - (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withItems:(NSArray *)items;
 
 @end
 
-@interface THRList : NSObject<THRMutableList>
+@class THRPropertyList;
+
+@protocol THRItem <NSObject>
+
+- (NSArray *)childItems;
+- (THRPropertyList *)propertyList;
+
 @end
 
+@protocol THRSection <NSObject>
+
+- (UIView *)headerView;
+- (UIView *)footerView;
+- (UITableViewCell *)cellForRow:(NSUInteger)row;
+
+@end
+
+
+@interface THRList : NSObject<THRMutableList>
+- (instancetype)initWithItems:(NSArray *)items;
++ (instancetype)listWithItems:(NSArray *)items;
+@end
+
+// THRManaged(Object)List? Move to another file?
+
 @interface THRSavedList : NSObject<THRList>
+// -initWithEntityName:managedObjectContext: ?
 - (instancetype)initWithRequest:(NSFetchRequest *)request managedObjectContext:(NSManagedObjectContext *)objectContext;
 @end
 
 @interface NSManagedObjectContext (THRListCreating)
+
+// -listForEntityName:?
 - (THRSavedList *)listWithRequest:(NSFetchRequest *)request;
-- (NSString *)defaultSortKeyForEntity:(NSEntityDescription *)entity;
 @end

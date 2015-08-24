@@ -8,6 +8,8 @@
 
 #import "NSObject+THRTableDataProviding.h"
 
+#import <BAFoundation/NSObject+BAIntrospection.h>
+
 @implementation NSObject (THRTableDataProviding)
 
 - (NSString *)listRepresentation {
