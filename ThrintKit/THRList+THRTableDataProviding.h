@@ -8,5 +8,32 @@
 
 #import "THRList.h"
 
-@interface THRList (THRTableDataProviding)<UITableViewDataSource>
+@protocol THRViewList <THRList, UITableViewDataSource>
+@end
+
+@protocol THRViewItem <THRItem>
+
++ (Class)tableViewCellClass;
++ (NSString *)tableViewCellReuseIdentifier;
++ (UITableViewCellStyle)tableViewCellStyle;
+
+- (Class)tableViewCellClass;
+- (NSString *)tableViewCellReuseIdentifier;
+- (UITableViewCellStyle)tableViewCellStyle;
+
++ (UITableViewCell *)newCell;
+- (UITableViewCell *)newCell;
+
+- (UITableViewCell *)cellForTableView:(UITableView *)tableView;
+- (void)configureTableViewCell:(UITableViewCell *)tableViewCell;
+
+//+ (THRProperty *)titleProperty;
+//+ (NSArray *)valueProperties;
+//+ (NSArray *)optionProperties;
+//+ (NSArray *)connectionProperties;
+//+ (NSArray *)collectionProperties;
+
+@end
+
+@interface THRList (THRTableDataProviding)<THRViewList>
 @end

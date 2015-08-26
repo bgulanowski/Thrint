@@ -65,14 +65,14 @@
 
 @protocol THRMutableGroupedList <THRMutableList, THRGroupedList>
 
-- (void)insertObject:(NSObject<THRGroup> *)object inGroupsAtIndex:(NSUInteger)index;
+- (void)insertObject:(NSObject<THRGroup> *)group inGroupsAtIndex:(NSUInteger)index;
 - (void)insertGroups:(NSArray *)array atIndexes:(NSIndexSet *)indexes;
 
 - (void)removeObjectFromGroupsAtIndex:(NSUInteger)index;
 - (void)removeGroupsAtIndexes:(NSIndexSet *)indexes;
 
-- (void)replaceObjectInGroupsAtIndex:(NSUInteger)index withObject:(NSObject<THRGroup> *)item;
-- (void)replaceGroupsAtIndexes:(NSIndexSet *)indexes withGroups:(NSArray *)sections;
+- (void)replaceObjectInGroupsAtIndex:(NSUInteger)index withObject:(NSObject<THRGroup> *)group;
+- (void)replaceGroupsAtIndexes:(NSIndexSet *)indexes withGroups:(NSArray *)groups;
 
 @end
 
@@ -80,14 +80,19 @@
 @class THRPropertyList;
 
 @protocol THRItem <NSObject>
-- (NSArray *)childItems;
+
+- (NSString *)listRepresentation;
+
+@optional
 - (THRPropertyList *)propertyList;
+- (NSArray *)childItems;
+
 @end
 
 
 // For now, a Group is just a List.
 // This may a problem, since a list is immutable.
-@protocol THRGroup <THRList>
+@protocol THRGroup <THRList, THRItem>
 @end
 
 
@@ -98,8 +103,8 @@
 
 
 @interface THRGroupedList : THRList<THRMutableGroupedList>
-- (instancetype)initWithSections:(NSArray *)sections NS_DESIGNATED_INITIALIZER;
-+ (instancetype)groupedListWithSections:(NSArray *)sections;
+- (instancetype)initWithGroups:(NSArray *)groups NS_DESIGNATED_INITIALIZER;
++ (instancetype)groupedListWithGroups:(NSArray *)groups;
 @end
 
 

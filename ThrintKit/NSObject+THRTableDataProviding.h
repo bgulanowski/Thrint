@@ -8,29 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "THRList+THRTableDataProviding.h"
+
 @class THRProperty;
 
-@interface NSObject (THRTableDataProviding)
-
-@property (readonly) NSString *listRepresentation;
-@property (readonly) Class tableViewCellClass;
-@property (readonly) NSString *tableViewCellReuseIdentifier;
-@property (readonly) UITableViewCellStyle tableViewCellStyle;
-
-//+ (THRProperty *)titleProperty;
-//+ (NSArray *)valueProperties;
-//+ (NSArray *)optionProperties;
-//+ (NSArray *)connectionProperties;
-//+ (NSArray *)collectionProperties;
-
-+ (Class)tableViewCellClass;
-+ (NSString *)tableViewCellReuseIdentifier;
-+ (UITableViewCellStyle)tableViewCellStyle;
-
-+ (UITableViewCell *)newCell;
-- (UITableViewCell *)newCell;
-
-- (UITableViewCell *)cellForTableView:(UITableView *)tableView;
-- (void)configureTableViewCell:(UITableViewCell *)tableViewCell;
+@interface NSObject (THRTableDataProviding)<THRViewItem>
 
 @end

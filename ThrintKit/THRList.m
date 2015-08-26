@@ -12,17 +12,17 @@
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 #import <BAFoundation/NSEntityDescription+BAAdditions.h>
 
+@interface THRList ()
+@end
+
 @implementation THRList {
     NSMutableArray *_items;
+@protected
     dispatch_queue_t _queue;
 }
 
 - (instancetype)init {
-    self = [super init];
-    if (self) {
-        _items = [NSMutableArray array];
-    }
-    return self;
+    return [self initWithItems:[NSArray array]];
 }
 
 #pragma mark - THRList
@@ -117,6 +117,115 @@
 
 + (instancetype)listWithItems:(NSArray *)items {
     return [[self alloc] initWithItems:items];
+}
+
+@end
+
+#pragma mark -
+
+@implementation THRGroupedList {
+    // Maybe we should re-use the items in the superclass to hold the groups?
+    // Problems: a group can be an item, but an item can't be a group.
+    //           groups are sublists. items are not sub-lists.
+    NSMutableArray *_groups;
+}
+
+#pragma mark - THRList
+
+- (instancetype)initWithItems:(NSArray *)items {
+    return [self initWithGroups:@[]];
+}
+
+#pragma mark - THRSectionedList
+
+- (NSObject<THRItem> *)itemAtIndexPath:(NSIndexPath *)indexPath {
+    return [[self objectInGroupsAtIndex:indexPath.section] objectInItemsAtIndex:indexPath.row];
+}
+
+#pragma mark - THRGroupedList Protocol
+
+- (NSArray *)groups {
+    __block NSArray *groups;
+    dispatch_sync(_queue, ^{
+        groups = [_groups copy];
+    });
+    return groups;
+}
+
+- (NSUInteger)countOfGroups {
+    __block NSUInteger count;
+    dispatch_sync(_queue, ^{
+        count = _groups.count;
+    });
+    return count;
+}
+
+- (NSObject<THRGroup> *)objectInGroupsAtIndex:(NSUInteger)index {
+    __block NSObject<THRGroup> *group;
+    dispatch_sync(_queue, ^{
+        group = [_groups objectAtIndex:index];
+    });
+    return group;
+}
+
+- (NSArray *)groupsAtIndexes:(NSIndexSet *)indexes {
+    __block NSArray *groups;
+    dispatch_sync(_queue, ^{
+        groups = [_groups objectsAtIndexes:indexes];
+    });
+    return groups;
+}
+
+#pragma mark - THRMutableGroupedList
+
+- (void)insertObject:(NSObject<THRGroup> *)group inGroupsAtIndex:(NSUInteger)index {
+    dispatch_sync(_queue, ^{
+        [_groups insertObject:group atIndex:index];
+    });
+}
+
+- (void)insertGroups:(NSArray *)array atIndexes:(NSIndexSet *)indexes {
+    dispatch_sync(_queue, ^{
+        [_groups insertObjects:array atIndexes:indexes];
+    });
+}
+
+- (void)removeObjectFromGroupsAtIndex:(NSUInteger)index {
+    dispatch_sync(_queue, ^{
+        [_groups removeObjectAtIndex:index];
+    });
+}
+
+- (void)removeGroupsAtIndexes:(NSIndexSet *)indexes {
+    dispatch_sync(_queue, ^{
+        [_groups removeObjectsAtIndexes:indexes];
+    });
+}
+
+- (void)replaceObjectInGroupsAtIndex:(NSUInteger)index withObject:(NSObject<THRGroup> *)group {
+    dispatch_sync(_queue, ^{
+        [_groups replaceObjectAtIndex:index withObject:group];
+    });
+}
+
+- (void)replaceGroupsAtIndexes:(NSIndexSet *)indexes withGroups:(NSArray *)groups {
+    dispatch_sync(_queue, ^{
+        [_groups replaceObjectsAtIndexes:indexes withObjects:groups];
+    });
+}
+
+#pragma mark - THRGroupedList Class
+
+- (instancetype)initWithGroups:(NSArray *)groups {
+    self = [super initWithItems:nil];
+    if (self) {
+        _groups = [groups mutableCopy];
+    }
+    return self;
+}
+
++ (instancetype)groupedListWithGroups:(NSArray *)groups {
+    return [[self alloc] initWithGroups:groups];
 }
 
 @end

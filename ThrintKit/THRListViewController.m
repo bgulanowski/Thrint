@@ -7,7 +7,7 @@
 //
 
 #import "THRListViewController.h"
-#import <ThrintKit/THRList.h>
+#import <ThrintKit/THRList+THRTableDataProviding.h>
 
 @interface THRListViewController ()<UITableViewDelegate>
 @property (nonatomic) UITableView *tableView;
@@ -17,7 +17,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithList:(id<THRList>)list {
+- (instancetype)initWithList:(NSObject<THRViewList> *)list {
     if ((self = [super init])) {
         _list = list;
     }
@@ -28,7 +28,7 @@
     return [self initWithList:[THRList listWithItems:items]];
 }
 
-+ (instancetype)listViewControllerWithList:(id<THRList>)list {
++ (instancetype)listViewControllerWithList:(NSObject<THRViewList> *)list {
     return [[self alloc] initWithList:list];
 }
 

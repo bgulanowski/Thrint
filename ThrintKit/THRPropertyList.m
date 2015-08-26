@@ -74,6 +74,12 @@ static THRPropertyType THRPropertyTypeForValueType(BAValueType valueType);
     return [[self alloc] initWithName:name type:type value:value];
 }
 
+#pragma mark - THRItem
+
+- (NSString *)listRepresentation {
+    return [self.value description];
+}
+
 @end
 
 #pragma mark -

@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol THRList;
+@protocol THRViewList;
 
 @interface THRListViewController : UIViewController
 
-@property (nonatomic, strong) id<THRList>list;
+@property (nonatomic, strong) NSObject<THRViewList> *list;
 
-- (instancetype)initWithList:(id<THRList>)list NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithList:(NSObject<THRViewList> *)list NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithItems:(NSArray *)items;
-+ (instancetype)listViewControllerWithList:(id<THRList>)list;
++ (instancetype)listViewControllerWithList:(NSObject<THRViewList> *)list;
 
 @end
