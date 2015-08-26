@@ -17,7 +17,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithList:(THRList *)list {
+- (instancetype)initWithList:(id<THRList>)list {
     if ((self = [super init])) {
         _list = list;
     }
@@ -28,7 +28,7 @@
     return [self initWithList:[THRList listWithItems:items]];
 }
 
-+ (instancetype)listViewControllerWithList:(THRList *)list {
++ (instancetype)listViewControllerWithList:(id<THRList>)list {
     return [[self alloc] initWithList:list];
 }
 
@@ -44,7 +44,9 @@
 
 #pragma mark - UIViewController
 
-
+- (void)viewDidLoad {
+    self.tableView.dataSource = self.list;
+}
 
 #pragma mark - UITableViewDelegate
 

@@ -43,7 +43,7 @@
     return count;
 }
 
-- (id)objectInItemsAtIndex:(NSUInteger)index
+- (NSObject<THRItem> *)objectInItemsAtIndex:(NSUInteger)index
 {
     __block id item;
     dispatch_sync(_queue, ^{
@@ -69,7 +69,7 @@
     });
 }
 
-- (void)insertObject:(id)item inItemsAtIndex:(NSUInteger)index {
+- (void)insertObject:(NSObject<THRItem> *)item inItemsAtIndex:(NSUInteger)index {
     dispatch_sync(_queue, ^{
         [_items insertObject:item atIndex:index];
     });
@@ -93,7 +93,7 @@
     });
 }
 
-- (void)replaceObjectInItemsAtIndex:(NSUInteger)index withObject:(id)item {
+- (void)replaceObjectInItemsAtIndex:(NSUInteger)index withObject:(NSObject<THRItem> *)item {
     dispatch_sync(_queue, ^{
         [_items replaceObjectAtIndex:index withObject:item];
     });
