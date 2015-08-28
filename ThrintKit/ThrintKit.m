@@ -8,7 +8,7 @@
 
 #import "ThrintKit.h"
 
-static NSString * const ThrintKitVersion = @"1.0.2";
+static NSString * const ThrintKitVersion = @"1.1.0";
 
 static NSString * const ThrintKitProductName = @"ThrintKit";
 

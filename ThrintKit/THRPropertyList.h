@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import <ThrintKit/ThrintKit.h>
+#import <BAFoundation/NSObject+BAIntrospection.h>
 
 typedef NS_ENUM(NSUInteger, THRPropertyType) {
     THRPropertyTypeUndefined,
@@ -21,7 +22,9 @@ typedef NS_ENUM(NSUInteger, THRPropertyType) {
     THRPropertyTypeCount
 };
 
-@class THRProperty;
+extern THRPropertyType THRPropertyTypeForValueType(BAValueType valueType);
+
+@protocol THRDetailedItem;
 
 /*
  * Represents a list of THRProperty objects
@@ -31,8 +34,30 @@ typedef NS_ENUM(NSUInteger, THRPropertyType) {
 
 @property (readonly) NSArray *properties;
 
-- (instancetype)initWithObject:(id)object names:(NSArray *)names;
-+ (instancetype)propertyListWithObject:(id)object names:(NSArray *)names;
+- (instancetype)initWithObject:(NSObject<THRDetailedItem> *)object names:(NSArray *)names;
++ (instancetype)propertyListWithObject:(NSObject<THRDetailedItem> *)object names:(NSArray *)names;
+
+@end
+
+
+@class THRProperty;
+
+@protocol THRDetailedItem <THRItem>
+
+@property (readonly) NSArray *properties;
+
+- (THRProperty *)propertyForKey:(NSString *)key;
+- (NSArray *)propertiesForKeys:(NSArray *)keys;
+- (NSArray *)propertiesForType:(THRPropertyType)propertyType;
+- (NSDictionary *)propertiesByType;
+
++ (THRPropertyType)propertyTypeForKey:(NSString *)key;
+- (THRPropertyType)propertyTypeForKey:(NSString *)key;
+
++ (NSArray *)propertyKeys;
+- (NSArray *)propertyKeys;
+
+- (THRPropertyList *)propertyList;
 
 @end
 
@@ -92,21 +117,8 @@ typedef NS_ENUM(NSUInteger, THRPropertyType) {
 @end
 
 
-
-@interface NSObject (THRPropertyCreating)
-
-// In the default implementation, all properties are values
-@property (readonly) NSArray *properties;
-
-- (THRProperty *)propertyForKey:(NSString *)key;
-- (NSArray *)propertiesForKeys:(NSArray *)keys;
-- (NSArray *)propertiesForType:(THRPropertyType)propertyType;
-- (NSDictionary *)propertiesByType;
-
-+ (THRPropertyType)propertyTypeForKey:(NSString *)key;
-- (THRPropertyType)propertyTypeForKey:(NSString *)key;
-
-+ (NSArray *)propertyKeys;
-- (NSArray *)propertyKeys;
-
+#if 0
+@interface NSObject (THRPropertyCreating)<THRDetailedItem>
+// By default, all properties of the class discovered by introspection are supported
 @end
+#endif

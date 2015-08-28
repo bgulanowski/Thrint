@@ -100,8 +100,10 @@
 		8426F4D215C1DC4000337A17 /* EntityListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4D015C1DC4000337A17 /* EntityListDataSource.m */; };
 		8426F4D515C1DC5800337A17 /* ListDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4D315C1DC5800337A17 /* ListDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8426F4D615C1DC5800337A17 /* ListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4D415C1DC5800337A17 /* ListDataSource.m */; };
+		84523DDA1B910F7D000477A3 /* THRItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 84523DD91B910F7D000477A3 /* THRItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84523DDF1B911239000477A3 /* THRGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 84523DDD1B911239000477A3 /* THRGroup.h */; };
+		84523DE01B911239000477A3 /* THRGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 84523DDE1B911239000477A3 /* THRGroup.m */; };
 		8452E6271617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = 8452E6251617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8452E6281617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */; };
 		8456BB7F1B81FAA700DEECBD /* libMAObjCRuntime_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8456BB7A1B81FA8C00DEECBD /* libMAObjCRuntime_iOS.a */; };
 		8456BB821B81FB0900DEECBD /* THRClassInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 8456BB801B81FB0900DEECBD /* THRClassInspector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8456BB831B81FB0900DEECBD /* THRClassInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 8456BB811B81FB0900DEECBD /* THRClassInspector.m */; };
@@ -113,13 +115,12 @@
 		8485682118FC982200914FE1 /* libThrintKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAB349C14D9D57C0038B6CC /* libThrintKit.a */; };
 		8485682218FC982200914FE1 /* libBAFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485681A18FC97C300914FE1 /* libBAFoundation.a */; };
 		8485682918FCB62800914FE1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485682818FCB62800914FE1 /* libz.dylib */; };
+		848D1DC41B8DD1B30020A710 /* NSObject+THRTableDataProviding.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */; };
 		84B3D3F91909F47000DA15B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B3D3F81909F47000DA15B5 /* Images.xcassets */; };
 		84BD6A601B80C080005C658F /* THRList+THRTableDataProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = 84BD6A5E1B80C080005C658F /* THRList+THRTableDataProviding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84BD6A611B80C080005C658F /* THRList+THRTableDataProviding.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD6A5F1B80C080005C658F /* THRList+THRTableDataProviding.m */; };
 		84BD6A641B80C5B9005C658F /* THRPropertyList.h in Headers */ = {isa = PBXBuildFile; fileRef = 84BD6A621B80C5B9005C658F /* THRPropertyList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84BD6A651B80C5B9005C658F /* THRPropertyList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD6A631B80C5B9005C658F /* THRPropertyList.m */; };
-		84BD6A681B80CD83005C658F /* THRPropertyList+THRTableDataProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = 84BD6A661B80CD83005C658F /* THRPropertyList+THRTableDataProviding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84BD6A691B80CD83005C658F /* THRPropertyList+THRTableDataProviding.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD6A671B80CD83005C658F /* THRPropertyList+THRTableDataProviding.m */; };
 		84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
 		84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */; };
@@ -332,6 +333,9 @@
 		8426F4D015C1DC4000337A17 /* EntityListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityListDataSource.m; sourceTree = "<group>"; };
 		8426F4D315C1DC5800337A17 /* ListDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDataSource.h; sourceTree = "<group>"; };
 		8426F4D415C1DC5800337A17 /* ListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDataSource.m; sourceTree = "<group>"; };
+		84523DD91B910F7D000477A3 /* THRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRItem.h; sourceTree = "<group>"; };
+		84523DDD1B911239000477A3 /* THRGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRGroup.h; sourceTree = "<group>"; };
+		84523DDE1B911239000477A3 /* THRGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRGroup.m; sourceTree = "<group>"; };
 		8452E6251617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+THRTableDataProviding.h"; sourceTree = "<group>"; };
 		8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+THRTableDataProviding.m"; sourceTree = "<group>"; };
 		8456BB711B81FA8C00DEECBD /* MAObjCRuntime.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MAObjCRuntime.xcodeproj; path = MAObjCRuntime/xcode/MAObjCRuntime.xcodeproj; sourceTree = "<group>"; };
@@ -343,13 +347,12 @@
 		847C618019144E37001622BF /* BooleanAttributeCell~iphone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "BooleanAttributeCell~iphone.xib"; sourceTree = "<group>"; };
 		8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BAFoundation.xcodeproj; path = BAFoundation/iOS/BAFoundation.xcodeproj; sourceTree = "<group>"; };
 		8485682818FCB62800914FE1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		848D1DC51B8DD61E0020A710 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84B3D3F81909F47000DA15B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84BD6A5E1B80C080005C658F /* THRList+THRTableDataProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "THRList+THRTableDataProviding.h"; sourceTree = "<group>"; };
 		84BD6A5F1B80C080005C658F /* THRList+THRTableDataProviding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "THRList+THRTableDataProviding.m"; sourceTree = "<group>"; };
 		84BD6A621B80C5B9005C658F /* THRPropertyList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRPropertyList.h; sourceTree = "<group>"; };
 		84BD6A631B80C5B9005C658F /* THRPropertyList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRPropertyList.m; sourceTree = "<group>"; };
-		84BD6A661B80CD83005C658F /* THRPropertyList+THRTableDataProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "THRPropertyList+THRTableDataProviding.h"; sourceTree = "<group>"; };
-		84BD6A671B80CD83005C658F /* THRPropertyList+THRTableDataProviding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "THRPropertyList+THRTableDataProviding.m"; sourceTree = "<group>"; };
 		84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TextAttributeCell~iphone.xib"; sourceTree = "<group>"; };
 		84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+ThrintAdditions.h"; sourceTree = "<group>"; };
 		84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ThrintAdditions.m"; sourceTree = "<group>"; };
@@ -396,6 +399,7 @@
 		4E821721147BFFB300295D45 = {
 			isa = PBXGroup;
 			children = (
+				848D1DC51B8DD61E0020A710 /* README.md */,
 				8456BB711B81FA8C00DEECBD /* MAObjCRuntime.xcodeproj */,
 				8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */,
 				4E821736147BFFB300295D45 /* Thrint */,
@@ -697,14 +701,15 @@
 		8460D2071ACAC49100BCBBC9 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				84523DD91B910F7D000477A3 /* THRItem.h */,
 				8460D2081ACAC4ED00BCBBC9 /* THRList.h */,
 				8460D2091ACAC4ED00BCBBC9 /* THRList.m */,
 				84BD6A5E1B80C080005C658F /* THRList+THRTableDataProviding.h */,
 				84BD6A5F1B80C080005C658F /* THRList+THRTableDataProviding.m */,
 				84BD6A621B80C5B9005C658F /* THRPropertyList.h */,
 				84BD6A631B80C5B9005C658F /* THRPropertyList.m */,
-				84BD6A661B80CD83005C658F /* THRPropertyList+THRTableDataProviding.h */,
-				84BD6A671B80CD83005C658F /* THRPropertyList+THRTableDataProviding.m */,
+				84523DDD1B911239000477A3 /* THRGroup.h */,
+				84523DDE1B911239000477A3 /* THRGroup.m */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -725,9 +730,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8456BB821B81FB0900DEECBD /* THRClassInspector.h in Headers */,
-				84BD6A681B80CD83005C658F /* THRPropertyList+THRTableDataProviding.h in Headers */,
 				840E11311AA20B190055F56A /* ThrintKit.h in Headers */,
 				84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */,
+				84523DDA1B910F7D000477A3 /* THRItem.h in Headers */,
 				8426C213190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h in Headers */,
 				8410880615BA11FF008E97B9 /* BooleanAttributeCell.h in Headers */,
 				8410880715BA11FF008E97B9 /* DateAttributeCell.h in Headers */,
@@ -736,6 +741,7 @@
 				8410881015BA11FF008E97B9 /* NSManagedObject+ViewAdditions.h in Headers */,
 				8410881415BA11FF008E97B9 /* TextAttributeCell.h in Headers */,
 				8410882B15BA18BF008E97B9 /* SliderAttributeCell.h in Headers */,
+				84523DDF1B911239000477A3 /* THRGroup.h in Headers */,
 				8426F4CB15C1DB9C00337A17 /* DetailVC.h in Headers */,
 				84BD6A601B80C080005C658F /* THRList+THRTableDataProviding.h in Headers */,
 				8426F4CD15C1DB9C00337A17 /* ListVC.h in Headers */,
@@ -987,6 +993,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84523DE01B911239000477A3 /* THRGroup.m in Sources */,
 				8426C214190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m in Sources */,
 				8456BB831B81FB0900DEECBD /* THRClassInspector.m in Sources */,
 				4E8316AF14E2C5BA00123C1B /* BooleanAttributeCell.m in Sources */,
@@ -994,9 +1001,9 @@
 				84BD6A651B80C5B9005C658F /* THRPropertyList.m in Sources */,
 				4E8316B514E2C5BA00123C1B /* IntegerAttributeCell.m in Sources */,
 				8460D20B1ACAC4ED00BCBBC9 /* THRList.m in Sources */,
+				848D1DC41B8DD1B30020A710 /* NSObject+THRTableDataProviding.m in Sources */,
 				4E8316DF14E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m in Sources */,
 				84002B401B89FEBD001B65A0 /* THRListViewController.m in Sources */,
-				84BD6A691B80CD83005C658F /* THRPropertyList+THRTableDataProviding.m in Sources */,
 				84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */,
 				4E8316E514E2C5BA00123C1B /* TextAttributeCell.m in Sources */,
 				4E8316E714E2C5BA00123C1B /* Thrint.m in Sources */,
@@ -1009,7 +1016,6 @@
 				8426F4CE15C1DB9C00337A17 /* ListVC.m in Sources */,
 				8426F4D215C1DC4000337A17 /* EntityListDataSource.m in Sources */,
 				8426F4D615C1DC5800337A17 /* ListDataSource.m in Sources */,
-				8452E6281617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

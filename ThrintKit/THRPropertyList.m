@@ -8,10 +8,6 @@
 
 #import "THRPropertyList.h"
 
-#import <BAFoundation/NSObject+BAIntrospection.h>
-
-static THRPropertyType THRPropertyTypeForValueType(BAValueType valueType);
-
 #pragma mark -
 
 @interface THRPropertyList ()
@@ -24,7 +20,7 @@ static THRPropertyType THRPropertyTypeForValueType(BAValueType valueType);
 
 @synthesize properties=_properties;
 
-- (instancetype)initWithObject:(id)object names:(NSArray *)names {
+- (instancetype)initWithObject:(NSObject<THRDetailedItem> *)object names:(NSArray *)names {
     self = [super init];
     if (self) {
         _properties = [object propertiesForKeys:names];
@@ -32,7 +28,7 @@ static THRPropertyType THRPropertyTypeForValueType(BAValueType valueType);
     return self;
 }
 
-+ (instancetype)propertyListWithObject:(id)object names:(NSArray *)names {
++ (instancetype)propertyListWithObject:(NSObject<THRDetailedItem> *)object names:(NSArray *)names {
     return [[self alloc] initWithObject:object names:names];
 }
 
@@ -80,10 +76,15 @@ static THRPropertyType THRPropertyTypeForValueType(BAValueType valueType);
     return [self.value description];
 }
 
+- (BOOL)hasProperties {
+    return NO;
+}
+
 @end
 
 #pragma mark -
 
+#if 0
 @implementation NSObject (THRPropertyCreating)
 
 - (THRProperty *)propertyForKey:(NSString *)key {
@@ -155,7 +156,12 @@ static THRPropertyType THRPropertyTypeForValueType(BAValueType valueType);
 //    return values;
 //}
 
+- (THRPropertyList *)propertyList {
+    return [THRPropertyList propertyListWithObject:self names:[self propertyKeys]];
+}
+
 @end
+#endif
 
 THRPropertyType THRPropertyTypeForValueType(BAValueType valueType) {
     

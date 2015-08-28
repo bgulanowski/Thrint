@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
+#if 0
 #import <Foundation/Foundation.h>
 
 #import "THRList+THRTableDataProviding.h"
@@ -15,3 +16,4 @@
 @interface NSObject (THRTableDataProviding)<THRViewItem>
 
 @end
+#endif

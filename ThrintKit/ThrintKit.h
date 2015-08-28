@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-/* The purpose of this class is just to create an object file.
- */
-
-#import <ThrintKit/NSObject+ThrintAdditions.h>
+#import <ThrintKit/NSObject+THRTableDataProviding.h>
 
 #import <ThrintKit/THRList.h>
 #import <ThrintKit/THRList+THRTableDataProviding.h>

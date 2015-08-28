@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
+#if 0
 #import "NSObject+THRTableDataProviding.h"
 
 #import <BAFoundation/NSObject+BAIntrospection.h>
@@ -59,3 +60,4 @@
 }
 
 @end
+#endif
