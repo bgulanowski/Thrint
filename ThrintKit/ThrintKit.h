@@ -25,6 +25,8 @@
 #import <ThrintKit/TextAttributeCell.h>
 #import <ThrintKit/Thrint.h>
 
+#import <ThrintKit/NSObject+THRTableDataProviding.h>
+
 @interface ThrintKit : NSObject
 
 + (NSString *)versionString;

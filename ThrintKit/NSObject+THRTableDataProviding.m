@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
-#import "NSObject+THRTableDataProviding.h"
+#import <ThrintKit/THRGroup.h>
+
+#import <ThrintKit/NSObject+THRTableDataProviding.h>
 
 #import <BAFoundation/NSObject+BAIntrospection.h>
-
-#import "THRGroup.h"
 
 @implementation NSObject (THRItemConforming)
 

@@ -697,13 +697,13 @@
 		8460D2071ACAC49100BCBBC9 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				84523DDD1B911239000477A3 /* THRGroup.h */,
+				84523DDE1B911239000477A3 /* THRGroup.m */,
 				84523DD91B910F7D000477A3 /* THRItem.h */,
 				8460D2081ACAC4ED00BCBBC9 /* THRList.h */,
 				8460D2091ACAC4ED00BCBBC9 /* THRList.m */,
 				84BD6A621B80C5B9005C658F /* THRProperty.h */,
 				84BD6A631B80C5B9005C658F /* THRProperty.m */,
-				84523DDD1B911239000477A3 /* THRGroup.h */,
-				84523DDE1B911239000477A3 /* THRGroup.m */,
 			);
 			name = List;
 			sourceTree = "<group>";
