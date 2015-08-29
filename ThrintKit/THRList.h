@@ -14,7 +14,7 @@
 
 @protocol THRMutableList;
 
-@protocol THRList <NSObject>
+@protocol THRList <UITableViewDataSource>
 
 @property (readonly, copy) NSArray *items;
 
@@ -44,6 +44,8 @@
 @end
 
 @interface THRList : NSObject <THRList>
+- (instancetype)initWithItems:(NSArray *)items;
++ (instancetype)listWithItems:(NSArray *)items;
 @end
 
 @interface THRMutableList : THRList <THRMutableList>
@@ -52,7 +54,7 @@
 
 // THRManaged(Object)List? Move to another file?
 
-@interface THRSavedList : NSObject<THRList>
+@interface THRSavedList : THRList
 // -initWithEntityName:managedObjectContext: ?
 - (instancetype)initWithRequest:(NSFetchRequest *)request managedObjectContext:(NSManagedObjectContext *)objectContext;
 @end

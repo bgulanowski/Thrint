@@ -6,43 +6,44 @@
 //  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
-#if 0
 #import "NSObject+THRTableDataProviding.h"
 
 #import <BAFoundation/NSObject+BAIntrospection.h>
 
-@implementation NSObject (THRTableDataProviding)
+#import "THRGroup.h"
 
-- (NSString *)listRepresentation {
-    return [self description];
-}
+@implementation NSObject (THRItemConforming)
+
+#pragma mark - Class cell implementations
 
 + (Class)tableViewCellClass {
     return [UITableViewCell class];
-}
-
-- (Class)tableViewCellClass {
-    return [[self class] tableViewCellClass];
 }
 
 + (UITableViewCellStyle)tableViewCellStyle {
     return UITableViewCellStyleDefault;
 }
 
-- (UITableViewCellStyle)tableViewCellStyle {
-    return [[self class] tableViewCellStyle];
-}
-
 + (NSString *)tableViewCellReuseIdentifier {
     return @"ListDataSourceCell";
 }
 
-- (NSString *)tableViewCellReuseIdentifier {
-    return [[self class] tableViewCellReuseIdentifier];
-}
-
 + (UITableViewCell *)newCell {
     return [(UITableViewCell *)[[self tableViewCellClass] alloc] initWithStyle:[self tableViewCellStyle] reuseIdentifier:[self tableViewCellReuseIdentifier]];
+}
+
+#pragma mark - Instance cell implementations
+
+- (Class)tableViewCellClass {
+    return [[self class] tableViewCellClass];
+}
+
+- (UITableViewCellStyle)tableViewCellStyle {
+    return [[self class] tableViewCellStyle];
+}
+
+- (NSString *)tableViewCellReuseIdentifier {
+    return [[self class] tableViewCellReuseIdentifier];
 }
 
 - (UITableViewCell *)newCell {
@@ -56,8 +57,67 @@
 }
 
 - (void)configureTableViewCell:(UITableViewCell *)tableViewCell {
-    tableViewCell.textLabel.text = [self listRepresentation];
+    tableViewCell.textLabel.text = [self valueForKey:[self titlePropertyKey]];
+}
+
+#pragma mark - Properties
+
++ (NSSet *)defaultTitlePropertyKeys {
+    return [NSSet setWithArray:@[@"name", @"title"]];
+}
+
++ (NSString *)titlePropertyKey {
+    NSMutableSet *propertyNames = [NSMutableSet setWithArray:[self propertyNames]];
+    [propertyNames intersectSet:[self defaultTitlePropertyKeys]];
+    return [propertyNames anyObject];
+}
+
++ (NSArray *)valuePropertyKeys {
+    return @[];
+}
+
++ (NSArray *)optionPropertyKeys {
+    return @[];
+}
+
++ (NSArray *)connectionPropertyKeys {
+    return @[];
+}
+
++ (NSArray *)collectionPropertyKeys {
+    return [[self propertyInfo] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"valueType = %d", BAValueTypeCollection]];
+}
+
+- (NSString *)titlePropertyKey {
+    return [[self class] titlePropertyKey];
+}
+
+- (NSArray *)valuePropertyKeys {
+    return [[self class] valuePropertyKeys];
+}
+
+- (NSArray *)optionPropertyKeys {
+    return [[self class] optionPropertyKeys];
+}
+
+- (NSArray *)connectionPropertyKeys {
+    return [[self class] connectionPropertyKeys];
+}
+
+- (NSArray *)collectionPropertyKeys {
+    return [[self class] collectionPropertyKeys];
+}
+
+- (NSArray *)childItems {
+    return [[self dictionaryWithValuesForKeys:[self connectionPropertyKeys]] allValues];
+}
+
+- (NSArray *)propertyLists {
+    return @[];
+}
+
+- (THRGroup *)propertyGroup {
+    return [THRGroup groupWithLists:[self propertyLists]];
 }
 
 @end
-#endif

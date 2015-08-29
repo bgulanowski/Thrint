@@ -8,7 +8,7 @@
 
 #import "TextAttributeCell.h"
 
-#import "ThrintKit.h"
+#import <ThrintKit/ThrintKit.h>
 #import "NSManagedObject+ViewAdditions.h"
 
 #import <BAFoundation/NSManagedObject+BAAdditions.h>

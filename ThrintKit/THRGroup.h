@@ -20,7 +20,7 @@
 
 - (id<THRItem>)itemAtIndexPath:(NSIndexPath *)indexPath;
 
-- (instancetype)initWithLists:(NSArray *)lists;
+- (instancetype)initWithLists:(NSArray *)lists NS_DESIGNATED_INITIALIZER;
 + (instancetype)groupWithLists:(NSArray *)lists;
 
 @end

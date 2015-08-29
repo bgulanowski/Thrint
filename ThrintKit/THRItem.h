@@ -9,29 +9,21 @@
 #import <UIKit/UIKit.h>
 
 @class THRProperty;
+@class THRGroup;
 
 @protocol THRItem <NSObject>
 
-+ (Class)tableViewCellClass;
-+ (NSString *)tableViewCellReuseIdentifier;
-+ (UITableViewCellStyle)tableViewCellStyle;
-
-- (Class)tableViewCellClass;
-- (NSString *)tableViewCellReuseIdentifier;
-- (UITableViewCellStyle)tableViewCellStyle;
-
-+ (UITableViewCell *)newCell;
-- (UITableViewCell *)newCell;
+// Cells
 
 - (UITableViewCell *)cellForTableView:(UITableView *)tableView;
 - (void)configureTableViewCell:(UITableViewCell *)tableViewCell;
 
-+ (THRProperty *)titleProperty;
-+ (NSArray *)valueProperties;
-+ (NSArray *)optionProperties;
-+ (NSArray *)connectionProperties;
-+ (NSArray *)collectionProperties;
+// Child items
 
-@optional
 - (NSArray *)childItems;
+
+// Groups
+
+- (THRGroup *)propertyGroup;
+
 @end

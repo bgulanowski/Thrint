@@ -68,8 +68,14 @@
     return [[self objectInListsAtIndex:indexPath.section] objectInItemsAtIndex:indexPath.row];
 }
 
+#pragma mark - Initialization
+
+- (instancetype)init {
+    return [self initWithLists:@[]];
+}
+
 - (instancetype)initWithLists:(NSArray *)lists {
-    self = [self init];
+    self = [super init];
     if (self) {
         _lists = [lists mutableCopy];
     }
@@ -79,6 +85,7 @@
 + (instancetype)groupWithLists:(NSArray *)lists {
     return [[self alloc] initWithLists:lists];
 }
+
 
 @end
 

@@ -6,14 +6,40 @@
 //  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
-#if 0
 #import <Foundation/Foundation.h>
 
-#import "THRList+THRTableDataProviding.h"
+#import <ThrintKit/THRItem.h>
 
-@class THRProperty;
+@interface NSObject (THRItemConforming)<THRItem>
 
-@interface NSObject (THRTableDataProviding)<THRViewItem>
+// Cells
+
++ (Class)tableViewCellClass;
++ (NSString *)tableViewCellReuseIdentifier;
++ (UITableViewCellStyle)tableViewCellStyle;
++ (UITableViewCell *)newCell;
+
+- (Class)tableViewCellClass;
+- (NSString *)tableViewCellReuseIdentifier;
+- (UITableViewCellStyle)tableViewCellStyle;
+- (UITableViewCell *)newCell;
+
+// Properties
+
++ (NSSet *)defaultTitlePropertyKeys;
+
++ (NSString *)titlePropertyKey;
++ (NSArray *)valuePropertyKeys;
++ (NSArray *)optionPropertyKeys;
++ (NSArray *)connectionPropertyKeys;
++ (NSArray *)collectionPropertyKeys;
+
+- (NSString *)titlePropertyKey;
+- (NSArray *)valuePropertyKeys;
+- (NSArray *)optionPropertyKeys;
+- (NSArray *)connectionPropertyKeys;
+- (NSArray *)collectionPropertyKeys;
+
+- (NSArray *)propertyLists;
 
 @end
-#endif

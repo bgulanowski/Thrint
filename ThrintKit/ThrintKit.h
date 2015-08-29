@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <ThrintKit/NSObject+THRTableDataProviding.h>
-
 #import <ThrintKit/THRList.h>
-#import <ThrintKit/THRList+THRTableDataProviding.h>
 #import <ThrintKit/THRPropertyList.h>
 
 #import <ThrintKit/ListDataSource.h>

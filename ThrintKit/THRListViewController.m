@@ -17,7 +17,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithList:(NSObject<THRViewList> *)list {
+- (instancetype)initWithList:(id<THRList>)list {
     if ((self = [super init])) {
         _list = list;
     }
@@ -28,7 +28,7 @@
     return [self initWithList:[THRList listWithItems:items]];
 }
 
-+ (instancetype)listViewControllerWithList:(NSObject<THRViewList> *)list {
++ (instancetype)listViewControllerWithList:(id<THRList>)list {
     return [[self alloc] initWithList:list];
 }
 

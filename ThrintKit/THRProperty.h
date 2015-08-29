@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <ThrintKit/ThrintKit.h>
+#import <ThrintKit/THRItem.h>
 #import <BAFoundation/NSObject+BAIntrospection.h>
 
 typedef NS_ENUM(NSUInteger, THRPropertyType) {
@@ -26,20 +26,6 @@ extern THRPropertyType THRPropertyTypeForValueType(BAValueType valueType);
 
 @protocol THRDetailedItem;
 
-/*
- * Represents a list of THRProperty objects
- */
-
-@interface THRPropertyList : NSObject<THRList>
-
-@property (readonly) NSArray *properties;
-
-- (instancetype)initWithObject:(NSObject<THRDetailedItem> *)object names:(NSArray *)names;
-+ (instancetype)propertyListWithObject:(NSObject<THRDetailedItem> *)object names:(NSArray *)names;
-
-@end
-
-
 @class THRProperty;
 
 @protocol THRDetailedItem <THRItem>
@@ -56,8 +42,6 @@ extern THRPropertyType THRPropertyTypeForValueType(BAValueType valueType);
 
 + (NSArray *)propertyKeys;
 - (NSArray *)propertyKeys;
-
-- (THRPropertyList *)propertyList;
 
 @end
 

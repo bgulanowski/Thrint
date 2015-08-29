@@ -21,8 +21,36 @@
     dispatch_queue_t _queue;
 }
 
+#pragma mark - Initialization
+
 - (instancetype)init {
-    return [self initWithItems:[NSArray array]];
+    return [self initWithItems:@[]];
+}
+
+- (instancetype)initWithItems:(NSArray *)items {
+    self = [super init];
+    if (self) {
+        _items = [items mutableCopy];
+    }
+    return self;
+}
+
++ (instancetype)listWithItems:(NSArray *)items {
+    return [[self alloc] initWithItems:items];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self countOfItems];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[self objectInItemsAtIndex:indexPath.row] cellForTableView:tableView];
 }
 
 #pragma mark - THRList
@@ -105,21 +133,8 @@
     });
 }
 
-#pragma mark - Initializer
-
-- (instancetype)initWithItems:(NSArray *)items {
-    self = [super init];
-    if (self) {
-        _items = [items mutableCopy];
-    }
-    return self;
-}
-
-+ (instancetype)listWithItems:(NSArray *)items {
-    return [[self alloc] initWithItems:items];
-}
-
 @end
+
 #pragma mark -
 
 @interface THRSavedList ()

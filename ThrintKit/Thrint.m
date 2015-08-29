@@ -9,8 +9,8 @@
 #import "Thrint.h"
 
 #import "ListVC.h"
-#import "ThrintKit.h"
-#import "ThrintTableViewController.h"
+#import <ThrintKit/ThrintKit.h>
+#import <ThrintKit/ThrintTableViewController.h>
 
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 
