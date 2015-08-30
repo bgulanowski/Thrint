@@ -459,11 +459,6 @@
 		4E83161114E1A33D00123C1B /* ThrintKit */ = {
 			isa = PBXGroup;
 			children = (
-				8460D2071ACAC49100BCBBC9 /* List */,
-				8456BB841B81FB1700DEECBD /* Introspection */,
-				8452E62316179DED00DE6DF6 /* Categories */,
-				4E83162314E1A76D00123C1B /* ThrintKit.h */,
-				4E83162414E1A76D00123C1B /* ThrintKit.m */,
 				4E8316ED14E2C62800123C1B /* Classes */,
 				4E83174D14E413B200123C1B /* Resources */,
 				4E83161214E1A33D00123C1B /* Supporting Files */,
@@ -549,9 +544,16 @@
 		4E8316ED14E2C62800123C1B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84BBF67D1B9350F90033E18E /* Old */,
+				4E8316EE14E2C62F00123C1B /* Attribute Cells */,
+				8452E62316179DED00DE6DF6 /* Categories */,
+				8456BB841B81FB1700DEECBD /* Introspection */,
+				84BBF67C1B9350D60033E18E /* Detail */,
+				8460D2071ACAC49100BCBBC9 /* List */,
 				8400662F15BA02C10005A060 /* Thrint.h */,
 				4E8316A914E2C5BA00123C1B /* Thrint.m */,
-				4E8316EE14E2C62F00123C1B /* Attribute Cells */,
+				4E83162314E1A76D00123C1B /* ThrintKit.h */,
+				4E83162414E1A76D00123C1B /* ThrintKit.m */,
 				4E8316EF14E2C63700123C1B /* View Controllers */,
 			);
 			name = Classes;
@@ -702,8 +704,6 @@
 				84523DD91B910F7D000477A3 /* THRItem.h */,
 				8460D2081ACAC4ED00BCBBC9 /* THRList.h */,
 				8460D2091ACAC4ED00BCBBC9 /* THRList.m */,
-				84BD6A621B80C5B9005C658F /* THRProperty.h */,
-				84BD6A631B80C5B9005C658F /* THRProperty.m */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -714,6 +714,22 @@
 				8485681A18FC97C300914FE1 /* libBAFoundation.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		84BBF67C1B9350D60033E18E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				84BD6A621B80C5B9005C658F /* THRProperty.h */,
+				84BD6A631B80C5B9005C658F /* THRProperty.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		84BBF67D1B9350F90033E18E /* Old */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -14,6 +14,7 @@
 @interface THRGroup : NSObject <UITableViewDataSource>
 
 @property (readonly, copy) NSArray *lists;
+
 - (NSUInteger)countOfLists;
 - (id<THRList>)objectInListsAtIndex:(NSUInteger)index;
 - (NSArray *)listsAtIndexes:(NSIndexSet *)indexes;
