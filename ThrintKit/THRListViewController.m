@@ -7,7 +7,7 @@
 //
 
 #import "THRListViewController.h"
-#import <ThrintKit/THRList+THRTableDataProviding.h>
+#import "THRList.h"
 
 @interface THRListViewController ()<UITableViewDelegate>
 @property (nonatomic) UITableView *tableView;

@@ -544,7 +544,6 @@
 		4E8316ED14E2C62800123C1B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				84BBF67D1B9350F90033E18E /* Old */,
 				4E8316EE14E2C62F00123C1B /* Attribute Cells */,
 				8452E62316179DED00DE6DF6 /* Categories */,
 				8456BB841B81FB1700DEECBD /* Introspection */,
@@ -723,13 +722,6 @@
 				84BD6A631B80C5B9005C658F /* THRProperty.m */,
 			);
 			name = Detail;
-			sourceTree = "<group>";
-		};
-		84BBF67D1B9350F90033E18E /* Old */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Old;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

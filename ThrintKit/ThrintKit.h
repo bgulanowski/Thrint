@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import <ThrintKit/THRList.h>
-#import <ThrintKit/THRPropertyList.h>
+#import <ThrintKit/THRProperty.h>
 
 #import <ThrintKit/ListDataSource.h>
 #import <ThrintKit/EntityListDataSource.h>
