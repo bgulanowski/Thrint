@@ -18,7 +18,7 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithList:(id<THRList>)list {
-    if ((self = [super init])) {
+    if ((self = [super initWithNibName:nil bundle:nil])) {
         _list = list;
     }
     return self;
@@ -26,6 +26,14 @@
 
 - (instancetype)initWithItems:(NSArray *)items {
     return [self initWithList:[THRList listWithItems:items]];
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    return [self initWithList:nil];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    return [self initWithList:nil];
 }
 
 + (instancetype)listViewControllerWithList:(id<THRList>)list {
