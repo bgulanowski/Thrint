@@ -47,11 +47,11 @@
 
 @interface _ProductNote (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveDetails;
-- (void)setPrimitiveDetails:(NSString*)value;
+- (NSString *)primitiveDetails;
+- (void)setPrimitiveDetails:(NSString *)value;
 
-- (NSString*)primitiveTitle;
-- (void)setPrimitiveTitle:(NSString*)value;
+- (NSString *)primitiveTitle;
+- (void)setPrimitiveTitle:(NSString *)value;
 
 
 - (Product*)primitiveProduct;

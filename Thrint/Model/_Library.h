@@ -48,8 +48,8 @@
 
 @interface _Library (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (NSString *)primitiveName;
+- (void)setPrimitiveName:(NSString *)value;
 
 
 - (NSMutableSet*)primitiveDependents;

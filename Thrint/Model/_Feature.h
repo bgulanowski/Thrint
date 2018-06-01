@@ -63,11 +63,11 @@
 
 @interface _Feature (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveDetails;
-- (void)setPrimitiveDetails:(NSString*)value;
+- (NSString *)primitiveDetails;
+- (void)setPrimitiveDetails:(NSString *)value;
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (NSString *)primitiveName;
+- (void)setPrimitiveName:(NSString *)value;
 
 
 - (Component*)primitiveComponent;

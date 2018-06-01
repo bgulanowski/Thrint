@@ -67,16 +67,16 @@
 
 @interface _Developer (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSNumber*)primitiveActive;
-- (void)setPrimitiveActive:(NSNumber*)value;
+- (NSNumber *)primitiveActive;
+- (void)setPrimitiveActive:(NSNumber *)value;
 - (BOOL)primitiveActiveValue;
 - (void)setPrimitiveActiveValue:(BOOL)value_;
 
-- (NSDate*)primitiveJoinDate;
-- (void)setPrimitiveJoinDate:(NSDate*)value;
+- (NSDate *)primitiveJoinDate;
+- (void)setPrimitiveJoinDate:(NSDate *)value;
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (NSString *)primitiveName;
+- (void)setPrimitiveName:(NSString *)value;
 
 
 - (NSMutableSet*)primitiveFeatures;

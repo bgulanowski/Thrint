@@ -83,26 +83,26 @@
 
 @interface _Product (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveCode;
-- (void)setPrimitiveCode:(NSString*)value;
+- (NSString *)primitiveCode;
+- (void)setPrimitiveCode:(NSString *)value;
 
-- (NSDate*)primitiveDueDate;
-- (void)setPrimitiveDueDate:(NSDate*)value;
+- (NSDate *)primitiveDueDate;
+- (void)setPrimitiveDueDate:(NSDate *)value;
 
-- (NSData*)primitiveImageData;
-- (void)setPrimitiveImageData:(NSData*)value;
+- (NSData *)primitiveImageData;
+- (void)setPrimitiveImageData:(NSData *)value;
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (NSString *)primitiveName;
+- (void)setPrimitiveName:(NSString *)value;
 
-- (NSString*)primitiveOther;
-- (void)setPrimitiveOther:(NSString*)value;
+- (NSString *)primitiveOther;
+- (void)setPrimitiveOther:(NSString *)value;
 
-- (NSString*)primitiveOtherTitle;
-- (void)setPrimitiveOtherTitle:(NSString*)value;
+- (NSString *)primitiveOtherTitle;
+- (void)setPrimitiveOtherTitle:(NSString *)value;
 
-- (NSDate*)primitiveStartDate;
-- (void)setPrimitiveStartDate:(NSDate*)value;
+- (NSDate *)primitiveStartDate;
+- (void)setPrimitiveStartDate:(NSDate *)value;
 
 
 - (NSMutableSet*)primitiveComponents;

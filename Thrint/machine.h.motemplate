@@ -30,7 +30,7 @@
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 - (<$managedObjectClassName$>ID*)objectID;
 <$foreach Attribute noninheritedAttributes do$><$if Attribute.hasDefinedAttributeType$>
-@property (nonatomic, retain) <$Attribute.objectAttributeType$> *<$Attribute.name$>;<$if Attribute.hasScalarAttributeType$>
+@property (nonatomic, retain) <$Attribute.objectAttributeType$><$Attribute.name$>;<$if Attribute.hasScalarAttributeType$>
 @property <$Attribute.scalarAttributeType$> <$Attribute.name$>Value;
 - (<$Attribute.scalarAttributeType$>)<$Attribute.name$>Value;
 - (void)set<$Attribute.name.initialCapitalString$>Value:(<$Attribute.scalarAttributeType$>)value_;<$endif$>
@@ -60,8 +60,8 @@
 
 @interface _<$managedObjectClassName$> (CoreDataGeneratedPrimitiveAccessors)
 <$foreach Attribute noninheritedAttributes do$><$if Attribute.hasDefinedAttributeType$>
-- (<$Attribute.objectAttributeType$>*)primitive<$Attribute.name.initialCapitalString$>;
-- (void)setPrimitive<$Attribute.name.initialCapitalString$>:(<$Attribute.objectAttributeType$>*)value;<$if Attribute.hasScalarAttributeType$>
+- (<$Attribute.objectAttributeType$>)primitive<$Attribute.name.initialCapitalString$>;
+- (void)setPrimitive<$Attribute.name.initialCapitalString$>:(<$Attribute.objectAttributeType$>)value;<$if Attribute.hasScalarAttributeType$>
 - (<$Attribute.scalarAttributeType$>)primitive<$Attribute.name.initialCapitalString$>Value;
 - (void)setPrimitive<$Attribute.name.initialCapitalString$>Value:(<$Attribute.scalarAttributeType$>)value_;<$endif$>
 <$endif$><$endforeach do$>

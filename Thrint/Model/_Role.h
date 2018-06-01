@@ -58,11 +58,11 @@
 
 @interface _Role (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (NSString *)primitiveName;
+- (void)setPrimitiveName:(NSString *)value;
 
-- (NSNumber*)primitiveUnique;
-- (void)setPrimitiveUnique:(NSNumber*)value;
+- (NSNumber *)primitiveUnique;
+- (void)setPrimitiveUnique:(NSNumber *)value;
 - (BOOL)primitiveUniqueValue;
 - (void)setPrimitiveUniqueValue:(BOOL)value_;
 

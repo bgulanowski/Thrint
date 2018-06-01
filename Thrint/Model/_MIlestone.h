@@ -52,11 +52,11 @@
 
 @interface _Milestone (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSDate*)primitiveDueDate;
-- (void)setPrimitiveDueDate:(NSDate*)value;
+- (NSDate *)primitiveDueDate;
+- (void)setPrimitiveDueDate:(NSDate *)value;
 
-- (NSString*)primitiveVersion;
-- (void)setPrimitiveVersion:(NSString*)value;
+- (NSString *)primitiveVersion;
+- (void)setPrimitiveVersion:(NSString *)value;
 
 
 - (NSMutableSet*)primitiveFeatures;
