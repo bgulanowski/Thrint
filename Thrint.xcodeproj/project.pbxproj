@@ -141,6 +141,13 @@
 			remoteGlobalIDString = 4EAB349B14D9D57C0038B6CC;
 			remoteInfo = ThrintKit;
 		};
+		84EA2D5E20C1E8B500FA08A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84EA2D5220C1D7B500FA08A6 /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B6AAB6CA14C21B9A0007A0A4;
+			remoteInfo = BAFoundation;
+		};
 		84F247641AE12DF100D3C499 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4E821723147BFFB300295D45 /* Project object */;
@@ -655,6 +662,14 @@
 			name = Detail;
 			sourceTree = "<group>";
 		};
+		84EA2D5B20C1E8B500FA08A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84EA2D5F20C1E8B500FA08A6 /* libBAFoundation.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -771,6 +786,12 @@
 			mainGroup = 4E821721147BFFB300295D45;
 			productRefGroup = 4E82172D147BFFB300295D45 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 84EA2D5B20C1E8B500FA08A6 /* Products */;
+					ProjectRef = 84EA2D5220C1D7B500FA08A6 /* BAFoundation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4E82172B147BFFB300295D45 /* Thrint */,
@@ -780,6 +801,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		84EA2D5F20C1E8B500FA08A6 /* libBAFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBAFoundation.a;
+			remoteRef = 84EA2D5E20C1E8B500FA08A6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4E82172A147BFFB300295D45 /* Resources */ = {
