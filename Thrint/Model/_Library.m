@@ -12,7 +12,7 @@
 }
 
 - (Library *)insertLibrary {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Library" inManagedObjectContext:self];
+	return (Library *)[NSEntityDescription insertNewObjectForEntityForName:@"Library" inManagedObjectContext:self];
 }
 
 @end

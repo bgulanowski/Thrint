@@ -12,7 +12,7 @@
 }
 
 - (Role *)insertRole {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Role" inManagedObjectContext:self];
+	return (Role *)[NSEntityDescription insertNewObjectForEntityForName:@"Role" inManagedObjectContext:self];
 }
 
 @end

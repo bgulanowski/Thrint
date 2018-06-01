@@ -12,7 +12,7 @@
 }
 
 - (ProductNote *)insertProductNote {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"ProductNote" inManagedObjectContext:self];
+	return (ProductNote *)[NSEntityDescription insertNewObjectForEntityForName:@"ProductNote" inManagedObjectContext:self];
 }
 
 @end

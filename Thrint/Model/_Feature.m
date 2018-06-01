@@ -12,7 +12,7 @@
 }
 
 - (Feature *)insertFeature {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Feature" inManagedObjectContext:self];
+	return (Feature *)[NSEntityDescription insertNewObjectForEntityForName:@"Feature" inManagedObjectContext:self];
 }
 
 @end

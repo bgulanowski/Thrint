@@ -12,7 +12,7 @@
 }
 
 - (Component *)insertComponent {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Component" inManagedObjectContext:self];
+	return (Component *)[NSEntityDescription insertNewObjectForEntityForName:@"Component" inManagedObjectContext:self];
 }
 
 @end

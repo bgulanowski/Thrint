@@ -12,7 +12,7 @@
 }
 
 - (Team *)insertTeam {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Team" inManagedObjectContext:self];
+	return (Team *)[NSEntityDescription insertNewObjectForEntityForName:@"Team" inManagedObjectContext:self];
 }
 
 @end

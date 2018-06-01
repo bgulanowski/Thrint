@@ -12,7 +12,7 @@
 }
 
 - (Developer *)insertDeveloper {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Developer" inManagedObjectContext:self];
+	return (Developer *)[NSEntityDescription insertNewObjectForEntityForName:@"Developer" inManagedObjectContext:self];
 }
 
 @end

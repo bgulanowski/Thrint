@@ -12,7 +12,7 @@
 }
 
 - (<$managedObjectClassName$> *)insert<$managedObjectClassName$> {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"<$name$>" inManagedObjectContext:self];
+	return (<$managedObjectClassName$> *)[NSEntityDescription insertNewObjectForEntityForName:@"<$name$>" inManagedObjectContext:self];
 }
 
 @end

@@ -12,7 +12,7 @@
 }
 
 - (Milestone *)insertMilestone {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Milestone" inManagedObjectContext:self];
+	return (Milestone *)[NSEntityDescription insertNewObjectForEntityForName:@"Milestone" inManagedObjectContext:self];
 }
 
 @end

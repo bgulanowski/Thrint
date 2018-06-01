@@ -12,7 +12,7 @@
 }
 
 - (Test *)insertTest {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Test" inManagedObjectContext:self];
+	return (Test *)[NSEntityDescription insertNewObjectForEntityForName:@"Test" inManagedObjectContext:self];
 }
 
 @end
