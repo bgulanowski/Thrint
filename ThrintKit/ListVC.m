@@ -119,7 +119,7 @@
         [self synchronizeSelectionWithDetailView];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotate {
     return YES;
 }
 

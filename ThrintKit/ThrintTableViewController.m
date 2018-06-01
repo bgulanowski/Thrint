@@ -17,7 +17,7 @@
 
 @synthesize thrint=_thrint, entityNames=_entityNames;
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotate {
     return YES;
 }
 
