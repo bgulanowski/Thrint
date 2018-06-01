@@ -71,6 +71,7 @@
 #pragma mark - NSNibAwaking
 - (void)awakeFromNib {
     [_textField addTarget:self action:@selector(update:) forControlEvents:UIControlEventEditingDidEnd];
+    [super awakeFromNib];
 }
 
 

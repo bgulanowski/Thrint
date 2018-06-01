@@ -173,7 +173,7 @@
 - (UIStoryboard *)thrintStoryboard {
     dispatch_once(&_thrintStoryBoardToken, ^{
         @try {
-            _thrintStoryboard = [UIStoryboard storyboardWithName:[[self class] storyboardName] bundle:[ThrintKit resourceBundle]];
+            self->_thrintStoryboard = [UIStoryboard storyboardWithName:[[self class] storyboardName] bundle:[ThrintKit resourceBundle]];
         }
         @catch (NSException *exception) {
         }
