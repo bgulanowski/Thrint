@@ -46,9 +46,7 @@
     self = [super initWithStoreURL:url];
     if(self) {
         [self.context makeActive];
-        self.rootEntityNames = entityNames;
-        if(![entityNames count])
-            self.rootEntityNames = [[[[self.context persistentStoreCoordinator] managedObjectModel] entitiesByName] allKeys];
+        self.rootEntityNames = entityNames ?: self.context.entityNames;
     }
     return self;
 }
@@ -59,8 +57,8 @@
 
 - (ListVC *)configureListViewController:(ListVC *)listVC forEntityNamed:(NSString *)entityName {
     
-    NSString *title = _delegateTitles ? [_delegate titleForEntity:entityName] ?: entityName : entityName;
-    UIImage *image = _delegateImages ? [UIImage imageNamed:[_delegate imageNameForEntity:entityName]] : nil;
+    NSString *title = [self titleForEntityNamed:entityName];
+    UIImage *image = [self imageForEntityNamed:entityName];
     
     listVC.navigationItem.title = title;
     listVC.allowEditing = YES;
@@ -68,6 +66,18 @@
     listVC.dataSource = [[EntityListDataSource alloc] initWithManagedObjectContext:self.context entityName:entityName predicate:nil];
 
     return listVC;
+}
+
+- (NSString *)titleForEntityNamed:(NSString *)entityName {
+    return [self delegateTitleForEntityNamed:entityName] ?: entityName;
+}
+
+- (NSString *)delegateTitleForEntityNamed:(NSString *)entityName {
+    return _delegateTitles ? [_delegate titleForEntity:entityName] : entityName;
+}
+
+- (UIImage *)imageForEntityNamed:(NSString *)entityName {
+    return _delegateImages ? [UIImage imageNamed:[_delegate imageNameForEntity:entityName]] : nil;;
 }
 
 - (UISplitViewController *)splitViewControllerForEntityNamed:(NSString *)entityName {
@@ -96,10 +106,13 @@
     NSString *className = [entityName stringByAppendingString:@"ListVC"];
     Class listVCClass = NSClassFromString(className) ?: [ListVC class];
     
-    EntityListDataSource *datasource = [[EntityListDataSource alloc] initWithManagedObjectContext:self.context entityName:entityName predicate:nil];
-    ListVC *listVC = [[listVCClass alloc] initWithDataSource:datasource];
+    ListVC *listVC = [[listVCClass alloc] initWithDataSource:[self dataSourceForEntityNamed:entityName]];
     
     return [self configureListViewController:listVC forEntityNamed:entityName];
+}
+
+- (EntityListDataSource *)dataSourceForEntityNamed:(NSString *)entityName {
+    return [[EntityListDataSource alloc] initWithManagedObjectContext:self.context entityName:entityName predicate:nil];
 }
 
 - (UITabBarController *)rootTabBarController {
