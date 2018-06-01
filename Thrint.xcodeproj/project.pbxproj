@@ -119,6 +119,8 @@
 		84BD6A641B80C5B9005C658F /* THRProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 84BD6A621B80C5B9005C658F /* THRProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84BD6A651B80C5B9005C658F /* THRProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD6A631B80C5B9005C658F /* THRProperty.m */; };
 		84EA2D4D20C196E600FA08A6 /* Thrint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2D4B20C196E600FA08A6 /* Thrint.xcdatamodeld */; };
+		84EA2D4E20C19FC600FA08A6 /* EntityBrowser~ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser~ipad.storyboard */; };
+		84EA2D4F20C19FC900FA08A6 /* EntityBrowser~iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */; };
 		84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
 		84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */; };
@@ -900,12 +902,14 @@
 				84F4761715C1E7960015D59C /* TextAttributeCell~ipad.xib in Resources */,
 				4E82173B147BFFB300295D45 /* InfoPlist.strings in Resources */,
 				4EE47F14147EF2E7006C4795 /* icon_user.png in Resources */,
+				84EA2D4F20C19FC900FA08A6 /* EntityBrowser~iphone.storyboard in Resources */,
 				84B3D3F91909F47000DA15B5 /* Images.xcassets in Resources */,
 				8419ECD41A059A23004D4906 /* BooleanAttributeCell~iphone.xib in Resources */,
 				4EE47F15147EF2E7006C4795 /* icon_users.png in Resources */,
 				4EE47F17147EF2F3006C4795 /* icon_settings.png in Resources */,
 				4EE47F19147EF311006C4795 /* icon_document.png in Resources */,
 				84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */,
+				84EA2D4E20C19FC600FA08A6 /* EntityBrowser~ipad.storyboard in Resources */,
 				4E83162814E1AE3B00123C1B /* Configuration.plist in Resources */,
 				8461A89216174945009FE5C5 /* Localizable.strings in Resources */,
 			);

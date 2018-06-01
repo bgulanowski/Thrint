@@ -172,10 +172,9 @@
 
 - (UIStoryboard *)thrintStoryboard {
     dispatch_once(&_thrintStoryBoardToken, ^{
-        @try {
-            self->_thrintStoryboard = [UIStoryboard storyboardWithName:[[self class] storyboardName] bundle:[ThrintKit resourceBundle]];
-        }
-        @catch (NSException *exception) {
+        NSBundle *bundle = [ThrintKit resourceBundle] ?: [NSBundle mainBundle];
+        if (bundle) {
+            self->_thrintStoryboard = [UIStoryboard storyboardWithName:[[self class] storyboardName] bundle:bundle];
         }
     });
     
