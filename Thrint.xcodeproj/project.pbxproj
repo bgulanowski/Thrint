@@ -1210,7 +1210,10 @@
 				DSTROOT = /tmp/thrint.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/$(PRODUCT_NAME)-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(CONFIGURATION_BUILD_DIR)/usr/local/include",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = include/ThrintKit;
@@ -1224,7 +1227,10 @@
 				DSTROOT = /tmp/thrint.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(TARGET_NAME)/$(PRODUCT_NAME)-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(CONFIGURATION_BUILD_DIR)/usr/local/include",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = include/ThrintKit;
