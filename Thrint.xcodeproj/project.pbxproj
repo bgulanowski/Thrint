@@ -37,7 +37,6 @@
 		4E8316E514E2C5BA00123C1B /* TextAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A714E2C5BA00123C1B /* TextAttributeCell.m */; };
 		4E8316E714E2C5BA00123C1B /* Thrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A914E2C5BA00123C1B /* Thrint.m */; };
 		4E8316EA14E2C5BA00123C1B /* ThrintTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */; };
-		4E8316FA14E2C8E800123C1B /* Thrint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316F714E2C8E800123C1B /* Thrint.xcdatamodeld */; };
 		4E8316FC14E2E5E000123C1B /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168D14E2C5BA00123C1B /* Component.m */; };
 		4E8316FD14E2E5E000123C1B /* Developer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168F14E2C5BA00123C1B /* Developer.m */; };
 		4E8316FE14E2E5E000123C1B /* Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83169114E2C5BA00123C1B /* Feature.m */; };
@@ -119,6 +118,7 @@
 		84B3D3F91909F47000DA15B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B3D3F81909F47000DA15B5 /* Images.xcassets */; };
 		84BD6A641B80C5B9005C658F /* THRProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 84BD6A621B80C5B9005C658F /* THRProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84BD6A651B80C5B9005C658F /* THRProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD6A631B80C5B9005C658F /* THRProperty.m */; };
+		84EA2D4D20C196E600FA08A6 /* Thrint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2D4B20C196E600FA08A6 /* Thrint.xcdatamodeld */; };
 		84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
 		84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */; };
@@ -292,11 +292,10 @@
 		4E8316A714E2C5BA00123C1B /* TextAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextAttributeCell.m; sourceTree = "<group>"; };
 		4E8316A914E2C5BA00123C1B /* Thrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thrint.m; sourceTree = "<group>"; };
 		4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrintTableViewController.m; sourceTree = "<group>"; };
-		4E8316F814E2C8E800123C1B /* Thrint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thrint.xcdatamodel; sourceTree = "<group>"; };
-		4E83171514E2FBD200123C1B /* human.h.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = human.h.motemplate; sourceTree = "<group>"; };
-		4E83171614E2FBD300123C1B /* human.m.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = human.m.motemplate; sourceTree = "<group>"; };
-		4E83171714E2FBD500123C1B /* machine.h.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = machine.h.motemplate; sourceTree = "<group>"; };
-		4E83171814E2FBD700123C1B /* machine.m.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = machine.m.motemplate; sourceTree = "<group>"; };
+		4E83171514E2FBD200123C1B /* human.h.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; name = human.h.motemplate; path = ../human.h.motemplate; sourceTree = "<group>"; };
+		4E83171614E2FBD300123C1B /* human.m.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; name = human.m.motemplate; path = ../human.m.motemplate; sourceTree = "<group>"; };
+		4E83171714E2FBD500123C1B /* machine.h.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; name = machine.h.motemplate; path = ../machine.h.motemplate; sourceTree = "<group>"; };
+		4E83171814E2FBD700123C1B /* machine.m.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; name = machine.m.motemplate; path = ../machine.m.motemplate; sourceTree = "<group>"; };
 		4E9778A8150D21EE0096EDBD /* ImageAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAttributeCell.m; sourceTree = "<group>"; };
 		4EA237C4147C022500E69862 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4EA23818147C36D900E69862 /* DashboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardVC.h; sourceTree = "<group>"; };
@@ -349,6 +348,7 @@
 		84B3D3F81909F47000DA15B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84BD6A621B80C5B9005C658F /* THRProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRProperty.h; sourceTree = "<group>"; };
 		84BD6A631B80C5B9005C658F /* THRProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRProperty.m; sourceTree = "<group>"; };
+		84EA2D4C20C196E600FA08A6 /* Thrint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thrint.xcdatamodel; sourceTree = "<group>"; };
 		84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TextAttributeCell~iphone.xib"; sourceTree = "<group>"; };
 		84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+ThrintAdditions.h"; sourceTree = "<group>"; };
 		84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ThrintAdditions.m"; sourceTree = "<group>"; };
@@ -510,7 +510,6 @@
 				4E83168B14E2C5BA00123C1B /* _Test.m */,
 			);
 			name = Machine;
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4E8316EC14E2C60F00123C1B /* Human */ = {
@@ -538,7 +537,6 @@
 				4E83169F14E2C5BA00123C1B /* Test.m */,
 			);
 			name = Human;
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4E8316ED14E2C62800123C1B /* Classes */ = {
@@ -599,12 +597,12 @@
 		4E8316FB14E2E58200123C1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4E8316F714E2C8E800123C1B /* Thrint.xcdatamodeld */,
+				84EA2D4B20C196E600FA08A6 /* Thrint.xcdatamodeld */,
 				4E8316EC14E2C60F00123C1B /* Human */,
 				4E8316EB14E2C5CA00123C1B /* Machine */,
 				4E83174C14E4137900123C1B /* Templates (not part of target) */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4E83174C14E4137900123C1B /* Templates (not part of target) */ = {
@@ -964,6 +962,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EA2D4D20C196E600FA08A6 /* Thrint.xcdatamodeld in Sources */,
 				4E83170C14E2E5FF00123C1B /* _ProductNote.m in Sources */,
 				4E83170D14E2E5FF00123C1B /* _Role.m in Sources */,
 				4E83170E14E2E5FF00123C1B /* _Team.m in Sources */,
@@ -986,7 +985,6 @@
 				4E83170214E2E5E000123C1B /* ProductNote.m in Sources */,
 				4E82173D147BFFB300295D45 /* main.m in Sources */,
 				4E821741147BFFB300295D45 /* AppDelegate.m in Sources */,
-				4E8316FA14E2C8E800123C1B /* Thrint.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1369,13 +1367,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4E8316F714E2C8E800123C1B /* Thrint.xcdatamodeld */ = {
+		84EA2D4B20C196E600FA08A6 /* Thrint.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4E8316F814E2C8E800123C1B /* Thrint.xcdatamodel */,
+				84EA2D4C20C196E600FA08A6 /* Thrint.xcdatamodel */,
 			);
-			currentVersion = 4E8316F814E2C8E800123C1B /* Thrint.xcdatamodel */;
-			path = Thrint.xcdatamodeld;
+			currentVersion = 84EA2D4C20C196E600FA08A6 /* Thrint.xcdatamodel */;
+			name = Thrint.xcdatamodeld;
+			path = ../Thrint.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
