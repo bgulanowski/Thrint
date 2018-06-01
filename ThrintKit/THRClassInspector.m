@@ -9,10 +9,10 @@
 #import "THRClassInspector.h"
 
 #import <BAFoundation/NSObject+BAIntrospection.h>
-#import <MAObjcRuntime_iOS/RTIvar.h>
-#import <MAObjcRuntime_iOS/RTProperty.h>
-#import <MAObjcRuntime_iOS/RTMethod.h>
-#import <MAObjcRuntime_iOS/MARTNSObject.h>
+#import <RTIvar.h>
+#import <RTProperty.h>
+#import <RTMethod.h>
+#import <MARTNSObject.h>
 
 #define SelectorString(_selector) NSStringFromSelector( @selector(_selector) )
 
