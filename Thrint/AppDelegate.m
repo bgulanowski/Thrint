@@ -21,7 +21,7 @@
 #import "Role.h"
 #import "Team.h"
 
-#import <BAFoundation/NSManagedObjectContext+BAadditions.h>
+#import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 
 
 @implementation AppDelegate

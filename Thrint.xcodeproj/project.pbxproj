@@ -51,7 +51,7 @@
 		4E83170714E2E5F400123C1B /* _Developer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83167B14E2C5BA00123C1B /* _Developer.m */; };
 		4E83170814E2E5F400123C1B /* _Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83167D14E2C5BA00123C1B /* _Feature.m */; };
 		4E83170914E2E5F400123C1B /* _Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83167F14E2C5BA00123C1B /* _Library.m */; };
-		4E83170A14E2E5F400123C1B /* _MIlestone.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168114E2C5BA00123C1B /* _MIlestone.m */; };
+		4E83170A14E2E5F400123C1B /* _Milestone.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168114E2C5BA00123C1B /* _Milestone.m */; };
 		4E83170B14E2E5F400123C1B /* _Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168314E2C5BA00123C1B /* _Product.m */; };
 		4E83170C14E2E5FF00123C1B /* _ProductNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168514E2C5BA00123C1B /* _ProductNote.m */; };
 		4E83170D14E2E5FF00123C1B /* _Role.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168714E2C5BA00123C1B /* _Role.m */; };
@@ -256,8 +256,8 @@
 		4E83167D14E2C5BA00123C1B /* _Feature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Feature.m; sourceTree = "<group>"; };
 		4E83167E14E2C5BA00123C1B /* _Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Library.h; sourceTree = "<group>"; };
 		4E83167F14E2C5BA00123C1B /* _Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Library.m; sourceTree = "<group>"; };
-		4E83168014E2C5BA00123C1B /* _MIlestone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MIlestone.h; sourceTree = "<group>"; };
-		4E83168114E2C5BA00123C1B /* _MIlestone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MIlestone.m; sourceTree = "<group>"; };
+		4E83168014E2C5BA00123C1B /* _Milestone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Milestone.h; sourceTree = "<group>"; };
+		4E83168114E2C5BA00123C1B /* _Milestone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Milestone.m; sourceTree = "<group>"; };
 		4E83168214E2C5BA00123C1B /* _Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Product.h; sourceTree = "<group>"; };
 		4E83168314E2C5BA00123C1B /* _Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Product.m; sourceTree = "<group>"; };
 		4E83168414E2C5BA00123C1B /* _ProductNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _ProductNote.h; sourceTree = "<group>"; };
@@ -496,8 +496,8 @@
 				4E83167D14E2C5BA00123C1B /* _Feature.m */,
 				4E83167E14E2C5BA00123C1B /* _Library.h */,
 				4E83167F14E2C5BA00123C1B /* _Library.m */,
-				4E83168014E2C5BA00123C1B /* _MIlestone.h */,
-				4E83168114E2C5BA00123C1B /* _MIlestone.m */,
+				4E83168014E2C5BA00123C1B /* _Milestone.h */,
+				4E83168114E2C5BA00123C1B /* _Milestone.m */,
 				4E83168214E2C5BA00123C1B /* _Product.h */,
 				4E83168314E2C5BA00123C1B /* _Product.m */,
 				4E83168414E2C5BA00123C1B /* _ProductNote.h */,
@@ -971,7 +971,7 @@
 				4E83170714E2E5F400123C1B /* _Developer.m in Sources */,
 				4E83170814E2E5F400123C1B /* _Feature.m in Sources */,
 				4E83170914E2E5F400123C1B /* _Library.m in Sources */,
-				4E83170A14E2E5F400123C1B /* _MIlestone.m in Sources */,
+				4E83170A14E2E5F400123C1B /* _Milestone.m in Sources */,
 				4E83170B14E2E5F400123C1B /* _Product.m in Sources */,
 				4E83170314E2E5EA00123C1B /* Role.m in Sources */,
 				4E83170414E2E5EA00123C1B /* Team.m in Sources */,
