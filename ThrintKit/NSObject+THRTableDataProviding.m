@@ -11,6 +11,7 @@
 #import <ThrintKit/NSObject+THRTableDataProviding.h>
 
 #import <BAFoundation/NSObject+BAIntrospection.h>
+#import <BAFoundation/NSManagedObject+BAAdditions.h>
 
 @implementation NSObject (THRItemConforming)
 
@@ -57,7 +58,10 @@
 }
 
 - (void)configureTableViewCell:(UITableViewCell *)tableViewCell {
-    tableViewCell.textLabel.text = [self valueForKey:[self titlePropertyKey]];
+    NSString *key = [self titlePropertyKey];
+    if (key) {
+        tableViewCell.textLabel.text = [self valueForKey:key];
+    }
 }
 
 #pragma mark - Properties
@@ -118,6 +122,18 @@
 
 - (THRGroup *)propertyGroup {
     return [THRGroup groupWithLists:[self propertyLists]];
+}
+
+@end
+
+#pragma mark -
+
+@implementation NSManagedObject (THRItemConforming)
+
+- (NSString *)titlePropertyKey {
+    NSMutableSet *set = [NSMutableSet setWithArray:[self attributeNames]];
+    [set intersectSet:[[self class] defaultTitlePropertyKeys]];
+    return [set anyObject];
 }
 
 @end
