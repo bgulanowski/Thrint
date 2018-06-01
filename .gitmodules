@@ -1,6 +1,3 @@
 [submodule "BAFoundation"]
 	path = BAFoundation
 	url = git@github.com:bgulanowski/BAFoundation.git
-[submodule "MAObjCRuntime"]
-	path = MAObjCRuntime
-	url = https://github.com/mikeash/MAObjCRuntime.git

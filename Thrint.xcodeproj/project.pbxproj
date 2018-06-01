@@ -103,7 +103,6 @@
 		84523DDF1B911239000477A3 /* THRGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 84523DDD1B911239000477A3 /* THRGroup.h */; };
 		84523DE01B911239000477A3 /* THRGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 84523DDE1B911239000477A3 /* THRGroup.m */; };
 		8452E6271617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = 8452E6251617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8456BB7F1B81FAA700DEECBD /* libMAObjCRuntime_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8456BB7A1B81FA8C00DEECBD /* libMAObjCRuntime_iOS.a */; };
 		8456BB821B81FB0900DEECBD /* THRClassInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 8456BB801B81FB0900DEECBD /* THRClassInspector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8456BB831B81FB0900DEECBD /* THRClassInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 8456BB811B81FB0900DEECBD /* THRClassInspector.m */; };
 		8460D20A1ACAC4ED00BCBBC9 /* THRList.h in Headers */ = {isa = PBXBuildFile; fileRef = 8460D2081ACAC4ED00BCBBC9 /* THRList.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -135,34 +134,6 @@
 			remoteGlobalIDString = 4EAB349B14D9D57C0038B6CC;
 			remoteInfo = ThrintKit;
 		};
-		8456BB771B81FA8C00DEECBD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8456BB711B81FA8C00DEECBD /* MAObjCRuntime.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E;
-			remoteInfo = MAObjCRuntime;
-		};
-		8456BB791B81FA8C00DEECBD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8456BB711B81FA8C00DEECBD /* MAObjCRuntime.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 22A07AE215241A3B008A2A36;
-			remoteInfo = MAObjCRuntime_iOS;
-		};
-		8456BB7B1B81FA8C00DEECBD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8456BB711B81FA8C00DEECBD /* MAObjCRuntime.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 22A07AF115241A3B008A2A36;
-			remoteInfo = MAObjCRuntime_iOSTests;
-		};
-		8456BB7D1B81FA9E00DEECBD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8456BB711B81FA8C00DEECBD /* MAObjCRuntime.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 22A07AE115241A3B008A2A36;
-			remoteInfo = MAObjCRuntime_iOS;
-		};
 		8485681918FC97C300914FE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */;
@@ -183,13 +154,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4EAB349B14D9D57C0038B6CC;
 			remoteInfo = ThrintKit;
-		};
-		84E1B58D1B82116E00BD1216 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8456BB711B81FA8C00DEECBD /* MAObjCRuntime.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 22A07AE115241A3B008A2A36;
-			remoteInfo = MAObjCRuntime_iOS;
 		};
 		84F247641AE12DF100D3C499 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -337,7 +301,6 @@
 		84523DDE1B911239000477A3 /* THRGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRGroup.m; sourceTree = "<group>"; };
 		8452E6251617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+THRTableDataProviding.h"; sourceTree = "<group>"; };
 		8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+THRTableDataProviding.m"; sourceTree = "<group>"; };
-		8456BB711B81FA8C00DEECBD /* MAObjCRuntime.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MAObjCRuntime.xcodeproj; path = MAObjCRuntime/xcode/MAObjCRuntime.xcodeproj; sourceTree = "<group>"; };
 		8456BB801B81FB0900DEECBD /* THRClassInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRClassInspector.h; sourceTree = "<group>"; };
 		8456BB811B81FB0900DEECBD /* THRClassInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRClassInspector.m; sourceTree = "<group>"; };
 		8460D2081ACAC4ED00BCBBC9 /* THRList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRList.h; sourceTree = "<group>"; };
@@ -365,7 +328,6 @@
 			files = (
 				8485682918FCB62800914FE1 /* libz.dylib in Frameworks */,
 				8485682218FC982200914FE1 /* libBAFoundation.a in Frameworks */,
-				8456BB7F1B81FAA700DEECBD /* libMAObjCRuntime_iOS.a in Frameworks */,
 				8485682118FC982200914FE1 /* libThrintKit.a in Frameworks */,
 				4EA237C5147C022500E69862 /* CoreData.framework in Frameworks */,
 				4E821731147BFFB300295D45 /* UIKit.framework in Frameworks */,
@@ -398,7 +360,6 @@
 			isa = PBXGroup;
 			children = (
 				848D1DC51B8DD61E0020A710 /* README.md */,
-				8456BB711B81FA8C00DEECBD /* MAObjCRuntime.xcodeproj */,
 				8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */,
 				4E821736147BFFB300295D45 /* Thrint */,
 				4E83161114E1A33D00123C1B /* ThrintKit */,
@@ -676,16 +637,6 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		8456BB721B81FA8C00DEECBD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8456BB781B81FA8C00DEECBD /* MAObjCRuntime */,
-				8456BB7A1B81FA8C00DEECBD /* libMAObjCRuntime_iOS.a */,
-				8456BB7C1B81FA8C00DEECBD /* MAObjCRuntime_iOSTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		8456BB841B81FB1700DEECBD /* Introspection */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,7 +723,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8456BB7E1B81FA9E00DEECBD /* PBXTargetDependency */,
 				8485681E18FC981700914FE1 /* PBXTargetDependency */,
 			);
 			name = Thrint;
@@ -794,7 +744,6 @@
 			);
 			dependencies = (
 				8485681C18FC97D900914FE1 /* PBXTargetDependency */,
-				84E1B58E1B82116E00BD1216 /* PBXTargetDependency */,
 			);
 			name = ThrintKit;
 			productName = thrint;
@@ -848,10 +797,6 @@
 					ProductGroup = 8485681618FC97C200914FE1 /* Products */;
 					ProjectRef = 8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */;
 				},
-				{
-					ProductGroup = 8456BB721B81FA8C00DEECBD /* Products */;
-					ProjectRef = 8456BB711B81FA8C00DEECBD /* MAObjCRuntime.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -864,27 +809,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		8456BB781B81FA8C00DEECBD /* MAObjCRuntime */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = MAObjCRuntime;
-			remoteRef = 8456BB771B81FA8C00DEECBD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8456BB7A1B81FA8C00DEECBD /* libMAObjCRuntime_iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMAObjCRuntime_iOS.a;
-			remoteRef = 8456BB791B81FA8C00DEECBD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8456BB7C1B81FA8C00DEECBD /* MAObjCRuntime_iOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MAObjCRuntime_iOSTests.xctest;
-			remoteRef = 8456BB7B1B81FA8C00DEECBD /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		8485681A18FC97C300914FE1 /* libBAFoundation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1036,11 +960,6 @@
 			target = 4EAB349B14D9D57C0038B6CC /* ThrintKit */;
 			targetProxy = 8410881A15BA140E008E97B9 /* PBXContainerItemProxy */;
 		};
-		8456BB7E1B81FA9E00DEECBD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MAObjCRuntime_iOS;
-			targetProxy = 8456BB7D1B81FA9E00DEECBD /* PBXContainerItemProxy */;
-		};
 		8485681C18FC97D900914FE1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BAFoundation;
@@ -1050,11 +969,6 @@
 			isa = PBXTargetDependency;
 			target = 4EAB349B14D9D57C0038B6CC /* ThrintKit */;
 			targetProxy = 8485681D18FC981700914FE1 /* PBXContainerItemProxy */;
-		};
-		84E1B58E1B82116E00BD1216 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MAObjCRuntime_iOS;
-			targetProxy = 84E1B58D1B82116E00BD1216 /* PBXContainerItemProxy */;
 		};
 		84F247651AE12DF100D3C499 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
