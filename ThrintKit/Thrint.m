@@ -29,31 +29,19 @@
 }
 
 #pragma mark - UISplitViewControllerDelegate
-- (void)splitViewController:(UISplitViewController*)svc
-     willHideViewController:(UINavigationController *)aViewController
-          withBarButtonItem:(UIBarButtonItem*)barButtonItem
-       forPopoverController:(UIPopoverController*)pc {
-    
-    UINavigationController *nav = [[svc viewControllers] lastObject];
-    
-    barButtonItem.title = [aViewController valueForKeyPath:@"topViewController.navigationItem.title"];
-    [nav topViewController].navigationItem.leftBarButtonItem = barButtonItem;
-    
-    [(ListVC *)aViewController.topViewController setPopOver:pc];
-}
 
-- (void)splitViewController: (UISplitViewController*)svc
-     willShowViewController:(UINavigationController *)aViewController
-  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
-    
-    UINavigationController *nav = [[svc viewControllers] lastObject];
-    
-    [nav topViewController].navigationItem.leftBarButtonItem = nil;
-    [(ListVC *)aViewController.topViewController setPopOver:nil];
+- (void)splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode {
+    UIViewController *detail = [(UINavigationController *)[svc.viewControllers lastObject] topViewController];
+    if (displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
+        detail.navigationItem.leftBarButtonItem = svc.displayModeButtonItem;
+    }
+    else if (displayMode == UISplitViewControllerDisplayModeAllVisible) {
+        detail.navigationItem.leftBarButtonItem = nil;
+    }
 }
-
 
 #pragma mark - New
+
 - (id)initWithStoreURL:(NSURL *)url rootEntityNames:(NSArray *)entityNames {
     self = [super initWithStoreURL:url];
     if(self) {
@@ -77,20 +65,23 @@
     listVC.navigationItem.title = title;
     listVC.allowEditing = YES;
     listVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:image tag:101 + [_rootEntityNames indexOfObject:entityName]];
-    
+    listVC.dataSource = [[EntityListDataSource alloc] initWithManagedObjectContext:self.context entityName:entityName predicate:nil];
+
     return listVC;
 }
 
 - (UISplitViewController *)splitViewControllerForEntityNamed:(NSString *)entityName {
     
     UISplitViewController *svc = (UISplitViewController *)[self.thrintStoryboard instantiateInitialViewController];
-    UINavigationController *nav = (UINavigationController *)[[svc viewControllers] objectAtIndex:0];
-    ListVC *listVC = (ListVC *)[nav topViewController];
+    UINavigationController *nav = (UINavigationController *)[svc viewControllers][0];
     
-    EntityListDataSource *datasource = [[EntityListDataSource alloc] initWithManagedObjectContext:self.context entityName:entityName predicate:nil];
-
-    listVC.dataSource = datasource;
+    ListVC *listVC = (ListVC *)[nav topViewController];
     [self configureListViewController:listVC forEntityNamed:entityName];
+    
+    if (svc.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
+        UIViewController *secondary = [(UINavigationController *)svc.viewControllers[1] topViewController];
+        secondary.navigationItem.leftBarButtonItem = svc.displayModeButtonItem;
+    }
 
     svc.tabBarItem = listVC.tabBarItem;
     listVC.tabBarItem = nil;
@@ -170,6 +161,8 @@
     return [NSString stringWithFormat:@"EntityBrowser~%@", [self fileSuffixForDevice]];
 }
 
+// TODO: convert to class method and fix missing resource bundle
+// We could make a normal framework target now
 - (UIStoryboard *)thrintStoryboard {
     dispatch_once(&_thrintStoryBoardToken, ^{
         NSBundle *bundle = [ThrintKit resourceBundle] ?: [NSBundle mainBundle];
