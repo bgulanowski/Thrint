@@ -16,6 +16,7 @@
 
 - (void)awakeFromNib {
     [_stepper addTarget:self action:@selector(update:) forControlEvents:UIControlEventValueChanged];
+    [super awakeFromNib];
 }
 
 - (id)objectValue {

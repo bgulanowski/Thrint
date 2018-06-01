@@ -16,6 +16,7 @@
 
 - (void)awakeFromNib {
     [_switch addTarget:self action:@selector(update:) forControlEvents:UIControlEventValueChanged];
+    [super awakeFromNib];
 }
 
 - (void)configure {
