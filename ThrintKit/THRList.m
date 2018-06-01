@@ -54,7 +54,7 @@
 - (NSArray *)items {
     __block NSArray *items;
     dispatch_sync(_queue, ^{
-        items = [_items copy];
+        items = [self->_items copy];
     });
     return items;
 }
@@ -62,7 +62,7 @@
 - (NSUInteger)countOfItems {
     __block NSUInteger count;
     dispatch_sync(_queue, ^{
-        count = _items.count;
+        count = self->_items.count;
     });
     return count;
 }
@@ -71,7 +71,7 @@
 {
     __block id item;
     dispatch_sync(_queue, ^{
-        item = [_items objectAtIndex:index];
+        item = [self->_items objectAtIndex:index];
     });
     return item;
 }
@@ -79,7 +79,7 @@
 - (NSArray *)itemsAtIndexes:(NSIndexSet *)indexes {
     __block NSArray *items;
     dispatch_sync(_queue, ^{
-        items = [_items objectsAtIndexes:indexes];
+        items = [self->_items objectsAtIndexes:indexes];
     });
     return items;
 }
@@ -88,44 +88,44 @@
 
 - (void)setItems:(NSArray *)items {
     dispatch_sync(_queue, ^{
-        [_items removeAllObjects];
-        [_items addObjectsFromArray:items];
+        [self->_items removeAllObjects];
+        [self->_items addObjectsFromArray:items];
     });
 }
 
 - (void)insertObject:(NSObject<THRItem> *)item inItemsAtIndex:(NSUInteger)index {
     dispatch_sync(_queue, ^{
-        [_items insertObject:item atIndex:index];
+        [self->_items insertObject:item atIndex:index];
     });
 }
 
 - (void)insertItems:(NSArray *)items atIndexes:(NSIndexSet *)indexes {
     dispatch_sync(_queue, ^{
-        [_items insertObjects:items atIndexes:indexes];
+        [self->_items insertObjects:items atIndexes:indexes];
     });
 }
 
 - (void)removeObjectFromItemsAtIndex:(NSUInteger)index {
     dispatch_sync(_queue, ^{
-        [_items removeObjectAtIndex:index];
+        [self->_items removeObjectAtIndex:index];
     });
 }
 
 - (void)removeItemsAtIndexes:(NSIndexSet *)indexes {
     dispatch_sync(_queue, ^{
-        [_items removeObjectsAtIndexes:indexes];
+        [self->_items removeObjectsAtIndexes:indexes];
     });
 }
 
 - (void)replaceObjectInItemsAtIndex:(NSUInteger)index withObject:(NSObject<THRItem> *)item {
     dispatch_sync(_queue, ^{
-        [_items replaceObjectAtIndex:index withObject:item];
+        [self->_items replaceObjectAtIndex:index withObject:item];
     });
 }
 
 - (void)replaceItemsAtIndexes:(NSIndexSet *)indexes withItems:(NSArray *)items {
     dispatch_sync(_queue, ^{
-        [_items replaceObjectsAtIndexes:indexes withObjects:items];
+        [self->_items replaceObjectsAtIndexes:indexes withObjects:items];
     });
 }
 

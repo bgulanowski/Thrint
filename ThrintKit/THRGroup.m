@@ -35,7 +35,7 @@
 - (NSArray *)lists {
     __block NSArray *lists;
     dispatch_sync(_queue, ^{
-        lists = [_lists copy];
+        lists = [self->_lists copy];
     });
     return lists;
 }
@@ -43,7 +43,7 @@
 - (NSUInteger)countOfLists {
     __block NSUInteger count;
     dispatch_sync(_queue, ^{
-        count = _lists.count;
+        count = self->_lists.count;
     });
     return count;
 }
@@ -51,7 +51,7 @@
 - (id<THRList>)objectInListsAtIndex:(NSUInteger)index {
     __block id<THRList> list;
     dispatch_sync(_queue, ^{
-        list = [_lists objectAtIndex:index];
+        list = [self->_lists objectAtIndex:index];
     });
     return list;
 }
@@ -59,7 +59,7 @@
 - (NSArray *)listsAtIndexes:(NSIndexSet *)indexes {
     __block NSArray *lists;
     dispatch_sync(_queue, ^{
-        lists = [_lists objectsAtIndexes:indexes];
+        lists = [self->_lists objectsAtIndexes:indexes];
     });
     return lists;
 }
@@ -93,37 +93,37 @@
 
 - (void)insertObject:(id<THRList>)list inListsAtIndex:(NSUInteger)index {
     dispatch_sync(_queue, ^{
-        [_lists insertObject:list atIndex:index];
+        [self->_lists insertObject:list atIndex:index];
     });
 }
 
 - (void)insertLists:(NSArray *)array atIndexes:(NSIndexSet *)indexes {
     dispatch_sync(_queue, ^{
-        [_lists insertObjects:array atIndexes:indexes];
+        [self->_lists insertObjects:array atIndexes:indexes];
     });
 }
 
 - (void)removeObjectFromListsAtIndex:(NSUInteger)index {
     dispatch_sync(_queue, ^{
-        [_lists removeObjectAtIndex:index];
+        [self->_lists removeObjectAtIndex:index];
     });
 }
 
 - (void)removeListsAtIndexes:(NSIndexSet *)indexes {
     dispatch_sync(_queue, ^{
-        [_lists removeObjectsAtIndexes:indexes];
+        [self->_lists removeObjectsAtIndexes:indexes];
     });
 }
 
 - (void)replaceObjectInListsAtIndex:(NSUInteger)index withObject:(id<THRList>)list {
     dispatch_sync(_queue, ^{
-        [_lists replaceObjectAtIndex:index withObject:list];
+        [self->_lists replaceObjectAtIndex:index withObject:list];
     });
 }
 
 - (void)replaceListsAtIndexes:(NSIndexSet *)indexes withLists:(NSArray *)lists {
     dispatch_sync(_queue, ^{
-        [_lists replaceObjectsAtIndexes:indexes withObjects:lists];
+        [self->_lists replaceObjectsAtIndexes:indexes withObjects:lists];
     });
 }
 

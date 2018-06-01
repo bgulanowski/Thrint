@@ -49,10 +49,10 @@
 typedef id (^THRGetterBlock)(void);
 
 #define LAZY_ASSIGNMENT(ivarName, getterBlock) do { \
-    if (!ivarName) { \
+    if (!self->ivarName) { \
         dispatch_sync(_queue, ^{ \
-            if (!ivarName) { \
-                ivarName = getterBlock(); \
+            if (!self->ivarName) { \
+                self->ivarName = getterBlock(); \
             } \
         }); \
     } \
@@ -60,27 +60,27 @@ typedef id (^THRGetterBlock)(void);
 
 
 - (NSArray *)ancestors {
-    LAZY_ASSIGNMENT(_ancestors, ^{ return [_targetClass ancestors]; });
+    LAZY_ASSIGNMENT(_ancestors, ^{ return [self->_targetClass ancestors]; });
     return _ancestors;
 }
 
 - (NSArray *)subclasses {
-    LAZY_ASSIGNMENT(_subclasses, ^{ return [_targetClass rt_subclasses]; });
+    LAZY_ASSIGNMENT(_subclasses, ^{ return [self->_targetClass rt_subclasses]; });
     return _subclasses;
 }
 
 - (NSArray *)ivars {
-    LAZY_ASSIGNMENT(_ivars, ^{ return [_targetClass rt_ivars]; });
+    LAZY_ASSIGNMENT(_ivars, ^{ return [self->_targetClass rt_ivars]; });
     return _ivars;
 }
 
 - (NSArray *)properties {
-    LAZY_ASSIGNMENT(_properties, ^{ return [_targetClass rt_properties]; });
+    LAZY_ASSIGNMENT(_properties, ^{ return [self->_targetClass rt_properties]; });
     return _properties;
 }
 
 - (NSArray *)methods {
-    LAZY_ASSIGNMENT(_methods, ^{ return [_targetClass rt_methods]; } );
+    LAZY_ASSIGNMENT(_methods, ^{ return [self->_targetClass rt_methods]; } );
     return _methods;
 }
 
