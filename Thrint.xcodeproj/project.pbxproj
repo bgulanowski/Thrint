@@ -111,7 +111,6 @@
 		847C618119144E63001622BF /* TextAttributeCell~iphone.xib in Copy Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
 		847C618219144E63001622BF /* BooleanAttributeCell~iphone.xib in Copy Resources */ = {isa = PBXBuildFile; fileRef = 847C618019144E37001622BF /* BooleanAttributeCell~iphone.xib */; };
 		8485682118FC982200914FE1 /* libThrintKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAB349C14D9D57C0038B6CC /* libThrintKit.a */; };
-		8485682218FC982200914FE1 /* libBAFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485681A18FC97C300914FE1 /* libBAFoundation.a */; };
 		8485682918FCB62800914FE1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485682818FCB62800914FE1 /* libz.dylib */; };
 		848D1DC41B8DD1B30020A710 /* NSObject+THRTableDataProviding.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */; };
 		84B3D3F91909F47000DA15B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B3D3F81909F47000DA15B5 /* Images.xcassets */; };
@@ -120,6 +119,7 @@
 		84EA2D4D20C196E600FA08A6 /* Thrint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2D4B20C196E600FA08A6 /* Thrint.xcdatamodeld */; };
 		84EA2D4E20C19FC600FA08A6 /* EntityBrowser~ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser~ipad.storyboard */; };
 		84EA2D4F20C19FC900FA08A6 /* EntityBrowser~iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */; };
+		84EA2D5A20C1D85500FA08A6 /* libBAFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EA2D5920C1D85500FA08A6 /* libBAFoundation.a */; };
 		84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
 		84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */; };
@@ -133,20 +133,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4EAB349B14D9D57C0038B6CC;
 			remoteInfo = ThrintKit;
-		};
-		8485681918FC97C300914FE1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B6AAB6CA14C21B9A0007A0A4;
-			remoteInfo = BAFoundation;
-		};
-		8485681B18FC97D900914FE1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B6AAB6C914C21B9A0007A0A4;
-			remoteInfo = BAFoundation;
 		};
 		8485681D18FC981700914FE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -307,13 +293,14 @@
 		8460D2091ACAC4ED00BCBBC9 /* THRList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRList.m; sourceTree = "<group>"; };
 		8461A89316174945009FE5C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		847C618019144E37001622BF /* BooleanAttributeCell~iphone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "BooleanAttributeCell~iphone.xib"; sourceTree = "<group>"; };
-		8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BAFoundation.xcodeproj; path = BAFoundation/iOS/BAFoundation.xcodeproj; sourceTree = "<group>"; };
 		8485682818FCB62800914FE1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		848D1DC51B8DD61E0020A710 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84B3D3F81909F47000DA15B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84BD6A621B80C5B9005C658F /* THRProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRProperty.h; sourceTree = "<group>"; };
 		84BD6A631B80C5B9005C658F /* THRProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRProperty.m; sourceTree = "<group>"; };
 		84EA2D4C20C196E600FA08A6 /* Thrint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thrint.xcdatamodel; sourceTree = "<group>"; };
+		84EA2D5220C1D7B500FA08A6 /* BAFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BAFoundation.xcodeproj; path = BAFoundation/iOS/BAFoundation.xcodeproj; sourceTree = GITHUB; };
+		84EA2D5920C1D85500FA08A6 /* libBAFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libBAFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TextAttributeCell~iphone.xib"; sourceTree = "<group>"; };
 		84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+ThrintAdditions.h"; sourceTree = "<group>"; };
 		84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ThrintAdditions.m"; sourceTree = "<group>"; };
@@ -326,11 +313,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8485682918FCB62800914FE1 /* libz.dylib in Frameworks */,
-				8485682218FC982200914FE1 /* libBAFoundation.a in Frameworks */,
+				84EA2D5A20C1D85500FA08A6 /* libBAFoundation.a in Frameworks */,
 				8485682118FC982200914FE1 /* libThrintKit.a in Frameworks */,
-				4EA237C5147C022500E69862 /* CoreData.framework in Frameworks */,
+				8485682918FCB62800914FE1 /* libz.dylib in Frameworks */,
 				4E821731147BFFB300295D45 /* UIKit.framework in Frameworks */,
+				4EA237C5147C022500E69862 /* CoreData.framework in Frameworks */,
 				4E821733147BFFB300295D45 /* Foundation.framework in Frameworks */,
 				4E821735147BFFB300295D45 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -360,7 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				848D1DC51B8DD61E0020A710 /* README.md */,
-				8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */,
+				84EA2D5220C1D7B500FA08A6 /* BAFoundation.xcodeproj */,
 				4E821736147BFFB300295D45 /* Thrint */,
 				4E83161114E1A33D00123C1B /* ThrintKit */,
 				840E11911AA21E650055F56A /* ThrintKit Resources */,
@@ -383,6 +370,7 @@
 		4E82172F147BFFB300295D45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84EA2D5920C1D85500FA08A6 /* libBAFoundation.a */,
 				8485682818FCB62800914FE1 /* libz.dylib */,
 				84F4761815C1E7B50015D59C /* ThrintKit.framework */,
 				84F4761515C1E7700015D59C /* Resources */,
@@ -658,14 +646,6 @@
 			name = List;
 			sourceTree = "<group>";
 		};
-		8485681618FC97C200914FE1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8485681A18FC97C300914FE1 /* libBAFoundation.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		84BBF67C1B9350D60033E18E /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,7 +723,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8485681C18FC97D900914FE1 /* PBXTargetDependency */,
 			);
 			name = ThrintKit;
 			productName = thrint;
@@ -792,12 +771,6 @@
 			mainGroup = 4E821721147BFFB300295D45;
 			productRefGroup = 4E82172D147BFFB300295D45 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 8485681618FC97C200914FE1 /* Products */;
-					ProjectRef = 8485681518FC97C200914FE1 /* BAFoundation.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				4E82172B147BFFB300295D45 /* Thrint */,
@@ -808,34 +781,24 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		8485681A18FC97C300914FE1 /* libBAFoundation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libBAFoundation.a;
-			remoteRef = 8485681918FC97C300914FE1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		4E82172A147BFFB300295D45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84F4761715C1E7960015D59C /* TextAttributeCell~ipad.xib in Resources */,
 				4E82173B147BFFB300295D45 /* InfoPlist.strings in Resources */,
 				4EE47F14147EF2E7006C4795 /* icon_user.png in Resources */,
-				84EA2D4F20C19FC900FA08A6 /* EntityBrowser~iphone.storyboard in Resources */,
 				84B3D3F91909F47000DA15B5 /* Images.xcassets in Resources */,
-				8419ECD41A059A23004D4906 /* BooleanAttributeCell~iphone.xib in Resources */,
 				4EE47F15147EF2E7006C4795 /* icon_users.png in Resources */,
 				4EE47F17147EF2F3006C4795 /* icon_settings.png in Resources */,
 				4EE47F19147EF311006C4795 /* icon_document.png in Resources */,
-				84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */,
-				84EA2D4E20C19FC600FA08A6 /* EntityBrowser~ipad.storyboard in Resources */,
 				4E83162814E1AE3B00123C1B /* Configuration.plist in Resources */,
 				8461A89216174945009FE5C5 /* Localizable.strings in Resources */,
+				8419ECD41A059A23004D4906 /* BooleanAttributeCell~iphone.xib in Resources */,
+				84F4761715C1E7960015D59C /* TextAttributeCell~ipad.xib in Resources */,
+				84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */,
+				84EA2D4E20C19FC600FA08A6 /* EntityBrowser~ipad.storyboard in Resources */,
+				84EA2D4F20C19FC900FA08A6 /* EntityBrowser~iphone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,11 +922,6 @@
 			isa = PBXTargetDependency;
 			target = 4EAB349B14D9D57C0038B6CC /* ThrintKit */;
 			targetProxy = 8410881A15BA140E008E97B9 /* PBXContainerItemProxy */;
-		};
-		8485681C18FC97D900914FE1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BAFoundation;
-			targetProxy = 8485681B18FC97D900914FE1 /* PBXContainerItemProxy */;
 		};
 		8485681E18FC981700914FE1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
