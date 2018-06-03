@@ -114,10 +114,10 @@
 		84B3D3F91909F47000DA15B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B3D3F81909F47000DA15B5 /* Images.xcassets */; };
 		84BD6A641B80C5B9005C658F /* THRProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 84BD6A621B80C5B9005C658F /* THRProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84BD6A651B80C5B9005C658F /* THRProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD6A631B80C5B9005C658F /* THRProperty.m */; };
-		84EA2D4D20C196E600FA08A6 /* Thrint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2D4B20C196E600FA08A6 /* Thrint.xcdatamodeld */; };
 		84EA2D4E20C19FC600FA08A6 /* EntityBrowser~ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser~ipad.storyboard */; };
 		84EA2D4F20C19FC900FA08A6 /* EntityBrowser~iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */; };
 		84EA2D5A20C1D85500FA08A6 /* libBAFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EA2D5920C1D85500FA08A6 /* libBAFoundation.a */; };
+		84EA2D8920C42C7A00FA08A6 /* Thrint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2D8720C42C7A00FA08A6 /* Thrint.xcdatamodeld */; };
 		84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
 		84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */; };
@@ -186,7 +186,7 @@
 
 /* Begin PBXFileReference section */
 		4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TextAttributeCell~ipad.xib"; sourceTree = "<group>"; };
-		4E82172C147BFFB300295D45 /* Thrint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thrint.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E82172C147BFFB300295D45 /* Thrint Demo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Thrint Demo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E821730147BFFB300295D45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E821732147BFFB300295D45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4E821734147BFFB300295D45 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -202,7 +202,7 @@
 		4E83161B14E1A3FC00123C1B /* EntityBrowser~ipad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "EntityBrowser~ipad.storyboard"; sourceTree = "<group>"; };
 		4E83162314E1A76D00123C1B /* ThrintKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrintKit.h; sourceTree = "<group>"; };
 		4E83162414E1A76D00123C1B /* ThrintKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrintKit.m; sourceTree = "<group>"; };
-		4E83162714E1AE3B00123C1B /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		4E83162714E1AE3B00123C1B /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Configuration.plist; path = "../../../Github/Thrint/Thrint Demo-iOS/Configuration.plist"; sourceTree = "<group>"; };
 		4E83167014E2C5BA00123C1B /* BooleanAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooleanAttributeCell.m; sourceTree = "<group>"; };
 		4E83167214E2C5BA00123C1B /* DateAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateAttributeCell.m; sourceTree = "<group>"; };
 		4E83167614E2C5BA00123C1B /* IntegerAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerAttributeCell.m; sourceTree = "<group>"; };
@@ -302,9 +302,9 @@
 		84B3D3F81909F47000DA15B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84BD6A621B80C5B9005C658F /* THRProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRProperty.h; sourceTree = "<group>"; };
 		84BD6A631B80C5B9005C658F /* THRProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRProperty.m; sourceTree = "<group>"; };
-		84EA2D4C20C196E600FA08A6 /* Thrint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thrint.xcdatamodel; sourceTree = "<group>"; };
 		84EA2D5220C1D7B500FA08A6 /* BAFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BAFoundation.xcodeproj; path = BAFoundation/iOS/BAFoundation.xcodeproj; sourceTree = GITHUB; };
 		84EA2D5920C1D85500FA08A6 /* libBAFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libBAFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EA2D8820C42C7A00FA08A6 /* Thrint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thrint.xcdatamodel; sourceTree = "<group>"; };
 		84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TextAttributeCell~iphone.xib"; sourceTree = "<group>"; };
 		84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+ThrintAdditions.h"; sourceTree = "<group>"; };
 		84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ThrintAdditions.m"; sourceTree = "<group>"; };
@@ -353,7 +353,7 @@
 			children = (
 				848D1DC51B8DD61E0020A710 /* README.md */,
 				84EA2D5220C1D7B500FA08A6 /* BAFoundation.xcodeproj */,
-				4E821736147BFFB300295D45 /* Thrint */,
+				4E821736147BFFB300295D45 /* Thrint Demo-iOS */,
 				4E83161114E1A33D00123C1B /* ThrintKit */,
 				840E11911AA21E650055F56A /* ThrintKit Resources */,
 				4E82172F147BFFB300295D45 /* Frameworks */,
@@ -365,7 +365,7 @@
 		4E82172D147BFFB300295D45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E82172C147BFFB300295D45 /* Thrint.app */,
+				4E82172C147BFFB300295D45 /* Thrint Demo-iOS.app */,
 				4EAB349C14D9D57C0038B6CC /* libThrintKit.a */,
 				840E11901AA21E650055F56A /* ThrintKit.bundle */,
 			);
@@ -387,7 +387,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4E821736147BFFB300295D45 /* Thrint */ = {
+		4E821736147BFFB300295D45 /* Thrint Demo-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				4E82173F147BFFB300295D45 /* AppDelegate.h */,
@@ -398,7 +398,7 @@
 				84B3D3F81909F47000DA15B5 /* Images.xcassets */,
 				4E821737147BFFB300295D45 /* Supporting Files */,
 			);
-			path = Thrint;
+			path = "Thrint Demo-iOS";
 			sourceTree = "<group>";
 		};
 		4E821737147BFFB300295D45 /* Supporting Files */ = {
@@ -552,7 +552,7 @@
 		4E8316FB14E2E58200123C1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				84EA2D4B20C196E600FA08A6 /* Thrint.xcdatamodeld */,
+				84EA2D8720C42C7A00FA08A6 /* Thrint.xcdatamodeld */,
 				4E8316EC14E2C60F00123C1B /* Human */,
 				4E8316EB14E2C5CA00123C1B /* Machine */,
 				4E83174C14E4137900123C1B /* Templates (not part of target) */,
@@ -595,8 +595,7 @@
 				84F7EBE020C452DE00481431 /* Launch Screen.storyboard */,
 			);
 			name = Resources;
-			path = /Users/brent/Dev/github/thrint/Thrint;
-			sourceTree = "<absolute>";
+			sourceTree = "<group>";
 		};
 		840E11911AA21E650055F56A /* ThrintKit Resources */ = {
 			isa = PBXGroup;
@@ -694,9 +693,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4E82172B147BFFB300295D45 /* Thrint */ = {
+		4E82172B147BFFB300295D45 /* Thrint Demo-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E821756147BFFB400295D45 /* Build configuration list for PBXNativeTarget "Thrint" */;
+			buildConfigurationList = 4E821756147BFFB400295D45 /* Build configuration list for PBXNativeTarget "Thrint Demo-iOS" */;
 			buildPhases = (
 				4E821728147BFFB300295D45 /* Sources */,
 				4E821729147BFFB300295D45 /* Frameworks */,
@@ -708,9 +707,9 @@
 			dependencies = (
 				8485681E18FC981700914FE1 /* PBXTargetDependency */,
 			);
-			name = Thrint;
+			name = "Thrint Demo-iOS";
 			productName = Thrint;
-			productReference = 4E82172C147BFFB300295D45 /* Thrint.app */;
+			productReference = 4E82172C147BFFB300295D45 /* Thrint Demo-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4EAB349B14D9D57C0038B6CC /* ThrintKit */ = {
@@ -782,7 +781,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				4E82172B147BFFB300295D45 /* Thrint */,
+				4E82172B147BFFB300295D45 /* Thrint Demo-iOS */,
 				4EAB349B14D9D57C0038B6CC /* ThrintKit */,
 				844B426C15BA0DC80073B540 /* Distribution */,
 				840E118F1AA21E650055F56A /* ThrintKit Resources */,
@@ -873,12 +872,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84EA2D4D20C196E600FA08A6 /* Thrint.xcdatamodeld in Sources */,
 				4E83170C14E2E5FF00123C1B /* _ProductNote.m in Sources */,
 				4E83170D14E2E5FF00123C1B /* _Role.m in Sources */,
 				4E83170E14E2E5FF00123C1B /* _Team.m in Sources */,
 				4E83170F14E2E5FF00123C1B /* _Test.m in Sources */,
 				4E83170614E2E5F400123C1B /* _Component.m in Sources */,
+				84EA2D8920C42C7A00FA08A6 /* Thrint.xcdatamodeld in Sources */,
 				4E83170714E2E5F400123C1B /* _Developer.m in Sources */,
 				4E83170814E2E5F400123C1B /* _Feature.m in Sources */,
 				4E83170914E2E5F400123C1B /* _Library.m in Sources */,
@@ -1085,9 +1084,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Thrint/Thrint-Prefix.pch";
-				INFOPLIST_FILE = "Thrint/Thrint-Info.plist";
+				GCC_PREFIX_HEADER = "Thrint Demo-iOS/Thrint-Prefix.pch";
+				INFOPLIST_FILE = "Thrint Demo-iOS/Thrint-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1103,9 +1104,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Thrint/Thrint-Prefix.pch";
-				INFOPLIST_FILE = "Thrint/Thrint-Info.plist";
+				GCC_PREFIX_HEADER = "Thrint Demo-iOS/Thrint-Prefix.pch";
+				INFOPLIST_FILE = "Thrint Demo-iOS/Thrint-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1223,7 +1226,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E821756147BFFB400295D45 /* Build configuration list for PBXNativeTarget "Thrint" */ = {
+		4E821756147BFFB400295D45 /* Build configuration list for PBXNativeTarget "Thrint Demo-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E821757147BFFB400295D45 /* Debug */,
@@ -1262,14 +1265,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		84EA2D4B20C196E600FA08A6 /* Thrint.xcdatamodeld */ = {
+		84EA2D8720C42C7A00FA08A6 /* Thrint.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				84EA2D4C20C196E600FA08A6 /* Thrint.xcdatamodel */,
+				84EA2D8820C42C7A00FA08A6 /* Thrint.xcdatamodel */,
 			);
-			currentVersion = 84EA2D4C20C196E600FA08A6 /* Thrint.xcdatamodel */;
-			name = Thrint.xcdatamodeld;
-			path = ../Thrint.xcdatamodeld;
+			currentVersion = 84EA2D8820C42C7A00FA08A6 /* Thrint.xcdatamodel */;
+			path = Thrint.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
