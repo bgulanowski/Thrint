@@ -108,7 +108,6 @@
 		8461A89216174945009FE5C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8461A89416174945009FE5C5 /* Localizable.strings */; };
 		847C618119144E63001622BF /* TextAttributeCell~iphone.xib in Copy Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
 		847C618219144E63001622BF /* BooleanAttributeCell~iphone.xib in Copy Resources */ = {isa = PBXBuildFile; fileRef = 847C618019144E37001622BF /* BooleanAttributeCell~iphone.xib */; };
-		8485682118FC982200914FE1 /* libThrintKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAB349C14D9D57C0038B6CC /* libThrintKit.a */; };
 		8485682918FCB62800914FE1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485682818FCB62800914FE1 /* libz.dylib */; };
 		848D1DC41B8DD1B30020A710 /* NSObject+THRTableDataProviding.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */; };
 		84B3D3F91909F47000DA15B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B3D3F81909F47000DA15B5 /* Images.xcassets */; };
@@ -118,6 +117,60 @@
 		84EA2D4F20C19FC900FA08A6 /* EntityBrowser~iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */; };
 		84EA2D5A20C1D85500FA08A6 /* libBAFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EA2D5920C1D85500FA08A6 /* libBAFoundation.a */; };
 		84EA2D8920C42C7A00FA08A6 /* Thrint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2D8720C42C7A00FA08A6 /* Thrint.xcdatamodeld */; };
+		84EA2D9820C42CE400FA08A6 /* Thrint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EA2D8F20C42CE300FA08A6 /* Thrint.framework */; };
+		84EA2D9F20C42CE400FA08A6 /* Thrint_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2D9E20C42CE400FA08A6 /* Thrint_iOSTests.m */; };
+		84EA2DA120C42CE400FA08A6 /* Thrint.h in Headers */ = {isa = PBXBuildFile; fileRef = 84EA2D9120C42CE300FA08A6 /* Thrint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DA420C42CE400FA08A6 /* Thrint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EA2D8F20C42CE300FA08A6 /* Thrint.framework */; };
+		84EA2DA520C42CE400FA08A6 /* Thrint.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84EA2D8F20C42CE300FA08A6 /* Thrint.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84EA2DAC20C42D5700FA08A6 /* NSEntityDescription+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DAD20C42D5700FA08A6 /* NSEntityDescription+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */; };
+		84EA2DAE20C42D5700FA08A6 /* NSManagedObject+ViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DAF20C42D5700FA08A6 /* NSManagedObject+ViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A114E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m */; };
+		84EA2DB020C42D5700FA08A6 /* NSManagedObjectContext+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426C211190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DB120C42D5700FA08A6 /* NSManagedObjectContext+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426C212190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m */; };
+		84EA2DB220C42D5700FA08A6 /* NSObject+THRTableDataProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = 8452E6251617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DB320C42D5700FA08A6 /* NSObject+THRTableDataProviding.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */; };
+		84EA2DB420C42D7600FA08A6 /* BooleanAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662015BA02C10005A060 /* BooleanAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DB520C42D7600FA08A6 /* BooleanAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83167014E2C5BA00123C1B /* BooleanAttributeCell.m */; };
+		84EA2DB620C42D7600FA08A6 /* DateAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662115BA02C10005A060 /* DateAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DB720C42D7600FA08A6 /* DateAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83167214E2C5BA00123C1B /* DateAttributeCell.m */; };
+		84EA2DB820C42D7600FA08A6 /* ImageAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662615BA02C10005A060 /* ImageAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DB920C42D7600FA08A6 /* ImageAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9778A8150D21EE0096EDBD /* ImageAttributeCell.m */; };
+		84EA2DBA20C42D7600FA08A6 /* IntegerAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662715BA02C10005A060 /* IntegerAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DBB20C42D7600FA08A6 /* IntegerAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83167614E2C5BA00123C1B /* IntegerAttributeCell.m */; };
+		84EA2DBC20C42D7600FA08A6 /* SliderAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8410882915BA18BF008E97B9 /* SliderAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DBD20C42D7600FA08A6 /* SliderAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8410882A15BA18BF008E97B9 /* SliderAttributeCell.m */; };
+		84EA2DBE20C42D7600FA08A6 /* TextAttributeCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662E15BA02C10005A060 /* TextAttributeCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DBF20C42D7600FA08A6 /* TextAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A714E2C5BA00123C1B /* TextAttributeCell.m */; };
+		84EA2DC020C42D8000FA08A6 /* THRClassInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 8456BB801B81FB0900DEECBD /* THRClassInspector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DC220C42D8300FA08A6 /* THRProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 84BD6A621B80C5B9005C658F /* THRProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DC320C42D8300FA08A6 /* THRProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD6A631B80C5B9005C658F /* THRProperty.m */; };
+		84EA2DC420C42D8600FA08A6 /* THRGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 84523DDD1B911239000477A3 /* THRGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DC520C42D8600FA08A6 /* THRGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 84523DDE1B911239000477A3 /* THRGroup.m */; };
+		84EA2DC620C42D8600FA08A6 /* THRItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 84523DD91B910F7D000477A3 /* THRItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DC720C42D8600FA08A6 /* THRList.h in Headers */ = {isa = PBXBuildFile; fileRef = 8460D2081ACAC4ED00BCBBC9 /* THRList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DC820C42D8600FA08A6 /* THRList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460D2091ACAC4ED00BCBBC9 /* THRList.m */; };
+		84EA2DCA20C42D8D00FA08A6 /* Thrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A914E2C5BA00123C1B /* Thrint.m */; };
+		84EA2DCB20C43A3900FA08A6 /* libBAFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EA2D5F20C1E8B500FA08A6 /* libBAFoundation.a */; };
+		84EA2DCC20C43A6200FA08A6 /* DetailVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4C715C1DB9C00337A17 /* DetailVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DCD20C43A6200FA08A6 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4C815C1DB9C00337A17 /* DetailVC.m */; };
+		84EA2DCE20C43A6200FA08A6 /* EntityListDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4CF15C1DC4000337A17 /* EntityListDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DCF20C43A6200FA08A6 /* EntityListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4D015C1DC4000337A17 /* EntityListDataSource.m */; };
+		84EA2DD020C43A6200FA08A6 /* ListDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4D315C1DC5800337A17 /* ListDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DD120C43A6200FA08A6 /* ListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4D415C1DC5800337A17 /* ListDataSource.m */; };
+		84EA2DD220C43A6200FA08A6 /* ListVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4C915C1DB9C00337A17 /* ListVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DD320C43A6200FA08A6 /* ListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4CA15C1DB9C00337A17 /* ListVC.m */; };
+		84EA2DD420C43A6200FA08A6 /* ThrintTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400663015BA02C10005A060 /* ThrintTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DD520C43A6200FA08A6 /* ThrintTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */; };
+		84EA2DD620C43A6200FA08A6 /* THRListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 84002B3D1B89FEBD001B65A0 /* THRListViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EA2DD720C43A6200FA08A6 /* THRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84002B3E1B89FEBD001B65A0 /* THRListViewController.m */; };
+		84EA2DD820C43DD600FA08A6 /* ThrintKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E83162314E1A76D00123C1B /* ThrintKit.h */; };
+		84EA2DD920C43DD600FA08A6 /* ThrintKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83162414E1A76D00123C1B /* ThrintKit.m */; };
+		84EA2DDF20C43E2F00FA08A6 /* BooleanAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847C618019144E37001622BF /* BooleanAttributeCell~iphone.xib */; };
+		84EA2DE020C43E2F00FA08A6 /* TextAttributeCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */; };
+		84EA2DE120C43E2F00FA08A6 /* TextAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
+		84EA2DE220C43E2F00FA08A6 /* EntityBrowser~ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser~ipad.storyboard */; };
+		84EA2DE320C43E2F00FA08A6 /* EntityBrowser~iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */; };
 		84F11F8F190431AF0035E15C /* TextAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
 		84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */; };
@@ -133,19 +186,26 @@
 			remoteGlobalIDString = 4EAB349B14D9D57C0038B6CC;
 			remoteInfo = ThrintKit;
 		};
-		8485681D18FC981700914FE1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E821723147BFFB300295D45 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4EAB349B14D9D57C0038B6CC;
-			remoteInfo = ThrintKit;
-		};
 		84EA2D5E20C1E8B500FA08A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84EA2D5220C1D7B500FA08A6 /* BAFoundation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = B6AAB6CA14C21B9A0007A0A4;
 			remoteInfo = BAFoundation;
+		};
+		84EA2D9920C42CE400FA08A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E821723147BFFB300295D45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84EA2D8E20C42CE300FA08A6;
+			remoteInfo = "Thrint-iOS";
+		};
+		84EA2D9B20C42CE400FA08A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E821723147BFFB300295D45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E82172B147BFFB300295D45;
+			remoteInfo = "Thrint Demo-iOS";
 		};
 		84F247641AE12DF100D3C499 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -163,6 +223,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				84EA2DA520C42CE400FA08A6 /* Thrint.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +366,12 @@
 		84EA2D5220C1D7B500FA08A6 /* BAFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BAFoundation.xcodeproj; path = BAFoundation/iOS/BAFoundation.xcodeproj; sourceTree = GITHUB; };
 		84EA2D5920C1D85500FA08A6 /* libBAFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libBAFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EA2D8820C42C7A00FA08A6 /* Thrint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thrint.xcdatamodel; sourceTree = "<group>"; };
+		84EA2D8F20C42CE300FA08A6 /* Thrint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thrint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EA2D9120C42CE300FA08A6 /* Thrint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Thrint.h; sourceTree = "<group>"; };
+		84EA2D9220C42CE300FA08A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84EA2D9720C42CE400FA08A6 /* Thrint-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Thrint-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EA2D9E20C42CE400FA08A6 /* Thrint_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Thrint_iOSTests.m; sourceTree = "<group>"; };
+		84EA2DA020C42CE400FA08A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TextAttributeCell~iphone.xib"; sourceTree = "<group>"; };
 		84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+ThrintAdditions.h"; sourceTree = "<group>"; };
 		84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ThrintAdditions.m"; sourceTree = "<group>"; };
@@ -319,8 +386,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84EA2D5A20C1D85500FA08A6 /* libBAFoundation.a in Frameworks */,
-				8485682118FC982200914FE1 /* libThrintKit.a in Frameworks */,
 				8485682918FCB62800914FE1 /* libz.dylib in Frameworks */,
+				84EA2DA420C42CE400FA08A6 /* Thrint.framework in Frameworks */,
 				4E821731147BFFB300295D45 /* UIKit.framework in Frameworks */,
 				4EA237C5147C022500E69862 /* CoreData.framework in Frameworks */,
 				4E821733147BFFB300295D45 /* Foundation.framework in Frameworks */,
@@ -345,6 +412,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84EA2D8B20C42CE300FA08A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EA2DCB20C43A3900FA08A6 /* libBAFoundation.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84EA2D9420C42CE400FA08A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EA2D9820C42CE400FA08A6 /* Thrint.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -356,6 +439,8 @@
 				4E821736147BFFB300295D45 /* Thrint Demo-iOS */,
 				4E83161114E1A33D00123C1B /* ThrintKit */,
 				840E11911AA21E650055F56A /* ThrintKit Resources */,
+				84EA2D9020C42CE300FA08A6 /* Thrint-iOS */,
+				84EA2D9D20C42CE400FA08A6 /* Thrint-iOSTests */,
 				4E82172F147BFFB300295D45 /* Frameworks */,
 				4E82172D147BFFB300295D45 /* Products */,
 			);
@@ -368,6 +453,8 @@
 				4E82172C147BFFB300295D45 /* Thrint Demo-iOS.app */,
 				4EAB349C14D9D57C0038B6CC /* libThrintKit.a */,
 				840E11901AA21E650055F56A /* ThrintKit.bundle */,
+				84EA2D8F20C42CE300FA08A6 /* Thrint.framework */,
+				84EA2D9720C42CE400FA08A6 /* Thrint-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -658,6 +745,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		84EA2D9020C42CE300FA08A6 /* Thrint-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				84EA2D9120C42CE300FA08A6 /* Thrint.h */,
+				84EA2D9220C42CE300FA08A6 /* Info.plist */,
+			);
+			path = "Thrint-iOS";
+			sourceTree = "<group>";
+		};
+		84EA2D9D20C42CE400FA08A6 /* Thrint-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				84EA2D9E20C42CE400FA08A6 /* Thrint_iOSTests.m */,
+				84EA2DA020C42CE400FA08A6 /* Info.plist */,
+			);
+			path = "Thrint-iOSTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -690,6 +795,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84EA2D8C20C42CE300FA08A6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EA2DD220C43A6200FA08A6 /* ListVC.h in Headers */,
+				84EA2DD420C43A6200FA08A6 /* ThrintTableViewController.h in Headers */,
+				84EA2DD020C43A6200FA08A6 /* ListDataSource.h in Headers */,
+				84EA2DD820C43DD600FA08A6 /* ThrintKit.h in Headers */,
+				84EA2DCE20C43A6200FA08A6 /* EntityListDataSource.h in Headers */,
+				84EA2DD620C43A6200FA08A6 /* THRListViewController.h in Headers */,
+				84EA2DCC20C43A6200FA08A6 /* DetailVC.h in Headers */,
+				84EA2DB620C42D7600FA08A6 /* DateAttributeCell.h in Headers */,
+				84EA2DB820C42D7600FA08A6 /* ImageAttributeCell.h in Headers */,
+				84EA2DB420C42D7600FA08A6 /* BooleanAttributeCell.h in Headers */,
+				84EA2DBE20C42D7600FA08A6 /* TextAttributeCell.h in Headers */,
+				84EA2DBA20C42D7600FA08A6 /* IntegerAttributeCell.h in Headers */,
+				84EA2DAC20C42D5700FA08A6 /* NSEntityDescription+ThrintAdditions.h in Headers */,
+				84EA2DAE20C42D5700FA08A6 /* NSManagedObject+ViewAdditions.h in Headers */,
+				84EA2DC020C42D8000FA08A6 /* THRClassInspector.h in Headers */,
+				84EA2DC720C42D8600FA08A6 /* THRList.h in Headers */,
+				84EA2DB020C42D5700FA08A6 /* NSManagedObjectContext+ThrintAdditions.h in Headers */,
+				84EA2DC620C42D8600FA08A6 /* THRItem.h in Headers */,
+				84EA2DBC20C42D7600FA08A6 /* SliderAttributeCell.h in Headers */,
+				84EA2DB220C42D5700FA08A6 /* NSObject+THRTableDataProviding.h in Headers */,
+				84EA2DC220C42D8300FA08A6 /* THRProperty.h in Headers */,
+				84EA2DC420C42D8600FA08A6 /* THRGroup.h in Headers */,
+				84EA2DA120C42CE400FA08A6 /* Thrint.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -705,7 +840,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8485681E18FC981700914FE1 /* PBXTargetDependency */,
 			);
 			name = "Thrint Demo-iOS";
 			productName = Thrint;
@@ -748,6 +882,43 @@
 			productReference = 840E11901AA21E650055F56A /* ThrintKit.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		84EA2D8E20C42CE300FA08A6 /* Thrint-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84EA2DA620C42CE400FA08A6 /* Build configuration list for PBXNativeTarget "Thrint-iOS" */;
+			buildPhases = (
+				84EA2D8A20C42CE300FA08A6 /* Sources */,
+				84EA2D8B20C42CE300FA08A6 /* Frameworks */,
+				84EA2D8C20C42CE300FA08A6 /* Headers */,
+				84EA2D8D20C42CE300FA08A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Thrint-iOS";
+			productName = "Thrint-iOS";
+			productReference = 84EA2D8F20C42CE300FA08A6 /* Thrint.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		84EA2D9620C42CE400FA08A6 /* Thrint-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84EA2DA920C42CE400FA08A6 /* Build configuration list for PBXNativeTarget "Thrint-iOSTests" */;
+			buildPhases = (
+				84EA2D9320C42CE400FA08A6 /* Sources */,
+				84EA2D9420C42CE400FA08A6 /* Frameworks */,
+				84EA2D9520C42CE400FA08A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84EA2D9A20C42CE400FA08A6 /* PBXTargetDependency */,
+				84EA2D9C20C42CE400FA08A6 /* PBXTargetDependency */,
+			);
+			name = "Thrint-iOSTests";
+			productName = "Thrint-iOSTests";
+			productReference = 84EA2D9720C42CE400FA08A6 /* Thrint-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -760,6 +931,16 @@
 				TargetAttributes = {
 					840E118F1AA21E650055F56A = {
 						CreatedOnToolsVersion = 6.1.1;
+					};
+					84EA2D8E20C42CE300FA08A6 = {
+						CreatedOnToolsVersion = 9.4;
+						ProvisioningStyle = Automatic;
+					};
+					84EA2D9620C42CE400FA08A6 = {
+						CreatedOnToolsVersion = 9.4;
+						DevelopmentTeam = UA9654EX3X;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4E82172B147BFFB300295D45;
 					};
 				};
 			};
@@ -785,6 +966,8 @@
 				4EAB349B14D9D57C0038B6CC /* ThrintKit */,
 				844B426C15BA0DC80073B540 /* Distribution */,
 				840E118F1AA21E650055F56A /* ThrintKit Resources */,
+				84EA2D8E20C42CE300FA08A6 /* Thrint-iOS */,
+				84EA2D9620C42CE400FA08A6 /* Thrint-iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -830,6 +1013,25 @@
 				842452401B7FBD2A00FB231B /* TextAttributeCell~iphone.xib in Resources */,
 				8424523C1B7FBD0100FB231B /* EntityBrowser~ipad.storyboard in Resources */,
 				8424523D1B7FBD0100FB231B /* EntityBrowser~iphone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84EA2D8D20C42CE300FA08A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EA2DE020C43E2F00FA08A6 /* TextAttributeCell~ipad.xib in Resources */,
+				84EA2DE320C43E2F00FA08A6 /* EntityBrowser~iphone.storyboard in Resources */,
+				84EA2DE220C43E2F00FA08A6 /* EntityBrowser~ipad.storyboard in Resources */,
+				84EA2DDF20C43E2F00FA08A6 /* BooleanAttributeCell~iphone.xib in Resources */,
+				84EA2DE120C43E2F00FA08A6 /* TextAttributeCell~iphone.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84EA2D9520C42CE400FA08A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,6 +1135,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84EA2D8A20C42CE300FA08A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EA2DB920C42D7600FA08A6 /* ImageAttributeCell.m in Sources */,
+				84EA2DBF20C42D7600FA08A6 /* TextAttributeCell.m in Sources */,
+				84EA2DB720C42D7600FA08A6 /* DateAttributeCell.m in Sources */,
+				84EA2DBD20C42D7600FA08A6 /* SliderAttributeCell.m in Sources */,
+				84EA2DB320C42D5700FA08A6 /* NSObject+THRTableDataProviding.m in Sources */,
+				84EA2DCF20C43A6200FA08A6 /* EntityListDataSource.m in Sources */,
+				84EA2DD120C43A6200FA08A6 /* ListDataSource.m in Sources */,
+				84EA2DBB20C42D7600FA08A6 /* IntegerAttributeCell.m in Sources */,
+				84EA2DCD20C43A6200FA08A6 /* DetailVC.m in Sources */,
+				84EA2DC320C42D8300FA08A6 /* THRProperty.m in Sources */,
+				84EA2DB520C42D7600FA08A6 /* BooleanAttributeCell.m in Sources */,
+				84EA2DD720C43A6200FA08A6 /* THRListViewController.m in Sources */,
+				84EA2DAF20C42D5700FA08A6 /* NSManagedObject+ViewAdditions.m in Sources */,
+				84EA2DD320C43A6200FA08A6 /* ListVC.m in Sources */,
+				84EA2DAD20C42D5700FA08A6 /* NSEntityDescription+ThrintAdditions.m in Sources */,
+				84EA2DC520C42D8600FA08A6 /* THRGroup.m in Sources */,
+				84EA2DD920C43DD600FA08A6 /* ThrintKit.m in Sources */,
+				84EA2DD520C43A6200FA08A6 /* ThrintTableViewController.m in Sources */,
+				84EA2DC820C42D8600FA08A6 /* THRList.m in Sources */,
+				84EA2DB120C42D5700FA08A6 /* NSManagedObjectContext+ThrintAdditions.m in Sources */,
+				84EA2DCA20C42D8D00FA08A6 /* Thrint.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84EA2D9320C42CE400FA08A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84EA2D9F20C42CE400FA08A6 /* Thrint_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -941,10 +1179,15 @@
 			target = 4EAB349B14D9D57C0038B6CC /* ThrintKit */;
 			targetProxy = 8410881A15BA140E008E97B9 /* PBXContainerItemProxy */;
 		};
-		8485681E18FC981700914FE1 /* PBXTargetDependency */ = {
+		84EA2D9A20C42CE400FA08A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4EAB349B14D9D57C0038B6CC /* ThrintKit */;
-			targetProxy = 8485681D18FC981700914FE1 /* PBXContainerItemProxy */;
+			target = 84EA2D8E20C42CE300FA08A6 /* Thrint-iOS */;
+			targetProxy = 84EA2D9920C42CE400FA08A6 /* PBXContainerItemProxy */;
+		};
+		84EA2D9C20C42CE400FA08A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E82172B147BFFB300295D45 /* Thrint Demo-iOS */;
+			targetProxy = 84EA2D9B20C42CE400FA08A6 /* PBXContainerItemProxy */;
 		};
 		84F247651AE12DF100D3C499 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1085,6 +1328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Thrint Demo-iOS/Thrint-Prefix.pch";
@@ -1105,6 +1349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Thrint Demo-iOS/Thrint-Prefix.pch";
@@ -1214,6 +1459,150 @@
 			};
 			name = Release;
 		};
+		84EA2DA720C42CE400FA08A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Thrint-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LichenLabs.Thrint-iOS";
+				PRODUCT_NAME = Thrint;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		84EA2DA820C42CE400FA08A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Thrint-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LichenLabs.Thrint-iOS";
+				PRODUCT_NAME = Thrint;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		84EA2DAA20C42CE400FA08A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UA9654EX3X;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Thrint-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LichenLabs.Thrint-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thrint Demo-iOS.app/Thrint Demo-iOS";
+			};
+			name = Debug;
+		};
+		84EA2DAB20C42CE400FA08A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UA9654EX3X;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Thrint-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LichenLabs.Thrint-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thrint Demo-iOS.app/Thrint Demo-iOS";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1258,6 +1647,24 @@
 			buildConfigurations = (
 				844B426E15BA0DC80073B540 /* Debug */,
 				844B426F15BA0DC80073B540 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84EA2DA620C42CE400FA08A6 /* Build configuration list for PBXNativeTarget "Thrint-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84EA2DA720C42CE400FA08A6 /* Debug */,
+				84EA2DA820C42CE400FA08A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84EA2DA920C42CE400FA08A6 /* Build configuration list for PBXNativeTarget "Thrint-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84EA2DAA20C42CE400FA08A6 /* Debug */,
+				84EA2DAB20C42CE400FA08A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <ThrintKit/THRItem.h>
+#import "THRItem.h"
 
 @interface NSObject (THRItemConforming)<THRItem>
 

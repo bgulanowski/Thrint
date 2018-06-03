@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
-#import <ThrintKit/ThrintKit.h>
+#import "ThrintKit.h"
 
 static NSString * const ThrintKitVersion = @"1.1.0";
 

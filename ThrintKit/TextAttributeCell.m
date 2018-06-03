@@ -8,10 +8,10 @@
 
 #import "TextAttributeCell.h"
 
-#import <ThrintKit/ThrintKit.h>
+#import "Thrint.h"
 #import "NSManagedObject+ViewAdditions.h"
 
-#import <BAFoundation/NSManagedObject+BAAdditions.h>
+#import <BAFoundation/BAFoundation.h>
 
 
 @interface UINib (NibLocating)

@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
 

@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Lichen Labs. All rights reserved.
 //
 
-#import <ThrintKit/THRProperty.h>
-#import <ThrintKit/NSObject+THRTableDataProviding.h>
+#import "THRProperty.h"
+#import "NSObject+THRTableDataProviding.h"
 
 @implementation THRProperty
 

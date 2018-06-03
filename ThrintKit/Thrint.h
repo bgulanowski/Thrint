@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Bored Astronaut. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #import <BAFoundation/BACoreDataManager.h>
 

@@ -6,9 +6,8 @@
 //  Copyright (c) 2012 Bored Astronaut. All rights reserved.
 //
 
-#import <ThrintKit/THRGroup.h>
-
-#import <ThrintKit/NSObject+THRTableDataProviding.h>
+#import "THRGroup.h"
+#import "NSObject+THRTableDataProviding.h"
 
 #import <BAFoundation/NSObject+BAIntrospection.h>
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
@@ -71,6 +70,7 @@
 }
 
 + (NSString *)titlePropertyKey {
+    // FIXME: Doing this for every cell we create is not efficient. Should be cached? memoized?
     NSMutableSet *propertyNames = [NSMutableSet setWithArray:[self propertyNames]];
     [propertyNames intersectSet:[self defaultTitlePropertyKeys]];
     return [propertyNames anyObject];

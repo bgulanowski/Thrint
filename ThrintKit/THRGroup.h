@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Lichen Labs. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @protocol THRItem;
 @protocol THRList;

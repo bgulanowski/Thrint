@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-
+#import <CoreData/CoreData.h>
 
 @interface TextAttributeCell : UITableViewCell<UITextFieldDelegate>
 
