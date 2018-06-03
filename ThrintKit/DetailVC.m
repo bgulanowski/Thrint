@@ -233,6 +233,14 @@
 
 #pragma mark - DetailVC
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [[UIApplication modelManager] startEditing]; // _liveEditing is NO
+    }
+    return self;
+}
+
 - (id)initWithObject:(NSManagedObject *)object properties:(NSArray *)properties {
     self = [self initWithStyle:UITableViewStyleGrouped];
     if(self) {
@@ -254,7 +262,7 @@
 //}
 
 - (void)cancelConfirmed {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissSelf];
 }
 
 - (void)finalizeEditing {
