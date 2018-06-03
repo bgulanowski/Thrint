@@ -103,8 +103,6 @@
 		84523DDF1B911239000477A3 /* THRGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 84523DDD1B911239000477A3 /* THRGroup.h */; };
 		84523DE01B911239000477A3 /* THRGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 84523DDE1B911239000477A3 /* THRGroup.m */; };
 		8452E6271617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = 8452E6251617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8456BB821B81FB0900DEECBD /* THRClassInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = 8456BB801B81FB0900DEECBD /* THRClassInspector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8456BB831B81FB0900DEECBD /* THRClassInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 8456BB811B81FB0900DEECBD /* THRClassInspector.m */; };
 		8460D20A1ACAC4ED00BCBBC9 /* THRList.h in Headers */ = {isa = PBXBuildFile; fileRef = 8460D2081ACAC4ED00BCBBC9 /* THRList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8460D20B1ACAC4ED00BCBBC9 /* THRList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460D2091ACAC4ED00BCBBC9 /* THRList.m */; };
 		8461A89216174945009FE5C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8461A89416174945009FE5C5 /* Localizable.strings */; };
@@ -294,8 +292,6 @@
 		84523DDE1B911239000477A3 /* THRGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRGroup.m; sourceTree = "<group>"; };
 		8452E6251617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+THRTableDataProviding.h"; sourceTree = "<group>"; };
 		8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+THRTableDataProviding.m"; sourceTree = "<group>"; };
-		8456BB801B81FB0900DEECBD /* THRClassInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRClassInspector.h; sourceTree = "<group>"; };
-		8456BB811B81FB0900DEECBD /* THRClassInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRClassInspector.m; sourceTree = "<group>"; };
 		8460D2081ACAC4ED00BCBBC9 /* THRList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRList.h; sourceTree = "<group>"; };
 		8460D2091ACAC4ED00BCBBC9 /* THRList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRList.m; sourceTree = "<group>"; };
 		8461A89316174945009FE5C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -502,7 +498,6 @@
 			children = (
 				4E8316EE14E2C62F00123C1B /* Attribute Cells */,
 				8452E62316179DED00DE6DF6 /* Categories */,
-				8456BB841B81FB1700DEECBD /* Introspection */,
 				84BBF67C1B9350D60033E18E /* Detail */,
 				8460D2071ACAC49100BCBBC9 /* List */,
 				8400662F15BA02C10005A060 /* Thrint.h */,
@@ -632,15 +627,6 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		8456BB841B81FB1700DEECBD /* Introspection */ = {
-			isa = PBXGroup;
-			children = (
-				8456BB801B81FB0900DEECBD /* THRClassInspector.h */,
-				8456BB811B81FB0900DEECBD /* THRClassInspector.m */,
-			);
-			name = Introspection;
-			sourceTree = "<group>";
-		};
 		8460D2071ACAC49100BCBBC9 /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,7 +663,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8456BB821B81FB0900DEECBD /* THRClassInspector.h in Headers */,
 				840E11311AA20B190055F56A /* ThrintKit.h in Headers */,
 				84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */,
 				84523DDA1B910F7D000477A3 /* THRItem.h in Headers */,
@@ -916,7 +901,6 @@
 			files = (
 				84523DE01B911239000477A3 /* THRGroup.m in Sources */,
 				8426C214190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m in Sources */,
-				8456BB831B81FB0900DEECBD /* THRClassInspector.m in Sources */,
 				4E8316AF14E2C5BA00123C1B /* BooleanAttributeCell.m in Sources */,
 				4E8316B114E2C5BA00123C1B /* DateAttributeCell.m in Sources */,
 				84BD6A651B80C5B9005C658F /* THRProperty.m in Sources */,
