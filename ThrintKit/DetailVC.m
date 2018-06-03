@@ -117,25 +117,9 @@
     }
 }
 
-- (void)viewDidUnload {
-    self.tableFooterView = nil;
-    [super viewDidUnload];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotate {
     return YES;
 }
-
-
-// We don't need to do this here if the cancel/done buttons are working properly
-//- (void)viewDidDisappear:(BOOL)animated {
-//    if(![[self.navigationController viewControllers] containsObject:self]) {
-//        // we got popped
-//        if(_endEditingBlock) _endEditingBlock();
-//        if(!_liveEditing) [[UIApplication modelManager] endEditing];
-//    }
-//    [super viewDidDisappear:animated];
-//}
 
 #pragma mark - UIScrollViewDelegate
 
@@ -170,6 +154,7 @@
     }
     
     if(listVC) {
+        __weak typeof (self) weakSelf = self;
         ListVC *weakListVC = listVC;
         listVC.selectionBlock = ^(id object) {
             weakListVC.dataSource.selection = object;
@@ -177,14 +162,13 @@
             if(NSInteger16AttributeType == type) {
                 object = @([weakListVC.dataSource.selectionPath row] + 1);
             }
-            [_object setValue:object forKeyPath:propertyName];
+            [weakSelf.object setValue:object forKeyPath:propertyName];
             [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
             return (UIViewController *)nil;
         };
         [self.navigationController pushViewController:listVC animated:YES];
     }
 }
-
 
 #if 0
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {

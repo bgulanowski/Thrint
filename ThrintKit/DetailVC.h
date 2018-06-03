@@ -23,8 +23,8 @@ typedef void (^EndEditingBlock)(void);
 @interface DetailVC : UITableViewController<UIActionSheetDelegate>
 
 @property (nonatomic, weak) UIViewController *container;
+@property (nonatomic, weak) IBOutlet UIView *tableFooterView;
 
-@property (nonatomic, strong) IBOutlet UIView *tableFooterView;
 @property (nonatomic, strong) NSManagedObject *object;
 @property (nonatomic, strong) NSArray *properties;
 
