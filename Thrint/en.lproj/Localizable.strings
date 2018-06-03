@@ -10,10 +10,14 @@
 /* General/Shared */
 "ok" = "OK";
 "cancel" = "Cancel";
-"delete" = "Delete";
-"discard" = "Discard";
-"discard_changes_" = "Discard Changes?";
 
+"delete" = "Delete";
+"delete_entry_title" = "Delete?";
+"delete_entry_message" = "Are you sure you want to delete this entry?";
+
+"discard" = "Discard";
+"discard_changes" = "Discard Changes?";
+"discard_message" = "This will discard the changes that have not been saved. Are you sure?";
 
 /* List */
 

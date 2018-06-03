@@ -122,6 +122,7 @@
 		84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */; };
 		84F4761715C1E7960015D59C /* TextAttributeCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */; };
+		84F7EBE120C452DE00481431 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F7EBE020C452DE00481431 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,6 +310,7 @@
 		84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ThrintAdditions.m"; sourceTree = "<group>"; };
 		84F4761515C1E7700015D59C /* Resources */ = {isa = PBXFileReference; lastKnownFileType = text; name = Resources; path = ThrintKit.framework/Resources; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F4761815C1E7B50015D59C /* ThrintKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ThrintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F7EBE020C452DE00481431 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "Thrint/Launch Screen.storyboard"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -590,6 +592,7 @@
 				4EE47F16147EF2F3006C4795 /* icon_settings.png */,
 				4E83162714E1AE3B00123C1B /* Configuration.plist */,
 				8461A89416174945009FE5C5 /* Localizable.strings */,
+				84F7EBE020C452DE00481431 /* Launch Screen.storyboard */,
 			);
 			name = Resources;
 			path = /Users/brent/Dev/github/thrint/Thrint;
@@ -808,6 +811,7 @@
 				4EE47F15147EF2E7006C4795 /* icon_users.png in Resources */,
 				4EE47F17147EF2F3006C4795 /* icon_settings.png in Resources */,
 				4EE47F19147EF311006C4795 /* icon_document.png in Resources */,
+				84F7EBE120C452DE00481431 /* Launch Screen.storyboard in Resources */,
 				4E83162814E1AE3B00123C1B /* Configuration.plist in Resources */,
 				8461A89216174945009FE5C5 /* Localizable.strings in Resources */,
 				8419ECD41A059A23004D4906 /* BooleanAttributeCell~iphone.xib in Resources */,
@@ -1081,7 +1085,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Thrint/Thrint-Prefix.pch";
 				INFOPLIST_FILE = "Thrint/Thrint-Info.plist";
@@ -1100,7 +1103,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Thrint/Thrint-Prefix.pch";
 				INFOPLIST_FILE = "Thrint/Thrint-Info.plist";
