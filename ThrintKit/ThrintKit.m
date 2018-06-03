@@ -22,7 +22,7 @@ static NSString * const ThrintKitProductName = @"ThrintKit";
     
     NSBundle *thrintKitBundle = [NSBundle bundleForClass:[self class]];
     NSString *resourcePath = [thrintKitBundle pathForResource:ThrintKitProductName ofType:@"bundle"];    
-    return [NSBundle bundleWithPath:resourcePath];
+    return resourcePath ? [NSBundle bundleWithPath:resourcePath] : thrintKitBundle;
 }
 
 @end

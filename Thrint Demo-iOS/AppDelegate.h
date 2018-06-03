@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Thrint.h"
+#import "ThrintDemo.h"
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, ThrintDelegate, BAApplicationDelegateAdditions>
 
-@property (nonatomic, strong) Thrint *thrint;
+@property (nonatomic, strong) ThrintDemo *thrint;
 
 @property (nonatomic, strong) UIWindow *window;
 

@@ -85,7 +85,7 @@
     NSString *storePath = [dirPath stringByAppendingPathComponent:@"thrint.sql"];
     NSArray *names = [[[self configuration] objectForKey:@"entity_tabs"] allKeys];
     
-    self.thrint = [[Thrint alloc] initWithStoreURL:[NSURL fileURLWithPath:storePath] rootEntityNames:names];
+    self.thrint = [[ThrintDemo alloc] initWithStoreURL:[NSURL fileURLWithPath:storePath] rootEntityNames:names];
     _thrint.delegate = self;
     
     if (![_thrint.context countOfEntity:[Team entityName]]) {
