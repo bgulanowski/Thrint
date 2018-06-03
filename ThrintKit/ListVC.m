@@ -17,7 +17,6 @@
 
 @synthesize dataSource=_dataSource;
 @synthesize container=_container;
-@synthesize popOver=_popOver;
 @synthesize selectionBlock=_selectionBlock;
 @synthesize selection=_selection;
 @synthesize allowEditing=_allowEditing;
@@ -49,8 +48,6 @@
     
     if([self.dataSource.content count])
         dvc.object = [self.dataSource objectAtIndexPath:indexPath];
-    
-    [self.popOver dismissPopoverAnimated:YES];
 }
 
 

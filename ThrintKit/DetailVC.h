@@ -20,7 +20,7 @@ typedef void (^EndEditingBlock)(void);
 
 @class ListVC;
 
-@interface DetailVC : UITableViewController<UIActionSheetDelegate>
+@interface DetailVC : UITableViewController
 
 @property (nonatomic, weak) UIViewController *container;
 @property (nonatomic, weak) IBOutlet UIView *tableFooterView;
@@ -42,7 +42,7 @@ typedef void (^EndEditingBlock)(void);
 //- (ListVC *)listViewControllerForProperty:(NSString *)property;
 
 - (void)finalizeEditing;
-- (void)cancelConfirmed;
+//- (void)cancelConfirmed;
 
 - (IBAction)dismissKeyboard:(id)sender;
 - (IBAction)cancelEdits:(id)sender;

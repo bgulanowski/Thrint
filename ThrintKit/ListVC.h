@@ -20,7 +20,6 @@ typedef UIViewController * (^SelectionBlock)(id object);
 @interface ListVC : UITableViewController<ListDataSourceDelegate>
 
 @property (nonatomic, weak) UIViewController *container;
-@property (nonatomic, weak) UIPopoverController *popOver;
 @property (nonatomic, weak) id selection;
 
 @property (nonatomic, strong) ListDataSource *dataSource;

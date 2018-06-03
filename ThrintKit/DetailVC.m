@@ -40,21 +40,34 @@
     }
 }
 
-- (void)confirmCancel {
+- (void)confirmDiscardChanges {
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"discard_changes", @"")
+                                                                   message:NSLocalizedString(@"discard_message", @"")
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *discardAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"discard", @"")
+                                                            style:UIAlertActionStyleDestructive
+                                                          handler:^(UIAlertAction * action) {
+                                                              [self applyCancelEdits];
+                                                          }];
     
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"discard_changes_", @"")
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"cancel", @"")
-                                         destructiveButtonTitle:NSLocalizedString(@"discard", @"")
-                                              otherButtonTitles:nil];
-    self.action = ActionCancel;
+    [alert addAction:discardAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)confirmDeleteObject {
     
-    if(self.tabBarController) {
-        [sheet showFromTabBar:self.tabBarController.tabBar];
-    }
-    else {
-        [sheet showInView:self.view];
-    }
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"delete_entry_title", @"")
+                                                                   message:NSLocalizedString(@"delete_entry_message", @"")
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"delete", @"")
+                                                     style:UIAlertActionStyleDestructive
+                                                   handler:^(UIAlertAction * _Nonnull action) {
+                                                       [self applyDelete];
+                                                   }];
+    
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Accessors
@@ -81,7 +94,6 @@
     }
 }
 
-#pragma mark - Accessors
 - (void)setObject:(NSManagedObject *)model {
     if(_object != model) {
         [[_object managedObjectContext] save:NULL];
@@ -204,33 +216,6 @@
     return cell;
 }
 
-#pragma mark - UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-
-    if([actionSheet cancelButtonIndex] == buttonIndex) return;
-    
-    [self.view endEditing:YES];
-    
-    if(_action == ActionCancel) {
-        if([self.object isInserted]) {
-            [self.object.managedObjectContext deleteObject:self.object];
-            self.object = nil;
-        }
-        else {
-            [self.object.managedObjectContext refreshObject:self.object mergeChanges:NO];
-        }
-        [[UIApplication modelManager] cancelEdits];
-    }
-    else if(_action == ActionDelete) {
-        [self.object.managedObjectContext deleteObject:self.object];
-        [[UIApplication modelManager] endEditing];
-        [[UIApplication modelManager] save];
-    }
-    
-    [self cancelConfirmed];
-}
-
 #pragma mark - DetailVC
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
@@ -260,10 +245,6 @@
 //- (ListVC *)listViewControllerForProperty:(NSString *)property {
 //    
 //}
-
-- (void)cancelConfirmed {
-    [self dismissSelf];
-}
 
 - (void)finalizeEditing {
     [self.view endEditing:YES];
@@ -299,7 +280,7 @@
         [self dismissSelf];
     }
     else {
-        [self confirmCancel];
+        [self confirmDiscardChanges];
     }
 }
 
@@ -309,19 +290,31 @@
 }
 
 - (IBAction)deleteObject:(id)sender {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"delete_log_", @"")
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"cancel", @"")
-                                         destructiveButtonTitle:NSLocalizedString(@"delete", @"")
-                                              otherButtonTitles:nil];
-    self.action = ActionDelete;
-    
-    if(self.tabBarController) {
-        [sheet showFromTabBar:self.tabBarController.tabBar];
+    [self confirmDeleteObject];
+}
+
+#pragma mark - DetailVC
+
+- (void)applyCancelEdits {
+    // ???: necessary?
+    [self.view endEditing:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+    if([self.object isInserted]) {
+        [self.object.managedObjectContext deleteObject:self.object];
+        self.object = nil;
     }
     else {
-        [sheet showInView:self.view];
+        [self.object.managedObjectContext refreshObject:self.object mergeChanges:NO];
     }
+    [[UIApplication modelManager] cancelEdits];
+    [self dismissSelf];
+}
+
+- (void)applyDelete {
+    [self.view endEditing:YES];
+    [self.object.managedObjectContext deleteObject:self.object];
+    [[UIApplication modelManager] endEditing];
+    [[UIApplication modelManager] save];
 }
 
 @end
