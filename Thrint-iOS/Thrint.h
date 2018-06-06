@@ -31,7 +31,7 @@ FOUNDATION_EXPORT const unsigned char Thrint_iOSVersionString[];
 #import <Thrint/IntegerAttributeCell.h>
 #import <Thrint/SliderAttributeCell.h>
 #import <Thrint/TextAttributeCell.h>
-#import <Thrint/Thrint.h>
+#import <Thrint/THRDataManager.h>
 
 #import <Thrint/NSObject+THRTableDataProviding.h>
 

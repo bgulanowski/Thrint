@@ -6,7 +6,7 @@
 //  Copyright © 2018 Lichen Labs. All rights reserved.
 //
 
-#import <Thrint/ThrintKit.h>
+#import <Thrint/Thrint.h>
 
 @interface ThrintDemo : THRDataManager
 
