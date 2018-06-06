@@ -535,8 +535,8 @@
 		4E83161114E1A33D00123C1B /* ThrintKit */ = {
 			isa = PBXGroup;
 			children = (
+				845E595220C811DB00A2983C /* View Model */,
 				4E8316ED14E2C62800123C1B /* Classes */,
-				4E83174D14E413B200123C1B /* Resources */,
 				4E83161214E1A33D00123C1B /* Supporting Files */,
 			);
 			path = ThrintKit;
@@ -618,43 +618,12 @@
 		4E8316ED14E2C62800123C1B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4E8316EE14E2C62F00123C1B /* Attribute Cells */,
-				8452E62316179DED00DE6DF6 /* Categories */,
-				84BBF67C1B9350D60033E18E /* Detail */,
-				8460D2071ACAC49100BCBBC9 /* List */,
 				8400662F15BA02C10005A060 /* Thrint.h */,
 				4E8316A914E2C5BA00123C1B /* Thrint.m */,
 				4E83162314E1A76D00123C1B /* ThrintKit.h */,
 				4E83162414E1A76D00123C1B /* ThrintKit.m */,
-				4E8316EF14E2C63700123C1B /* View Controllers */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		4E8316EE14E2C62F00123C1B /* Attribute Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Attribute Cells";
-			sourceTree = "<group>";
-		};
-		4E8316EF14E2C63700123C1B /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				8426F4C715C1DB9C00337A17 /* DetailVC.h */,
-				8426F4C815C1DB9C00337A17 /* DetailVC.m */,
-				8426F4CF15C1DC4000337A17 /* EntityListDataSource.h */,
-				8426F4D015C1DC4000337A17 /* EntityListDataSource.m */,
-				8426F4D315C1DC5800337A17 /* ListDataSource.h */,
-				8426F4D415C1DC5800337A17 /* ListDataSource.m */,
-				8426F4C915C1DB9C00337A17 /* ListVC.h */,
-				8426F4CA15C1DB9C00337A17 /* ListVC.m */,
-				8400663015BA02C10005A060 /* ThrintTableViewController.h */,
-				4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */,
-				84002B3D1B89FEBD001B65A0 /* THRListViewController.h */,
-				84002B3E1B89FEBD001B65A0 /* THRListViewController.m */,
-			);
-			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		4E8316FB14E2E58200123C1B /* Model */ = {
@@ -681,18 +650,6 @@
 			name = "Templates (not part of target)";
 			sourceTree = "<group>";
 		};
-		4E83174D14E413B200123C1B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				847C618019144E37001622BF /* BooleanAttributeCell~iphone.xib */,
-				4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */,
-				84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */,
-				4E83161B14E1A3FC00123C1B /* EntityBrowser~ipad.storyboard */,
-				840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		4EE47F11147EF2D1006C4795 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -705,21 +662,6 @@
 				84F7EBE020C452DE00481431 /* Launch Screen.storyboard */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		8452E62316179DED00DE6DF6 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */,
-				84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */,
-				8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */,
-				4E8316A114E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m */,
-				8426C211190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h */,
-				8426C212190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m */,
-				8452E6251617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h */,
-				8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */,
-			);
-			name = Categories;
 			sourceTree = "<group>";
 		};
 		845E58FB20C80C3000A2983C /* Thrint Demo-Mac */ = {
@@ -778,25 +720,95 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		8460D2071ACAC49100BCBBC9 /* List */ = {
+		845E594D20C810EC00A2983C /* Cell Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				847C618019144E37001622BF /* BooleanAttributeCell~iphone.xib */,
+				4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */,
+				84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */,
+			);
+			path = "Cell Interfaces";
+			sourceTree = "<group>";
+		};
+		845E594E20C8110D00A2983C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4E83161B14E1A3FC00123C1B /* EntityBrowser~ipad.storyboard */,
+				840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		845E594F20C8115800A2983C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8426F4C715C1DB9C00337A17 /* DetailVC.h */,
+				8426F4C815C1DB9C00337A17 /* DetailVC.m */,
+				8426F4CF15C1DC4000337A17 /* EntityListDataSource.h */,
+				8426F4D015C1DC4000337A17 /* EntityListDataSource.m */,
+				8426F4D315C1DC5800337A17 /* ListDataSource.h */,
+				8426F4D415C1DC5800337A17 /* ListDataSource.m */,
+				8426F4C915C1DB9C00337A17 /* ListVC.h */,
+				8426F4CA15C1DB9C00337A17 /* ListVC.m */,
+				8400663015BA02C10005A060 /* ThrintTableViewController.h */,
+				4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */,
+				84002B3D1B89FEBD001B65A0 /* THRListViewController.h */,
+				84002B3E1B89FEBD001B65A0 /* THRListViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		845E595220C811DB00A2983C /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				84BD6A621B80C5B9005C658F /* THRProperty.h */,
+				84BD6A631B80C5B9005C658F /* THRProperty.m */,
 				84523DDD1B911239000477A3 /* THRGroup.h */,
 				84523DDE1B911239000477A3 /* THRGroup.m */,
 				84523DD91B910F7D000477A3 /* THRItem.h */,
 				8460D2081ACAC4ED00BCBBC9 /* THRList.h */,
 				8460D2091ACAC4ED00BCBBC9 /* THRList.m */,
 			);
-			name = List;
+			path = "View Model";
 			sourceTree = "<group>";
 		};
-		84BBF67C1B9350D60033E18E /* Detail */ = {
+		845E595320C8121500A2983C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				84BD6A621B80C5B9005C658F /* THRProperty.h */,
-				84BD6A631B80C5B9005C658F /* THRProperty.m */,
+				845E595620C8124100A2983C /* Thrint */,
+				845E595520C8122500A2983C /* Foundation */,
+				845E595420C8121B00A2983C /* Core Data */,
 			);
-			name = Detail;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		845E595420C8121B00A2983C /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */,
+				84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */,
+				8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */,
+				4E8316A114E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m */,
+				8426C211190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h */,
+				8426C212190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		845E595520C8122500A2983C /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				8452E6251617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h */,
+				8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		845E595620C8124100A2983C /* Thrint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Thrint;
 			sourceTree = "<group>";
 		};
 		84EA2D5B20C1E8B500FA08A6 /* Products */ = {
@@ -810,6 +822,10 @@
 		84EA2D9020C42CE300FA08A6 /* Thrint-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				845E595320C8121500A2983C /* Extensions */,
+				845E594F20C8115800A2983C /* View Controllers */,
+				845E594E20C8110D00A2983C /* Storyboards */,
+				845E594D20C810EC00A2983C /* Cell Interfaces */,
 				845E593420C80E5300A2983C /* Cells */,
 				84EA2D9120C42CE300FA08A6 /* Thrint.h */,
 				84EA2D9220C42CE300FA08A6 /* Info.plist */,
