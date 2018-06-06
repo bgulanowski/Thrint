@@ -387,7 +387,6 @@
 		84BD6A621B80C5B9005C658F /* THRProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRProperty.h; sourceTree = "<group>"; };
 		84BD6A631B80C5B9005C658F /* THRProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRProperty.m; sourceTree = "<group>"; };
 		84EA2D5220C1D7B500FA08A6 /* BAFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BAFoundation.xcodeproj; path = BAFoundation/iOS/BAFoundation.xcodeproj; sourceTree = GITHUB; };
-		84EA2D5920C1D85500FA08A6 /* libBAFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libBAFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EA2D8820C42C7A00FA08A6 /* Thrint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thrint.xcdatamodel; sourceTree = "<group>"; };
 		84EA2D8F20C42CE300FA08A6 /* Thrint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Thrint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EA2D9120C42CE300FA08A6 /* Thrint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Thrint.h; sourceTree = "<group>"; };
@@ -398,8 +397,6 @@
 		84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TextAttributeCell~iphone.xib"; sourceTree = "<group>"; };
 		84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+ThrintAdditions.h"; sourceTree = "<group>"; };
 		84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+ThrintAdditions.m"; sourceTree = "<group>"; };
-		84F4761515C1E7700015D59C /* Resources */ = {isa = PBXFileReference; lastKnownFileType = text; name = Resources; path = ThrintKit.framework/Resources; sourceTree = BUILT_PRODUCTS_DIR; };
-		84F4761815C1E7B50015D59C /* ThrintKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ThrintKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F7EBD620C443CC00481431 /* ThrintDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThrintDemo.h; sourceTree = "<group>"; };
 		84F7EBD720C443CC00481431 /* ThrintDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThrintDemo.m; sourceTree = "<group>"; };
 		84F7EBDA20C444B400481431 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -501,10 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				84F7EBDA20C444B400481431 /* libz.tbd */,
-				84EA2D5920C1D85500FA08A6 /* libBAFoundation.a */,
 				8485682818FCB62800914FE1 /* libz.dylib */,
-				84F4761815C1E7B50015D59C /* ThrintKit.framework */,
-				84F4761515C1E7700015D59C /* Resources */,
 				4E821730147BFFB300295D45 /* UIKit.framework */,
 				4E821732147BFFB300295D45 /* Foundation.framework */,
 				4EA237C4147C022500E69862 /* CoreData.framework */,
