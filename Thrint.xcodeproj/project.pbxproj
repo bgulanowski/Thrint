@@ -14,9 +14,6 @@
 		4E82173D147BFFB300295D45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E82173C147BFFB300295D45 /* main.m */; };
 		4E821741147BFFB300295D45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E821740147BFFB300295D45 /* AppDelegate.m */; };
 		4E83162814E1AE3B00123C1B /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E83162714E1AE3B00123C1B /* Configuration.plist */; };
-		4E8316DF14E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A114E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m */; };
-		4E8316E714E2C5BA00123C1B /* Thrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A914E2C5BA00123C1B /* Thrint.m */; };
-		4E8316EA14E2C5BA00123C1B /* ThrintTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */; };
 		4E8316FC14E2E5E000123C1B /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168D14E2C5BA00123C1B /* Component.m */; };
 		4E8316FD14E2E5E000123C1B /* Developer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168F14E2C5BA00123C1B /* Developer.m */; };
 		4E8316FE14E2E5E000123C1B /* Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83169114E2C5BA00123C1B /* Feature.m */; };
@@ -38,37 +35,10 @@
 		4E83170E14E2E5FF00123C1B /* _Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168914E2C5BA00123C1B /* _Team.m */; };
 		4E83170F14E2E5FF00123C1B /* _Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83168B14E2C5BA00123C1B /* _Test.m */; };
 		4EA237C5147C022500E69862 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA237C4147C022500E69862 /* CoreData.framework */; };
-		4EAB349D14D9D57C0038B6CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E821732147BFFB300295D45 /* Foundation.framework */; };
 		4EE47F14147EF2E7006C4795 /* icon_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F12147EF2E7006C4795 /* icon_user.png */; };
 		4EE47F15147EF2E7006C4795 /* icon_users.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F13147EF2E7006C4795 /* icon_users.png */; };
 		4EE47F17147EF2F3006C4795 /* icon_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F16147EF2F3006C4795 /* icon_settings.png */; };
 		4EE47F19147EF311006C4795 /* icon_document.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EE47F18147EF311006C4795 /* icon_document.png */; };
-		84002B3F1B89FEBD001B65A0 /* THRListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 84002B3D1B89FEBD001B65A0 /* THRListViewController.h */; };
-		84002B401B89FEBD001B65A0 /* THRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84002B3E1B89FEBD001B65A0 /* THRListViewController.m */; };
-		840E11311AA20B190055F56A /* ThrintKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E83162314E1A76D00123C1B /* ThrintKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		840E117F1AA2124C0055F56A /* EntityBrowser~iphone.storyboard in Copy Resources */ = {isa = PBXBuildFile; fileRef = 840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */; };
-		840E11AC1AA222F70055F56A /* ThrintKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83162414E1A76D00123C1B /* ThrintKit.m */; };
-		8410880315BA1120008E97B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E821730147BFFB300295D45 /* UIKit.framework */; };
-		8410880415BA113E008E97B9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA237C4147C022500E69862 /* CoreData.framework */; };
-		8410881015BA11FF008E97B9 /* NSManagedObject+ViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410881515BA11FF008E97B9 /* Thrint.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662F15BA02C10005A060 /* Thrint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410881615BA11FF008E97B9 /* ThrintTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400663015BA02C10005A060 /* ThrintTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8410882015BA1588008E97B9 /* TextAttributeCell~ipad.xib in Copy Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */; };
-		8410882615BA17B5008E97B9 /* EntityBrowser~ipad.storyboard in Copy Resources */ = {isa = PBXBuildFile; fileRef = 4E83161B14E1A3FC00123C1B /* EntityBrowser~ipad.storyboard */; };
-		8426C213190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426C211190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8426C214190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426C212190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m */; };
-		8426F4CB15C1DB9C00337A17 /* DetailVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4C715C1DB9C00337A17 /* DetailVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8426F4CC15C1DB9C00337A17 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4C815C1DB9C00337A17 /* DetailVC.m */; };
-		8426F4CD15C1DB9C00337A17 /* ListVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4C915C1DB9C00337A17 /* ListVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8426F4CE15C1DB9C00337A17 /* ListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4CA15C1DB9C00337A17 /* ListVC.m */; };
-		8426F4D115C1DC4000337A17 /* EntityListDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4CF15C1DC4000337A17 /* EntityListDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8426F4D215C1DC4000337A17 /* EntityListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4D015C1DC4000337A17 /* EntityListDataSource.m */; };
-		8426F4D515C1DC5800337A17 /* ListDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4D315C1DC5800337A17 /* ListDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8426F4D615C1DC5800337A17 /* ListDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4D415C1DC5800337A17 /* ListDataSource.m */; };
-		84523DDA1B910F7D000477A3 /* THRItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 84523DD91B910F7D000477A3 /* THRItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84523DDF1B911239000477A3 /* THRGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 84523DDD1B911239000477A3 /* THRGroup.h */; };
-		84523DE01B911239000477A3 /* THRGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 84523DDE1B911239000477A3 /* THRGroup.m */; };
-		8452E6271617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = 8452E6251617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		845E58FE20C80C3000A2983C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E58FD20C80C3000A2983C /* AppDelegate.m */; };
 		845E590120C80C3000A2983C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E590020C80C3000A2983C /* ViewController.m */; };
 		845E590320C80C3100A2983C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845E590220C80C3100A2983C /* Assets.xcassets */; };
@@ -78,16 +48,9 @@
 		845E592B20C80CDF00A2983C /* Thrint_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 845E592920C80CDF00A2983C /* Thrint_Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		845E592E20C80CDF00A2983C /* Thrint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845E592720C80CDF00A2983C /* Thrint.framework */; };
 		845E593020C80CDF00A2983C /* Thrint.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 845E592720C80CDF00A2983C /* Thrint.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8460D20A1ACAC4ED00BCBBC9 /* THRList.h in Headers */ = {isa = PBXBuildFile; fileRef = 8460D2081ACAC4ED00BCBBC9 /* THRList.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8460D20B1ACAC4ED00BCBBC9 /* THRList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460D2091ACAC4ED00BCBBC9 /* THRList.m */; };
 		8461A89216174945009FE5C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8461A89416174945009FE5C5 /* Localizable.strings */; };
-		847C618119144E63001622BF /* TextAttributeCell~iphone.xib in Copy Resources */ = {isa = PBXBuildFile; fileRef = 84F11F8E19042E730035E15C /* TextAttributeCell~iphone.xib */; };
-		847C618219144E63001622BF /* BooleanAttributeCell~iphone.xib in Copy Resources */ = {isa = PBXBuildFile; fileRef = 847C618019144E37001622BF /* BooleanAttributeCell~iphone.xib */; };
 		8485682918FCB62800914FE1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485682818FCB62800914FE1 /* libz.dylib */; };
-		848D1DC41B8DD1B30020A710 /* NSObject+THRTableDataProviding.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452E6261617A0B200DE6DF6 /* NSObject+THRTableDataProviding.m */; };
 		84B3D3F91909F47000DA15B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B3D3F81909F47000DA15B5 /* Images.xcassets */; };
-		84BD6A641B80C5B9005C658F /* THRProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 84BD6A621B80C5B9005C658F /* THRProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84BD6A651B80C5B9005C658F /* THRProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD6A631B80C5B9005C658F /* THRProperty.m */; };
 		84EA2D8920C42C7A00FA08A6 /* ThrintDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2D8720C42C7A00FA08A6 /* ThrintDemo.xcdatamodeld */; };
 		84EA2D9820C42CE400FA08A6 /* Thrint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EA2D8F20C42CE300FA08A6 /* Thrint.framework */; };
 		84EA2D9F20C42CE400FA08A6 /* Thrint_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EA2D9E20C42CE400FA08A6 /* Thrint_iOSTests.m */; };
@@ -143,8 +106,6 @@
 		84EA2DE320C43E2F00FA08A6 /* EntityBrowser~iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */; };
 		84EA2DE420C43FA200FA08A6 /* Thrint.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84EA2D8F20C42CE300FA08A6 /* Thrint.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84EA2DE720C4424200FA08A6 /* libBAFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84EA2D5F20C1E8B500FA08A6 /* libBAFoundation.a */; };
-		84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F11FF119061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F11FF219061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m */; };
 		84F7EBD820C443CC00481431 /* ThrintDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F7EBD720C443CC00481431 /* ThrintDemo.m */; };
 		84F7EBDB20C444B400481431 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F7EBDA20C444B400481431 /* libz.tbd */; };
 		84F7EBE120C452DE00481431 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F7EBE020C452DE00481431 /* Launch Screen.storyboard */; };
@@ -226,21 +187,6 @@
 				84EA2DE420C43FA200FA08A6 /* Thrint.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8410881F15BA155E008E97B9 /* Copy Resources */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(TARGET_NAME).framework/Versions/A/Resources";
-			dstSubfolderSpec = 16;
-			files = (
-				840E117F1AA2124C0055F56A /* EntityBrowser~iphone.storyboard in Copy Resources */,
-				847C618119144E63001622BF /* TextAttributeCell~iphone.xib in Copy Resources */,
-				847C618219144E63001622BF /* BooleanAttributeCell~iphone.xib in Copy Resources */,
-				8410882015BA1588008E97B9 /* TextAttributeCell~ipad.xib in Copy Resources */,
-				8410882615BA17B5008E97B9 /* EntityBrowser~ipad.storyboard in Copy Resources */,
-			);
-			name = "Copy Resources";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		845E592F20C80CDF00A2983C /* Embed Frameworks */ = {
@@ -330,7 +276,6 @@
 		4EA237C4147C022500E69862 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4EA23818147C36D900E69862 /* DashboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardVC.h; sourceTree = "<group>"; };
 		4EA23819147C36D900E69862 /* DashboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardVC.m; sourceTree = "<group>"; };
-		4EAB349C14D9D57C0038B6CC /* libThrintKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libThrintKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE47F12147EF2E7006C4795 /* icon_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_user.png; sourceTree = "<group>"; };
 		4EE47F13147EF2E7006C4795 /* icon_users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_users.png; sourceTree = "<group>"; };
 		4EE47F16147EF2F3006C4795 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
@@ -417,16 +362,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4EAB349914D9D57C0038B6CC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4EAB349D14D9D57C0038B6CC /* Foundation.framework in Frameworks */,
-				8410880415BA113E008E97B9 /* CoreData.framework in Frameworks */,
-				8410880315BA1120008E97B9 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		845E58F720C80C3000A2983C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,7 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				4E82172C147BFFB300295D45 /* Thrint Demo.app */,
-				4EAB349C14D9D57C0038B6CC /* libThrintKit.a */,
 				84EA2D8F20C42CE300FA08A6 /* Thrint.framework */,
 				84EA2D9720C42CE400FA08A6 /* Thrint-iOSTests.xctest */,
 				845E58FA20C80C3000A2983C /* Thrint Demo.app */,
@@ -845,29 +779,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4EAB349A14D9D57C0038B6CC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				840E11311AA20B190055F56A /* ThrintKit.h in Headers */,
-				84F11FF319061D5A0035E15C /* NSEntityDescription+ThrintAdditions.h in Headers */,
-				84523DDA1B910F7D000477A3 /* THRItem.h in Headers */,
-				8426C213190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.h in Headers */,
-				8410881015BA11FF008E97B9 /* NSManagedObject+ViewAdditions.h in Headers */,
-				84523DDF1B911239000477A3 /* THRGroup.h in Headers */,
-				8426F4CB15C1DB9C00337A17 /* DetailVC.h in Headers */,
-				8426F4CD15C1DB9C00337A17 /* ListVC.h in Headers */,
-				8426F4D115C1DC4000337A17 /* EntityListDataSource.h in Headers */,
-				84002B3F1B89FEBD001B65A0 /* THRListViewController.h in Headers */,
-				8460D20A1ACAC4ED00BCBBC9 /* THRList.h in Headers */,
-				8426F4D515C1DC5800337A17 /* ListDataSource.h in Headers */,
-				8410881515BA11FF008E97B9 /* Thrint.h in Headers */,
-				8410881615BA11FF008E97B9 /* ThrintTableViewController.h in Headers */,
-				84BD6A641B80C5B9005C658F /* THRProperty.h in Headers */,
-				8452E6271617A0B200DE6DF6 /* NSObject+THRTableDataProviding.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		845E592420C80CDF00A2983C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -926,25 +837,6 @@
 			productName = Thrint;
 			productReference = 4E82172C147BFFB300295D45 /* Thrint Demo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		4EAB349B14D9D57C0038B6CC /* ThrintKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4EAB34A614D9D57C0038B6CC /* Build configuration list for PBXNativeTarget "ThrintKit" */;
-			buildPhases = (
-				4EAB349A14D9D57C0038B6CC /* Headers */,
-				844B427615BA0ED40073B540 /* Create Bundle and Add Headers */,
-				8410881F15BA155E008E97B9 /* Copy Resources */,
-				4EAB349814D9D57C0038B6CC /* Sources */,
-				4EAB349914D9D57C0038B6CC /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ThrintKit;
-			productName = thrint;
-			productReference = 4EAB349C14D9D57C0038B6CC /* libThrintKit.a */;
-			productType = "com.apple.product-type.library.static";
 		};
 		845E58F920C80C3000A2983C /* Thrint Demo-Mac */ = {
 			isa = PBXNativeTarget;
@@ -1076,7 +968,6 @@
 			projectRoot = "";
 			targets = (
 				4E82172B147BFFB300295D45 /* Thrint Demo-iOS */,
-				4EAB349B14D9D57C0038B6CC /* ThrintKit */,
 				84EA2D8E20C42CE300FA08A6 /* Thrint-iOS */,
 				84EA2D9620C42CE400FA08A6 /* Thrint-iOSTests */,
 				845E58F920C80C3000A2983C /* Thrint Demo-Mac */,
@@ -1184,24 +1075,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		844B427615BA0ED40073B540 /* Create Bundle and Add Headers */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Create Bundle and Add Headers";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/ThrintKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh \"Versions/Current/Headers\"   \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/Resources\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Resources\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4E821728147BFFB300295D45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1231,28 +1104,6 @@
 				4E82173D147BFFB300295D45 /* main.m in Sources */,
 				4E821741147BFFB300295D45 /* AppDelegate.m in Sources */,
 				84EA2D8920C42C7A00FA08A6 /* ThrintDemo.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4EAB349814D9D57C0038B6CC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				84523DE01B911239000477A3 /* THRGroup.m in Sources */,
-				8426C214190197D5001FE49F /* NSManagedObjectContext+ThrintAdditions.m in Sources */,
-				84BD6A651B80C5B9005C658F /* THRProperty.m in Sources */,
-				8460D20B1ACAC4ED00BCBBC9 /* THRList.m in Sources */,
-				848D1DC41B8DD1B30020A710 /* NSObject+THRTableDataProviding.m in Sources */,
-				4E8316DF14E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m in Sources */,
-				84002B401B89FEBD001B65A0 /* THRListViewController.m in Sources */,
-				84F11FF419061D5A0035E15C /* NSEntityDescription+ThrintAdditions.m in Sources */,
-				4E8316E714E2C5BA00123C1B /* Thrint.m in Sources */,
-				4E8316EA14E2C5BA00123C1B /* ThrintTableViewController.m in Sources */,
-				840E11AC1AA222F70055F56A /* ThrintKit.m in Sources */,
-				8426F4CC15C1DB9C00337A17 /* DetailVC.m in Sources */,
-				8426F4CE15C1DB9C00337A17 /* ListVC.m in Sources */,
-				8426F4D215C1DC4000337A17 /* EntityListDataSource.m in Sources */,
-				8426F4D615C1DC5800337A17 /* ListDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1503,40 +1354,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BoredAstronaut.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Thrint Demo";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		4EAB34A414D9D57C0038B6CC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/thrint.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(TARGET_NAME)/$(PRODUCT_NAME)-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(CONFIGURATION_BUILD_DIR)/usr/local/include",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = include/ThrintKit;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		4EAB34A514D9D57C0038B6CC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/thrint.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(TARGET_NAME)/$(PRODUCT_NAME)-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(CONFIGURATION_BUILD_DIR)/usr/local/include",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = include/ThrintKit;
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -1855,15 +1672,6 @@
 			buildConfigurations = (
 				4E821757147BFFB400295D45 /* Debug */,
 				4E821758147BFFB400295D45 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4EAB34A614D9D57C0038B6CC /* Build configuration list for PBXNativeTarget "ThrintKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4EAB34A414D9D57C0038B6CC /* Debug */,
-				4EAB34A514D9D57C0038B6CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
