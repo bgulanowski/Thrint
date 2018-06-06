@@ -13,6 +13,6 @@
     #import <CoreData/CoreData.h>
     #import <Foundation/Foundation.h>
 
-    #import <ThrintKit/ThrintKit.h>
+    #import <Thrint/ThrintKit.h>
 #endif
 

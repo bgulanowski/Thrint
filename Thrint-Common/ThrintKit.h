@@ -8,24 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-#import <ThrintKit/THRList.h>
-#import <ThrintKit/THRProperty.h>
+#import <Thrint/THRList.h>
+#import <Thrint/THRProperty.h>
 
-#import <ThrintKit/ListDataSource.h>
-#import <ThrintKit/EntityListDataSource.h>
-#import <ThrintKit/ListVC.h>
-#import <ThrintKit/DetailVC.h>
-#import <ThrintKit/ThrintTableViewController.h>
+#import <Thrint/ListDataSource.h>
+#import <Thrint/EntityListDataSource.h>
+#import <Thrint/ListVC.h>
+#import <Thrint/DetailVC.h>
+#import <Thrint/ThrintTableViewController.h>
 
-#import <ThrintKit/BooleanAttributeCell.h>
-#import <ThrintKit/DateAttributeCell.h>
-#import <ThrintKit/ImageAttributeCell.h>
-#import <ThrintKit/IntegerAttributeCell.h>
-#import <ThrintKit/SliderAttributeCell.h>
-#import <ThrintKit/TextAttributeCell.h>
-#import <ThrintKit/Thrint.h>
+#import <Thrint/BooleanAttributeCell.h>
+#import <Thrint/DateAttributeCell.h>
+#import <Thrint/ImageAttributeCell.h>
+#import <Thrint/IntegerAttributeCell.h>
+#import <Thrint/SliderAttributeCell.h>
+#import <Thrint/TextAttributeCell.h>
+#import <Thrint/Thrint.h>
 
-#import <ThrintKit/NSObject+THRTableDataProviding.h>
+#import <Thrint/NSObject+THRTableDataProviding.h>
 
 @interface ThrintKit : NSObject
 

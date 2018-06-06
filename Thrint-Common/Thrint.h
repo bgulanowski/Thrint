@@ -10,9 +10,9 @@
 
 #import <BAFoundation/BACoreDataManager.h>
 
-#import <ThrintKit/ListVC.h>
-#import <ThrintKit/DetailVC.h>
-#import <ThrintKit/ThrintTableViewController.h>
+#import <Thrint/ListVC.h>
+#import <Thrint/DetailVC.h>
+#import <Thrint/ThrintTableViewController.h>
 
 
 @protocol ThrintDelegate <NSObject>

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Lichen Labs. All rights reserved.
 //
 
-#import <ThrintKit/ThrintKit.h>
+#import <Thrint/ThrintKit.h>
 
 @interface ThrintDemo : Thrint
 

@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-#import <ThrintKit/THRItem.h>
+#import <Thrint/THRItem.h>
 
 @protocol THRMutableList;
 

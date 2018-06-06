@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <ThrintKit/THRItem.h>
+#import <Thrint/THRItem.h>
 #import <BAFoundation/NSObject+BAIntrospection.h>
 
 typedef NS_ENUM(NSUInteger, THRPropertyType) {

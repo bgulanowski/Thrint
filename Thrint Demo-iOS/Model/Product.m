@@ -1,6 +1,6 @@
 #import "Product.h"
 
-#import <ThrintKit/NSManagedObject+ViewAdditions.h>
+#import <Thrint/NSManagedObject+ViewAdditions.h>
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 
