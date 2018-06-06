@@ -215,9 +215,6 @@
 		4E82173E147BFFB300295D45 /* Thrint-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Thrint-Prefix.pch"; sourceTree = "<group>"; };
 		4E82173F147BFFB300295D45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E821740147BFFB300295D45 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4E83161314E1A33D00123C1B /* ThrintKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThrintKit-Info.plist"; sourceTree = "<group>"; };
-		4E83161514E1A33D00123C1B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4E83161714E1A33D00123C1B /* ThrintKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThrintKit-Prefix.pch"; sourceTree = "<group>"; };
 		4E83161B14E1A3FC00123C1B /* EntityBrowser~ipad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "EntityBrowser~ipad.storyboard"; sourceTree = "<group>"; };
 		4E83162314E1A76D00123C1B /* ThrintKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrintKit.h; sourceTree = "<group>"; };
 		4E83162414E1A76D00123C1B /* ThrintKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrintKit.m; sourceTree = "<group>"; };
@@ -472,19 +469,8 @@
 			children = (
 				845E595220C811DB00A2983C /* View Model */,
 				4E8316ED14E2C62800123C1B /* Classes */,
-				4E83161214E1A33D00123C1B /* Supporting Files */,
 			);
 			path = "Thrint-Common";
-			sourceTree = "<group>";
-		};
-		4E83161214E1A33D00123C1B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4E83161314E1A33D00123C1B /* ThrintKit-Info.plist */,
-				4E83161414E1A33D00123C1B /* InfoPlist.strings */,
-				4E83161714E1A33D00123C1B /* ThrintKit-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4E83166E14E2C50500123C1B /* View Controllers */ = {
@@ -1187,14 +1173,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				4E82173A147BFFB300295D45 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4E83161414E1A33D00123C1B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4E83161514E1A33D00123C1B /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
