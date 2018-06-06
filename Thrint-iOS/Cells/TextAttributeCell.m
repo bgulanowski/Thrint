@@ -8,7 +8,7 @@
 
 #import "TextAttributeCell.h"
 
-#import "Thrint.h"
+#import "THRDataManager.h"
 #import "NSManagedObject+ViewAdditions.h"
 
 #import <BAFoundation/BAFoundation.h>
@@ -196,7 +196,7 @@
         nibs = [[NSMutableDictionary alloc] init];
     });
     
-    NSString *nibFileName = [NSString stringWithFormat:@"%@~%@", NSStringFromClass(self), [Thrint fileSuffixForDevice]];
+    NSString *nibFileName = [NSString stringWithFormat:@"%@~%@", NSStringFromClass(self), [THRDataManager fileSuffixForDevice]];
     UINib *nib = [nibs objectForKey:nibFileName];
     
     if(!nib) {

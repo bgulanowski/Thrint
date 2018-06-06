@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Bored Astronaut. All rights reserved.
 //
 
-#import "Thrint.h"
+#import "THRDataManager.h"
 
 #import "ListVC.h"
 #import "ThrintKit.h"
@@ -15,7 +15,7 @@
 #import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 
 
-@implementation Thrint {
+@implementation THRDataManager {
     dispatch_once_t _thrintStoryBoardToken;
 }
 

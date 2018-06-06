@@ -10,7 +10,7 @@
 
 #import "ListVC.h"
 
-#import "Thrint.h"
+#import "THRDataManager.h"
 
 
 @implementation ThrintTableViewController

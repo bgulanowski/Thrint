@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@class Thrint;
+@class THRDataManager;
 
 @interface ThrintTableViewController : UITableViewController
 
-@property (nonatomic, weak)   Thrint *thrint;
+@property (nonatomic, weak)   THRDataManager *thrint;
 @property (nonatomic, strong) NSArray *entityNames;
 
 @end

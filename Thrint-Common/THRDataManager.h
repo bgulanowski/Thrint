@@ -24,7 +24,7 @@
 @end
 
 
-@interface Thrint : BACoreDataManager<UISplitViewControllerDelegate> {
+@interface THRDataManager : BACoreDataManager<UISplitViewControllerDelegate> {
     BOOL _delegateTitles;
     BOOL _delegateImages;
 }

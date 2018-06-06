@@ -8,7 +8,7 @@
 
 #import "DetailVC.h"
 
-#import "Thrint.h"
+#import "THRDataManager.h"
 #import "ListVC.h"
 #import "TextAttributeCell.h"
 #import "EntityListDataSource.h"
@@ -239,7 +239,7 @@
 }
 
 + (DetailVC *)detailViewControllerWithObject:(NSManagedObject *)object properties:(NSArray *)properties {
-    return [[(Thrint *)[UIApplication modelManager] thrintStoryboard] detailViewControllerWithObject:object properties:properties] ?: [[self alloc] initWithObject:object properties:properties];
+    return [[(THRDataManager *)[UIApplication modelManager] thrintStoryboard] detailViewControllerWithObject:object properties:properties] ?: [[self alloc] initWithObject:object properties:properties];
 }
 
 //- (ListVC *)listViewControllerForProperty:(NSString *)property {

@@ -8,6 +8,6 @@
 
 #import <Thrint/ThrintKit.h>
 
-@interface ThrintDemo : Thrint
+@interface ThrintDemo : THRDataManager
 
 @end

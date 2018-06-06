@@ -48,6 +48,7 @@
 		845E592B20C80CDF00A2983C /* Thrint_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 845E592920C80CDF00A2983C /* Thrint_Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		845E592E20C80CDF00A2983C /* Thrint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845E592720C80CDF00A2983C /* Thrint.framework */; };
 		845E593020C80CDF00A2983C /* Thrint.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 845E592720C80CDF00A2983C /* Thrint.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		845E595720C8150A00A2983C /* THRDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400662F15BA02C10005A060 /* THRDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8461A89216174945009FE5C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8461A89416174945009FE5C5 /* Localizable.strings */; };
 		8485682918FCB62800914FE1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8485682818FCB62800914FE1 /* libz.dylib */; };
 		84B3D3F91909F47000DA15B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B3D3F81909F47000DA15B5 /* Images.xcassets */; };
@@ -84,7 +85,7 @@
 		84EA2DC620C42D8600FA08A6 /* THRItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 84523DD91B910F7D000477A3 /* THRItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84EA2DC720C42D8600FA08A6 /* THRList.h in Headers */ = {isa = PBXBuildFile; fileRef = 8460D2081ACAC4ED00BCBBC9 /* THRList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84EA2DC820C42D8600FA08A6 /* THRList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460D2091ACAC4ED00BCBBC9 /* THRList.m */; };
-		84EA2DCA20C42D8D00FA08A6 /* Thrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A914E2C5BA00123C1B /* Thrint.m */; };
+		84EA2DCA20C42D8D00FA08A6 /* THRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316A914E2C5BA00123C1B /* THRDataManager.m */; };
 		84EA2DCC20C43A6200FA08A6 /* DetailVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4C715C1DB9C00337A17 /* DetailVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84EA2DCD20C43A6200FA08A6 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F4C815C1DB9C00337A17 /* DetailVC.m */; };
 		84EA2DCE20C43A6200FA08A6 /* EntityListDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8426F4CF15C1DC4000337A17 /* EntityListDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -97,7 +98,7 @@
 		84EA2DD520C43A6200FA08A6 /* ThrintTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */; };
 		84EA2DD620C43A6200FA08A6 /* THRListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 84002B3D1B89FEBD001B65A0 /* THRListViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84EA2DD720C43A6200FA08A6 /* THRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84002B3E1B89FEBD001B65A0 /* THRListViewController.m */; };
-		84EA2DD820C43DD600FA08A6 /* ThrintKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E83162314E1A76D00123C1B /* ThrintKit.h */; };
+		84EA2DD820C43DD600FA08A6 /* ThrintKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E83162314E1A76D00123C1B /* ThrintKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84EA2DD920C43DD600FA08A6 /* ThrintKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83162414E1A76D00123C1B /* ThrintKit.m */; };
 		84EA2DDF20C43E2F00FA08A6 /* BooleanAttributeCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847C618019144E37001622BF /* BooleanAttributeCell~iphone.xib */; };
 		84EA2DE020C43E2F00FA08A6 /* TextAttributeCell~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E3813FA14852F520024A7B1 /* TextAttributeCell~ipad.xib */; };
@@ -266,7 +267,7 @@
 		4E83169F14E2C5BA00123C1B /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		4E8316A114E2C5BA00123C1B /* NSManagedObject+ViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ViewAdditions.m"; sourceTree = "<group>"; };
 		4E8316A714E2C5BA00123C1B /* TextAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextAttributeCell.m; sourceTree = "<group>"; };
-		4E8316A914E2C5BA00123C1B /* Thrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thrint.m; sourceTree = "<group>"; };
+		4E8316A914E2C5BA00123C1B /* THRDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THRDataManager.m; sourceTree = "<group>"; };
 		4E8316AD14E2C5BA00123C1B /* ThrintTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrintTableViewController.m; sourceTree = "<group>"; };
 		4E83171514E2FBD200123C1B /* human.h.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; name = human.h.motemplate; path = ../human.h.motemplate; sourceTree = "<group>"; };
 		4E83171614E2FBD300123C1B /* human.m.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; name = human.m.motemplate; path = ../human.m.motemplate; sourceTree = "<group>"; };
@@ -288,7 +289,7 @@
 		8400662715BA02C10005A060 /* IntegerAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerAttributeCell.h; sourceTree = "<group>"; };
 		8400662A15BA02C10005A060 /* NSManagedObject+ViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ViewAdditions.h"; sourceTree = "<group>"; };
 		8400662E15BA02C10005A060 /* TextAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextAttributeCell.h; sourceTree = "<group>"; };
-		8400662F15BA02C10005A060 /* Thrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thrint.h; sourceTree = "<group>"; };
+		8400662F15BA02C10005A060 /* THRDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRDataManager.h; sourceTree = "<group>"; };
 		8400663015BA02C10005A060 /* ThrintTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrintTableViewController.h; sourceTree = "<group>"; };
 		840E117D1AA212380055F56A /* EntityBrowser~iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "EntityBrowser~iphone.storyboard"; sourceTree = "<group>"; };
 		8410882915BA18BF008E97B9 /* SliderAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderAttributeCell.h; sourceTree = "<group>"; };
@@ -552,8 +553,8 @@
 		4E8316ED14E2C62800123C1B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8400662F15BA02C10005A060 /* Thrint.h */,
-				4E8316A914E2C5BA00123C1B /* Thrint.m */,
+				8400662F15BA02C10005A060 /* THRDataManager.h */,
+				4E8316A914E2C5BA00123C1B /* THRDataManager.m */,
 				4E83162314E1A76D00123C1B /* ThrintKit.h */,
 				4E83162414E1A76D00123C1B /* ThrintKit.m */,
 			);
@@ -792,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84EA2DD220C43A6200FA08A6 /* ListVC.h in Headers */,
+				845E595720C8150A00A2983C /* THRDataManager.h in Headers */,
 				84EA2DD420C43A6200FA08A6 /* ThrintTableViewController.h in Headers */,
 				84EA2DD020C43A6200FA08A6 /* ListDataSource.h in Headers */,
 				84EA2DD820C43DD600FA08A6 /* ThrintKit.h in Headers */,
@@ -1148,7 +1150,7 @@
 				84EA2DD520C43A6200FA08A6 /* ThrintTableViewController.m in Sources */,
 				84EA2DC820C42D8600FA08A6 /* THRList.m in Sources */,
 				84EA2DB120C42D5700FA08A6 /* NSManagedObjectContext+ThrintAdditions.m in Sources */,
-				84EA2DCA20C42D8D00FA08A6 /* Thrint.m in Sources */,
+				84EA2DCA20C42D8D00FA08A6 /* THRDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
