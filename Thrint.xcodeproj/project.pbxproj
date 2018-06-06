@@ -404,12 +404,12 @@
 				848D1DC51B8DD61E0020A710 /* README.md */,
 				84EA2D5220C1D7B500FA08A6 /* BAFoundation.xcodeproj */,
 				845E590F20C80C9A00A2983C /* BAFoundation.xcodeproj */,
-				4E821736147BFFB300295D45 /* Thrint Demo-iOS */,
-				4E83161114E1A33D00123C1B /* ThrintKit */,
-				84EA2D9020C42CE300FA08A6 /* Thrint-iOS */,
-				84EA2D9D20C42CE400FA08A6 /* Thrint-iOSTests */,
 				845E58FB20C80C3000A2983C /* Thrint Demo-Mac */,
+				4E821736147BFFB300295D45 /* Thrint Demo-iOS */,
 				845E592820C80CDF00A2983C /* Thrint-Mac */,
+				84EA2D9D20C42CE400FA08A6 /* Thrint-iOSTests */,
+				84EA2D9020C42CE300FA08A6 /* Thrint-iOS */,
+				4E83161114E1A33D00123C1B /* Thrint-Common */,
 				4E82172F147BFFB300295D45 /* Frameworks */,
 				4E82172D147BFFB300295D45 /* Products */,
 			);
@@ -466,14 +466,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4E83161114E1A33D00123C1B /* ThrintKit */ = {
+		4E83161114E1A33D00123C1B /* Thrint-Common */ = {
 			isa = PBXGroup;
 			children = (
 				845E595220C811DB00A2983C /* View Model */,
 				4E8316ED14E2C62800123C1B /* Classes */,
 				4E83161214E1A33D00123C1B /* Supporting Files */,
 			);
-			path = ThrintKit;
+			path = "Thrint-Common";
 			sourceTree = "<group>";
 		};
 		4E83161214E1A33D00123C1B /* Supporting Files */ = {
