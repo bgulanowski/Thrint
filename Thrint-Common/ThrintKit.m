@@ -18,11 +18,4 @@ static NSString * const ThrintKitProductName = @"ThrintKit";
     return ThrintKitVersion;
 }
 
-+ (NSBundle *)resourceBundle {
-    
-    NSBundle *thrintKitBundle = [NSBundle bundleForClass:[self class]];
-    NSString *resourcePath = [thrintKitBundle pathForResource:ThrintKitProductName ofType:@"bundle"];    
-    return resourcePath ? [NSBundle bundleWithPath:resourcePath] : thrintKitBundle;
-}
-
 @end

@@ -11,6 +11,5 @@
 @interface ThrintKit : NSObject
 
 + (NSString *)versionString;
-+ (NSBundle *)resourceBundle;
 
 @end

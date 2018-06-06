@@ -45,8 +45,10 @@
 - (id)initWithStoreURL:(NSURL *)url rootEntityNames:(NSArray *)entityNames {
     self = [super initWithStoreURL:url];
     if(self) {
+        _rootEntityNames = entityNames ?: self.context.entityNames;
+        NSBundle *bundle = [NSBundle bundleForClass:[THRDataManager class]];
+        _thrintStoryboard = [UIStoryboard storyboardWithName:[[self class] storyboardName] bundle:bundle];
         [self.context makeActive];
-        self.rootEntityNames = entityNames ?: self.context.entityNames;
     }
     return self;
 }
@@ -174,23 +176,4 @@
     return [NSString stringWithFormat:@"EntityBrowser~%@", [self fileSuffixForDevice]];
 }
 
-// TODO: convert to class method and fix missing resource bundle
-// We could make a normal framework target now
-- (UIStoryboard *)thrintStoryboard {
-    dispatch_once(&_thrintStoryBoardToken, ^{
-        NSBundle *bundle = [ThrintKit resourceBundle] ?: [NSBundle mainBundle];
-        if (bundle) {
-            self->_thrintStoryboard = [UIStoryboard storyboardWithName:[[self class] storyboardName] bundle:bundle];
-        }
-    });
-    
-    return _thrintStoryboard;
-}
-
-//
-//#pragma mark - NSNotification handlers
-//- (void)contextRequestNotification:(NSNotification *)note {
-//    [[note object] setContext:self.context];
-//}
-//
 @end
